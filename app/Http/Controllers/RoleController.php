@@ -138,6 +138,6 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        Role::destroy($id);
     }
 }
