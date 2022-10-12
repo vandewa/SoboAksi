@@ -9,7 +9,7 @@
                 <ul class="menu-content">
                     <li class="{{ Request::segment(2) == 'user' ? 'active' : '' }}"><a class="menu-item " href="{{ route('admin:user.index') }}" data-i18n="Management User">Management User</a></li>
                     <li class="{{ Request::segment(2) == 'role' ? 'active' : '' }}"><a class="menu-item" href="{{ route('admin:role.index') }}" data-i18n="Role">Role</a></li>
-                    <li class="{{ Request::segment(2) == 'permission' ? 'active' : '' }}"><a class="menu-item" href="{{ route('admin:permission.index') }}" data-i18n="Permission">Permission</a></li>
+                    {{-- <li class="{{ Request::segment(2) == 'permission' ? 'active' : '' }}"><a class="menu-item" href="{{ route('admin:permission.index') }}" data-i18n="Permission">Permission</a></li> --}}
                 </ul>
             </li>
         </ul>

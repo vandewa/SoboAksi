@@ -19,17 +19,6 @@
     </div>
 </div>
 
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-        <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-        </ul>
-    </div>
-@endif
-
 <div class="content-body">  
     <div class="row">
         <div class="col-md-12">
@@ -42,8 +31,6 @@
                 <div class="card-content collpase show">
                     <div class="card-body">
                         {{Form::open(['route' => 'admin:user.store','method' => 'post', 'id' => 'my-form'])}} 
-                        
-                        {{ Auth::user()->roles->pluck('name') }}
                         
                         @include('admin.user.form')
                             

@@ -88,18 +88,6 @@ class ManagementUserController extends Controller
     
         return redirect(route('admin:user.index'))->with('status', 'berhasil');
                         
-        // $request->validate([
-        //     'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
-        // ]);
-
-        
-    //    User::create([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'role' => $request->role,
-    //         'password' => Hash::make($request->password)
-    //    ]);
-
     }
 
     /**
