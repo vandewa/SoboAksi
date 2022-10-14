@@ -28,8 +28,7 @@
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
-                        {{Form::model($data, ['route' => ['admin:role.update', $data->id],'method' => 'put', 'files' =>
-                        'true', ''])}}
+                        {{Form::model($data, ['route' => ['admin:role.update', $data->id],'method' => 'put', 'id' => 'my-form'])}}
                         
                         @include('admin.role.form')
                             
@@ -44,7 +43,7 @@
 @endsection
 
 @push('js')
-{!! JsValidator::formRequest('App\Http\Requests\UserStoreValidation','#my-form') !!}
+{!! JsValidator::formRequest('App\Http\Requests\UpdateRoleValidation','#my-form') !!}
  <script>
     function change()
      {

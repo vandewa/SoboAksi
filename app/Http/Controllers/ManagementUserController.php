@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Http;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Arr;
 use DB;
+use App\Http\Requests\UserStoreValidation;
+use App\Http\Requests\UserUpdateValidation;
 
 
 class ManagementUserController extends Controller
@@ -71,15 +73,8 @@ class ManagementUserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:password_confirmation',
-            'roles' => 'required'
-        ]);
-    
+    public function store(UserStoreValidation $request)
+    {    
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
@@ -124,15 +119,8 @@ class ManagementUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateValidation $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'same:password_confirmation',
-            'roles' => 'required'
-        ]);
-    
         $input = $request->all();
         if(!empty($input['password'])){ 
             $input['password'] = Hash::make($input['password']);

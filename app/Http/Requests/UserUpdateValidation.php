@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 
-class UserStoreValidation extends FormRequest
+class UserUpdateValidation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,10 +27,11 @@ class UserStoreValidation extends FormRequest
     {
         return [
             'name' => 'required',
-            'roles' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:password_confirmation|confirmed|min:8',
+            'email' => ['required', 'email',
+                Rule::unique('users')->ignore($this->user),
+            ],
+            'password' => 'same:password_confirmation|confirmed|min:8',
+            'roles' => 'required'
         ];
-
     }
 }

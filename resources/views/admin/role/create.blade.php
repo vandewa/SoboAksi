@@ -43,7 +43,7 @@
 @endsection
 
 @push('js')
-{!! JsValidator::formRequest('App\Http\Requests\UserStoreValidation','#my-form') !!}
+{!! JsValidator::formRequest('App\Http\Requests\StoreRoleValidation','#my-form') !!}
  <script>
     function change()
      {

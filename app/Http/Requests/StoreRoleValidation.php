@@ -5,8 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-
-class UserStoreValidation extends FormRequest
+class StoreRoleValidation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +25,8 @@ class UserStoreValidation extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'roles' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:password_confirmation|confirmed|min:8',
+            'name' => 'required|unique:roles,name',
+            'permission' => 'required',
         ];
-
     }
 }
