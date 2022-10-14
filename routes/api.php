@@ -1,5 +1,13 @@
 <?php
 
+use App\Http\Controllers\Api\CodeCheckController;
+use App\Http\Controllers\Api\ForgotPasswordController;
+use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\LogoutController;
+use App\Http\Controllers\Api\OtpLoginController;
+use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\Api\ResetPasswordController;
+use App\Http\Controllers\Api\VerifyOtpLoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +25,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/register', RegisterController::class)->name('register');
+Route::post('/login', LoginController::class)->name('login');
+Route::post('/logout', LogoutController::class)->name('logout');
+
+Route::post('password/email',  ForgotPasswordController::class);
+Route::post('password/code/check', CodeCheckController::class);
+Route::post('password/reset', ResetPasswordController::class);
+
+Route::post('request_otp', OtpLoginController::class);
+Route::post('verify_otp', VerifyOtpLoginController::class);
