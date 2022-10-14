@@ -4126,11 +4126,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-<<<<<<< HEAD
-                "source": "https://github.com/symfony/http-foundation/tree/v6.1.5"
-=======
                 "source": "https://github.com/symfony/http-foundation/tree/v6.0.12"
->>>>>>> origin/maulana
             },
             "funding": [
                 {
