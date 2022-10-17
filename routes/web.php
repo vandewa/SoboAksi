@@ -18,10 +18,8 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 //dokumentasi template
 Route::get('/documentation', function () {
     return \File::get(public_path() . '/documentation.html');
