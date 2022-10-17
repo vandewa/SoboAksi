@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nomor_hp')->nullable();
             $table->string('alamat')->nullable();
             $table->string('jenis_kelamin_st')->nullable();
-            $table->string('pekerjaan')->nullable();
+            $table->string('pekerjaan_st')->nullable();
             $table->date('tgl_lahir')->nullable();
             // $table->string('role_st')->nullable();
         });
