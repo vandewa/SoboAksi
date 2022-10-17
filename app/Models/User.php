@@ -34,7 +34,7 @@ class User extends Authenticatable implements JWTSubject
         'nomor_hp',
         'alamat',
         'jenis_kelamin_st',
-        'pekerjaan',
+        'pekerjaan_st',
         'tgl_lahir',
         'region_prop',
         'region_kab',

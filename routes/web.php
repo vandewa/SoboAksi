@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 //dokumentasi template
 Route::get('/documentation', function () {
-    return \File::get(public_path() . '/index.html');
+    return \File::get(public_path() . '/documentation.html');
 }); 
 
 Auth::routes();
