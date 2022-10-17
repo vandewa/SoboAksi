@@ -44,7 +44,7 @@
 
 <!-- BEGIN: Body-->
 
-<body class="vertical-layout vertical-menu 1-column bg-full-screen-image blank-page blank-page" data-open="click" data-menu="vertical-menu" data-col="1-column">
+<body class="vertical-layout vertical-menu 1-column blank-page blank-page" data-open="click" data-menu="vertical-menu" data-col="1-column"  style="background: url({{ asset('stack-admin/app-assets/images/jpg/modern.jpg') }}); background-size: cover; background-position: center center;"> 
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
