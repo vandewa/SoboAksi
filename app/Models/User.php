@@ -35,7 +35,11 @@ class User extends Authenticatable implements JWTSubject
         'alamat',
         'jenis_kelamin_st',
         'pekerjaan',
-        'tgl_lahir'
+        'tgl_lahir',
+        'region_prop',
+        'region_kab',
+        'region_kec',
+        'region_kel',
     ];
 
     /**
@@ -79,5 +83,9 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function jk(){
+        return $this->belongsTo(ComCode::class, 'jenis_kelamin_st');
     }
 }

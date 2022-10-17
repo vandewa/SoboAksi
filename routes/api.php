@@ -10,6 +10,8 @@ use App\Http\Controllers\Api\ResetPasswordController;
 use App\Http\Controllers\Api\VerifyOtpLoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ApiProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,7 @@ Route::post('password/reset', ResetPasswordController::class);
 
 Route::post('request_otp', OtpLoginController::class);
 Route::post('verify_otp', VerifyOtpLoginController::class);
+
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::resource('profile', ApiProfileController::class);
+});
