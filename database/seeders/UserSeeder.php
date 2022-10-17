@@ -36,8 +36,9 @@ class UserSeeder extends Seeder
         $user = User::create([
             'name' => 'Superadmin', 
             'email' => 'superadmin@app.com',
-            'password' => bcrypt('password'),
+            'password' => bcrypt('password'), //password
             'profile_photo_path' => 'images/profile/pemda.png',
+            'jenis_kelamin_st' => 'JENIS_KELAMIN_ST_01',
         ]);
       
         $role = Role::create(['name' => 'diaspora']);
