@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Exception;
 use App\Http\Resources\ProfileResource;
+use App\Facades\MyResponse;
 
 class ApiProfileController extends Controller
 {
@@ -17,16 +18,16 @@ class ApiProfileController extends Controller
      */
     public function index()
     {
-        // $data = User::where('id', auth('api')->user()->id)->first();
-        // try {
-        //     $responseData = ProfileResource::collection($data)->resolve();
-        // } catch (Exception $e) {
-        //     $responseData = [];
-        // }
+        $data = User::where('id', auth('api')->user()->id)->get();
+        try {
+            $responseData = ProfileResource::collection($data)->resolve();
 
-        // return $responseData;
+            return $responseData;
+        } catch (Exception $e) {
+            $responseData = [];
+        }
 
-        return ProfileResource::collection(User::where('id', auth('api')->user()->id)->get());
+        return MyResponse::type('success')->info('Instansi ditemukan')->data($responseData)->response();
     }
 
     /**

@@ -88,4 +88,20 @@ class User extends Authenticatable implements JWTSubject
     public function jk(){
         return $this->belongsTo(ComCode::class, 'jenis_kelamin_st');
     }
+
+    public function provinsi(){
+        return $this->belongsTo(ComRegion::class, 'region_prop');
+    }
+
+    public function kabupaten(){
+        return $this->belongsTo(ComRegion::class, 'region_kab');
+    }
+
+    public function kecamatan(){
+        return $this->belongsTo(ComRegion::class, 'region_kec');
+    }
+
+    public function kelurahan(){
+        return $this->belongsTo(ComRegion::class, 'region_kel');
+    }
 }
