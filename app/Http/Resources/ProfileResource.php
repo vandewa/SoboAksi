@@ -25,10 +25,10 @@ class ProfileResource extends JsonResource
             "pekerjaan" => $this->pekerjaan,
             "tgl_lahir" => $this->tgl_lahir,
             "jenis_kelamin_st" => $this->jk->code_nm,
-            "region_prop" => $this->region_prop,
-            "region_kab" => $this->region_kab,
-            "region_kec" => $this->region_kec,
-            "region_kel" => $this->region_kel,
+            "region_prop" => $this->provinsi->region_nm,
+            "region_kab" => $this->kabupaten->region_nm,
+            "region_kec" => $this->kecamatan->region_nm,
+            "region_kel" => $this->kelurahan->region_nm,
         ];
     }
 }
