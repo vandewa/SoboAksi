@@ -6,6 +6,7 @@ use App\Http\Controllers\ManagementUserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/documentation', function () {
 Auth::routes();
 
 Route::resource('profile', ProfileController::class);
+Route::get('kabupaten', [RegionController::class, 'kabupaten'])->name('kabupaten');
+Route::get('kecamatan', [RegionController::class, 'kecamatan'])->name('kecamatan');
+Route::get('kelurahan', [RegionController::class, 'kelurahan'])->name('kelurahan');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
