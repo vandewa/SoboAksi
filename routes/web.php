@@ -7,6 +7,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegionController;
+use App\Http\Controllers\WilayahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //dokumentasi template
 Route::get('/documentation', function () {
     return \File::get(public_path() . '/documentation.html');
-}); 
+});
 
 Auth::routes();
 
@@ -39,5 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('user', ManagementUserController::class);
         Route::resource('role', RoleController::class);
         Route::resource('permission', PermissionController::class);
+        Route::resource('wilayah', WilayahController::class);
+        Route::get('kabupaten', [WilayahController::class, 'index']);
     });
 });
