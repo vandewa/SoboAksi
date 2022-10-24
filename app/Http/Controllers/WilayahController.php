@@ -19,10 +19,8 @@ class WilayahController extends Controller
 
             $data = Wilayah::where('region_level', 1)->get();
 
-            if ($request->filled('kode')) {
-                $data->whereHas('kode', function ($a) use ($request) {
-                    $a->where('region_root', $request->kabupaten);
-                });
+            if ($request->query('kode')) {
+                $data = Wilayah::where('region_root', $request->query('kode'));
             }
 
             return DataTables::of($data)
@@ -39,12 +37,19 @@ class WilayahController extends Controller
                 ->addColumn('kab', function ($data) {
                     $actionBtn =
                         '<div>
-                     <a href="' . url('kabupaten?kode=') . $data->region_cd . '" class="btn btn-outline-info round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data">Lihat</a>
+                     <a href="' . url('admin/filter?kode=') . $data->region_cd . '&kab=kab " class="btn btn-outline-info round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data">Lihat</a>
+                </div>';
+                    return $actionBtn;
+                })
+                ->addColumn('kec', function ($data) {
+                    $actionBtn =
+                        '<div>
+                     <a href="' . url('admin/filter?kab=') . $data->region_cd . '" class="btn btn-outline-info round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data">Lihat</a>
                 </div>';
                     return $actionBtn;
                 })
 
-                ->rawColumns(['action', 'kab'])
+                ->rawColumns(['action', 'kab', 'kec'])
                 ->make(true);
         }
 

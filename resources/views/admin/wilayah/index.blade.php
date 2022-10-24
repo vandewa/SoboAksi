@@ -40,13 +40,31 @@
                         <div class="table-responsive">
                             <table class="table table-striped devan w-100">
                                 <thead>
+                                    @if(request('kab'))
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode Kecamatan</th>
+                                        <th>Nama Kecamatan</th>
+                                        <th>List Desa</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
+                                    @elseif(request('kode'))
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode Kabupaten</th>
+                                        <th>Nama Kabupaten</th>
+                                        <th>List Kecamatan</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
+                                    @else
                                     <tr>
                                         <th>No</th>
                                         <th>Kode Provinsi</th>
-                                        <th>Provinsi</th>
+                                        <th>Nama Provinsi</th>
                                         <th>List Kabupaten</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
+                                    @endif
                                 </thead>
                                 <tbody>
                                 </tbody>
@@ -75,13 +93,11 @@
             { data: 'DT_RowIndex', orderable: false, searchable: false, className: "text-left" },
             { data: 'region_cd' },
             { data: 'region_nm' },
-            { data: 'kab' },
+            { data: 'kab', className: "text-center" },
             { data: 'action', name: 'action', orderable: false, searchable: false },
         ]
     });
-</script>
 
-<script type="text/javascript">
     function sweetAlert() {
         Swal.fire({
             position: 'top-end',
@@ -91,10 +107,10 @@
             timer: 2000
         })
     }
-
-    @if (session('status'))
-        sweetAlert();
-    @endif
 </script>
+
+@if(session('status'))
+sweetAlert();
+@endif
 
 @endpush

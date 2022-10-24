@@ -20,7 +20,7 @@
                             href="{{ route('admin:permission.index') }}" data-i18n="Permission">Permission</a></li> --}}
                 </ul>
             </li>
-            <li class="nav-item {{ Request::segment(2) == 'wilayah' ? 'active' : '' }} "><a
+            <li class="nav-item {{ Request::segment(2) == 'wilayah' || Request::segment(2) == 'filter' ? 'active' : '' }} "><a
                     href="{{ route('admin:wilayah.index') }}"><i class="feather icon-globe"></i><span class="menu-title"
                         data-i18n="Data User">Data
                         Wilayah</span></a>

@@ -41,6 +41,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('role', RoleController::class);
         Route::resource('permission', PermissionController::class);
         Route::resource('wilayah', WilayahController::class);
-        Route::get('kabupaten', [WilayahController::class, 'index']);
+        Route::get('filter', [WilayahController::class, 'index']);
     });
 });
