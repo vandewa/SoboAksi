@@ -20,9 +20,16 @@ return new class extends Migration
             $table->string('otp')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('nik')->nullable();
+            $table->string('nomor_hp')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('jenis_kelamin_st')->nullable();
+            $table->string('pekerjaan_st')->nullable();
+            $table->date('tgl_lahir')->nullable();
             $table->string('profile_photo_path')->nullable();
+            $table->rememberToken();
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

@@ -1,65 +1,17 @@
 <div class="form-body">
-    <h4 class="form-section"><i class="fa fa-user-secret"></i> Management User</h4>
     <div class="row">
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Nama</label>
-                        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nama Lengkap']) !!}
+                        {!! Form::text('nama', null, ['class' => 'form-control', 'placeholder' => 'Nama Lengkap']) !!}
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Role</label>
-                        @if(Request::segment(3) == 'create' )
-                            {!! Form::select('roles[]', $roles,[], array('class' => 'select2 form-control','multiple')) !!}
-                        @else
-                            {!! Form::select('roles[]', $roles,$userRole, array('class' => 'select2 form-control','multiple')) !!}
-                        @endif
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Email</label>
-                        {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email' ]) !!}
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Nomor WhatsApp</label>
-                        {!! Form::number('nomor_hp', null, ['class' => 'form-control', 'placeholder' => 'Masukkan WhatsApp']) !!}
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>NIK</label>
-                        {!! Form::number('nik', null, ['class' => 'form-control', 'placeholder' => 'Masukkan NIK']) !!}
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Jenis Kelamin</label>
-                        {{Form::select('jenis_kelamin_st', get_code_group('JENIS_KELAMIN_ST'), null, ['class' => 'form-control', 'placeholder' => 'Pilih Jenis Kelamin'])}}
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Tanggal Lahir</label>
-                        {!! Form::date('tgl_lahir', null, ['class' => 'form-control']) !!}
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Pekerjaan</label>
-                        {{Form::select('pekerjaan_st', get_code_group('PEKERJAAN_ST'), null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Pekerjaan'])}}
+                        <label>Telepon</label>
+                        {!! Form::number('telepon', null, ['class' => 'form-control', 'placeholder' => 'Masukkan WhatsApp']) !!}
                     </div>
                 </div>
             </div>
@@ -68,7 +20,7 @@
                     <div class="form-group">
                         <label>Provinsi</label>
                         {{Form::select('region_prop', get_prov(), null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Provinsi', 'id' => 'provinsi'])}}
-                </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
@@ -86,7 +38,7 @@
                     <div class="form-group">
                         <label>Kecamatan</label>
                         @if(Request::segment(3) == 'create' )
-                            {{Form::select('region_kec',[], null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan', 'id' => 'Kecamatan'])}}
+                            {{Form::select('region_kec',[], null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan', 'id' => 'kecamatan'])}}
                         @else
                              {{Form::select('region_kec', get_kec($data->region_kab), $kecamatan, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan','id' => 'kecamatan'])}}   
                         @endif
@@ -110,63 +62,46 @@
                         {!! Form::text('alamat', null, ['class' => 'form-control', 'placeholder' => 'Masukkan alamat']) !!}
                     </div>
                 </div> 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Identitas</label>
+                        {{Form::select('kode_identitas', get_code_group('IDENTITAS_ST'), null, ['class' => 'form-control', 'placeholder' => 'Pilih Identitas', ])}}
+                    </div>
+                </div> 
             </div>
-
-            @if(Request::segment(3) == 'create' )
-
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Password</label>
-                        <div class="input-group mt-0">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="mybutton" onclick="change()"><i class="feather icon-eye"></i></span>
-                            </div>
-                            <input name="password" type="password" class="form-control" id="pass" placeholder="Password" required>
-                        </div>
+                        <label>Nomor Identitas</label>
+                        {!! Form::number('no_identitas', null, ['class' => 'form-control', 'placeholder' => 'Masukkan nomor identitas']) !!}
                     </div>
                 </div>
+                
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Konfirmasi Password</label>
-                        <div class="input-group mt-0">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"id="mybutton2" onclick="change2()"><i class="feather icon-eye"></i></span>
-                            </div>
-                            <input name="password_confirmation" type="password" class="form-control" id="passs" placeholder="Konfirmasi Password" required>
-                        </div>
+                        <label>Foto KTP</label>
+                        <input type="file" name="foto_ktp" placeholder="Choose image" id="foto_ktp" class="form-control" accept="image/jpeg, image/png">
+                        @if(empty($data->foto_ktp) || is_null($data->foto_ktp))
+                        <img id="preview-image-before-upload" src="{{ asset('images/png/notfound.gif')}}" alt="preview image" style="max-height: 250px;">
+                        @else
+                        <img id="preview-image-before-upload" src="{{ $data->preview_ktp }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
+                        @endif
+                    </div>
+                </div> 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Foto Penerima</label>
+                        <input type="file" name="foto_penerima" placeholder="Choose image" id="foto_penerima" class="form-control" accept="image/jpeg, image/png">
+                        @if(empty($data->foto_penerima) || is_null($data->foto_penerima))
+                        <img id="preview-image-before-upload2" src="{{ asset('images/png/notfound.gif')}}" alt="preview image" style="max-height: 250px;">
+                        @else
+                        <img id="preview-image-before-upload2" src="{{ $data->preview_penerima }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
+                        @endif
                     </div>
                 </div>
             </div>
-
-            @endif
-
-            @if(Request::segment(4) == 'edit' )
-
-            <h4 class="form-section"><i class="fa fa-key"></i> Ganti Password</h4>
-
-            <div class="form-group row has-icon-left">
-                <label class="col-md-3 label-control">Password</label>
-                <div class="col-md-9">
-                    <input name="password" type="password" class="form-control" id="pass" placeholder="Password">
-                    <div class="form-control-position">
-                        <span id="mybutton" onclick="change()"><i class="feather icon-eye"></i></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row has-icon-left">
-                <label class="col-md-3 label-control">Konfirmasi Password</label>
-                <div class="col-md-9">
-                    <input name="password_confirmation" type="password" class="form-control" id="passs" placeholder="Konfirmasi Password">
-                    <div class="form-control-position">
-                        <span id="mybutton2" onclick="change2()"><i class="feather icon-eye"></i></span>
-                    </div>
-                </div>
-            </div>
-
-            @endif
-        
         </div>
     </div>
 </div>
@@ -231,5 +166,34 @@
            });
     });
 
+</script>
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        $('#foto_penerima').change(function() {
+            console.log('berubah');
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+
+                $('#preview-image-before-upload2').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]);
+
+        });
+        $('#foto_ktp').change(function() {
+            console.log('berubah');
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+
+                $('#preview-image-before-upload').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(this.files[0]);
+
+        });
+
+    });
 </script>
 @endpush

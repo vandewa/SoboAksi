@@ -4,13 +4,13 @@
 @section('content')
 <div class="content-header row">
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title mb-0">Management User</h3>
+        <h3 class="content-header-title mb-0">Penerima</h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Data User</a>
+                <ol class="breadcrumb"> 
+                    <li class="breadcrumb-item"><a href="#">Penerima</a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Management User</a>
+                    <li class="breadcrumb-item"><a href="#">Data Penerima</a>
                     </li>
                 </ol>
             </div>
@@ -18,7 +18,7 @@
     </div>
     <div class="content-header-right text-md-right col-md-6 col-12">
         <div class="form-group">
-           <a href="{{ route('admin:user.create') }}" class="btn btn-lg round mr-1 mb-1" style="color: rgb(255, 255, 255);
+           <a href="{{ route('admin:penerima.create') }}" class="btn btn-lg round mr-1 mb-1" style="color: rgb(255, 255, 255);
            box-shadow: none;
            background-color: rgb(51, 88, 244) !important;
            background-image: linear-gradient(to left bottom, rgb(29, 140, 248), rgb(51, 88, 244), rgb(29, 140, 248)) !important;">
@@ -43,8 +43,11 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
+                                        <th>Alamat</th>
+                                        <th>Provinsi</th>
+                                        <th>Kabupaten</th>
+                                        <th>Kecamatan</th>
+                                        <th>Kelurahan</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -73,9 +76,12 @@
         ajax: window.location.href,
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-left"},
-            { data: 'name'},
-            { data: 'email'},
-            { data: 'role'},
+            { data: 'nama'},
+            { data: 'alamat'},
+            { data: 'provinsi.region_nm'},
+            { data: 'kabupaten.region_nm'},
+            { data: 'kecamatan.region_nm'},
+            { data: 'kelurahan.region_nm'},
             { data: 'action', name: 'action',  orderable: false, searchable: false },
         ]
     });
