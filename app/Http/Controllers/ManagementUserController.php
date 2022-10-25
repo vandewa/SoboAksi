@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
-use Illuminate\Support\Facades\Http;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Arr;
 use DB;

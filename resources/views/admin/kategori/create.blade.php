@@ -1,18 +1,16 @@
-@section('title', 'Edit User Sobo Aksi')
+@section('title', 'Tambah Kategori Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')
 <div class="content-header row">
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title mb-0">Edit User</h3>
+        <h3 class="content-header-title mb-0">Tambah Kategori</h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Data User</a>
+                    <li class="breadcrumb-item"><a href="#">Data Kategori</a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Management User</a>
-                    </li>
-                    <li class="breadcrumb-item active">Edit User
+                    <li class="breadcrumb-item active">Tambah Kategori
                     </li>
                 </ol>
             </div>
@@ -20,20 +18,19 @@
     </div>
 </div>
 <div class="content-body">  
-    <div class="row justify-content-md-center">
-        <div class="col-md-6">
+    <div class="row">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" id="horz-layout-colored-controls">Edit User</h4>
+                    <h4 class="card-title" id="horz-layout-colored-controls">Tambah Kategori</h4>
                     <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
-                        {{Form::model($data, ['route' => ['admin:user.update', $data->id],'method' => 'put', 'files' =>
-                        'true', 'id' => 'my-form'])}}
+                        {{Form::open(['route' => 'admin:kategori.store','method' => 'post', 'id' => 'my-form'])}} 
                         
-                        @include('admin.user.form')
-                        
+                        @include('admin.kategori.form')
+                            
                         {{Form::close()}}
                     </div>
                 </div>
@@ -45,7 +42,7 @@
 @endsection
 
 @push('js')
-{!! JsValidator::formRequest('App\Http\Requests\UserUpdateValidation','#my-form') !!}
+{!! JsValidator::formRequest('App\Http\Requests\KategoriStoreValidation','#my-form') !!}
  <script>
     function change()
      {

@@ -1,16 +1,16 @@
-@section('title', 'Management User Sobo Aksi')
+@section('title', 'Aksi Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')
 <div class="content-header row">
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title mb-0">Management User</h3>
+        <h3 class="content-header-title mb-0">Aksi</h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Data User</a>
+                    <li class="breadcrumb-item"><a href="#">Data Aksi</a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Management User</a>
+                    <li class="breadcrumb-item"><a href="#">Aksi</a>
                     </li>
                 </ol>
             </div>
@@ -18,7 +18,7 @@
     </div>
     <div class="content-header-right text-md-right col-md-6 col-12">
         <div class="form-group">
-           <a href="{{ route('admin:user.create') }}" class="btn btn-lg round mr-1 mb-1" style="color: rgb(255, 255, 255);
+           <a href="{{ route('admin:aksi.create') }}" class="btn btn-lg round mr-1 mb-1" style="color: rgb(255, 255, 255);
            box-shadow: none;
            background-color: rgb(51, 88, 244) !important;
            background-image: linear-gradient(to left bottom, rgb(29, 140, 248), rgb(51, 88, 244), rgb(29, 140, 248)) !important;">
@@ -42,10 +42,13 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
-                                        <th class="text-center">Aksi</th>
+                                        <th>Creator</th>
+                                        <th>Judul</th>
+                                        <th>Kategori</th>
+                                        <th>Publikasi</th>
+                                        <th>Tanggal Publikasi</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,10 +75,13 @@
         responsive: true,
         ajax: window.location.href,
         columns: [
-            { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-left"},
-            { data: 'name'},
-            { data: 'email'},
-            { data: 'role'},
+            { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-center"},
+            { data: 'user.name'},
+            { data: 'judul'},
+            { data: 'kategori.nama_kategori'},
+            { data: 'publikasi'},
+            { data: 'tanggal'},
+            { data: 'setuju'},
             { data: 'action', name: 'action',  orderable: false, searchable: false },
         ]
     });
