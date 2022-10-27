@@ -10,6 +10,7 @@ use App\Http\Controllers\RegionController;
 use App\Http\Controllers\PenerimaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\AksiController;
+use App\Http\Controllers\WilayahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //dokumentasi template
 Route::get('/documentation', function () {
     return \File::get(public_path() . '/documentation.html');
-}); 
+});
 
 Auth::routes();
 
@@ -46,5 +47,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('penerima', PenerimaController::class);
         Route::resource('kategori', KategoriController::class);
         Route::resource('aksi', AksiController::class);
+        Route::resource('wilayah', WilayahController::class);
+        Route::get('filter', [WilayahController::class, 'index']);
     });
 });
