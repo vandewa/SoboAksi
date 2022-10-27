@@ -21,8 +21,12 @@ class Aksi extends Model
         return $this->belongsTo(User::class, 'creator_id');
     }
 
-    public function kategori(){
-        return $this->belongsTo(kategori::class, 'kategori');
+    public function kategorinya(){
+        return $this->belongsTo(Kategori::class, 'kategori');
+    }
+
+    public function fotonya(){
+        return $this->hasMany(AksiPhoto::class, 'aksi_id');
     }
     
 }

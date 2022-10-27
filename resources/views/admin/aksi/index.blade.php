@@ -47,8 +47,8 @@
                                         <th>Kategori</th>
                                         <th>Publikasi</th>
                                         <th>Tanggal Publikasi</th>
-                                        <th>Status</th>
-                                        <th>Aksi</th>
+                                        {{-- <th>Status</th> --}}
+                                        <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -78,10 +78,10 @@
             { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-center"},
             { data: 'user.name'},
             { data: 'judul'},
-            { data: 'kategori.nama_kategori'},
-            { data: 'publikasi'},
-            { data: 'tanggal'},
-            { data: 'setuju'},
+            { data: 'kategori.nama_kategori', defaultContent: '-'},
+            { data: 'publikasinya', orderable: false, searchable: false},
+            { data: 'tanggal', orderable: false, searchable: false},
+            // { data: 'setuju', orderable: false, searchable: false},
             { data: 'action', name: 'action',  orderable: false, searchable: false },
         ]
     });

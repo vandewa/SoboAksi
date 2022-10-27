@@ -44,4 +44,8 @@ class Penerima extends Model
         return $devan;
     }
 
+    public function identitas(){
+        return $this->belongsTo(ComCode::class, 'kode_identitas');
+    }
+
 }

@@ -86,7 +86,7 @@
                     <div class="form-group">
                         <label>Kecamatan</label>
                         @if(Request::segment(3) == 'create' )
-                            {{Form::select('region_kec',[], null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan', 'id' => 'Kecamatan'])}}
+                            {{Form::select('region_kec',[], null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan', 'id' => 'kecamatan'])}}
                         @else
                              {{Form::select('region_kec', get_kec($data->region_kab), $kecamatan, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan','id' => 'kecamatan'])}}   
                         @endif

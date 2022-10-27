@@ -93,7 +93,8 @@ class PenerimaController extends Controller
                 'kode_identitas' => $request->kode_identitas,
                 'no_identitas' => $request->no_identitas,
                 'foto_ktp' => $path_foto_ktp,
-                'foto_penerima' => $path_foto_penerima
+                'foto_penerima' => $path_foto_penerima,
+                'creator_id' => auth()->user()->id
             ];
 
         } else {
@@ -107,6 +108,7 @@ class PenerimaController extends Controller
                 'telepon' => $request->telepon,
                 'kode_identitas' => $request->kode_identitas,
                 'no_identitas' => $request->no_identitas,
+                'creator_id' => auth()->user()->id
             ];
         }
 
