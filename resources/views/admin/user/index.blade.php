@@ -75,7 +75,7 @@
             { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-left"},
             { data: 'name'},
             { data: 'email'},
-            { data: 'role'},
+            { data: 'role', searchable: false },
             { data: 'action', name: 'action',  orderable: false, searchable: false },
         ]
     });

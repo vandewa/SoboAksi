@@ -10,4 +10,6 @@ class AksiPartisipasi extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $guarded = [];
 }

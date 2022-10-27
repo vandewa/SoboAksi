@@ -4,12 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
-use Exception;
-use App\Http\Resources\ProfileResource;
-use App\Facades\MyResponse;
 
-class ApiProfileController extends Controller
+class ApiAksiPhotoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,14 +14,7 @@ class ApiProfileController extends Controller
      */
     public function index()
     {
-        $data = User::with('jk', 'provinsi', 'kabupaten', 'kecamatan', 'kelurahan')->where('id', auth('api')->user()->id)->get();
-        try {
-            $responseData = ProfileResource::collection($data)->resolve();
-        } catch (Exception $e) {
-            $responseData = [];
-        }
-
-        return MyResponse::type('success')->info('Get Profile')->data($responseData)->response();
+        //
     }
 
     /**

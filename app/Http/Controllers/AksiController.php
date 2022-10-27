@@ -8,6 +8,7 @@ use App\Models\Aksi;
 use App\Models\Kategori;
 use Yajra\DataTables\Facades\DataTables;    
 use App\Http\Requests\AksiStoreValidation;
+use Carbon\Carbon;
 
 class AksiController extends Controller
 {
@@ -18,10 +19,10 @@ class AksiController extends Controller
      */
     public function index(Request $request)
     {
-        // return $data = Aksi::with('publikasi', 'user', 'kategori')->get();
+        // return $data = Aksi::with('publikasi', 'user', 'kategorinya')->get();
         if($request->ajax()){
 
-            $data = Aksi::with('publikasi', 'user', 'kategori')->select('*');
+            $data = Aksi::with('publikasi', 'user', 'kategorinya')->select('*');
 
             return DataTables::of($data)
             ->addIndexColumn()
@@ -41,21 +42,27 @@ class AksiController extends Controller
                 return '<label class=" badge bg-danger">Ditolak</label>';
                }
             })
-            ->editColumn('publikasi', function($a){
-               if($a->publikasi->code_cd == 'PUBLISH_ST_01'){
-                return '<label class=" badge bg-success">Ya</label>';
-               } else {
-                return '<label class=" badge bg-danger">Tidak</label>';
-               }
+            ->addColumn('publikasinya', function($a){
+                if($a->publikasi != null){
+                    if($a->publikasi->code_cd == 'PUBLISH_ST_01'){
+                        return '<label class=" badge bg-success">Ya</label>';
+                   } else {
+                        return '<label class=" badge bg-danger">Tidak</label>';
+                   }
+                }
+                else{
+                    return '-';
+                }
+               
             })
             ->addColumn('tanggal', function($a){
                 if($a->publish_at != NULL || $a->publish_at != ''){
-                    return \Carbon\Carbon::createFromTimeStamp(strtotime($a->publish_at))->isoFormat('D MMMM Y');
+                    return Carbon::createFromTimeStamp(strtotime($a->publish_at))->isoFormat('D MMMM Y');
                 } else {
                     return '-';
                 }
             })
-            ->rawColumns(['action', 'setuju', 'publikasi'])
+            ->rawColumns(['action', 'setuju', 'publikasinya'])
             ->make(true);
         }
 
