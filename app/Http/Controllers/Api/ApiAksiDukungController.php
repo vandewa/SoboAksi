@@ -41,7 +41,7 @@ class ApiAksiDukungController extends Controller
     {
         $cek = AksiDukung::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user->id)->first();
         if($cek){
-            $cek->delete();
+            $cek->forceDelete();
         }else {
             $data = AksiDukung::create([
                 'aksi_id' => $request->aksi_id,

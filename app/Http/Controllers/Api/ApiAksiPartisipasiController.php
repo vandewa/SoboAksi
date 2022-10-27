@@ -41,7 +41,7 @@ class ApiAksiPartisipasiController extends Controller
     {
         $cek = AksiPartisipasi::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user->id)->first();
         if($cek){
-            $cek->delete();
+            $cek->forceDelete();
         }else {
             $data = AksiPartisipasi::create([
                 'aksi_id' => $request->aksi_id,
