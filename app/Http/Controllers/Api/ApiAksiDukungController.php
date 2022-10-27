@@ -39,10 +39,17 @@ class ApiAksiDukungController extends Controller
      */
     public function store(Request $request)
     {
-        $data = AksiDukung::create([
-            'aksi_id' => $request->aksi_id,
-            'creator_id' => auth('api')->user->id
-        ]);
+        $cek = AksiDukung::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user->id)->first();
+        if($cek){
+            $cek->delete();
+        }else {
+            $data = AksiDukung::create([
+                'aksi_id' => $request->aksi_id,
+                'creator_id' => auth('api')->user->id
+            ]);
+        }
+
+
 
         try {
             return MyResponse::type('success')->info('Berhasil Memberikan Dukungan')->data($data)->response();

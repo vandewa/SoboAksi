@@ -56,30 +56,44 @@ class ApiAksiController extends Controller
                 'deskripsi' => $request->deskripsi,
                 'creator_id' => auth('api')->user()->id,
                 'setuju' => $request->setuju,
-                'publish_st' => $request->publish_st,
+                'publish_st' => 'PUBLISH_ST_02',
                 'publish_at' => $request->publish_at,
             ]);
-    
-            foreach($request->foto as $key => $step){
+            // tambah foto
+            foreach($request->file('foto') as $key){
                 $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
-                if ($request->hasFile('tmp.' . $key)) {
-                    $file = $request->file('tmp.' . $key);
-                    $path_foto_ktp = $file->store($paths);
+
+
+                    $path_foto_ktp = $key->store($paths);
                     $data->fotonya()->create([
                         "url" => $path_foto_ktp
                     ]);
-                }
             }
+
+            // tambah penerima donasi
+
+            if($request->filled('penerima_id')){
+                $data->penerimaDonasi()->create(
+                    [
+                        'penerima_id' => $request->penerima_id,
+                        'target_donasi' => $request->target_donasi,
+                        'target_waktu' => $request->target_waktu,
+                        'donasi_tercapai' => 0,
+                        'donasi_st' => 'DONASI_ST_01',
+                    ]
+                );
+            }
+
             return $data;
         });
 
         try {
-            return MyResponse::type('success')->info('Berhasil Membuat Penerima')->data($a)->response();
+            return MyResponse::type('success')->info('Berhasil Membuat Aksi')->data($a)->response();
         } catch (Exception $e) {
             // $responseData = [];
             return MyResponse::type('error')->info('Isian Tidak Sesuai')->response();
         }
-    
+
     }
 
     /**

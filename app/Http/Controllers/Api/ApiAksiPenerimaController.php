@@ -24,7 +24,7 @@ class ApiAksiPenerimaController extends Controller
      */
     public function create()
     {
-     //       
+     //
     }
 
     /**
@@ -33,7 +33,7 @@ class ApiAksiPenerimaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PenerimaStoreValidation $request)
+    public function store(Request $request)
     {
         //
     }
