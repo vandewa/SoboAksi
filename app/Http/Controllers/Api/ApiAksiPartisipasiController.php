@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\AksiDukung;
 use Illuminate\Http\Request;
 use App\Models\AksiPartisipasi;
 use Exception;
@@ -27,17 +28,7 @@ class ApiAksiPartisipasiController extends Controller
      */
     public function create()
     {
-        $data = AksiPartisipasi::create([
-            'aksi_id' => $request->aksi_id,
-            'creator_id' => auth('api')->user->id
-        ]);
-
-        try {
-            return MyResponse::type('success')->info('Berhasil Memberikan Partisipasi')->data($data)->response();
-        } catch (Exception $e) {
-            // $responseData = [];
-            return MyResponse::type('error')->info('Isian Tidak Sesuai')->response();
-        }
+        //
     }
 
     /**
@@ -48,7 +39,22 @@ class ApiAksiPartisipasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cek = AksiPartisipasi::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user->id)->first();
+        if($cek){
+            $cek->forceDelete();
+        }else {
+            $data = AksiPartisipasi::create([
+                'aksi_id' => $request->aksi_id,
+                'creator_id' => auth('api')->user->id
+            ]);
+        }
+
+        try {
+            return MyResponse::type('success')->info('Berhasil Memberikan Partisipasi')->data($data)->response();
+        } catch (Exception $e) {
+            // $responseData = [];
+            return MyResponse::type('error')->info('Isian Tidak Sesuai')->response();
+        }
     }
 
     /**

@@ -28,5 +28,14 @@ class Aksi extends Model
     public function fotonya(){
         return $this->hasMany(AksiPhoto::class, 'aksi_id');
     }
-    
+    public function penerimaAksi()
+    {
+        return $this->belongsToMany(Penerima::class, 'aksi_penerimas', 'aksi_id','penerima_id');
+    }
+
+    public function penerimaDonasi()
+    {
+        return $this->hasMany(AksiPenerima::class, 'aksi_id');
+    }
+
 }
