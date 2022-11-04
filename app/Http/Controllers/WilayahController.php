@@ -37,19 +37,11 @@ class WilayahController extends Controller
                 ->addColumn('kab', function ($data) {
                     $actionBtn =
                         '<div>
-                     <a href="' . url('admin/filter?kode=') . $data->region_cd . '&kab=kab " class="btn btn-outline-info round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data">Lihat</a>
+                     <a href="' . url('admin/filter?kode=') . $data->region_cd . '" class="btn btn-outline-info round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data">Lihat</a>
                 </div>';
                     return $actionBtn;
                 })
-                ->addColumn('kec', function ($data) {
-                    $actionBtn =
-                        '<div>
-                     <a href="' . url('admin/filter?kab=') . $data->region_cd . '" class="btn btn-outline-info round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data">Lihat</a>
-                </div>';
-                    return $actionBtn;
-                })
-
-                ->rawColumns(['action', 'kab', 'kec'])
+                ->rawColumns(['action', 'kab'])
                 ->make(true);
         }
 
@@ -63,7 +55,7 @@ class WilayahController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.wilayah.create');
     }
 
     /**
