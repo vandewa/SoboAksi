@@ -18,16 +18,14 @@ class ApiProfileController extends Controller
      */
     public function index()
     {
-        $data = User::where('id', auth('api')->user()->id)->get();
+        $data = User::with('jk', 'provinsi', 'kabupaten', 'kecamatan', 'kelurahan')->where('id', auth('api')->user()->id)->get();
         try {
             $responseData = ProfileResource::collection($data)->resolve();
-
-            return $responseData;
         } catch (Exception $e) {
             $responseData = [];
         }
 
-        return MyResponse::type('success')->info('Instansi ditemukan')->data($responseData)->response();
+        return MyResponse::type('success')->info('Get Profile')->data($responseData)->response();
     }
 
     /**

@@ -11,7 +11,8 @@
     <meta name="author" content="SOBO AKSI">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard Sobo Aksi</title>
+    <title>@yield('title')</title>
+    
     <link rel="apple-touch-icon" href="{{ asset('stack-admin/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('stack-admin/app-assets/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -24,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/fonts/meteocons/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/vendors/css/charts/morris.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/vendors/css/forms/selects/select2.min.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/vendors/css/forms/toggle/switchery.min.css')}}"> --}}
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -41,6 +43,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/css/core/colors/palette-gradient.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/fonts/simple-line-icons/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/css/pages/timeline.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/css/plugins/forms/switch.css')}}"> --}}
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -91,6 +94,8 @@
     <script src="{{ asset('stack-admin/app-assets/vendors/js/extensions/unslider-min.js')}}"></script>
     <script src="{{ asset('stack-admin/app-assets/vendors/js/timeline/horizontal-timeline.js')}}"></script>
     <script src="{{ asset('stack-admin/app-assets/vendors/js/forms/select/select2.full.min.js')}}"></script>
+    {{-- <script src="{{ asset('stack-admin/app-assets/vendors/js/forms/toggle/bootstrap-checkbox.min.js')}}"></script> --}}
+    {{-- <script src="{{ asset('stack-admin/app-assets/vendors/js/forms/toggle/switchery.min.js')}}"></script> --}}
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -102,6 +107,7 @@
     <script src="{{ asset('stack-admin/app-assets/js/scripts/pages/page-users.js')}}"></script>
     <script src="{{ asset('stack-admin/app-assets/js/scripts/pages/dashboard-ecommerce.js')}}"></script>
     <script src="{{ asset('stack-admin/app-assets/js/scripts/forms/select/form-select2.js')}}"></script>
+    {{-- <script src="{{ asset('stack-admin/app-assets/js/scripts/forms/switch.js')}}"></script> --}}
 
     <!-- END: Page JS-->
 

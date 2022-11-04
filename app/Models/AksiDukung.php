@@ -10,4 +10,10 @@ class AksiDukung extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $guarded = [];
+
+    public function aksi(){
+        return $this->belongsTo(Aksi::class, 'aksi_id');
+    }
 }

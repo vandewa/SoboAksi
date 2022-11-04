@@ -86,7 +86,7 @@
                     <div class="form-group">
                         <label>Kecamatan</label>
                         @if(Request::segment(3) == 'create' )
-                            {{Form::select('region_kec',[], null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan', 'id' => 'Kecamatan'])}}
+                            {{Form::select('region_kec',[], null, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan', 'id' => 'kecamatan'])}}
                         @else
                              {{Form::select('region_kec', get_kec($data->region_kab), $kecamatan, ['class' => 'form-control select2', 'placeholder' => 'Pilih Kecamatan','id' => 'kecamatan'])}}   
                         @endif
@@ -192,7 +192,7 @@
                url: "{{ route('kabupaten') }}?kabupaten=" + kabupaten,
                success: function(res) {
                     $("#kabupaten").empty();
-                    $("#kabupaten").append('<option>Pilih Kabupaten</option>');
+                    $("#kabupaten").append('<option value="">Pilih Kabupaten</option>');
                     $.each(res, function(key, value) {
                         $("#kabupaten").append('<option value="' + key + '">' + value +
                             '</option>');
@@ -207,7 +207,7 @@
                url: "{{ route('kecamatan') }}?kecamatan=" + kecamatan,
                success: function(res) {
                     $("#kecamatan").empty();
-                    $("#kecamatan").append('<option>Pilih Kecamatan</option>');
+                    $("#kecamatan").append('<option value="">Pilih Kecamatan</option>');
                     $.each(res, function(key, value) {
                         $("#kecamatan").append('<option value="' + key + '">' + value +
                             '</option>');
@@ -222,7 +222,7 @@
                url: "{{ route('kelurahan') }}?kelurahan=" + kelurahan,
                success: function(res) {
                     $("#kelurahan").empty();
-                    $("#kelurahan").append('<option>Pilih Kelurahan</option>');
+                    $("#kelurahan").append('<option value="">Pilih Kelurahan</option>');
                     $.each(res, function(key, value) {
                         $("#kelurahan").append('<option value="' + key + '">' + value +
                             '</option>');
