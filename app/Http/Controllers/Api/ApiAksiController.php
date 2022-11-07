@@ -132,7 +132,7 @@ class ApiAksiController extends Controller
                 'judul' => $request->judul,
                 'kategori' => $request->kategori,
                 'deskripsi' => $request->deskripsi,
-                'creator_id' => auth()->user()->id,
+                'creator_id' => auth('api')->user()->id,
                 'setuju' => $request->setuju,
                 'publish_st' => $request->publish_st,
                 'publish_at' => $request->publish_at,

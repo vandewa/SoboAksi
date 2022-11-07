@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -35,6 +36,9 @@ class RegisterController extends Controller
             'email'     => $request->email,
             'password'  => bcrypt($request->password)
         ]);
+
+        $role = Role::create(['name' => 'masyarakat']);   
+        $user->assignRole([$role->id]);
 
         //return response JSON user is created
         if ($user) {

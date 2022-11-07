@@ -9,6 +9,7 @@ use Exception;
 use App\Facades\MyResponse;
 use Carbon\Carbon;
 use App\Http\Resources\PenerimaResource;
+use App\Http\Requests\PenerimaStoreValidation;
 
 class ApiPenerimaController extends Controller
 {
@@ -19,15 +20,15 @@ class ApiPenerimaController extends Controller
      */
     public function index()
     {
-        $data = Penerima::with('provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'identitas')->orderBy('nama', 'asc')->where('creator_id', auth('api')->user()->id)->get();
-
         try {
+            $data = Penerima::with('provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'identitas')->orderBy('nama', 'asc')->where('creator_id', auth('api')->user()->id)->get();
             $responseData = PenerimaResource::collection($data)->resolve();
+            return MyResponse::type('success')->info('Get Penerima')->data($responseData)->response();
         } catch (Exception $e) {
-            $responseData = [];
+            // $responseData = [];
+            return MyResponse::type('error')->info('Tidak Ada Penerima')->response();
         }
 
-        return MyResponse::type('success')->info('Get Penerima')->data($responseData)->response();
     }
 
     /**
