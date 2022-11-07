@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
-use App\Models\Role;
+use Spatie\Permission\Models\Role;
 
 class RoleSeeder extends Seeder
 {
@@ -16,6 +16,8 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
+        // DB::table('roles')->truncate();
+
         $data = [
             ['id' => '1', 'name' => 'diaspora', 'guard_name' => 'Diaspora'],
             ['id' => '2', 'name' => 'opd', 'guard_name' => 'OPD'],
