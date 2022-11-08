@@ -11,4 +11,7 @@ class AksiPenerima extends Model
     use HasFactory;
     use SoftDeletes;
     protected $guarded = [];
+    protected $casts = [
+        "donasi_tercapai" => "double"
+    ];
 }
