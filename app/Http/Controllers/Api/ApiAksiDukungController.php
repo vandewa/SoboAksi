@@ -39,23 +39,23 @@ class ApiAksiDukungController extends Controller
      */
     public function store(Request $request)
     {
-        $cek = AksiDukung::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user->id)->first();
+        $cek = AksiDukung::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user()->id)->first();
+   
         if($cek){
             $cek->forceDelete();
         }else {
             $data = AksiDukung::create([
                 'aksi_id' => $request->aksi_id,
-                'creator_id' => auth('api')->user->id
+                'creator_id' => auth('api')->user()->id
             ]);
         }
-
 
 
         try {
             return MyResponse::type('success')->info('Berhasil Memberikan Dukungan')->data($data)->response();
         } catch (Exception $e) {
             // $responseData = [];
-            return MyResponse::type('error')->info('Isian Tidak Sesuai')->response();
+            return MyResponse::type('error')->info('Login Gagal')->response();
         }
     }
 

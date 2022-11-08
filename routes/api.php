@@ -50,14 +50,13 @@ Route::post('xendit/callback/ewallet',[DonasiPaymentController::class, 'ewallet'
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::resource('profile', ApiProfileController::class);
-
-Route::resource('aksi', ApiAksiController::class);
-Route::resource('aksi-dukung', ApiAksiDukungController::class);
-Route::resource('aksi-penerima', ApiAksiPenerimaController::class);
-Route::resource('aksi-photo', ApiAksiPhotoController::class);
-Route::resource('aksi-partisipasi', ApiAksiPartisipasiController::class);
-Route::resource('aksi-comment', ApiAksiCommentController::class);
-Route::resource('penerima', ApiPenerimaController::class);
-Route::post('donasi', [DonasiPaymentController::class, 'store']);
-
+    Route::resource('aksi', ApiAksiController::class);
+    Route::resource('aksi-dukung', ApiAksiDukungController::class);
+    Route::resource('aksi-penerima', ApiAksiPenerimaController::class);
+    Route::resource('aksi-photo', ApiAksiPhotoController::class);
+    Route::resource('aksi-partisipasi', ApiAksiPartisipasiController::class);
+    Route::resource('aksi-comment', ApiAksiCommentController::class);
+    Route::resource('penerima', ApiPenerimaController::class);
+    Route::post('donasi', [DonasiPaymentController::class, 'store']);
 });
+

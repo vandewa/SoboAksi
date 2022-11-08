@@ -39,13 +39,14 @@ class ApiAksiPartisipasiController extends Controller
      */
     public function store(Request $request)
     {
-        $cek = AksiPartisipasi::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user->id)->first();
+        $cek = AksiPartisipasi::where('aksi_id', $request->aksi_id)->where('creator_id', auth('api')->user()->id)->first();
+
         if($cek){
             $cek->forceDelete();
         }else {
             $data = AksiPartisipasi::create([
                 'aksi_id' => $request->aksi_id,
-                'creator_id' => auth('api')->user->id
+                'creator_id' => auth('api')->user()->id
             ]);
         }
 
@@ -53,7 +54,7 @@ class ApiAksiPartisipasiController extends Controller
             return MyResponse::type('success')->info('Berhasil Memberikan Partisipasi')->data($data)->response();
         } catch (Exception $e) {
             // $responseData = [];
-            return MyResponse::type('error')->info('Isian Tidak Sesuai')->response();
+            return MyResponse::type('error')->info('Login Gagal')->response();
         }
     }
 
