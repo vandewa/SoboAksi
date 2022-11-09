@@ -47,8 +47,16 @@ Route::post('verify_otp', VerifyOtpLoginController::class);
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::resource('profile', ApiProfileController::class);
+    Route::resource('aksi', ApiAksiController::class);
+    Route::resource('aksi-dukung', ApiAksiDukungController::class);
+    Route::resource('aksi-penerima', ApiAksiPenerimaController::class);
+    Route::resource('aksi-photo', ApiAksiPhotoController::class);
+    Route::resource('aksi-partisipasi', ApiAksiPartisipasiController::class);
+    Route::resource('aksi-comment', ApiAksiCommentController::class);
+    Route::resource('penerima', ApiPenerimaController::class);
 });
 
+<<<<<<< HEAD
 Route::resource('aksi', ApiAksiController::class);
 Route::resource('aksi-dukung', ApiAksiDukungController::class);
 Route::resource('aksi-penerima', ApiAksiPenerimaController::class);
@@ -63,3 +71,5 @@ Route::get('provinsi', function () {
 Route::get('kabupaten', [RegionController::class, 'kabupaten']);
 Route::get('kecamatan', [RegionController::class, 'kecamatan']);
 Route::get('kelurahan', [RegionController::class, 'kelurahan']);
+=======
+>>>>>>> c5a354783afe35761470a6a5e920728ea7fdf680
