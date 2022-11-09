@@ -30,7 +30,7 @@
 
                 <div class="card-content collpase show">
                     <div class="card-body">
-                        {{Form::open(['route' => 'admin:user.store','method' => 'post', 'id' => 'my-form'])}}
+                        {{Form::open(['route' => 'admin:wilayah.store','method' => 'post', 'id' => 'my-form'])}}
 
                         @include('admin.wilayah.form')
 
