@@ -21,10 +21,14 @@ return new class extends Migration
             $table->double("payment");
             $table->dateTime("request_payment");
             $table->dateTime("payment_date")->nullable();
-            $table->string("payment_status");
-            $table->string("payment_type");
+            $table->string("payment_status")->nullable();;
+            $table->string("payment_type")->nullable();;
+            $table->string("bank_code")->nullable();;
             $table->string("xendit_transaction_id")->nullable();
             $table->string("channel_code")->nullable();
+            $table->string("payment_channel")->nullable();
+            $table->string("payment_destination")->nullable();
+            $table->string("url_payment")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
