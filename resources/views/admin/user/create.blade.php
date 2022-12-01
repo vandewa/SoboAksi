@@ -1,3 +1,4 @@
+@section('title', 'Tambah User | Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')
@@ -20,8 +21,8 @@
 </div>
 
 <div class="content-body">  
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title" id="horz-layout-colored-controls">Tambah User</h4>
@@ -45,7 +46,7 @@
 @endsection
 
 @push('js')
-{!! JsValidator::formRequest('App\Http\Requests\UserStoreValidation','#my-form') !!}
+{{-- {!! JsValidator::formRequest('App\Http\Requests\UserStoreValidation','#my-form') !!} --}}
  <script>
     function change()
      {

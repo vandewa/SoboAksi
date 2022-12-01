@@ -10,7 +10,7 @@ if (!function_exists('get_code_group')) {
 if (!function_exists('get_prov')) {
     function get_prov()
     {
-       return \App\Models\ComRegion::where("level", 1)->pluck('region_nm', 'region_cd');
+       return \App\Models\ComRegion::where("region_level", 1)->pluck('region_nm', 'region_cd');
     }
 }
 if (!function_exists('get_kab')) {

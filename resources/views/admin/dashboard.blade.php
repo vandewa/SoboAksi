@@ -1,5 +1,5 @@
+@section('title', 'Dashboard | Sobo Aksi')
 @extends('layouts.utama')
-
 @section('content')
 
 <div class="content-body">

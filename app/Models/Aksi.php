@@ -10,4 +10,42 @@ class Aksi extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $guarded = [];
+
+    public function publikasi(){
+        return $this->belongsTo(ComCode::class, 'publish_st');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'creator_id');
+    }
+
+    public function kategorinya(){
+        return $this->belongsTo(Kategori::class, 'kategori');
+    }
+
+    public function fotonya(){
+        return $this->hasMany(AksiPhoto::class, 'aksi_id');
+    }
+    public function penerimaAksi()
+    {
+        return $this->belongsToMany(Penerima::class, 'aksi_penerimas', 'aksi_id','penerima_id');
+    }
+
+    public function penerimaDonasi()
+    {
+        return $this->hasMany(AksiPenerima::class, 'aksi_id');
+    }
+
+    public function dukung()
+    {
+        return $this->hasMany(AksiDukung::class);
+    }
+
+    public function partisipasi()
+    {
+        return $this->hasMany(AksiPartisipasi::class);
+    }
+
 }

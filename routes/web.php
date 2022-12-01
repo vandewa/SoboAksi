@@ -6,6 +6,11 @@ use App\Http\Controllers\ManagementUserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegionController;
+use App\Http\Controllers\PenerimaController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\AksiController;
+use App\Http\Controllers\WilayahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,18 +27,27 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 //dokumentasi template
 Route::get('/documentation', function () {
-    return \File::get(public_path() . '/index.html');
+    return \File::get(public_path() . '/documentation.html');
 });
 
 Auth::routes();
 
-Route::resource('profile', ProfileController::class);
+Route::get('kabupaten', [RegionController::class, 'kabupaten'])->name('kabupaten');
+Route::get('kecamatan', [RegionController::class, 'kecamatan'])->name('kecamatan');
+Route::get('kelurahan', [RegionController::class, 'kelurahan'])->name('kelurahan');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+    Route::resource('profile', ProfileController::class);
+
     Route::group(['prefix' => 'admin', 'as' => 'admin:'], function () {
         Route::resource('user', ManagementUserController::class);
         Route::resource('role', RoleController::class);
         Route::resource('permission', PermissionController::class);
+        Route::resource('penerima', PenerimaController::class);
+        Route::resource('kategori', KategoriController::class);
+        Route::resource('aksi', AksiController::class);
+        Route::resource('wilayah', WilayahController::class);
+        Route::get('filter', [WilayahController::class, 'index']);
     });
 });

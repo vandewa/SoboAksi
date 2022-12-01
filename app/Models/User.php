@@ -9,10 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -34,7 +35,7 @@ class User extends Authenticatable implements JWTSubject
         'nomor_hp',
         'alamat',
         'jenis_kelamin_st',
-        'pekerjaan',
+        'pekerjaan_st',
         'tgl_lahir',
         'region_prop',
         'region_kab',
@@ -87,5 +88,21 @@ class User extends Authenticatable implements JWTSubject
 
     public function jk(){
         return $this->belongsTo(ComCode::class, 'jenis_kelamin_st');
+    }
+
+    public function provinsi(){
+        return $this->belongsTo(ComRegion::class, 'region_prop');
+    }
+
+    public function kabupaten(){
+        return $this->belongsTo(ComRegion::class, 'region_kab');
+    }
+
+    public function kecamatan(){
+        return $this->belongsTo(ComRegion::class, 'region_kec');
+    }
+
+    public function kelurahan(){
+        return $this->belongsTo(ComRegion::class, 'region_kel');
     }
 }

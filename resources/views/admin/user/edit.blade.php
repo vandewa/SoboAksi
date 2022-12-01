@@ -1,3 +1,4 @@
+@section('title', 'Edit User | Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')
@@ -19,8 +20,8 @@
     </div>
 </div>
 <div class="content-body">  
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title" id="horz-layout-colored-controls">Edit User</h4>

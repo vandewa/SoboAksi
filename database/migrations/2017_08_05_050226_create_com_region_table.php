@@ -22,6 +22,7 @@ class CreateComRegionTable extends Migration {
 			$table->char('default_st', 1)->nullable();
             $table->string('postal_cd', 10)->nullable();
 			$table->string('modi_id', 20)->nullable();
+			$table->softDeletes();
 			$table->timestamps();
 
 		});

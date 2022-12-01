@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Yajra\DataTables\Facades\DataTables;
-use Illuminate\Support\Facades\Http;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Arr;
 use DB;
 use App\Http\Requests\UserStoreValidation;
 use App\Http\Requests\UserUpdateValidation;
+use App\Models\ComRegion;
 
 
 class ManagementUserController extends Controller
@@ -107,8 +107,11 @@ class ManagementUserController extends Controller
         $data = User::find($id);
         $roles = Role::pluck('name','name')->all();
         $userRole = $data->roles->pluck('name','name')->all();
+        $kabupaten = ComRegion::where('region_cd', $data->region_kab)->pluck('region_cd', 'region_nm'); 
+        $kecamatan = ComRegion::where('region_cd', $data->region_kec)->pluck('region_cd', 'region_nm'); 
+        $kelurahan = ComRegion::where('region_cd', $data->region_kel)->pluck('region_cd', 'region_nm'); 
 
-        return view('admin.user.edit', compact('data', 'roles', 'userRole'));
+        return view('admin.user.edit', compact('data', 'roles', 'userRole', 'kabupaten', 'kecamatan', 'kelurahan'));
 
     }
 

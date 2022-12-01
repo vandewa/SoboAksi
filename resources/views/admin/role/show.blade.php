@@ -1,3 +1,4 @@
+@section('title', 'Detail Role | Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')

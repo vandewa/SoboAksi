@@ -30,7 +30,7 @@ class UserUpdateValidation extends FormRequest
             'email' => ['required', 'email',
                 Rule::unique('users')->ignore($this->user),
             ],
-            'password' => 'same:password_confirmation|confirmed|min:8',
+            'password' => 'nullable|same:password_confirmation|min:8',
             'roles' => 'required'
         ];
     }
