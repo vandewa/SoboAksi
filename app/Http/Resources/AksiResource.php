@@ -23,6 +23,8 @@ class AksiResource extends JsonResource
             "publish_st" => $this->publikasi->code_nm??'',
             "publish_at" => $this->publish_at??'',
             "creator_id" => $this->user->name??'',
+            "dukung" => $this->dukung_count??'',
+            "partisipasi" => $this->partisipasi_count??'',
         ];
     }
 }

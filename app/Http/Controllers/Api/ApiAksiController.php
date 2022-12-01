@@ -20,7 +20,7 @@ class ApiAksiController extends Controller
      */
     public function index()
     {
-        $data = Aksi::with('kategorinya', 'user', 'publikasi')->get();
+        $data = Aksi::with('kategorinya', 'user', 'publikasi')->withCount(['dukung', 'partisipasi'])->get();
 
         try {
             $responseData = AksiResource::collection($data)->resolve();
@@ -28,7 +28,7 @@ class ApiAksiController extends Controller
             $responseData = [];
         }
 
-        return MyResponse::type('success')->info('Get Aksi')->data($responseData)->response();
+        return MyResponse::type('paginate')->info('Get Aksi')->data($responseData)->response();
     }
 
     /**

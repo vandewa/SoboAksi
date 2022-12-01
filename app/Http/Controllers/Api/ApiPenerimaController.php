@@ -23,7 +23,8 @@ class ApiPenerimaController extends Controller
         try {
             $data = Penerima::with('provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'identitas')->orderBy('nama', 'asc')->where('creator_id', auth('api')->user()->id)->get();
             $responseData = PenerimaResource::collection($data)->resolve();
-            return MyResponse::type('success')->info('Get Penerima')->data($responseData)->response();
+            
+            return MyResponse::type('paginate')->info('Get Penerima')->data($responseData)->response();
         } catch (Exception $e) {
             // $responseData = [];
             return MyResponse::type('error')->info('Tidak Ada Penerima')->response();

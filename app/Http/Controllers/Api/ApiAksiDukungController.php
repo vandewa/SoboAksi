@@ -55,7 +55,7 @@ class ApiAksiDukungController extends Controller
             return MyResponse::type('success')->info('Berhasil Memberikan Dukungan')->data($data)->response();
         } catch (Exception $e) {
             // $responseData = [];
-            return MyResponse::type('error')->info('Login Gagal')->response();
+            return MyResponse::type('error')->info('Gagal Memberikan Dukungan')->response();
         }
     }
 

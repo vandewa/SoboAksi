@@ -38,4 +38,14 @@ class Aksi extends Model
         return $this->hasMany(AksiPenerima::class, 'aksi_id');
     }
 
+    public function dukung()
+    {
+        return $this->hasMany(AksiDukung::class);
+    }
+
+    public function partisipasi()
+    {
+        return $this->hasMany(AksiPartisipasi::class);
+    }
+
 }
