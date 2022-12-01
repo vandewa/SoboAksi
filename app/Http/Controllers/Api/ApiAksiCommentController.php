@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\AksiComment;
+use Exception;
+use App\Http\Resources\AksiCommentResource;
+use App\Facades\MyResponse;
 
 class ApiAksiCommentController extends Controller
 {
@@ -14,7 +18,28 @@ class ApiAksiCommentController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $data = AksiComment::with(['parent', 'user'])->get();
+            $responseData = AksiCommentResource::collection($data)->resolve();
+
+            return MyResponse::type('paginate')->info('Get Komentar')->data($responseData)->response();
+        } catch (Exception $e) {
+            // $responseData = [];
+            return MyResponse::type('error')->info('Tidak Ada Komentar')->response();
+        }
+    }
+
+    public function GetComment($id)
+    {
+        try {
+            $data = AksiComment::with(['parent', 'user'])->where('aksi_id', $id)->get();
+            $responseData = AksiCommentResource::collection($data)->resolve();
+
+            return MyResponse::type('success')->info('Get Komentar by Aksi')->data($responseData)->response();
+        } catch (Exception $e) {
+            // $responseData = [];
+            return MyResponse::type('error')->info('Tidak Ada Komentar')->response();
+        }
     }
 
     /**
@@ -35,7 +60,19 @@ class ApiAksiCommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = AksiComment::create([
+            'aksi_id' => $request->aksi_id,
+            'root_id' => $request->root_id,
+            'comment' => $request->comment,
+            'creator_id' => auth('api')->user()->id
+        ]);
+
+        try {
+            return MyResponse::type('success')->info('Berhasil Memberikan Komentar')->data($data)->response();
+        } catch (Exception $e) {
+            // $responseData = [];
+            return MyResponse::type('error')->info('Gagal Memberikan Komentar')->response();
+        }
     }
 
     /**
@@ -69,7 +106,16 @@ class ApiAksiCommentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $data = AksiComment::find($id)->update([
+                'comment' => $request->comment,
+            ]);
+
+            return MyResponse::type('success')->info('Berhasil Update Komentar')->data($data)->response();
+
+        } catch (Exception $e) {
+            return MyResponse::type('error')->info('Gagal Update Komentar')->response();
+        }
     }
 
     /**
@@ -80,6 +126,13 @@ class ApiAksiCommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = AksiComment::destroy($id);
+
+        if ($data){
+            return MyResponse::type('success')->info('Berhasil Delete Komentar')->response();
+        } else {
+            // $responseData = [];
+            return MyResponse::type('error')->info('Gagal Delete Komentar')->response();
+        }
     }
 }

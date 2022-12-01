@@ -52,7 +52,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::resource('aksi-penerima', ApiAksiPenerimaController::class);
     Route::resource('aksi-photo', ApiAksiPhotoController::class);
     Route::resource('aksi-partisipasi', ApiAksiPartisipasiController::class);
+    Route::get('comment-by-aksi/{id}', [ApiAksiCommentController::class, 'GetComment']);
     Route::resource('aksi-comment', ApiAksiCommentController::class);
     Route::resource('penerima', ApiPenerimaController::class);
 });
-
