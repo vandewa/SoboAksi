@@ -79,7 +79,7 @@ class ApiAksiController extends Controller
                         'target_donasi' => $request->target_donasi,
                         'target_waktu' => $request->target_waktu,
                         'donasi_tercapai' => 0,
-                        'donasi_st' => 'PENDING',
+                        'donasi_st' => 'DONASI_ST_00',
                     ]
                 );
             }
