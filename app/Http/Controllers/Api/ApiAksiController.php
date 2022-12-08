@@ -60,14 +60,14 @@ class ApiAksiController extends Controller
                 'publish_at' => $request->publish_at,
             ]);
             // tambah foto
-            foreach($request->file('foto') as $key){
-                $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
-
-
-                    $path_foto_ktp = $key->store($paths);
-                    $data->fotonya()->create([
-                        "url" => $path_foto_ktp
-                    ]);
+            if($request->hasFile('foto')){
+                foreach($request->file('foto') as $key){
+                    $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
+                        $path_foto_ktp = $key->store($paths);
+                        $data->fotonya()->create([
+                            "url" => $path_foto_ktp
+                        ]);
+                }
             }
 
             // tambah penerima donasi
@@ -79,7 +79,7 @@ class ApiAksiController extends Controller
                         'target_donasi' => $request->target_donasi,
                         'target_waktu' => $request->target_waktu,
                         'donasi_tercapai' => 0,
-                        'donasi_st' => 'DONASI_ST_01',
+                        'donasi_st' => 'DONASI_ST_00',
                     ]
                 );
             }
