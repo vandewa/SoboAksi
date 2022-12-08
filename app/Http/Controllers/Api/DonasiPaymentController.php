@@ -38,7 +38,7 @@ class DonasiPaymentController extends Controller
 
         $data =  AksiPenerima::where('aksi_id',  $donasi->aksi_id)->first();
         if($data->target_donasi <= $data->donasi_tercapai) {
-            $data->donasi_st = true;
+            $data->donasi_st = "DONASI_ST_01"; // TRUE
             $data->save();
         }
         return MyResponse::type("success")->info("berhasil update transaksi")->response();
