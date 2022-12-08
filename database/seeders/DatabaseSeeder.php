@@ -27,6 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionSeeder::class);
         $this->call(KategoriSeeder::class);
         $this->call(EwalletSeeder::class);
-        // $this->call(RoleSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }

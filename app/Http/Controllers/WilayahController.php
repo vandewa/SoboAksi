@@ -66,7 +66,13 @@ class WilayahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Wilayah::create([
+            'region_cd' => $request->input('region_cd'),
+            'region_nm' => $request->input('region_nm'),
+            'region_level' => 1
+        ]);
+
+        return redirect()->route('admin:wilayah.index')->with('status', 'berhasil');
     }
 
     /**

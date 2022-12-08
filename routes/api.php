@@ -19,7 +19,7 @@ use App\Http\Controllers\Api\ApiAksiPartisipasiController;
 use App\Http\Controllers\Api\ApiAksiCommentController;
 use App\Http\Controllers\Api\ApiPenerimaController;
 use App\Http\Controllers\Api\DonasiPaymentController;
-
+use App\Http\Controllers\RegionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,15 +48,31 @@ Route::post('verify_otp', VerifyOtpLoginController::class);
 Route::post('xendit/callback',[DonasiPaymentController::class, 'callback']);
 Route::post('xendit/callback/ewallet',[DonasiPaymentController::class, 'ewallet']);
 
-Route::group(['middleware' => 'auth:api'], function(){
+Route::group(['middleware' => 'auth:api'], function () {
     Route::resource('profile', ApiProfileController::class);
     Route::resource('aksi', ApiAksiController::class);
     Route::resource('aksi-dukung', ApiAksiDukungController::class);
     Route::resource('aksi-penerima', ApiAksiPenerimaController::class);
     Route::resource('aksi-photo', ApiAksiPhotoController::class);
     Route::resource('aksi-partisipasi', ApiAksiPartisipasiController::class);
+    Route::get('comment-by-aksi/{id}', [ApiAksiCommentController::class, 'GetComment']);
     Route::resource('aksi-comment', ApiAksiCommentController::class);
     Route::resource('penerima', ApiPenerimaController::class);
     Route::post('donasi', [DonasiPaymentController::class, 'store']);
 });
 
+
+Route::resource('aksi', ApiAksiController::class);
+Route::resource('aksi-dukung', ApiAksiDukungController::class);
+Route::resource('aksi-penerima', ApiAksiPenerimaController::class);
+Route::resource('aksi-photo', ApiAksiPhotoController::class);
+Route::resource('aksi-partisipasi', ApiAksiPartisipasiController::class);
+Route::resource('aksi-comment', ApiAksiCommentController::class);
+Route::resource('penerima', ApiPenerimaController::class);
+
+Route::get('provinsi', function () {
+    return response()->json(get_prov());
+});
+Route::get('kabupaten', [RegionController::class, 'kabupaten']);
+Route::get('kecamatan', [RegionController::class, 'kecamatan']);
+Route::get('kelurahan', [RegionController::class, 'kelurahan']);

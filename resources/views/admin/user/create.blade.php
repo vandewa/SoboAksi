@@ -1,4 +1,4 @@
-@section('title', 'Tambah User Sobo Aksi')
+@section('title', 'Tambah User | Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')
@@ -46,7 +46,7 @@
 @endsection
 
 @push('js')
-{{-- {!! JsValidator::formRequest('App\Http\Requests\UserStoreValidation','#my-form') !!} --}}
+{!! JsValidator::formRequest('App\Http\Requests\UserStoreValidation','#my-form') !!}
  <script>
     function change()
      {

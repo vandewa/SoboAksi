@@ -54,7 +54,7 @@ class ApiAksiPartisipasiController extends Controller
             return MyResponse::type('success')->info('Berhasil Memberikan Partisipasi')->data($data)->response();
         } catch (Exception $e) {
             // $responseData = [];
-            return MyResponse::type('error')->info('Login Gagal')->response();
+            return MyResponse::type('error')->info('Gagal Memberikan Partisipasi')->response();
         }
     }
 

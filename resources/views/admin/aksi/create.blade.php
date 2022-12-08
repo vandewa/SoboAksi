@@ -1,4 +1,4 @@
-@section('title', 'Tambah Aksi Sobo Aksi')
+@section('title', 'Tambah Aksi | Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')
