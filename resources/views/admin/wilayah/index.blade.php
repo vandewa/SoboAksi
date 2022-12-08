@@ -9,7 +9,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Data Wilayah</a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Management Wilayah</a>
+                    <li class="breadcrumb-item active">Management Wilayah</a>
                     </li>
                 </ol>
             </div>
@@ -40,15 +40,15 @@
                         <div class="table-responsive">
                             <table class="table table-striped devan w-100">
                                 <thead>
-                                    @if(request('kab'))
+                                    @if(Str::contains(url()->full(), 'wilayah'))
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Kecamatan</th>
-                                        <th>Nama Kecamatan</th>
-                                        <th>List Desa</th>
+                                        <th>Kode Provinsi</th>
+                                        <th>Nama Provinsi</th>
+                                        <th>List Kabupaten</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
-                                    @elseif(request('kode'))
+                                    @elseif(Str::length(request('kode')) == 2)
                                     <tr>
                                         <th>No</th>
                                         <th>Kode Kabupaten</th>
@@ -56,12 +56,27 @@
                                         <th>List Kecamatan</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
+                                    @elseif(Str::length(request('kode')) == 4)
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode Kecamatan</th>
+                                        <th>Nama Kecamatan</th>
+                                        <th>List Desa</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
+                                    @elseif(Str::length(request('kode')) == 7)
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode Kelurahan</th>
+                                        <th>Nama Kelurahan</th>
+                                        <th>List Desa</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
                                     @else
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode Provinsi</th>
-                                        <th>Nama Provinsi</th>
-                                        <th>List Kabupaten</th>
+                                        <th>Kode Desa</th>
+                                        <th>Nama Desa</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                     @endif
@@ -93,8 +108,11 @@
             { data: 'DT_RowIndex', orderable: false, searchable: false, className: "text-left" },
             { data: 'region_cd' },
             { data: 'region_nm' },
-            { data: 'kab', className: "text-center" },
-            { data: 'action', name: 'action', orderable: false, searchable: false },
+            @if (Str:: length(request('kode')) == 10)
+    @else
+    { data: 'kab', className: "text-center" },
+    @endif
+    { data: 'action', name: 'action', orderable: false, searchable: false },
         ]
     });
 
