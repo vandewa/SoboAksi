@@ -26,6 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ComCodeSeeder::class);
         $this->call(RegionSeeder::class);
         $this->call(KategoriSeeder::class);
-        // $this->call(RoleSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }

@@ -75,6 +75,8 @@ class ManagementUserController extends Controller
      */
     public function store(UserStoreValidation $request)
     {    
+
+        return $request->all();
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
