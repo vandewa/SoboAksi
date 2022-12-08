@@ -17,7 +17,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4623751537139602"
+        crossorigin="anonymous"></script>
     <div id="app">
+
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -76,5 +79,8 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </body>
 </html>

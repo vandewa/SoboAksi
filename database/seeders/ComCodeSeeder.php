@@ -119,6 +119,10 @@ class ComCodeSeeder extends Seeder
             ['code_cd' => 'PEKERJAAN_87', 'code_nm' => 'WALIKOTA', 'code_group' => 'PEKERJAAN_ST', 'code_value' => ''],
             ['code_cd' => 'PEKERJAAN_88', 'code_nm' => 'WARTAWAN', 'code_group' => 'PEKERJAAN_ST', 'code_value' => ''],
             ['code_cd' => 'PEKERJAAN_89', 'code_nm' => 'WIRASWASTA', 'code_group' => 'PEKERJAAN_ST', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_01', 'code_nm' => 'Ewallet', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_02', 'code_nm' => 'Virtual Account', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_03', 'code_nm' => 'Indomaret Group', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_04', 'code_nm' => 'Alfamart Group', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
         ];
 
         foreach ($data as $datum) {

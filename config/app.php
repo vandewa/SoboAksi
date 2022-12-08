@@ -58,6 +58,8 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+    'xendit_token' => env('XENDIT_TOKEN', "xnd_development_fjcEeL4kQmFwx60azq57Jn1rLOqy6dC6nasfGonJUcHRvJzKd3rOaI78Za69l"),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

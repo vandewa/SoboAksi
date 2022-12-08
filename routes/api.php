@@ -18,6 +18,7 @@ use App\Http\Controllers\Api\ApiAksiPhotoController;
 use App\Http\Controllers\Api\ApiAksiPartisipasiController;
 use App\Http\Controllers\Api\ApiAksiCommentController;
 use App\Http\Controllers\Api\ApiPenerimaController;
+use App\Http\Controllers\Api\DonasiPaymentController;
 use App\Http\Controllers\RegionController;
 
 /*
@@ -44,6 +45,8 @@ Route::post('password/reset', ResetPasswordController::class);
 
 Route::post('request_otp', OtpLoginController::class);
 Route::post('verify_otp', VerifyOtpLoginController::class);
+Route::post('xendit/callback',[DonasiPaymentController::class, 'callback']);
+Route::post('xendit/callback/ewallet',[DonasiPaymentController::class, 'ewallet']);
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::resource('profile', ApiProfileController::class);
@@ -55,6 +58,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('comment-by-aksi/{id}', [ApiAksiCommentController::class, 'GetComment']);
     Route::resource('aksi-comment', ApiAksiCommentController::class);
     Route::resource('penerima', ApiPenerimaController::class);
+    Route::post('donasi', [DonasiPaymentController::class, 'store']);
 });
 
 
