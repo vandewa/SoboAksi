@@ -30,6 +30,10 @@ Route::get('/documentation', function () {
     return \File::get(public_path() . '/documentation.html');
 });
 
+Route::get('/trusthand', function () {
+    return \File::get(public_path() . '/trushand.html');
+});
+
 Auth::routes();
 
 Route::get('kabupaten', [RegionController::class, 'kabupaten'])->name('kabupaten');
