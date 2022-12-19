@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- banner-section -->
-<section class="banner-section p_relative">
+<section class="banner-section p_relative" xmlns:livewire="http://www.w3.org/1999/html">
     <div class="banner-carousel owl-theme owl-carousel owl-nav-none">
         <div class="slide-item p_relative">
             <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/banner-1.jpg')}})"></div>
@@ -16,7 +16,7 @@
                     <div class="btn-box">
                         <a href="index.html" class="theme-btn-one"><span>Discover More</span></a>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="slide-item p_relative">
@@ -31,7 +31,7 @@
                     <div class="btn-box">
                         <a href="index.html" class="theme-btn-one"><span>Discover More</span></a>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="slide-item p_relative">
@@ -46,7 +46,7 @@
                     <div class="btn-box">
                         <a href="index.html" class="theme-btn-one"><span>Discover More</span></a>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="slide-item p_relative">
@@ -61,7 +61,7 @@
                     <div class="btn-box">
                         <a href="index.html" class="theme-btn-one"><span>Discover More</span></a>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
@@ -556,7 +556,7 @@
                                 <li>
                                     <a data-slide-index="1" href="#">
                                         <figure class="thumb thumb-2"><img src="{{ asset('trusthand/assets/images/resource/testimonial-2.jpg')}}" alt=""></figure>
-                                    </a>                                       
+                                    </a>
                                 </li>
                                 <li>
                                     <a data-slide-index="2" href="#">
@@ -591,7 +591,7 @@
                                 <li>
                                     <a data-slide-index="1" href="#">
                                         <figure class="thumb thumb-2"><img src="{{ asset('trusthand/assets/images/resource/testimonial-2.jpg')}}" alt=""></figure>
-                                    </a>                                       
+                                    </a>
                                 </li>
                                 <li>
                                     <a data-slide-index="2" href="#">
@@ -626,7 +626,7 @@
                                 <li>
                                     <a data-slide-index="1" href="#">
                                         <figure class="thumb thumb-2"><img src="{{ asset('trusthand/assets/images/resource/testimonial-2.jpg')}}" alt=""></figure>
-                                    </a>                                       
+                                    </a>
                                 </li>
                                 <li>
                                     <a data-slide-index="2" href="#">
@@ -674,79 +674,7 @@
 
 
 <!-- news-section -->
-<section class="news-section sec-pad">
-    <div class="auto-container">
-        <div class="sec-title centred mb_55">
-            <span class="sub-title">Articles</span>
-            <h2>Read Our Latest News</h2>
-        </div>
-        <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('trusthand/assets/images/news/news-1.jpg')}}" alt=""></a></figure>
-                        <div class="lower-content p_relative d_block">
-                            <div class="text">
-                                <div class="post-date"><h3>15 <span>APRIL</span></h3></div>
-                                <h3><a href="blog-details.html">How to Handle Unexpected Situations on Road</a></h3>
-                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque Tincidunt aurna suspit.</p>
-                                <div class="btn-box">
-                                    <a href="blog-details" class="theme-btn-two">Read more</a>
-                                </div>
-                            </div>
-                            <ul class="lower-box">
-                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
-                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('trusthand/assets/images/news/news-2.jpg')}}" alt=""></a></figure>
-                        <div class="lower-content p_relative d_block">
-                            <div class="text">
-                                <div class="post-date"><h3>14 <span>APRIL</span></h3></div>
-                                <h3><a href="blog-details.html">Our Donation is Hope for Poor Childrens</a></h3>
-                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque Tincidunt aurna suspit.</p>
-                                <div class="btn-box">
-                                    <a href="blog-details" class="theme-btn-two">Read more</a>
-                                </div>
-                            </div>
-                            <ul class="lower-box">
-                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
-                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="{{ asset('trusthand/assets/images/news/news-3.jpg')}}" alt=""></a></figure>
-                        <div class="lower-content p_relative d_block">
-                            <div class="text">
-                                <div class="post-date"><h3>12 <span>APRIL</span></h3></div>
-                                <h3><a href="blog-details.html">Our Donation is Hope for Poor Childrens</a></h3>
-                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque Tincidunt aurna suspit.</p>
-                                <div class="btn-box">
-                                    <a href="blog-details" class="theme-btn-two">Read more</a>
-                                </div>
-                            </div>
-                            <ul class="lower-box">
-                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
-                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<livewire:article/>
 <!-- news-section end -->
 
 @endsection

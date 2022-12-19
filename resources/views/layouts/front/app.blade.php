@@ -33,7 +33,7 @@
 
 
 @vite([])
-
+@livewireStyles
 @stack('css')
 </head>
 
@@ -80,7 +80,7 @@
                                 d
                             </span>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,125 +112,7 @@
 
 
         <!-- donate popup -->
-        <div id="donate-popup" class="donate-popup">
-            <div class="close-donate"><i class="fal fa-times"></i></div>
-            <div class="popup-inner">
-                <div class="donate-content">
-                    <div class="title-text centred">
-                        <h2>Donate Your Amount</h2>
-                    </div>
-                    <form action="trusthand/index.html" method="post" class="default-form">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-md-12 col-sm-12 donate-column">
-                                <div class="donate-box">
-                                    <div class="donate-option">
-                                        <h3>How Much?</h3>
-                                        <ul class="donate-list clearfix">
-                                            <li>
-                                                <input type="radio" id="donate-amount-1" name="donate-amount" checked="checked" />
-                                                <label for="donate-amount-1" data-amount="1000" >$10</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="donate-amount-2" name="donate-amount" />
-                                                <label for="donate-amount-2" data-amount="2000">$20</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="donate-amount-3" name="donate-amount" />
-                                                <label for="donate-amount-3" data-amount="3000">$50</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="donate-amount-4" name="donate-amount" />
-                                                <label for="donate-amount-4" data-amount="4000">$100</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="donate-amount-5" name="donate-amount" />
-                                                <label for="donate-amount-5" data-amount="5000">$500</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="donate-amount-6" name="donate-amount" />
-                                                <label for="donate-amount-6" data-amount="5000">$1000</label>
-                                            </li>
-                                        </ul>
-                                        <div class="other-amount">
-                                            <div class="text">
-                                                <h4>Like to Donate</h4>
-                                                <p>Enter your custom amount</p>
-                                            </div>
-                                            <div class="amount-box">
-                                                <div class="item-quantity"><input class="quantity-spinner" type="text" value="600" name="quantity"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="payment-option">
-                                        <h3>Choose Payment Option</h3>
-                                        <ul class="payment-list clearfix">
-                                            <li>
-                                                <input type="radio" id="payment-method-1" name="payment-method" checked="checked" />
-                                                <label for="payment-method-1" >Net Banking</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="payment-method-2" name="payment-method" />
-                                                <label for="payment-method-2">Credit - Debit Card</label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="payment-method-3" name="payment-method" />
-                                                <label for="payment-method-3">Offline Payment</label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 donate-form">
-                                <div class="form-inner">
-                                    <h3>Donar Information</h3>
-                                    <div class="row clearfix">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                            <div class="form-group">
-                                                <label>Your Name <span>*</span></label>
-                                                <input type="text" name="name" placeholder="example name" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                            <div class="form-group">
-                                                <label>Email Address <span>*</span></label>
-                                                <input type="email" name="email" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                            <div class="form-group">
-                                                <label>Phone</label>
-                                                <input type="text" name="phone" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 column">
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" name="address" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                            <div class="form-group message-btn">
-                                                <button type="submit" class="theme-btn-one">Donate Now</button>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                            <div class="form-group">
-                                                <label class="custom-control material-checkbox">
-                                                    <input type="checkbox" class="material-control-input">
-                                                    <span class="material-control-indicator"></span>
-                                                    <span class="description">I would like to donate automatically repeat each month</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- donate popup -->
+        <livewire:donate-popup/>
 
 
         <!-- sidebar cart item -->
@@ -332,14 +214,14 @@
                                             <li><a href="gallery.html">Gallery</a></li>
                                             <li><a href="error.html">404</a></li>
                                         </ul>
-                                    </li>  
+                                    </li>
                                     <li class="dropdown"><a href="trusthand/index.html">Causes</a>
                                         <ul>
                                             <li><a href="causes.html">Causes 1</a></li>
                                             <li><a href="causes-2.html">Causes 2</a></li>
                                             <li><a href="causes-details.html">Causes Details</a></li>
                                         </ul>
-                                    </li> 
+                                    </li>
                                     <li class="dropdown"><a href="trusthand/index.html">Shop</a>
                                         <ul>
                                             <li><a href="shop.html">Our Shop</a></li>
@@ -347,15 +229,15 @@
                                             <li><a href="cart.html">Cart Page</a></li>
                                             <li><a href="checkout.html">Checkout</a></li>
                                         </ul>
-                                    </li> 
+                                    </li>
                                     <li class="dropdown"><a href="trusthand/index.html">Blog</a>
                                         <ul>
                                             <li><a href="blog.html">Blog Grid</a></li>
                                             <li><a href="blog-2.html">Blog Standard</a></li>
                                             <li><a href="blog-details.html">Blog Details</a></li>
                                         </ul>
-                                    </li>  
-                                    <li><a href="contact.html">Contact</a></li> 
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -407,7 +289,7 @@
         <div class="mobile-menu">
             <div class="menu-backdrop"></div>
             <div class="close-btn"><i class="fas fa-times"></i></div>
-            
+
             <nav class="menu-box">
                 <div class="nav-logo"><a href="trusthand/index.html"><img src="{{ asset('trusthand/assets/images/logo.png')}}" alt="" title=""></a></div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
@@ -531,7 +413,7 @@
             </div>
         </div>
         <!-- Scroll to top end -->
-        
+
     </div>
 
 
@@ -557,6 +439,6 @@
     <script src="{{ asset('trusthand/assets/js/script.js')}}"></script>
 
     @stack('js')
-
+    @livewireScripts
 </body><!-- End of .page_wrapper -->
 </html>
