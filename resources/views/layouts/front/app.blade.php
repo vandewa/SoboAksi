@@ -113,6 +113,7 @@
 
         <!-- donate popup -->
         <livewire:donate-popup/>
+        <livewire:registrasi/>
 
 
         <!-- sidebar cart item -->
@@ -246,7 +247,7 @@
                                 <i class="icon-1"></i>
                             </li>
                             <li class="btn-box">
-                                <button class="donate-box-btn theme-btn-one"><span>Donate Now</span></button>
+                               <livewire:button.donasi/>
                             </li>
                             <li class="nav-btn nav-toggler navSidebar-button clearfix">
                                 <i class="icon-3"></i>
@@ -272,7 +273,7 @@
                                     <i class="icon-1"></i>
                                 </li>
                                 <li class="btn-box">
-                                    <button class="donate-box-btn theme-btn-one"><span>Donate Now</span></button>
+                                    <livewire:button.donasi/>
                                 </li>
                                 <li class="nav-btn nav-toggler navSidebar-button clearfix">
                                     <i class="icon-3"></i>
@@ -440,5 +441,11 @@
 
     @stack('js')
     @livewireScripts
+
+    <script>
+        Livewire.on('registrasi', postId => {
+            alert('A post was added with the id of: ' + postId);
+        })
+    </script>
 </body><!-- End of .page_wrapper -->
 </html>
