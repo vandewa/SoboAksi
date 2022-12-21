@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.0",
         "laravelcollective/html": "^6.3",
+        "livewire/livewire": "^2.10",
         "php-open-source-saver/jwt-auth": "1.4.2",
         "proengsoft/laravel-jsvalidation": "^4.7",
         "spatie/laravel-permission": "^5.5",
