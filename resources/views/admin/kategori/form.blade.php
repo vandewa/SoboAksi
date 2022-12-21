@@ -8,6 +8,25 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="form-group row">
+                <label class="col-md-3 label-control">Icon</label>
+                <div class="col-md-9">   
+                    @if (Request::segment(3) == 'create')
+                        {!! Form::file('icon', null, ['class' => 'form-control', 'accept' => 'image/*']) !!}
+                    @else
+                        {!! Form::file('icon', null, ['class' => 'form-control', 'accept' => 'image/*']) !!}
+                        @if($data->icon == null)
+                        <img id="preview-image-before-upload" src="{{ asset('trusthand/assets/images/icons/noimage.png') }}" alt="preview image" style="max-height: 250px;">
+                        @else
+                        <img id="preview-image-before-upload" src="{{asset('trusthand/assets/images/icons/'. $data->icon)}}" alt="preview image" style="max-height: 250px; max-width: 400px;">
+                        @endif
+                    @endif
+                </div>
+
+                
+            </div>
+        </div>
     </div>
 </div>
 

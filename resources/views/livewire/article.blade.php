@@ -1,8 +1,8 @@
 <section class="news-section sec-pad">
     <div class="auto-container">
         <div class="sec-title centred mb_55">
-            <span class="sub-title">Articles</span>
-            <h2>Read Our Latest News</h2>
+            <span class="sub-title">Berita</span>
+            <h2>Kabupaten Wonosobo</h2>
         </div>
         <div class="row clearfix">
             @foreach($article as $art)

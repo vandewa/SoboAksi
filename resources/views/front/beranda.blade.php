@@ -73,34 +73,15 @@
 <section class="feature-section p_relative sec-pad centred">
     <div class="auto-container">
         <div class="sec-title centred mb_50">
-            <span class="sub-title">Features</span>
-            <h2>Education Make a Life for <br />Poor Children!</h2>
+            <span class="sub-title">Kategori</span>
+            <h2>Aksi Kemanusiaan</h2>
         </div>
         <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+            <div class="col-lg-3 col-md-4 col-sm-12 feature-block">
                 <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><img src="{{ asset('trusthand/assets/images/icons/icon-1.png')}}" alt=""></div>
-                        <h3><a href="index.html">Become A Volunteer</a></h3>
-                        <p>Amet minim mollit no deserunt ulamco sit enim aliqua dolor sint Velit officia.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                <div class="feature-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><img src="{{ asset('trusthand/assets/images/icons/icon-2.png')}}" alt=""></div>
-                        <h3><a href="index.html">Send Us Donations</a></h3>
-                        <p>Amet minim mollit no deserunt ulamco sit enim aliqua dolor sint Velit officia.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
-                <div class="feature-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="icon-box"><img src="{{ asset('trusthand/assets/images/icons/icon-3.png')}}" alt=""></div>
-                        <h3><a href="index.html">Get Support Directly</a></h3>
-                        <p>Amet minim mollit no deserunt ulamco sit enim aliqua dolor sint Velit officia.</p>
+                    <div class="inner-box" style="padding: 30px 60px 17px 60px !important;">
+                        <div class="icon-box"><img src="{{ asset('trusthand/assets/images/icons/bencana.png')}}" alt=""></div>
+                        <h3><a href="index.html">Bencana Alam</a></h3>
                     </div>
                 </div>
             </div>
@@ -110,7 +91,7 @@
 <!-- feature-section end -->
 
 
-<!-- about-section -->
+{{-- <!-- about-section -->
 <section class="about-section bg-color-1 p_relative sec-pad">
     <div class="auto-container">
         <div class="row align-items-center clearfix">
@@ -168,10 +149,10 @@
         </div>
     </div>
 </section>
-<!-- about-section end -->
+<!-- about-section end --> --}}
 
 
-<!-- funfact-section -->
+{{-- <!-- funfact-section -->
 <section class="funfact-section pt_80 pb_80 bg-color-2">
     <div class="pattern-layer" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-2.png')}});"></div>
     <div class="auto-container">
@@ -211,7 +192,7 @@
         </div>
     </div>
 </section>
-<!-- funfact-section end -->
+<!-- funfact-section end --> --}}
 
 
 <!-- cause-section -->
@@ -222,8 +203,8 @@
     </div>
     <div class="auto-container">
         <div class="sec-title centred mb_50">
-            <span class="sub-title">Causes</span>
-            <h2>Our Popular Causes</h2>
+            <span class="sub-title">Penggalangan Dana</span>
+            <h2>Penggalangan Dana Mendesak</h2>
         </div>
         <div class="row clearfix">
             <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
@@ -311,8 +292,8 @@
 <section class="featured-causes">
     <div class="auto-container">
         <div class="sec-title mb_50">
-            <span class="sub-title">Features</span>
-            <h2>Featured Causes</h2>
+            <span class="sub-title">Berbagi</span>
+            <h2>Inisiasi dan Prakarsa</h2>
         </div>
         <div class="two-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
             <div class="single-item">
@@ -339,7 +320,7 @@
 <!-- featured-causes end -->
 
 
-<!-- service-section -->
+{{-- <!-- service-section -->
 <section class="service-section sec-pad bg-color-1 centred">
     <div class="auto-container">
         <div class="sec-title centred mb_50">
@@ -398,10 +379,10 @@
         </div>
     </div>
 </section>
-<!-- service-section end -->
+<!-- service-section end --> --}}
 
 
-<!-- project-section -->
+{{-- <!-- project-section -->
 <section class="project-section">
     <div class="outer-container">
         <div class="project-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
@@ -456,10 +437,10 @@
         </div>
     </div>
 </section>
-<!-- project-section end -->
+<!-- project-section end --> --}}
 
 
-<!-- team-section -->
+{{-- <!-- team-section -->
 <section class="team-section sec-pad centred">
     <div class="auto-container">
         <div class="sec-title centred mb_50">
@@ -530,10 +511,10 @@
         </div>
     </div>
 </section>
-<!-- team-section end -->
+<!-- team-section end --> --}}
 
 
-<!-- testimonial-section -->
+{{-- <!-- testimonial-section -->
 <section class="testimonial-section">
     <div class="bg-layer" style="background-image: url({{ asset('trusthand/assets/images/background/testimonial-bg.jpg')}});"></div>
     <div class="outer-container clearfix">
@@ -655,10 +636,10 @@
         </div>
     </div>
 </section>
-<!-- testimonial-section end -->
+<!-- testimonial-section end --> --}}
 
 
-<!-- clients-section -->
+{{-- <!-- clients-section -->
 <section class="clients-section">
     <div class="auto-container">
         <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
@@ -670,7 +651,7 @@
         </div>
     </div>
 </section>
-<!-- clients-section end -->
+<!-- clients-section end --> --}}
 
 
 <!-- news-section -->

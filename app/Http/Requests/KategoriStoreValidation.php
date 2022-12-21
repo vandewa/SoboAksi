@@ -24,7 +24,8 @@ class KategoriStoreValidation extends FormRequest
     public function rules()
     {
         return [
-            'nama_kategori' => 'required'
+            'nama_kategori' => 'required',
+            'icon' => 'required'
         ];
     }
 }
