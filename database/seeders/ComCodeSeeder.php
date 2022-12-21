@@ -28,6 +28,8 @@ class ComCodeSeeder extends Seeder
             ['code_cd' => 'IDENTITAS_ST_03', 'code_nm' => 'PASSPORT', 'code_group' => 'IDENTITAS_ST', 'code_value' => ''],
             ['code_cd' => 'PUBLISH_ST_01', 'code_nm' => 'Ya', 'code_group' => 'PUBLISH_ST', 'code_value' => ''],
             ['code_cd' => 'PUBLISH_ST_02', 'code_nm' => 'Tidak', 'code_group' => 'PUBLISH_ST', 'code_value' => ''],
+            ['code_cd' => 'DONASI_ST_00', 'code_nm' => 'PENDING', 'code_group' => 'DONASI_ST', 'code_value' => ''],
+            ['code_cd' => 'DONASI_ST_01', 'code_nm' => 'TERCAPAI', 'code_group' => 'DONASI_ST', 'code_value' => ''],
             // ['code_cd' => 'STATUS_ST_01', 'code_nm' => 'Ya', 'code_group' => 'STATUS_ST', 'code_value' => ''],
             // ['code_cd' => 'STATUS_ST_02', 'code_nm' => 'Tidak', 'code_group' => 'STATUS_ST', 'code_value' => ''],
             ['code_cd' => 'PEKERJAAN_01', 'code_nm' => 'AKUNTAN', 'code_group' => 'PEKERJAAN_ST', 'code_value' => ''],
@@ -119,6 +121,10 @@ class ComCodeSeeder extends Seeder
             ['code_cd' => 'PEKERJAAN_87', 'code_nm' => 'WALIKOTA', 'code_group' => 'PEKERJAAN_ST', 'code_value' => ''],
             ['code_cd' => 'PEKERJAAN_88', 'code_nm' => 'WARTAWAN', 'code_group' => 'PEKERJAAN_ST', 'code_value' => ''],
             ['code_cd' => 'PEKERJAAN_89', 'code_nm' => 'WIRASWASTA', 'code_group' => 'PEKERJAAN_ST', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_01', 'code_nm' => 'Ewallet', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_02', 'code_nm' => 'Virtual Account', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_03', 'code_nm' => 'Indomaret Group', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
+            ['code_cd' => 'PAYMENT_TYPE_04', 'code_nm' => 'Alfamart Group', 'code_group' => 'PAYMENT_TYPE', 'code_value' => ''],
         ];
 
         foreach ($data as $datum) {

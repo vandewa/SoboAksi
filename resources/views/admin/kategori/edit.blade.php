@@ -27,7 +27,7 @@
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
-                        {{Form::model($data, ['route' => ['admin:kategori.update', $data->id],'method' => 'put', 'id' => 'my-form'])}}
+                        {{Form::model($data, ['route' => ['admin:kategori.update', $data->id],'method' => 'put', 'id' => 'my-form', 'files' => true])}}
                         
                         @include('admin.kategori.form')
                             
