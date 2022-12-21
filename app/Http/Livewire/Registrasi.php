@@ -9,6 +9,7 @@ class Registrasi extends Component
     public $modal = false;
     public $registrasi = false;
     public $lupa = false;
+    public $name;
 
     protected $listeners = ["tampilModal", "lupaPassword", 'register'];
 
