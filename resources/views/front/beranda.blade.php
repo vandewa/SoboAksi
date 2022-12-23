@@ -4,22 +4,52 @@
 <!-- banner-section -->
 <section class="banner-section p_relative" xmlns:livewire="http://www.w3.org/1999/html">
     <div class="banner-carousel owl-theme owl-carousel owl-nav-none">
-        <div class="slide-item p_relative">
-            <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/banner-1.jpg')}})"></div>
+        {{-- <div class="slide-item p_relative">
+            <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/b.jpg')}})"></div>
             <div class="shape-1"></div>
             <div class="shape-2"></div>
             <div class="auto-container">
                 <div class="content-box p_relative d_block z_5">
                     <span class="special-text special_fonts p_relative d_block">Change The World</span>
-                    <h2 class="p_relative d_block">Make The Defference Today with Charity</h2>
-                    <p class="p_relative d_block">Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus.</p>
+                    <h2 class="p_relative d_block">Bupati Afif Salurkan Bantuan 612 juta rupiah  </h2>
+                    <p class="p_relative d_block">untuk Pembangunan dan Rehab Rumah Korban Bencana Alam</p>
                     <div class="btn-box">
                         <a href="index.html" class="theme-btn-one"><span>Discover More</span></a>
                     </div>
                 </div>
             </div>
+        </div> --}}
+        <div class="slide-item p_relative">
+            <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/b.png')}})"></div>
+            <div class="shape-1"></div>
+            <div class="shape-2"></div>
+            <div class="auto-container">
+                <div class="content-box p_relative d_block z_5">
+                    {{-- <span class="special-text special_fonts p_relative d_block">Change The World</span> --}}
+                    <h2 class="p_relative d_block">Afif Salurkan Bantuan 612 juta rupiah</h2>
+                    {{-- <p class="p_relative d_block">Bupati Wonosobo Afif Nurhidayat menyerahkan bantuan sosial senilai 612.500.000 juta rupiah untuk pembangunan dan rehabilitasi rumah bagi korban bencana alam di Wonosobo</p> --}}
+                    <div class="btn-box">
+                        {{-- <a href="index.html" class="theme-btn-one"><span>Discover More</span></a> --}}
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="slide-item p_relative">
+            <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/a.png')}})"></div>
+            <div class="shape-1"></div>
+            <div class="shape-2"></div>
+            <div class="auto-container">
+                <div class="content-box p_relative d_block z_5">
+                    {{-- <span class="special-text special_fonts p_relative d_block">Change The World</span> --}}
+                    <h2 class="p_relative d_block">Bantuan Korban Kebakaran Kampung Gintung</h2>
+                    {{-- <p class="p_relative d_block">Bupati Wonosobo Afif Nurhidayat menyerahkan bantuan sosial senilai 612.500.000 juta rupiah untuk pembangunan dan rehabilitasi rumah bagi korban bencana alam di Wonosobo</p> --}}
+                    <div class="btn-box">
+                        {{-- <a href="index.html" class="theme-btn-one"><span>Discover More</span></a> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- <div class="slide-item p_relative">
             <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/banner-2.jpg')}})"></div>
             <div class="shape-1"></div>
             <div class="shape-2"></div>
@@ -33,61 +63,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="slide-item p_relative">
-            <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/banner-1.jpg')}})"></div>
-            <div class="shape-1"></div>
-            <div class="shape-2"></div>
-            <div class="auto-container">
-                <div class="content-box p_relative d_block z_5">
-                    <span class="special-text special_fonts p_relative d_block">Change The World</span>
-                    <h2 class="p_relative d_block">Make The Defference Today with Charity</h2>
-                    <p class="p_relative d_block">Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus.</p>
-                    <div class="btn-box">
-                        <a href="index.html" class="theme-btn-one"><span>Discover More</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slide-item p_relative">
-            <div class="image-layer p_absolute" style="background-image:url({{ asset('trusthand/assets/images/banner/banner-2.jpg')}})"></div>
-            <div class="shape-1"></div>
-            <div class="shape-2"></div>
-            <div class="auto-container">
-                <div class="content-box p_relative d_block z_5">
-                    <span class="special-text special_fonts p_relative d_block">Change The World</span>
-                    <h2 class="p_relative d_block">Make The Defference Today with Charity</h2>
-                    <p class="p_relative d_block">Lorem ipsum dolor sit amet, consectetur adipiscing elit Turpis ridiculus tellus.</p>
-                    <div class="btn-box">
-                        <a href="index.html" class="theme-btn-one"><span>Discover More</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 <!-- banner-section end -->
 
 
 <!-- feature-section -->
-<section class="feature-section p_relative sec-pad centred">
-    <div class="auto-container">
-        <div class="sec-title centred mb_50">
-            <span class="sub-title">Kategori</span>
-            <h2>Aksi Kemanusiaan</h2>
-        </div>
-        <div class="row clearfix">
-            <div class="col-lg-3 col-md-4 col-sm-12 feature-block">
-                <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box" style="padding: 30px 60px 17px 60px !important;">
-                        <div class="icon-box"><img src="{{ asset('trusthand/assets/images/icons/bencana.png')}}" alt=""></div>
-                        <h3><a href="index.html">Bencana Alam</a></h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<livewire:category/>
 <!-- feature-section end -->
 
 

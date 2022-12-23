@@ -9,14 +9,18 @@
             <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                 <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="https://diskominfo.wonosobokab.go.id/{{$art["gambar_muka"]["path"]}}{{$art["gambar_muka"]["file_name"]}}" alt=""></a></figure>
+                        <figure class="image-box"><a href="blog-details.html"><img          
+                        src="https://diskominfo.wonosobokab.go.id/{{$art["gambar_muka"]["path"]}}{{$art["gambar_muka"] ["file_name"]}}" 
+                        alt="" style="height:300px; background-size: cover;
+                            background-position: center center;"></a></figure>
                         <div class="lower-content p_relative d_block">
                             <div class="text">
-                                <div class="post-date"><h3>15 <span>APRIL</span></h3></div>
-                                <h3><a href="blog-details.html">{{$art["judul_posting"]}}</a></h3>
+                                <div class="post-date"><h3>{{ date('d', strtotime($art["created_at"])) }}<span>{{ date('F', 
+                                strtotime($art["created_at"])) }}</span></h3></div>
+                                <h3><a href="">{{$art["judul_posting"]}}</a></h3>
                                 <p>{{$art["kata_kunci"]}}</p>
                                 <div class="btn-box">
-                                    <a href="blog-details" class="theme-btn-two">Read more</a>
+                                    <a href="" class="theme-btn-two">Read more</a>
                                 </div>
                             </div>
                             <ul class="lower-box">
