@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Home;
 
+use App\Models\User;
 use Livewire\Component;
+use Illuminate\Support\Facades\Hash;
 
 class FormRegister extends Component
 {
@@ -22,10 +24,22 @@ class FormRegister extends Component
         'email' => 'required|email|unique:users',
         'tgl_lahir' => 'required|date|before:today',
         'nomor_hp' => 'required|date',
+        'password' => 'required',
+        'password_confirmation' => 'required|same:password',
     ];
 
     public function simpan()
     {
+        $this->validate();
+        User::create(
+            [
+                "name" => $this->name,
+                "email" => $this->email,
+                "tgl_lahir" => $this->tgl_lahir,
+                "nomor_hp" => $this->nomor_hp,
+                "password" => Hash::make($this->password),
 
+            ]
+            );
     }
 }
