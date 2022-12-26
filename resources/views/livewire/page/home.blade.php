@@ -1,15 +1,7 @@
 <div>
-<!-- banner-section -->
-
-<!-- banner-section end -->
-
-
 <!-- feature-section -->
 <livewire:category/>
 <!-- feature-section end -->
-
-
-
 
 <!-- cause-section -->
 <section class="cause-section sec-pad">
@@ -22,59 +14,9 @@
             <span class="sub-title">Penggalangan Dana</span>
             <h2>Penggalangan Dana Mendesak</h2>
         </div>
-        <div class="row clearfix">
 
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
-                <div class="cause-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="causes-details.html"><img src="{{ asset('trusthand/assets/images/resource/cause-2.jpg')}}" alt=""></a></figure>
-                            <div class="category"><a href="causes-details.html">Education</a></div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="text">
-                                <h3><a href="causes-details.html">Promoting <br />The Rights of Children</a></h3>
-                                <p>Amet minim mollit no duis deserut lamo sit enim aliqua dolor do amet sint Velit officia consequt.</p>
-                            </div>
-                            <div class="progress-box">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="50%"><div class="count-text">50%</div></div>
-                                </div>
-                                <div class="donate-text">
-                                    <h6><span>$6,020</span> Raised</h6>
-                                    <h6><span>$12,000,000</span> Target</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
-                <div class="cause-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="causes-details.html"><img src="{{ asset('trusthand/assets/images/resource/cause-3.jpg')}}" alt=""></a></figure>
-                            <div class="category"><a href="causes-details.html">Education</a></div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="text">
-                                <h3><a href="causes-details.html">Education <br/>For African Children</a></h3>
-                                <p>Amet minim mollit no duis deserut lamo sit enim aliqua dolor do amet sint Velit officia consequt.</p>
-                            </div>
-                            <div class="progress-box">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="90%"><div class="count-text">90%</div></div>
-                                </div>
-                                <div class="donate-text">
-                                    <h6><span>$9,080</span> Raised</h6>
-                                    <h6><span>$10,000</span> Target</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <livewire:global.card-donasi/>
+
     </div>
 </section>
 <!-- cause-section end -->
