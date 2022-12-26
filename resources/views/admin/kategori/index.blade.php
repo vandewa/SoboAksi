@@ -43,6 +43,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Kategori</th>
+                                        <th>Icon</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -72,6 +73,7 @@
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-left"},
             { data: 'nama_kategori'},
+            { data: 'gambar'},
             { data: 'action', name: 'action',  orderable: false, searchable: false },
         ]
     });

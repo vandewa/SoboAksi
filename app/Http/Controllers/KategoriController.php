@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Kategori;
 use Yajra\DataTables\Facades\DataTables;
 use App\Http\Requests\KategoriStoreValidation;
+use App\Http\Requests\KategoriUpdateValidation;
 
 class KategoriController extends Controller
 {
@@ -32,7 +33,11 @@ class KategoriController extends Controller
                 </div>';
                 return $actionBtn;
             })
-            ->rawColumns(['action'])
+            ->addColumn('gambar', function($row){
+                $gambar = asset('trusthand/assets/images/icons/'.$row->icon);
+                return '<a href="'.$gambar.'" target="_blank"><img src="'.$gambar.'" style="height:50px;"></a>';
+            })
+            ->rawColumns(['action', 'gambar'])
             ->make(true);
         }
 
@@ -55,11 +60,25 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(KategoriStoreValidation $request)
+    public function store(Request $request)
     {
-        Kategori::create([
+        $a = Kategori::create([
             'nama_kategori' => ucwords($request->nama_kategori)
         ]);
+
+        $id = $a->id;
+
+        if($request->hasFile('icon')){
+            $a = $request->file('icon');
+            $prefix = date('Ymdhis');
+            $extension = $a->extension();
+            $filename = $prefix.'.'.$extension;
+            $request->file('icon')->move(public_path('/trusthand/assets/images/icons/'), $filename);
+
+            Kategori::find($id)->update([
+                'icon' => $filename
+            ]);
+        }
 
         return redirect(route('admin:kategori.index'))->with('status', 'berhasil');
 
@@ -96,11 +115,24 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(KategoriStoreValidation $request, $id)
+    public function update(KategoriUpdateValidation $request, $id)
     {
-        Kategori::find($id)->update([
+        Kategori::find($id)
+        ->update([
             'nama_kategori' => ucwords($request->nama_kategori)
         ]);
+
+        if($request->hasFile('icon')){
+            $a = $request->file('icon');
+            $prefix = date('Ymdhis');
+            $extension = $a->extension();
+            $filename = $prefix.'.'.$extension;
+            $request->file('icon')->move(public_path('/trusthand/assets/images/icons/'), $filename);
+
+            Kategori::find($id)->update([
+                'icon' => $filename
+            ]);
+        }
 
         return redirect(route('admin:kategori.index'))->with('status', 'berhasil');
 
