@@ -14,9 +14,9 @@ class Article extends Component
 
     public function mount()
     {
-       $response = Http::withoutVerifying()->get('https://diskominfo.wonosobokab.go.id/api/news');
+        $response = Http::withoutVerifying()->get('https://diskominfo.wonosobokab.go.id/api/news');
         $response = $response->collect();
-       $this->article =   array_slice($response['data']['data'], 0, 3);
+        $this->article =   array_slice($response['data']['data'], 0, 3);
     }
 
 

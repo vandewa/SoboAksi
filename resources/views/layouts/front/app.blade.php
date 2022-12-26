@@ -51,32 +51,29 @@
                     <div class="animation-preloader">
                         <div class="spinner"></div>
                         <div class="txt-loading">
-                            <span data-text-preloader="t" class="letters-loading">
-                                t
-                            </span>
-                            <span data-text-preloader="r" class="letters-loading">
-                                r
-                            </span>
-                            <span data-text-preloader="u" class="letters-loading">
-                                u
-                            </span>
                             <span data-text-preloader="s" class="letters-loading">
                                 s
                             </span>
-                            <span data-text-preloader="t" class="letters-loading">
-                                t
+                            <span data-text-preloader="o" class="letters-loading">
+                                o
                             </span>
-                            <span data-text-preloader="h" class="letters-loading">
-                                h
+                            <span data-text-preloader="b" class="letters-loading">
+                                b
+                            </span>
+                            <span data-text-preloader="o" class="letters-loading">
+                                o
                             </span>
                             <span data-text-preloader="a" class="letters-loading">
                                 a
                             </span>
-                            <span data-text-preloader="n" class="letters-loading">
-                                n
+                            <span data-text-preloader="k" class="letters-loading">
+                                k
                             </span>
-                            <span data-text-preloader="d" class="letters-loading">
-                                d
+                            <span data-text-preloader="s" class="letters-loading">
+                                s
+                            </span>
+                            <span data-text-preloader="i" class="letters-loading">
+                                i
                             </span>
                         </div>
                     </div>
@@ -90,7 +87,11 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href="trusthand/index.html"><img src="{{ asset('trusthand/assets/images/logo-2.png')}}" alt=""></a></figure>
+                    <figure class="logo-box pull-left">
+                        <a href="trusthand/index.html">
+                            <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
+                        </a>
+                    </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
                 <div class="overlay-layer"></div>
@@ -127,7 +128,9 @@
                     <div class="sidebar-info-contents">
                         <div class="content-inner">
                             <div class="logo">
-                                <a href="trusthand/index.html"><img src="{{ asset('trusthand/assets/images/logo-2.png')}}" alt="" /></a>
+                                <a href="trusthand/index.html">
+                                    <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="" />
+                                </a>
                             </div>
                             <div class="content-box">
                                 <h4>About Us</h4>
@@ -165,7 +168,11 @@
             <div class="header-lower">
                 <div class="outer-box">
                     <div class="logo-box">
-                        <figure class="logo"><a href="trusthand/index.html"><img src="{{ asset('trusthand/assets/images/logo.png')}}" alt=""></a></figure>
+                        <figure class="logo">
+                            <a href="trusthand/index.html">
+                                <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                            </a>
+                        </figure>
                     </div>
                     <div class="menu-area clearfix">
                         <!--Mobile Navigation Toggler-->
@@ -261,7 +268,11 @@
                 <div class="outer-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="trusthand/index.html"><img src="{{ asset('trusthand/assets/images/logo-2.png')}}" alt=""></a></figure>
+                            <figure class="logo">
+                                <a href="trusthand/index.html">
+                                    <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
+                                </a>
+                            </figure>
                         </div>
                         <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
@@ -291,7 +302,11 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="trusthand/index.html"><img src="{{ asset('trusthand/assets/images/logo.png')}}" alt="" title=""></a></div>
+                <div class="nav-logo">
+                    <a href="trusthand/index.html">
+                        <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                    </a>
+                </div>
                 <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
                 <div class="contact-info">
                     <h4>Contact Info</h4>
@@ -318,10 +333,12 @@
 
 
         <!-- main-footer -->
-        <footer class="main-footer">
+        <footer class="main-footer d-none d-sm-block d-sm-none d-md-block" >
             <div class="auto-container">
                 <div class="footer-top">
-                    <figure class="footer-logo"><a href="trusthand/index.html"><img src="{{ asset('trusthand/assets/images/logo-3.png')}}" alt=""></a></figure>
+                    <figure class="footer-logo"><a href="trusthand/index.html">
+                        <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt=""></a>
+                    </figure>
                     <ul class="social-links">
                         <li><a href="trusthand/index.html"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="trusthand/index.html"><i class="fab fa-twitter"></i></a></li>
