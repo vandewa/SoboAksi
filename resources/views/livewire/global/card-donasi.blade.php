@@ -13,7 +13,7 @@
                         </div>
                         <div class="progress-box">
                             <div class="bar">
-                                <div class="bar-inner count-bar" data-percent="85%"><div class="count-text">85%</div></div>
+                                <div class="bar-inner count-bar" style="width: 85%;"><div class="count-text">85%</div></div>
                             </div>
                             <div class="donate-text">
                                 <h6><span>$5,020</span> Raised</h6>
@@ -21,10 +21,10 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
-                                    <button class="btn btn-primary btn-block"> <i class="icon-16"></i> Komen</button>
+                                    <button class="btn btn-primary btn-block"> 0 <i class="icon-16"></i> Komen</button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button class="btn btn-warning btn-block"> <i class="fa fa-heart"></i> Suka</button>
+                                    <button class="btn btn-warning btn-block" wire:click="like"> {{ $jumlahLike }} <i class="fa fa-heart"></i> Suka</button>
                                 </div>
                             </div>
                         </div>
