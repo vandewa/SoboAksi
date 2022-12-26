@@ -40,7 +40,6 @@
 
 <!-- page wrapper -->
 <body>
-
     <div class="boxed_wrapper">
 
 
@@ -330,7 +329,7 @@
         </div><!-- End Mobile Menu -->
 
 
-        @yield('content')
+        {{ $slot }}
 
 
         <!-- main-footer -->
@@ -433,6 +432,8 @@
         <!-- Scroll to top end -->
 
     </div>
+
+
 
 
     <!-- jequery plugins -->
