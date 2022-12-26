@@ -11,6 +11,7 @@ use App\Http\Controllers\PenerimaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\AksiController;
 use App\Http\Controllers\WilayahController;
+use App\Http\Livewire\Page\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ use App\Http\Controllers\WilayahController;
 */
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', Home::class)->name('home');
 //dokumentasi template
 Route::get('/documentation', function () {
     return \File::get(public_path() . '/documentation.html');
