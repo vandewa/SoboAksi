@@ -11,18 +11,20 @@ class CardDonasi extends Component
     public $kategori;
     public $judul;
     public $deskripsi;
+    public $kategorinya;
 
-    public function mount()
+    public function mount($data)
     {
-        //
+        $this->kategori = $data->kategori;
+        $this->judul = $data->judul;
+        $this->deskripsi = $data->deskripsi;
+        $this->kategorinya = $data->kategorinya;
     }
 
     public function render()
     {
-        $aksi = Aksi::with('kategorinya')->limit(3)->get();
-        return view('livewire.global.card-donasi',[
-            "aksi" => $aksi
-        ]);
+        
+        return view('livewire.global.card-donasi');
     }
 
 
