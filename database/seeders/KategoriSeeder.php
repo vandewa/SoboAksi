@@ -19,7 +19,7 @@ class KategoriSeeder extends Seeder
         DB::table('kategoris')->truncate();
         $data = [
             ['nama_kategori' => 'Perorangan', 'icon' => '20221221043639.png'],
-            ['nama_kategori' => 'Bencana Alam', 'icon' => '20221221042431.png'],
+            ['nama_kategori' => 'Bencana', 'icon' => '20221221042431.png'],
             ['nama_kategori' => 'Pendidikan', 'icon' => '20221221043651.png'],
             ['nama_kategori' => 'Sembako', 'icon' => '20221221043659.png'],
             ['nama_kategori' => 'Kesehatan', 'icon' => '20221221043714.png'],
