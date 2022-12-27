@@ -10,7 +10,7 @@ class Login extends Component
     public $lupa = false;
     public $email;
     public $password;
-    
+
     public function render()
     {
         return view('livewire.home.login');
@@ -23,15 +23,17 @@ class Login extends Component
 
     public function userlogin()
     {
-        // $credentials = $request->only('email', 'password');
-        // if (Auth::attempt($credentials)) {
-        //     return 'berhasil login';
-        //     return redirect('/dashboard');
-        // } else {
-        //     return 'gagal login';
-        //     return redirect('/login')->with('error', 'Invalid Email address or Password');
-        // }
+        $this->validate();
+
+        if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+            return redirect()->route('home');
+        } else {
+            session()->flash('message', 'Alamat Email atau Password Anda salah!.');
+            $this->emit('alert_remove');
+            return;
+        }
     }
+
 
     public function lupaPassword()
     {

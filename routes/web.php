@@ -11,10 +11,10 @@ use App\Http\Controllers\RegionController;
 use App\Http\Controllers\PenerimaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\AksiController;
-use App\Http\Controllers\UserLoginController;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\WilayahController;
 use App\Http\Livewire\Page\Home;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +40,6 @@ Route::get('trusthand-template', function () {
 
 Auth::routes();
 
-Route::post('userlogin', [UserAuthController::class, 'userlogin'])->name('userlogin');
 Route::post('userregister', [UserRegisterController::class, 'store'])->name('userregister');
 
 Route::get('kabupaten', [RegionController::class, 'kabupaten'])->name('kabupaten');
