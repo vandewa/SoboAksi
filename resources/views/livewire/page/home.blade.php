@@ -14,9 +14,16 @@
             <span class="sub-title">Penggalangan Dana</span>
             <h2>Penggalangan Dana Mendesak</h2>
         </div>
-
-        <livewire:global.card-donasi/>
-
+        <div class="row clearfix">
+        @foreach ($aksi as $ak)
+            <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
+        @endforeach
+            <div class="row">
+                <div class="col-md-12 float-end mt-3">
+                    <div class="float-end">Lihat Semua</div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- cause-section end -->
