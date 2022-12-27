@@ -1,5 +1,5 @@
 
-        <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
+        <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
             <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                 <div class="inner-box">
                     <div class="image-box">

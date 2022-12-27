@@ -14,6 +14,7 @@ use App\Http\Controllers\AksiController;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\WilayahController;
 use App\Http\Livewire\Page\Home;
+use App\Http\Livewire\Page\Aksi;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -29,6 +30,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', Home::class)->name('home');
+Route::get('/aksi', Aksi::class)->name('home');
 //dokumentasi template
 Route::get('documentation', function () {
     return File::get(public_path() . '/documentation.html');
