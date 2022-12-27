@@ -4,7 +4,7 @@
         <div class="shape-2" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-4.png')}});"></div>
     </div>
     <div class="auto-container">
-        <div class="sec-title centred">
+        <div class="sec-title centred mb_50">
             <span class="sub-title">Penggalangan Dana</span>
             <h2>Penggalangan Dana Mendesak</h2>
         </div>
@@ -13,11 +13,11 @@
                 <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak['id']"/>
             @endforeach
         </div>
-    @if($hasMorePages)
-        <div class="load-more">
-        <a href="javascript:void(0);" wire:click="loadPosts">Lihat Selanjutnya</span> 
-        </div>
-    @endif
+@if($hasMorePages)
+    <div class="load-more">
+       <a href="javascript:void(0);" wire:click="loadPosts">Lihat Selanjutnya</span> 
+    </div>
+@endif
         
     </div>
 </section>

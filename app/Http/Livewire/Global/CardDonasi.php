@@ -16,6 +16,7 @@ class CardDonasi extends Component
     public $deskripsi;
     public $kategorinya;
     public $jumlahLike;
+    public $penerimaDonasi;
 
     public function mount($data)
     {
@@ -25,6 +26,7 @@ class CardDonasi extends Component
         $this->deskripsi = $data->deskripsi;
         $this->kategorinya = $data->kategorinya;
         $this->jumlahLike = $data->dukung_count;
+        $this->penerimaDonasi = $data->penerimaDonasi;
     }
 
     public function render()

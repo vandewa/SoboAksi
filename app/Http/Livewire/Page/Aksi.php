@@ -12,6 +12,14 @@ class Aksi extends Component
     public $pageNumber = 1;
     public $hasMorePages;
 
+    protected $listeners = ['newAksi'];
+
+    public function newAksi()
+    {
+       
+       
+    }
+
     public function mount()
     {
         $this->item = new Collection();
@@ -20,7 +28,8 @@ class Aksi extends Component
     }
     public function loadPosts()
     {
-        $posts = Beraksi::with(['kategorinya'])->withCount("dukung")->paginate(9, ['*'], 'page', $this->pageNumber);
+        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi'])->withCount("dukung")->orderBy("created_at", "desc")
+        ->paginate(9, ['*'], 'page', $this->pageNumber);
         // dd($posts->items());
       
 

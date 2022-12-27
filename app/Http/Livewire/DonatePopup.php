@@ -2,9 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\ComCode;
 use App\Models\ComRegion;
+use App\Models\Penerima;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Models\Aksi as Beraksi;
+use App\Models\Kategori;
 
 class DonatePopup extends Component
 {
@@ -13,7 +17,8 @@ class DonatePopup extends Component
     public $modal = false;
     public $photo;
     public $judul;
-    public $kategori;
+    public $kategori = 1;
+    public $listKategori;
     public $deskripsi;
     public $setuju;
     public $denganPenerima = false;
@@ -25,7 +30,9 @@ class DonatePopup extends Component
     public $region_kab;
     public $region_kec;
     public $region_kel;
+    public $alamat;
     public $telepon;
+    public $jenisIdentitas;
     public $kode_identitas;
     public $no_identitas;
     public $foto_ktp;
@@ -40,6 +47,8 @@ class DonatePopup extends Component
     public function mount()
     {
        $this->getProvinsi();
+       $this->getJenisIdentitas();
+       $this->getListKategori();
     }
 
     public function tampilModal()
@@ -53,6 +62,54 @@ class DonatePopup extends Component
     public function galangDana()
     {
         $this->denganPenerima = !$this->denganPenerima;
+    }
+
+    public function simpan()
+    {
+        if($this->denganPenerima){
+            $penerima = Penerima::create(
+                [
+                    "nama" => $this->nama,
+                    "alamat" => $this->alamat,
+                    "region_prop" => $this->region_prop,
+                    "region_kab" => $this->region_kab,
+                    "region_kec" => $this->region_kec,
+                    "region_kel" => $this->region_kel,
+                    "alamat" => $this->alamat,
+                    "telepon" => $this->telepon,
+                    "no_identitas" => $this->no_identitas,
+
+                ]
+            );
+        } else {
+           
+            $path = $this->photo->store('aksi', 'public');
+            $data = Beraksi::create([
+                "judul" => $this->judul,
+                "kategori" => $this->kategori,
+                "deskripsi" => $this->deskripsi,
+                "setuju" => true,
+                "creator_id" => auth()->user()->id,
+
+            ]);
+            $data->sampul()->create(
+                [
+                    "url" => $path
+                ]
+            );
+
+            $this->tampilModal();
+            $this->emitTo('page.aksi', 'newAksi');
+        }
+    }
+
+    public function getListKategori()
+    {
+        $this->listKategori = Kategori::all();
+    }
+    public function getJenisIdentitas()
+    {
+        $this->jenisIdentitas = ComCode::where("code_group", "IDENTITAS_ST")->get();
     }
 
     public function getProvinsi()

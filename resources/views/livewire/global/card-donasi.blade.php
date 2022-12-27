@@ -12,14 +12,19 @@
                             <p>{{$deskripsi}}</p>
                         </div>
                         <div class="progress-box">
+                            @if($penerimaDonasi)
                             <div class="bar">
                                 <div class="bar-inner count-bar" style="width: 85%;"><div class="count-text">85%</div></div>
                             </div>
+                            
                             <div class="donate-text">
+                              
                                 <h6><span>$5,020</span> Raised</h6>
                                 <h6><span>$8,000</span> Target</h6>
+                               
                             </div>
-                            <div class="row mt-3">
+                            @endif
+                            <div class="row mt-1">
                                 <div class="col-md-6">
                                     <button class="btn btn-primary btn-block"> 0 <i class="icon-16"></i> Komen</button>
                                 </div>
