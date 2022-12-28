@@ -18,9 +18,10 @@
         @foreach ($aksi as $ak)
             <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
         @endforeach
-            <div class="row">
-                <div class="col-md-12 float-end mt-3">
-                    <div class="float-end">Lihat Semua</div>
+            <div class="text-right col-md-12 float-end mt-3 d-flex justify-content-end">
+                <div class="float-end d-flex justify-content-end ml-6">
+                    <a class="btn btn-primary btn-md" href="{{ route('aksi') }}">Lihat Selengkapnya <i class="fas fa-angle-right fa-sm ml-1"></i>
+                    </a>
                 </div>
             </div>
         </div>
