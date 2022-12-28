@@ -16,7 +16,7 @@
         </div>
         <div class="row clearfix">
         @foreach ($aksi as $ak)
-            <livewire:global.card-donasi :data="$ak"/>
+            <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
         @endforeach
             <div class="row">
                 <div class="col-md-12 float-end mt-3">

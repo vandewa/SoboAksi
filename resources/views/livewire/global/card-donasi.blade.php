@@ -1,5 +1,5 @@
 
-        <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
+        <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
             <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                 <div class="inner-box">
                     <div class="image-box">
@@ -12,19 +12,24 @@
                             <p>{{$deskripsi}}</p>
                         </div>
                         <div class="progress-box">
+                            @if($penerimaDonasi)
                             <div class="bar">
-                                <div class="bar-inner count-bar" data-percent="85%"><div class="count-text">85%</div></div>
+                                <div class="bar-inner count-bar" style="width: 85%;"><div class="count-text">85%</div></div>
                             </div>
+                            
                             <div class="donate-text">
+                              
                                 <h6><span>$5,020</span> Raised</h6>
                                 <h6><span>$8,000</span> Target</h6>
+                               
                             </div>
-                            <div class="row mt-3">
+                            @endif
+                            <div class="row mt-1">
                                 <div class="col-md-6">
-                                    <button class="btn btn-primary btn-block"> <i class="icon-16"></i> Komen</button>
+                                    <button class="btn btn-primary btn-block"> 0 <i class="icon-16"></i> Komen</button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button class="btn btn-warning btn-block"> <i class="fa fa-heart"></i> Suka</button>
+                                    <button class="btn btn-warning btn-block" wire:click="like"> {{ $jumlahLike }} <i class="fa fa-heart"></i> Suka</button>
                                 </div>
                             </div>
                         </div>

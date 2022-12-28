@@ -13,17 +13,21 @@ class Registrasi extends Component
 
     protected $listeners = ["tampilModal", "lupaPassword", 'register'];
 
-    public function tampilModal(){
+    public function tampilModal()
+    {
         $this->modal = !$this->modal;
     }
+
     public function render()
     {
         return view('livewire.registrasi');
     }
+
     public function register()
     {
         $this->registrasi = !$this->registrasi;
     }
+
     public function lupaPassword()
     {
         $this->lupa = !$this->lupa;

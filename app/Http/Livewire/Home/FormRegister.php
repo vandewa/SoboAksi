@@ -19,11 +19,12 @@ class FormRegister extends Component
     {
         return view('livewire.home.form-register');
     }
+
     protected $rules = [
         'name' => 'required|min:6',
         'email' => 'required|email|unique:users',
         'tgl_lahir' => 'required|date|before:today',
-        'nomor_hp' => 'required|date',
+        'nomor_hp' => 'required',
         'password' => 'required',
         'password_confirmation' => 'required|same:password',
     ];
@@ -38,8 +39,7 @@ class FormRegister extends Component
                 "tgl_lahir" => $this->tgl_lahir,
                 "nomor_hp" => $this->nomor_hp,
                 "password" => Hash::make($this->password),
-
             ]
-            );
+        );
     }
 }
