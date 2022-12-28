@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Kategori;
 use Yajra\DataTables\Facades\DataTables;
 use App\Http\Requests\KategoriStoreValidation;
+use App\Http\Requests\KategoriUpdateValidation;
 
 class KategoriController extends Controller
 {
@@ -59,11 +60,13 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(KategoriStoreValidation $request)
+    public function store(Request $request)
     {
         $a = Kategori::create([
             'nama_kategori' => ucwords($request->nama_kategori)
         ]);
+
+        $id = $a->id;
 
         if($request->hasFile('icon')){
             $a = $request->file('icon');
@@ -72,7 +75,7 @@ class KategoriController extends Controller
             $filename = $prefix.'.'.$extension;
             $request->file('icon')->move(public_path('/trusthand/assets/images/icons/'), $filename);
 
-            Kategori::find($a->id)->update([
+            Kategori::find($id)->update([
                 'icon' => $filename
             ]);
         }
@@ -112,7 +115,7 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(KategoriStoreValidation $request, $id)
+    public function update(KategoriUpdateValidation $request, $id)
     {
         Kategori::find($id)
         ->update([

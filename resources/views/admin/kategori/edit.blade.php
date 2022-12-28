@@ -42,7 +42,7 @@
 @endsection
 
 @push('js')
-{!! JsValidator::formRequest('App\Http\Requests\KategoriStoreValidation','#my-form') !!}
+{!! JsValidator::formRequest('App\Http\Requests\KategoriUpdateValidation','#my-form') !!}
  <script>
     function change()
      {
