@@ -3,116 +3,166 @@
     <div class="popup-inner">
         <div class="donate-content">
             <div class="title-text centred">
-                <h2>Donate Your Amount</h2>
+                <h2>Tambah Aksi</h2>
             </div>
-            <form action="trusthand/index.html" method="post" class="default-form">
-                <div class="row clearfix">
-                    <div class="col-lg-6 col-md-12 col-sm-12 donate-column">
-                        <div class="donate-box">
-                            <div class="donate-option">
-                                <h3>How Much?</h3>
-                                <ul class="donate-list clearfix">
-                                    <li>
-                                        <input type="radio" id="donate-amount-1" name="donate-amount" checked="checked" />
-                                        <label for="donate-amount-1" data-amount="1000" >$10</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="donate-amount-2" name="donate-amount" />
-                                        <label for="donate-amount-2" data-amount="2000">$20</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="donate-amount-3" name="donate-amount" />
-                                        <label for="donate-amount-3" data-amount="3000">$50</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="donate-amount-4" name="donate-amount" />
-                                        <label for="donate-amount-4" data-amount="4000">$100</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="donate-amount-5" name="donate-amount" />
-                                        <label for="donate-amount-5" data-amount="5000">$500</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="donate-amount-6" name="donate-amount" />
-                                        <label for="donate-amount-6" data-amount="5000">$1000</label>
-                                    </li>
-                                </ul>
-                                <div class="other-amount">
-                                    <div class="text">
-                                        <h4>Like to Donate</h4>
-                                        <p>Enter your custom amount</p>
-                                    </div>
-                                    <div class="amount-box">
-                                        <div class="item-quantity"><input class="quantity-spinner" type="text" value="600" name="quantity"></div>
-                                    </div>
-                                </div>
+            <form action="" class="form-inner" wire:submit.prevent='simpan'>
+                <div class="row">
+                    <h3>Tambah Aksi</h3>
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Halaman Sampul <span>*</span></label>
+                                @if ($photo)
+                                    <img src="{{ $photo->temporaryUrl() }}"  width="200px" height="200px">
+                                @endif
+                                <input type="file" wire:model.lazy="photo" accept="image/*" class="form-control" name="name" placeholder="example name" required="">
                             </div>
-                            <div class="payment-option">
-                                <h3>Choose Payment Option</h3>
-                                <ul class="payment-list clearfix">
-                                    <li>
-                                        <input type="radio" id="payment-method-1" name="payment-method" checked="checked" />
-                                        <label for="payment-method-1" >Net Banking</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="payment-method-2" name="payment-method" />
-                                        <label for="payment-method-2">Credit - Debit Card</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="payment-method-3" name="payment-method" />
-                                        <label for="payment-method-3">Offline Payment</label>
-                                    </li>
-                                </ul>
+                            <div class="form-group">
+                                <label>Judul <span>*</span></label>
+                                <input type="text" wire:model.lazy="judul" class="form-control" name="name" placeholder="example name" required="">
+                            </div>
+                            <div class="form-group">
+                                <label>Kategori <span>*</span></label>
+                                <select name="" id="" wire:model.lazy="kategori" class="form-control">
+                                    @foreach ($listKategori??[] as $listKategori)
+                                        <option value="{{ $listKategori->id }}">{{ $listKategori->nama_kategori }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Deskripsi <span>*</span></label>
+                                <textarea name="" wire:model.lazy="deskripsi" id="" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <p>Apakah anda ingin menggalang dana untuk membantu orang lain? <input type="checkbox" wire:change="galangDana"> Ya</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 donate-form">
-                        <div class="form-inner">
-                            <h3>Donar Information</h3>
-                            <div class="row clearfix">
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
+                    <div class="col-md-12">
+                        @if($denganPenerima)
+                        <h3>Penerima Donasi</h3>
+
+                            <div class="form-group">
+                                <label>Nama Penerima <span>*</span></label>
+                                <input type="text" name="" class="form-control" id="" wire:model.lazy="nama">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Your Name <span>*</span></label>
-                                        <input type="text" name="name" placeholder="example name" required="">
+                                        <label>Provinsi <span>*</span></label>
+                                        <select  wire:change="getKabupaten" name="" wire:model.lazy="region_prop" id="" class="form-control">
+                                            @foreach ($provinsis as $provinsi )
+                                            <option value="{{ $provinsi->region_cd }}">
+                                                {{ $provinsi->region_nm }}
+                                            </option>
+                                            @endforeach
+
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
                                     <div class="form-group">
-                                        <label>Email Address <span>*</span></label>
-                                        <input type="email" name="email" required="">
+                                        <label>Kabupaten <span>*</span></label>
+                                        <select name="" wire:change="getKecamatan" wire:model.lazy="region_kab" id="" class="form-control">
+                                            @foreach ($kabupatens??[] as $provinsi )
+                                            <option value="{{ $provinsi->region_cd }}">
+                                                {{ $provinsi->region_nm }}
+                                            </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Phone</label>
-                                        <input type="text" name="phone" required="">
+                                        <label>Kecamatan <span>*</span></label>
+                                        <select name="" wire:change="getKelurahan" wire:model.lazy="region_kec" id="" class="form-control">
+                                        @foreach ($kecamatans??[] as $provinsi )
+                                        <option value="{{ $provinsi->region_cd }}">
+                                            {{ $provinsi->region_nm }}
+                                        </option>
+                                        @endforeach
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 column">
                                     <div class="form-group">
-                                        <label>Address</label>
-                                        <input type="text" name="address" required="">
+                                        <label>Desa / Kelurahan <span>*</span></label>
+                                        <select name="" wire:model.lazy="region_kel" id="" class="form-control">
+                                            @foreach ($desas??[] as $provinsi )
+                                        <option value="{{ $provinsi->region_cd }}">
+                                            {{ $provinsi->region_nm }}
+                                        </option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 column">
-                                    <div class="form-group message-btn">
-                                        <button type="submit" class="theme-btn-one">Donate Now</button>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 column">
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="custom-control material-checkbox">
-                                            <input type="checkbox" class="material-control-input">
-                                            <span class="material-control-indicator"></span>
-                                            <span class="description">I would like to donate automatically repeat each month</span>
-                                        </label>
+                                        <label>Alamat <span>*</span></label>
+                                       <textarea name="" id="" rows="3"  wire:model.lazy='alamat' class="form-control"></textarea>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label>No Telepon Penerima <span>*</span></label>
+                                <select name="" wire:model.lazy="penerima_id" id="" class="form-control">
+                                    <option value="">
+
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Jenis Identitas <span>*</span></label>
+                                        <select name="" wire:model.lazy="penerima_id" id="" class="form-control">
+                                            @foreach ($jenisIdentitas??[] as $identitas)
+                                            <option value="{{ $identitas->code_cd }}"> {{ $identitas->code_nm }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Foto Identitas <span>*</span></label>
+                                        @if ($foto_ktp)
+                                            <img src="{{ $foto_ktp->temporaryUrl() }}"  width="200px" height="200px">
+                                        @endif
+                                        <input type="file" wire:model.lazy="foto_ktp" accept="image/*" name="" class="form-control" id="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>NO Identitas <span>*</span></label>
+                                        <select name="" wire:model.lazy="penerima_id" id="" class="form-control">
+                                            <option value="">
+
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Foto Calon Penerima <span>*</span></label>
+                                        @if ($foto_penerima)
+                                        <img src="{{ $foto_penerima->temporaryUrl() }}" width="200px" height="200px">
+                                        @endif
+                                        <input type="file" name="" wire:model.lazy="foto_penerima" accept="image/*" class="form-control" id="">
+                                    </div>
+                                </div>
+                            </div>
+                        <h3>Jumlah Donasi</h3>
+                            <div class="form-group">
+                                <label>Target Donasi <span>*</span></label>
+                                <input type="number" wire:model.lazy="target_donasi" class="form-control" name="" id="">
+                            </div>
+                            <div class="form-group">
+                                <label>Batas Pengumpulan <span>*</span></label>
+                                <input type="date" wire:model.lazy="target_waktu" name="name" class="form-control" placeholder="example name" required="">
+                            </div>
+
+                        @endif
+                        <div class="row">
+                            <div class="col-md-12 push-right">
+                                <button class="btn btn-primary" type="submit">Beraksi</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 </div>

@@ -98,6 +98,12 @@ body {
   padding: 0px;
 }
 
+.load-more{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
 .auto-container{
   position:static;
   max-width:1320px;
