@@ -3,7 +3,8 @@
             <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                 <div class="inner-box">
                     <div class="image-box">
-                        <figure class="image"><a href="causes-details.html"><img src="{{ asset('trusthand/assets/images/resource/cause-1.jpg')}}" alt=""></a></figure>
+                        <figure class="image"><a href="causes-details.html"><img src="{{ $sampul }}" alt=""  style="width:410px;height:270px;background-size: cover;
+                            background-position: center center;"></a></figure>
                         <div class="category"><a href="causes-details.html">{{$kategorinya->nama_kategori}}</a></div>
                     </div>
                     <div class="lower-content">
@@ -16,12 +17,12 @@
                             <div class="bar">
                                 <div class="bar-inner count-bar" style="width: 85%;"><div class="count-text">85%</div></div>
                             </div>
-                            
+
                             <div class="donate-text">
-                              
+
                                 <h6><span>$5,020</span> Raised</h6>
                                 <h6><span>$8,000</span> Target</h6>
-                               
+
                             </div>
                             @endif
                             <div class="row mt-1">

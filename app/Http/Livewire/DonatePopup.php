@@ -82,7 +82,14 @@ class DonatePopup extends Component
                 ]
             );
         } else {
-           
+            $this->validate(
+                [
+                    "judul" => "required",
+                    "kategori" => "required",
+                    "deskripsi" => "required",
+                ]
+            );
+
             $path = $this->photo->store('aksi', 'public');
             $data = Beraksi::create([
                 "judul" => $this->judul,
@@ -99,7 +106,9 @@ class DonatePopup extends Component
             );
 
             $this->tampilModal();
-            $this->emitTo('page.aksi', 'newAksi');
+
+            return redirect()->to('aksi');
+            $this->emitTo('page.aksi', 'newAksi', $data->id);
         }
     }
 
