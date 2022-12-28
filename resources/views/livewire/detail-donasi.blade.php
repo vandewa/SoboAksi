@@ -1,7 +1,7 @@
 <div>
     <!-- Page Title -->
     <section class="page-title centred">
-        <div class="bg-layer" style="background-image: url({{ asset('storage/'.$datanya->sampul->url??"") }});"></div>
+        <div class="bg-layer" style="background-image: url({{ $sampul }});"></div>
         <div class="auto-container">
             <div class="content-box">
                 <h1>{{ $datanya->judul }}</h1>
@@ -17,7 +17,7 @@
                         <div class="cause-block-one">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <figure class="image"><img src="{{ asset('storage/'.$datanya->sampul->url??"") }}" alt=""></figure>
+                                    <figure class="image"><img src="{{ $sampul }}" alt=""></figure>
                                     <div class="category"><a href="causes-details.html">{{ $datanya->kategorinya->nama_kategori??"" }}</a></div>
                                 </div>
                                 <div class="lower-content">
@@ -110,9 +110,15 @@
                             </div>
                         </div>
                         <div class="donate-widget">
-                        
-                            <div class="inner-box" style="background-image: url({{ asset('storage/'.$donasi->sampul->url??"") }});">
-                                <div class="icon-box"><img src="{{ asset('storage/'.$donasi->sampul->url??"") }}" alt=""></div>
+                            @php
+                                if($donasi->sampul->url??"" != ''){
+                                    $devan = asset('storage/'.$donasi->sampul->url);
+                                } else {
+                                    $devan = asset('trusthand/assets/images/resource/cause-1.jpg');
+                                }
+                            @endphp
+                            <div class="inner-box" style="background-image: url({{ $devan }});">
+                                <div class="icon-box"><img src="{{ $devan }}" alt=""></div>
                                 <h3>{{ $donasi->judul??"" }}</h3>
                                 <button class="donate-box-btn theme-btn-one"><span>Donate Now</span></button>
                             </div>
