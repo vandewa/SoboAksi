@@ -13,6 +13,7 @@ class DetailDonasi extends Component
     public $datanya;
     public $kategoris;
     public $donasi;
+    public $sampul;
 
     public function mount($id)
     {
@@ -27,7 +28,9 @@ class DetailDonasi extends Component
     
     public function show($id)
     {
-        $this->datanya = Aksi::with('kategorinya', 'sampul')->find($id);
+        $data = Aksi::with('kategorinya', 'sampul')->find($id);
+        $this->datanya = $data;
+        $this->sampul = $data->sampul->url_photo?? asset('trusthand/assets/images/resource/cause-1.jpg');
     }
 
     public function getCategory()
@@ -42,8 +45,6 @@ class DetailDonasi extends Component
                         ->orderBy('created_at', 'asc')
                         // ->limit(1)
                         ->first();
-
-                    
     }
 
     
