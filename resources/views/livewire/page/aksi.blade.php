@@ -10,14 +10,14 @@
         </div>
          <div class="row clearfix">
             @foreach ($item as $index => $ak)
-                <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak['id']"/>
+                <livewire:global.card-donasi :data="$ak" :wire:key="$ak['id']"/>
             @endforeach
         </div>
 @if($hasMorePages)
     <div class="load-more">
-       <a href="javascript:void(0);" wire:click="loadPosts">Lihat Selanjutnya</span> 
+       <a href="javascript:void(0);" wire:click="loadPosts">Lihat Selanjutnya</span>
     </div>
 @endif
-        
+
     </div>
 </section>
