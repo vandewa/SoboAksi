@@ -14,7 +14,7 @@
                                 <img src="{{ asset('trusthand/assets/images/icons/'.$data->icon)}}" alt="">
                             </div>
                             <div class="d-flex justify-content-center">
-                                <h3><a href="index.html">{{ $data->nama_kategori }}</a></h3>
+                                <h3><a href="{{ route('aksi', ['kategori' => $data->id]) }}">{{ $data->nama_kategori }}</a></h3>
                             </div>
                         </div>
                     </div>
@@ -22,5 +22,5 @@
                 @endforeach
             </div>
         </div>
-    </section>  
+    </section>
 </div>

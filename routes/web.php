@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 Route::get('/', Home::class)->name('home');
-Route::get('/aksi', Aksi::class)->name('home');
+Route::get('/aksi', Aksi::class)->name('aksi');
 //dokumentasi template
 Route::get('documentation', function () {
     return File::get(public_path() . '/documentation.html');
