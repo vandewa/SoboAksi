@@ -14,7 +14,7 @@
                                 <div class="col-md-2">
                                 <img src="{{ asset('trusthand/assets/images/icons/'.$data->icon)}}" class="img-fluid rounded-start card-img-top" style="max-width:40%;">
                                 </div>
-                                <div class="col-md-8 mt-2">
+                                <div class="col-md-8 mt-2 mb-2">
                                     <h5 style="font-size: 10px;"><a href="#" style="color:black;">{{ $data->nama_kategori }}</a></h5> 
                                 </div>
                             </div>
