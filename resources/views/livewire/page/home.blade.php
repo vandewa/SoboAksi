@@ -4,12 +4,13 @@
 <!-- feature-section end -->
 
 <!-- cause-section -->
+@if (count($aksi) != 0)
 <section class="cause-section sec-pad">
     <div class="shape">
         <div class="shape-1" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-3.png')}});"></div>
         <div class="shape-2" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-4.png')}});"></div>
     </div>
-    <div class="auto-container">
+    <div class="auto-container">    
         <div class="sec-title centred mb_50">
             <span class="sub-title">Penggalangan Dana</span>
             <h2>Penggalangan Dana Mendesak</h2>
@@ -18,14 +19,16 @@
         @foreach ($aksi as $ak)
             <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
         @endforeach
-            <div class="row">
-                <div class="col-md-12 float-end mt-3">
-                    <div class="float-end">Lihat Semua</div>
+            <div class="text-right col-md-12 float-end mt-3 d-flex justify-content-end">
+                <div class="float-end d-flex justify-content-end ml-6">
+                    <a class="btn btn-primary btn-md" href="{{ route('aksi') }}">Lihat Selengkapnya <i class="fas fa-angle-right fa-sm ml-1"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+@endif
 <!-- cause-section end -->
 
 

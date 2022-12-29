@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('tittle')</title>
+    <title>Sobo Aksi</title>
 
     <!-- Fav Icon -->
-    <link rel="icon" href="{{ asset('trusthand/assets/images/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('trusthand/assets/images/logo.ico')}}" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link
@@ -95,7 +95,8 @@
             <div class="popup-inner">
                 <div class="upper-box clearfix">
                     <figure class="logo-box pull-left">
-                        <a href="trusthand/index.html">
+                        {{-- <a href="{{ route('home') }}"> --}}
+                        <a href="{{ route('home') }}">
                             <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
                         </a>
                     </figure>
@@ -104,7 +105,8 @@
                 <div class="overlay-layer"></div>
                 <div class="auto-container">
                     <div class="search-form">
-                        <form method="post" action="trusthand/index.html">
+                        {{-- <form method="post" action="{{ route('home') }}"> --}}
+                        <form method="post" action="{{ route('home') }}">
                             <div class="form-group">
                                 <fieldset>
                                     <input type="search" class="form-control" name="search-input" value=""
@@ -136,7 +138,7 @@
                         <div class="sidebar-info-contents">
                             <div class="content-inner">
                                 <div class="logo">
-                                    <a href="trusthand/index.html">
+                                    <a href="{{ route('home') }}">
                                         <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="" />
                                     </a>
                                 </div>
@@ -147,7 +149,7 @@
                                 </div>
                                 <div class="form-inner">
                                     <h4>Get a free quote</h4>
-                                    <form action="trusthand/index.html" method="post">
+                                    <form action="{{ route('home') }}" method="post">
                                         <div class="form-group">
                                             <input type="text" name="name" placeholder="Name" required="">
                                         </div>
@@ -178,7 +180,7 @@
                 <div class="outer-box">
                     <div class="logo-box">
                         <figure class="logo">
-                            <a href="trusthand/index.html">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
                             </a>
                         </figure>
@@ -190,19 +192,19 @@
                             <i class="icon-bar"></i>
                             <i class="icon-bar"></i>
                         </div>
-                        <nav class="main-menu navbar-expand-md navbar-light">
+                        {{-- <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="trusthand/index.html">Home</a>
+                                    <li class="current dropdown"><a href="{{ route('home') }}">Home</a>
                                         <ul>
-                                            <li><a href="trusthand/index.html">Child Education</a></li>
+                                            <li><a href="{{ route('home') }}">Child Education</a></li>
                                             <li><a href="index-2.html">Wildlife</a></li>
                                             <li><a href="index-3.html">Homeless People</a></li>
                                             <li><a href="index-onepage.html">OnePage Home</a></li>
                                             <li><a href="index-rtl.html">RTL Home</a></li>
-                                            <li class="dropdown"><a href="trusthand/index.html">Header Style</a>
+                                            <li class="dropdown"><a href="{{ route('home') }}">Header Style</a>
                                                 <ul>
-                                                    <li><a href="trusthand/index.html">Header Style 01</a></li>
+                                                    <li><a href="{{ route('home') }}">Header Style 01</a></li>
                                                     <li><a href="index-2.html">Header Style 02</a></li>
                                                     <li><a href="index-3.html">Header Style 03</a></li>
                                                 </ul>
@@ -210,15 +212,15 @@
                                         </ul>
                                     </li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li class="dropdown"><a href="trusthand/index.html">Pages</a>
+                                    <li class="dropdown"><a href="{{ route('home') }}">Pages</a>
                                         <ul>
-                                            <li class="dropdown"><a href="trusthand/index.html">Volunteer</a>
+                                            <li class="dropdown"><a href="{{ route('home') }}">Volunteer</a>
                                                 <ul>
                                                     <li><a href="team.html">Our Volunteer</a></li>
                                                     <li><a href="team-details.html">Volunteer Details</a></li>
                                                 </ul>
                                             </li>
-                                            <li class="dropdown"><a href="trusthand/index.html">Events</a>
+                                            <li class="dropdown"><a href="{{ route('home') }}">Events</a>
                                                 <ul>
                                                     <li><a href="events.html">Our Events</a></li>
                                                     <li><a href="events-details.html">Events Details</a></li>
@@ -231,14 +233,14 @@
                                             <li><a href="error.html">404</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="trusthand/index.html">Causes</a>
+                                    <li class="dropdown"><a href="{{ route('home') }}">Causes</a>
                                         <ul>
                                             <li><a href="causes.html">Causes 1</a></li>
                                             <li><a href="causes-2.html">Causes 2</a></li>
                                             <li><a href="causes-details.html">Causes Details</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="trusthand/index.html">Shop</a>
+                                    <li class="dropdown"><a href="{{ route('home') }}">Shop</a>
                                         <ul>
                                             <li><a href="shop.html">Our Shop</a></li>
                                             <li><a href="shop-details.html">Shop Details</a></li>
@@ -246,7 +248,7 @@
                                             <li><a href="checkout.html">Checkout</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown"><a href="trusthand/index.html">Blog</a>
+                                    <li class="dropdown"><a href="{{ route('home') }}">Blog</a>
                                         <ul>
                                             <li><a href="blog.html">Blog Grid</a></li>
                                             <li><a href="blog-2.html">Blog Standard</a></li>
@@ -256,11 +258,11 @@
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
-                        </nav>
+                        </nav> --}}
                         <ul class="nav-right">
-                            <li class="search-box-outer search-toggler">
+                            {{-- <li class="search-box-outer search-toggler">
                                 <i class="icon-1"></i>
-                            </li>
+                            </li> --}}
                             <li class="btn-box">
                                 <livewire:button.donasi />
                             </li>
@@ -278,7 +280,7 @@
                     <div class="outer-box">
                         <div class="logo-box">
                             <figure class="logo">
-                                <a href="trusthand/index.html">
+                                <a href="{{ route('home') }}">
                                     <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
                                 </a>
                             </figure>
@@ -288,9 +290,9 @@
                                 <!--Keep This Empty / Menu will come through Javascript-->
                             </nav>
                             <ul class="nav-right">
-                                <li class="search-box-outer search-toggler">
+                                {{-- <li class="search-box-outer search-toggler">
                                     <i class="icon-1"></i>
-                                </li>
+                                </li> --}}
                                 <li class="btn-box">
                                     <livewire:button.donasi />
                                 </li>
@@ -312,7 +314,7 @@
 
             <nav class="menu-box">
                 <div class="nav-logo">
-                    <a href="trusthand/index.html">
+                    <a href="{{ route('home') }}">
                         <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
                     </a>
                 </div>
@@ -329,11 +331,11 @@
                 </div>
                 <div class="social-links">
                     <ul class="clearfix">
-                        <li><a href="trusthand/index.html"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="trusthand/index.html"><span class="fab fa-facebook-square"></span></a></li>
-                        <li><a href="trusthand/index.html"><span class="fab fa-pinterest-p"></span></a></li>
-                        <li><a href="trusthand/index.html"><span class="fab fa-instagram"></span></a></li>
-                        <li><a href="trusthand/index.html"><span class="fab fa-youtube"></span></a></li>
+                        <li><a href="{{ route('home') }}"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="{{ route('home') }}"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="{{ route('home') }}"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="{{ route('home') }}"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="{{ route('home') }}"><span class="fab fa-youtube"></span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -342,21 +344,22 @@
 
         {{ $slot }}
 
+        @yield('content')
 
         <!-- main-footer -->
         <footer class="main-footer d-none d-sm-block d-sm-none d-md-block">
             <div class="auto-container">
                 <div class="footer-top">
-                    <figure class="footer-logo"><a href="trusthand/index.html">
+                    <figure class="footer-logo"><a href="{{ route('home') }}">
                             <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt=""></a>
                     </figure>
                     <ul class="social-links">
-                        <li><a href="trusthand/index.html"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="trusthand/index.html"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="trusthand/index.html"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ route('home') }}"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ route('home') }}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{ route('home') }}"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                <div class="widget-section">
+                {{-- <div class="widget-section">
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                             <div class="about-widget footer-widget">
@@ -377,11 +380,11 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="trusthand/index.html">About Us</a></li>
-                                        <li><a href="trusthand/index.html">Services</a></li>
-                                        <li><a href="trusthand/index.html">Case</a></li>
-                                        <li><a href="trusthand/index.html">Pricing</a></li>
-                                        <li><a href="trusthand/index.html">Contact Us</a></li>
+                                        <li><a href="{{ route('home') }}">About Us</a></li>
+                                        <li><a href="{{ route('home') }}">Services</a></li>
+                                        <li><a href="{{ route('home') }}">Case</a></li>
+                                        <li><a href="{{ route('home') }}">Pricing</a></li>
+                                        <li><a href="{{ route('home') }}">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -393,11 +396,11 @@
                                 </div>
                                 <div class="widget-content">
                                     <ul class="links-list clearfix">
-                                        <li><a href="trusthand/index.html">Privacy Policy</a></li>
-                                        <li><a href="trusthand/index.html">Terms & Condition</a></li>
-                                        <li><a href="trusthand/index.html">Support</a></li>
-                                        <li><a href="trusthand/index.html">Disclaimer</a></li>
-                                        <li><a href="trusthand/index.html">Faq</a></li>
+                                        <li><a href="{{ route('home') }}">Privacy Policy</a></li>
+                                        <li><a href="{{ route('home') }}">Terms & Condition</a></li>
+                                        <li><a href="{{ route('home') }}">Support</a></li>
+                                        <li><a href="{{ route('home') }}">Disclaimer</a></li>
+                                        <li><a href="{{ route('home') }}">Faq</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -419,10 +422,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="footer-bottom centred">
+                </div> --}}
+                <div class="footer-bottom left">
                     <div class="copyright">
-                        <p>Copyright 2022 by <a href="trusthand/index.html">trusthand</a> All Right Reserved.</p>
+                        <p>Copyright 2022 All Right Reserved.</p>
                     </div>
                 </div>
             </div>
