@@ -1,10 +1,7 @@
-<div class="d-block d-md-none">
-    <div class="row scroller">
-    <div class="col-7 sidebar addscrollbar">
-        <!-- Pesos -->
-        <div class="col-2 full-wallet float-left d-inline-block">
-        <div class="col-7 pl-0 pr-0 mt-4" style="max-width: 100%">
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
+<!-- Pesos -->
+<div class="col-2 full-wallet float-left d-inline-block">
+    <div class="col-7 pl-0 pr-0 mt-4" style="max-width: 100%">
+        <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
             <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" >
                 <div class="inner-box">
                     <div class="image-box">
@@ -14,7 +11,8 @@
                             background-position: center center;">
                             </a>
                         </figure>
-                        <div class="category"><a href="{{ route('detail-donasi',$idnya) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$kategorinya->nama_kategori}}</a></div>
+                        <div class="category"><a href="{{ route('detail-donasi',$idnya) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$kategorinya->nama_kategori}}</a>
+                        </div>
                     </div>
                     <div class="lower-content">
                         <div class="text" style="padding:12px 30px 13px 26px !important;text-align:center;">
@@ -47,34 +45,12 @@
                 </div>
             </div>
         </div>
-        </div>
     </div>
-        <!-- /Pesos-->
-    
-        
-        
-        <!-- Ethereum-->
-        <div class="col-2 full-wallet float-left d-inline-block">
-            <div class="col-7 wallet pl-0 pr-0 mt-4">
-            <div class="col-lg-2 d-inline-block wallet-side">
-                <img src="images/ethereum.png" alt="símbolo pesos" class="currency-symbol">
-            </div>
-            <div class="col-lg-10 d-inline-block float-right wallet-body text-center mb-4 pb-4">
-                <p class="raise">CLP$999.999.999</p>
-                <!--<i class="fas fa-arrow-up float-right"></i>-->
-                <hr>
-                <p class="balance">Balance</p>
-                <p class="amount">$999.999</p>
-                <a href="#" class="btn-depositar">Depositar</a>
-            </div>
-            </div>
-        </div>
-        <!-- /Ethereum-->
-        </div>
-    </div>    
 </div>
+<!-- /Pesos-->
 
-<div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
+{{-- start web --}}
+{{-- <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
     <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
         <div class="inner-box">
             <div class="image-box">
@@ -116,4 +92,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+{{-- end web --}}
+        
+     

@@ -11,6 +11,7 @@ class Aksi extends Component
     public $item ;
     public $pageNumber = 1;
     public $hasMorePages;
+    public $kategori;
 
     protected $listeners = ['newAksi' => '$refresh'];
 
@@ -22,6 +23,8 @@ class Aksi extends Component
     //    $this->item->prepend($a);
     // }
 
+    protected $queryString = ['kategori'];
+
     public function mount()
     {
         $this->item = new Collection();
@@ -30,8 +33,13 @@ class Aksi extends Component
     }
     public function loadPosts()
     {
-        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->orderBy("created_at", "desc")
-        ->paginate(9, ['*'], 'page', $this->pageNumber);
+        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->orderBy("created_at", "desc");
+        if($this->kategori){
+            $posts->whereHas('kategorinya', function($a){
+                $a->where('id', $this->kategori);
+            });
+        }
+        $posts = $posts->paginate(9, ['*'], 'page', $this->pageNumber);
         // dd($posts->items());
 
 

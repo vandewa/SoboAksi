@@ -45,86 +45,88 @@
     
     <style>
         .sidebar {
-  /* background-color: #ececec; */
-  width: 3000px;
-  /*overflow-x: scroll;
-	overflow-y: hidden;
-	white-space: nowrap;*/
-}
+            /* background-color: #ececec; */
+            width: 3000px;
+            /*overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;*/
+        }
 
-.wallet {
-  background-color: #7b67db;
-  background-image: linear-gradient(120deg, #7b67db 0%, #ab8afb 50%, #FFFFFF 100%);
-  width: 90%;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-  height: 167px;
-  widows: 90%;
-  /* margin: 0 auto; */
-}
+        .wallet {
+        background-color: #7b67db;
+        background-image: linear-gradient(120deg, #7b67db 0%, #ab8afb 50%, #FFFFFF 100%);
+        width: 90%;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+        height: 167px;
+        widows: 90%;
+        /* margin: 0 auto; */
+        }
 
-.wallet-body {
-  background-color: #fff;
-  border-radius: 0 10px 10px 0;
-}
+        .wallet-body {
+        background-color: #fff;
+        border-radius: 0 10px 10px 0;
+        }
 
-.raise {
-  font-size: 0.8em;
-  color: #b8b8b8;
-  padding-top: 8px;
-  margin-bottom: 8px;
-}
+        .raise {
+        font-size: 0.8em;
+        color: #b8b8b8;
+        padding-top: 8px;
+        margin-bottom: 8px;
+        }
 
-.fa-arrow-up {
-  font-size: 0.8em;
-  color: #b8b8b8;
-  margin-top: -24px;
-  margin-right: 56px;
-}
+        .fa-arrow-up {
+        font-size: 0.8em;
+        color: #b8b8b8;
+        margin-top: -24px;
+        margin-right: 56px;
+        }
 
-hr {
-  margin-top: 0;
-  margin-bottom: 14px;
-}
+        hr {
+        margin-top: 0;
+        margin-bottom: 14px;
+        }
 
-.balance {
-  color: #697377;
-  font-size: 0.8em;
-  margin-bottom: -3px;
-}
+        .balance {
+        color: #697377;
+        font-size: 0.8em;
+        margin-bottom: -3px;
+        }
 
-.amount {
-  color: #697377;
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+        .amount {
+        color: #697377;
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-bottom: 20px;
+        }
 
-.btn-depositar {
-  background-color: #7b67db;
-  padding: 10px 70px 10px 70px;
-  border-radius: 50px;
-  color: #fff;
-}
+        .btn-depositar {
+        background-color: #7b67db;
+        padding: 10px 70px 10px 70px;
+        border-radius: 50px;
+        color: #fff;
+        }
 
-.btn-depositar:hover {
-  text-decoration: none;
-  color: #fff;
-  background-color: #5a50a5;
-}
+        .btn-depositar:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #5a50a5;
+        }
 
-.currency-symbol {
-  vertical-align: middle;
-  margin-top: 40px;
-  margin-left: 5px;
-}
+        .currency-symbol {
+        vertical-align: middle;
+        margin-top: 40px;
+        margin-left: 5px;
+        }
 
-.addscrollbar{
-    overflow-x: scroll;
-    display: flex;
-}
+        .addscrollbar{
+            
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+        }
     </style>
 </head>
 

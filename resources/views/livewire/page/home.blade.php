@@ -16,9 +16,16 @@
             <h2>Penggalangan Dana Mendesak</h2>
         </div>
         <div class="row clearfix">
-        @foreach ($aksi as $ak)
-            <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
-        @endforeach
+            <div class="d-block d-md-none">
+                <div class="row scroller">
+                    <div class="col-7 sidebar addscrollbar">
+                        @foreach ($aksi as $ak)
+                            <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
+                            {{-- <livewire:global.card-donasi/> --}}
+                        @endforeach
+                    </div>
+                </div>    
+            </div>
             <div class="text-right col-md-12 float-end mt-3 d-flex justify-content-end">
                 <div class="float-end d-flex justify-content-end ml-6">
                     <a class="btn btn-primary btn-md" href="{{ route('aksi') }}">Lihat Selengkapnya <i class="fas fa-angle-right fa-sm ml-1"></i>
