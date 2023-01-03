@@ -42,11 +42,11 @@
     @vite([])
     @livewireStyles
     @stack('css')
-    
+
     <style>
         .sidebar {
             /* background-color: #ececec; */
-            width: 3000px;
+            width: 900px;
             /*overflow-x: scroll;
                 overflow-y: hidden;
                 white-space: nowrap;*/
@@ -122,7 +122,7 @@
         }
 
         .addscrollbar{
-            
+
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
             display: flex;

@@ -1,5 +1,5 @@
 <!-- Pesos -->
-<div class="col-2 full-wallet float-left d-inline-block">
+<div class="col-8 full-wallet float-left d-inline-block">
     <div class="col-7 pl-0 pr-0 mt-4" style="max-width: 100%">
         <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
             <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" >
@@ -96,5 +96,4 @@
     </div>
 </div> --}}
 {{-- end web --}}
-        
-     
+
