@@ -17,10 +17,10 @@
                             <div class="text">
                                 <div class="post-date"><h3>{{ date('d', strtotime($art["created_at"])) }}<span>{{ date('F', 
                                 strtotime($art["created_at"])) }}</span></h3></div>
-                                <h3><a href="">{{substr($art["judul_posting"],0,50)}}..</a></h3>
+                                <h3><a href="{{ route('detail-berita', $art["id_posting"]) }}">{{substr($art["judul_posting"],0,50)}}..</a></h3>
                                 <p>{{substr($art["kata_kunci"],0,50)}}..</p>
                                 <div class="btn-box">
-                                    <a href="" class="theme-btn-two">Read more</a>
+                                    <a href="{{ route('detail-berita', $art["id_posting"]) }}" class="theme-btn-two">Read more</a>
                                 </div>
                             </div>
                             <ul class="lower-box">
