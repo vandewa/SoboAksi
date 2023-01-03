@@ -18,10 +18,14 @@ class CardDonasi extends Component
     public $jumlahLike;
     public $penerimaDonasi;
     public $sampul;
+    public $peroleh;
+    public $target;
 
     public function mount($data)
     {
         $this->idnya = $data['id'];
+        $this->peroleh = $data['penerimaDonasi']['donasi_tercapai']??0;
+        $this->target = $data['penerimaDonasi']['target_donasi']??0;
         $this->kategori = $data['kategori'];
         $this->judul = $data['judul'];
         $this->deskripsi = $data['deskripsi'];
