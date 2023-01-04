@@ -17,14 +17,23 @@
         </div>
         <div class="row clearfix">
             <div class="d-block d-md-none">
-                <div class="row scroller">
-                    <div class="col-7 sidebar addscrollbar">
-                        @foreach ($aksi as $ak)
-                            <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
-                            {{-- <livewire:global.card-donasi/> --}}
-                        @endforeach
-                    </div>
-                </div>    
+                {{-- <div class="row scroller">
+                    <div class="col-7 sidebar addscrollbar"> --}}
+                        <div class="containere mb-75">
+ 
+                            <div class="content-wrapper">
+                        
+                            @foreach ($aksi as $ak)
+                                <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
+                                {{-- <livewire:global.card-donasi/> --}}
+                            @endforeach
+
+                            </div>
+                        </div>
+                        
+                            
+                        {{-- </div>
+                    </div>     --}}
             </div>
             <div class="text-right col-md-12 float-end mt-3 d-flex justify-content-end">
                 <div class="float-end d-flex justify-content-end ml-6">

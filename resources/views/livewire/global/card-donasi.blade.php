@@ -1,55 +1,44 @@
-<!-- Pesos -->
-<div class="col-2 full-wallet float-left d-inline-block">
-    <div class="col-7 pl-0 pr-0 mt-4" style="max-width: 100%">
-        <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
-            <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" >
-                <div class="inner-box">
-                    <div class="image-box">
-                        <figure class="image">
-                            <a href="{{ route('detail-donasi',$idnya) }}">
-                            <img src="{{ $sampul }}" style="width:410px;height:200px;background-size: cover;
-                            background-position: center center;">
-                            </a>
-                        </figure>
-                        <div class="category"><a href="{{ route('detail-donasi',$idnya) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$kategorinya->nama_kategori}}</a>
-                        </div>
-                    </div>
-                    <div class="lower-content">
-                        <div class="text" style="padding:12px 30px 13px 26px !important;text-align:center;">
-                        {{-- <div class="text" style="text-align: center;"> --}}
-                            <h2 style="font-size: 18px;"><a href="{{ route('detail-donasi',$idnya) }}" style=" color:black; ">{{$judul}}</a></h2>
-                            {{-- <p>{{substr($deskripsi,0,50)}}..</p> --}}
-                        </div>
-                        {{-- <div class="progress-box" style="padding:40px 40px 26px 40px;"> --}}
-                        <div class="progress-box">
-                            @if($penerimaDonasi)
-                            <div class="bar">
-                                <div class="bar-inner count-bar" style="width: {{ $peroleh/$target*100 }}%;"><div class="count-text">{{ $peroleh/$target*100 }}%</div></div>
-                            </div>
+<div class="containere">
+ 
+    {{-- <div class="content-wrapper"> --}}
+    
+      <div class="child">
+        <h1>CSS-only horizontal scroll tentative</h1>
+        <p>The idea is to create an horizontal scroll layout and to allow the user to scroll up/down the mouse to scroll left/right.</p>
+        <p>So… please scroll <strong>down</strong> with your mouse.</p>
+      </div>
+  
+      <div class="child">
+        <h2>The trick</h2>
+        <p>Rotate -90deg the container, and 90deg its children blocks.</p>
+        <p>You have to fix container and children dimensions. :(</p>
+        <p>See CSS for rather correct positioning.</p>
+      </div>
+  
+      <div class="child">
+        <h2>Desktop browsers</h2>
+        <p>Vertical scroll… scrolls. :)</p>
+        <p>But horizontal scroll (e.g. with a trackpad) doesn’t. :(</p>
+      </div>
+  
+      <div class="child">
+        <h2>Mobile browsers</h2>
+        <p>Only horizontal touchmove works on Chrome. :)</p>
+        <p>Only vertical touchmove works on Safari and Firefox. :(</p>
+      </div>
+  
+  
+      <div class="child">
+        <h2>Conclusion</h2>
+        <p>Without JavaScript: no good idea.</p>
+      </div>
+  
+    {{-- </div> --}}
+    
+  </div>
 
-                            <div class="donate-text">
 
-                                <h6><span>Rp. {{ number_format($peroleh,0,',','.') }}</span> Diperoleh</h6>
-                                <h6><span>Rp. {{ number_format($target,0,',','.') }}</span> Target</h6>
 
-                            </div>
-                            @endif
-                            <div class="row mt-1">
-                                <div class="col-6">
-                                    <button class="btn btn-primary btn-block" style="font-size: 7px;width:105%;"> 0 <i class="icon-16"></i> Komen</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-danger btn-block" style="font-size: 7px;width:105%;" wire:click="like"> {{ $jumlahLike }} <i class="fa fa-heart"></i> Suka</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /Pesos-->
 
 {{-- start web --}}
 {{-- <div class="col-lg-4 col-md-6 col-sm-12 cause-block mb-3">
