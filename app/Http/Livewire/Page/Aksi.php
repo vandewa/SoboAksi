@@ -39,7 +39,7 @@ class Aksi extends Component
                 $a->where('id', $this->kategori);
             });
         }
-        $posts = $posts->paginate(9, ['*'], 'page', $this->pageNumber);
+        $posts = $posts->paginate(12, ['*'], 'page', $this->pageNumber);
         // dd($posts->items());
 
 
