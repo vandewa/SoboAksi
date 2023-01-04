@@ -70,63 +70,29 @@
         border-radius: 0 10px 10px 0;
         }
 
-        .raise {
-        font-size: 0.8em;
-        color: #b8b8b8;
-        padding-top: 8px;
-        margin-bottom: 8px;
-        }
-
-        .fa-arrow-up {
-        font-size: 0.8em;
-        color: #b8b8b8;
-        margin-top: -24px;
-        margin-right: 56px;
-        }
-
-        hr {
-        margin-top: 0;
-        margin-bottom: 14px;
-        }
-
-        .balance {
-        color: #697377;
-        font-size: 0.8em;
-        margin-bottom: -3px;
-        }
-
-        .amount {
-        color: #697377;
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 20px;
-        }
-
-        .btn-depositar {
-        background-color: #7b67db;
-        padding: 10px 70px 10px 70px;
-        border-radius: 50px;
-        color: #fff;
-        }
-
-        .btn-depositar:hover {
-        text-decoration: none;
-        color: #fff;
-        background-color: #5a50a5;
-        }
-
-        .currency-symbol {
-        vertical-align: middle;
-        margin-top: 40px;
-        margin-left: 5px;
-        }
-
         .addscrollbar{
 
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
             display: flex;
         }
+
+        h2{
+            font-size: 40px !important;
+        }
+
+        h3{
+            font-size: 18px !important;
+        }
+
+        p{
+            font-size: 13px !important  ;
+        }
+
+        
+
+
+     
     </style>
 </head>
 
@@ -522,16 +488,19 @@
 
 
         <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <div>
-                <div class="scroll-top-inner">
-                    <div class="scroll-bar">
-                        <div class="bar-inner"></div>
+        <div class="d-none d-md-block">
+            <div class="scroll-to-top">
+                <div>
+                    <div class="scroll-top-inner">
+                        <div class="scroll-bar">
+                            <div class="bar-inner"></div>
+                        </div>
+                        <div class="scroll-bar-text">Go To Top</div>
                     </div>
-                    <div class="scroll-bar-text">Go To Top</div>
                 </div>
             </div>
         </div>
+        
         <!-- Scroll to top end -->
 
     </div>

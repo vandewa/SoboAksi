@@ -13,8 +13,6 @@ class Home extends Component
         return view('livewire.page.home', [
             "aksi" => $aksi
         ]);
-
-        // return view('livewire.page.home');
     }
 
 }
