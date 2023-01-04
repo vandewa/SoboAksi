@@ -1,10 +1,10 @@
 <div>
     <section class="feature-section p_relative sec-pad centred">
-        {{-- start mobile --}}
+        {{-- START MOBILE --}}
         <div class="d-block d-md-none">
             <div class="sec-title centred mb_50">
                 <span class="sub-title">Kategori</span>
-                <h2>Aksi Kemanusiaan</h2>
+                <h2 style="font-size: 25px !important; ">Aksi Kemanusiaan</h2>
             </div>
             <div class="container">
                 <div class="row">
@@ -27,14 +27,14 @@
                 </div>
             </div>
         </div>
-        {{-- End Mobile --}}
+        {{-- END MOBILE --}}
 
+        {{-- START DESKTOP --}}
         <div class="auto-container d-none d-sm-block d-sm-none d-md-block">
             <div class="sec-title centred mb_50">
                 <span class="sub-title">Kategori</span>
                 <h2>Aksi Kemanusiaan</h2>
             </div>
-            <div></div>
             <div class="row clearfix">
                 @foreach($kategori as $data)
                 <a href="{{ route('aksi', ['kategori' => $data->id]) }}">
@@ -42,7 +42,7 @@
                         <div class="feature-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                             <div class="inner-box" style="padding: 30px 60px 17px 60px !important;">
                                 <div class="icon-box">
-                                    <img src="{{ asset('trusthand/assets/images/icons/'.$data->icon)}}" alt="">
+                                    <img src="{{ asset('trusthand/assets/images/icons/'.$data->icon)}}">
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <h3><a href="{{ route('aksi', ['kategori' => $data->id]) }}">{{ $data->nama_kategori }}</a></h3>
@@ -54,5 +54,6 @@
                 @endforeach
             </div>
         </div>
+        {{-- END DESKTOP --}}
     </section>
 </div>

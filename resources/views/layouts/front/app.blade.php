@@ -42,11 +42,11 @@
     @vite([])
     @livewireStyles
     @stack('css')
-    
+
     <style>
         .sidebar {
             /* background-color: #ececec; */
-            width: 3000px;
+            width: 900px;
             /*overflow-x: scroll;
                 overflow-y: hidden;
                 white-space: nowrap;*/
@@ -70,98 +70,28 @@
         border-radius: 0 10px 10px 0;
         }
 
-        .raise {
-        font-size: 0.8em;
-        color: #b8b8b8;
-        padding-top: 8px;
-        margin-bottom: 8px;
-        }
-
-        .fa-arrow-up {
-        font-size: 0.8em;
-        color: #b8b8b8;
-        margin-top: -24px;
-        margin-right: 56px;
-        }
-
-        hr {
-        margin-top: 0;
-        margin-bottom: 14px;
-        }
-
-        .balance {
-        color: #697377;
-        font-size: 0.8em;
-        margin-bottom: -3px;
-        }
-
-        .amount {
-        color: #697377;
-        font-size: 1.4em;
-        font-weight: bold;
-        margin-bottom: 20px;
-        }
-
-        .btn-depositar {
-        background-color: #7b67db;
-        padding: 10px 70px 10px 70px;
-        border-radius: 50px;
-        color: #fff;
-        }
-
-        .btn-depositar:hover {
-        text-decoration: none;
-        color: #fff;
-        background-color: #5a50a5;
-        }
-
-        .currency-symbol {
-        vertical-align: middle;
-        margin-top: 40px;
-        margin-left: 5px;
-        }
-
         .addscrollbar{
-            
+
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
             display: flex;
         }
 
-        .containere {
-  /* position: fixed; */
-  top: -30px; // Hide the horizontal scrollbar.
-  left: 0;
-  width: 100vh;
-  height: calc(100vw);
+        h2{
+            font-size: 40px !important;
+        }
 
-  overflow: scroll;
-  transform: rotate(-90deg);
-  transform-origin: center calc(50vh);
-}
+        h3{
+            font-size: 18px !important;
+        }
 
-.child {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+        p{
+            font-size: 13px !important  ;
+        }
 
-  margin: 1em auto;
-  padding: 2em;
-  width: 500px;
-  height: 500px;
+        
 
-  transform: rotate(90deg);
 
-  border: 1px solid #333;
-  box-shadow: 3px 3px 6px rgba(#333, .3);
-
-  text-align: center;
-  
-  p {
-    line-height: 1.5;
-  }
-}
      
     </style>
 </head>
@@ -558,16 +488,19 @@
 
 
         <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <div>
-                <div class="scroll-top-inner">
-                    <div class="scroll-bar">
-                        <div class="bar-inner"></div>
+        <div class="d-none d-md-block">
+            <div class="scroll-to-top">
+                <div>
+                    <div class="scroll-top-inner">
+                        <div class="scroll-bar">
+                            <div class="bar-inner"></div>
+                        </div>
+                        <div class="scroll-bar-text">Go To Top</div>
                     </div>
-                    <div class="scroll-bar-text">Go To Top</div>
                 </div>
             </div>
         </div>
+        
         <!-- Scroll to top end -->
 
     </div>
