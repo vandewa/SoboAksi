@@ -23,11 +23,11 @@
                                 <div class="lower-content">
                                     <div class="progress-box">
                                         <div class="bar">
-                                            <div class="bar-inner count-bar" data-percent="50%"><div class="count-text">50%</div></div>
+                                            <div class="bar-inner count-bar" style="width: {{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%;"><div class="count-text">{{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%</div></div>
                                         </div>
                                         <div class="donate-text">
-                                            <h6><span>$6,020</span> Raised</h6>
-                                            <h6><span>$12,000</span> Target</h6>
+                                            <h6><span>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</span> Raised</h6>
+                                            <h6><span>Rp {{ $datanya->penerimaDonasi->target_donasi??0 }}</span> Target</h6>
                                         </div>
                                     </div>
                                     <div class="btn-box">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="content-one">
                             <div class="text" style="text-align:justify; text-justify:auto;text-indent: 40px;  color:black;">
-                               <p>{{ $datanya->deskripsi }}</p>
+                               <p>{!! $datanya->deskripsi !!}</p>
                             </div>
                         </div>
                         {{-- <div class="content-two">

@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Global;
+namespace App\Http\Livewire\Page;
 
 use Livewire\Component;
-use App\Models\Aksi;
 use App\Models\AksiDukung;
-use App\Models\AksiPhoto;
 use Illuminate\Support\Facades\Auth;
 
-class CardDonasi extends Component
+class MobileGalangDana extends Component
 {
     public $idnya;
     public $kategori;
@@ -38,7 +36,7 @@ class CardDonasi extends Component
 
     public function render()
     {
-        return view('livewire.global.card-donasi');
+        return view('livewire.page.mobile-galang-dana');
     }
 
     public function like()
@@ -60,6 +58,4 @@ class CardDonasi extends Component
             $this->jumlahLike ++;
         }
     }
-
-
 }

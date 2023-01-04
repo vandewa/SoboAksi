@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi <span>*</span></label>
-                                <textarea name="" wire:model.lazy="deskripsi" id="" class="form-control" rows="3"></textarea>
+                                <livewire:trix :value="$deskripsi">
                             </div>
                             <div class="form-group">
                                 <p>Apakah anda ingin menggalang dana untuk membantu orang lain? <input type="checkbox" wire:change="galangDana"> Ya</p>
@@ -101,17 +101,13 @@
                             </div>
                             <div class="form-group">
                                 <label>No Telepon Penerima <span>*</span></label>
-                                <select name="" wire:model.lazy="penerima_id" id="" class="form-control">
-                                    <option value="">
-
-                                    </option>
-                                </select>
+                                <input type="text" wire:model.lazy="telepon" name="" id="">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Jenis Identitas <span>*</span></label>
-                                        <select name="" wire:model.lazy="penerima_id" id="" class="form-control">
+                                        <select name="" wire:model.lazy="kode_identitas" id="" class="form-control">
                                             @foreach ($jenisIdentitas??[] as $identitas)
                                             <option value="{{ $identitas->code_cd }}"> {{ $identitas->code_nm }}</option>
                                             @endforeach
@@ -128,11 +124,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>NO Identitas <span>*</span></label>
-                                        <select name="" wire:model.lazy="penerima_id" id="" class="form-control">
-                                            <option value="">
-
-                                            </option>
-                                        </select>
+                                        <input type="text" name="" wire:model.lazy="no_identitas" id="">
                                     </div>
                                     <div class="form-group">
                                         <label>Foto Calon Penerima <span>*</span></label>

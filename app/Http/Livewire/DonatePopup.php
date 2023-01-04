@@ -9,6 +9,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Aksi as Beraksi;
 use App\Models\Kategori;
+use DB;
 
 class DonatePopup extends Component
 {
@@ -33,7 +34,7 @@ class DonatePopup extends Component
     public $alamat;
     public $telepon;
     public $jenisIdentitas;
-    public $kode_identitas;
+    public $kode_identitas = "IDENTITAS_ST_01";
     public $no_identitas;
     public $foto_ktp;
     public $foto_penerima;
@@ -42,7 +43,12 @@ class DonatePopup extends Component
     public $kecamatans;
     public $desas;
 
-    protected $listeners = ["tampilModal" => "tampilModal"];
+    protected $listeners = ["tampilModal" => "tampilModal", Trix::EVENT_VALUE_UPDATED];
+
+    public function trix_value_updated($value){
+        $this->deskripsi = $value;
+    }
+
 
     public function mount()
     {
@@ -67,20 +73,76 @@ class DonatePopup extends Component
     public function simpan()
     {
         if($this->denganPenerima){
-            $penerima = Penerima::create(
-                [
-                    "nama" => $this->nama,
-                    "alamat" => $this->alamat,
-                    "region_prop" => $this->region_prop,
-                    "region_kab" => $this->region_kab,
-                    "region_kec" => $this->region_kec,
-                    "region_kel" => $this->region_kel,
-                    "alamat" => $this->alamat,
-                    "telepon" => $this->telepon,
-                    "no_identitas" => $this->no_identitas,
+            $a = DB::transaction(function () {
+                $this->validate(
+                    [
+                        "nama" => "required",
+                        "alamat" => "required",
+                        "region_prop" => "required",
+                        "region_kab" => "required",
+                        "region_kec" => "required",
+                        "region_kel" => "required",
+                        "alamat" => "required",
+                        "telepon" => "required",
+                        "no_identitas" => "required",
+                        "foto_ktp" => "required|mimes:jpg,jpeg,png |max:4096",
+                        "foto_penerima" => "required|mimes:jpg,jpeg,png |max:4096",
+                        "judul" => "required",
+                        "kategori" => "required",
+                        "deskripsi" => "required",
+                        "target_donasi" => "required",
+                        "target_waktu" => "required|date",
+                    ]
+                );
+                $ktp = $this->foto_ktp->store('aksi/identitas/', 'public');
+                $penerimafoto = $this->foto_penerima->store('aksi/penerima', 'public');
+                $penerima = Penerima::create(
+                    [
+                        "nama" => $this->nama,
+                        "alamat" => $this->alamat,
+                        "region_prop" => $this->region_prop,
+                        "region_kab" => $this->region_kab,
+                        "region_kec" => $this->region_kec,
+                        "region_kel" => $this->region_kel,
+                        "kode_identitas" => $this->kode_identitas,
+                        "alamat" => $this->alamat,
+                        "telepon" => $this->telepon,
+                        "no_identitas" => $this->no_identitas,
+                        "foto_penerima" => $penerimafoto,
+                        "foto_ktp" => $ktp,
 
-                ]
-            );
+                    ]
+                );
+                $path = $this->photo->store('aksi', 'public');
+                $data = Beraksi::create([
+                    "judul" => $this->judul,
+                    "kategori" => $this->kategori,
+                    "deskripsi" => $this->deskripsi,
+                    "setuju" => true,
+                    "creator_id" => auth()->user()->id,
+
+                ]);
+                $data->sampul()->create(
+                    [
+                        "url" => $path
+                    ]
+                );
+                $data->penerimaDonasi()->create([
+                    "penerima_id" => $penerima->id,
+                    "target_donasi" => $this->target_donasi,
+                    "target_waktu" => $this->target_waktu,
+                    "donasi_st" => "DONASI_ST_00",
+                    "donasi_tercapai" => 0
+
+                ]);
+
+
+                $this->tampilModal();
+
+                return redirect()->to('aksi');
+
+            });
+
         } else {
             $this->validate(
                 [
