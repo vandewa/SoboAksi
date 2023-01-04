@@ -43,7 +43,12 @@ class DonatePopup extends Component
     public $kecamatans;
     public $desas;
 
-    protected $listeners = ["tampilModal" => "tampilModal"];
+    protected $listeners = ["tampilModal" => "tampilModal", Trix::EVENT_VALUE_UPDATED];
+
+    public function trix_value_updated($value){
+        $this->deskripsi = $value;
+    }
+
 
     public function mount()
     {

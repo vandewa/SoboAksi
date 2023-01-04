@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi <span>*</span></label>
-                                <textarea name="" wire:model.lazy="deskripsi" id="" class="form-control" rows="3"></textarea>
+                                <livewire:trix :value="$deskripsi">
                             </div>
                             <div class="form-group">
                                 <p>Apakah anda ingin menggalang dana untuk membantu orang lain? <input type="checkbox" wire:change="galangDana"> Ya</p>
