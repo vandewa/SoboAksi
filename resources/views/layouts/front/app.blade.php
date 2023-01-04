@@ -84,14 +84,7 @@
         h3{
             font-size: 18px !important;
         }
-
-        p{
-            font-size: 13px !important  ;
-        }
-
         
-
-
      
     </style>
 </head>

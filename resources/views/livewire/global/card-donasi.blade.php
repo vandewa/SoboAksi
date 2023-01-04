@@ -13,9 +13,9 @@
                 <div class="category"><a href="{{ route('detail-donasi',$idnya) }}">{{$kategorinya->nama_kategori}}</a></div>
             </div>
             <div class="lower-content">
-                <div class="text">
-                    <h3><a href="{{ route('detail-donasi',$idnya) }}">{{$judul}}</a></h3>
-                    <p>{{substr($deskripsi,0,50)}}..</p>
+                <div class="text" style="padding: 32px 30px 7px 40px;">
+                    <h3><a href="{{ route('detail-donasi',$idnya) }}">{{substr($judul,0,40)}}..</a></h3>
+                    {{-- <p>{{substr($deskripsi,0,50)}}..</p> --}}
                 </div>
                 <div class="progress-box">
                     @if($penerimaDonasi)
