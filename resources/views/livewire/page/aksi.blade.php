@@ -9,15 +9,16 @@
             <h2>Penggalangan Dana Mendesak</h2>
         </div>
          <div class="row clearfix">
-            @foreach ($item as $index => $ak)
-                <livewire:global.card-donasi :data="$ak" :wire:key="$ak['id']"/>
-            @endforeach
+           
+        @foreach ($item as $index => $ak)
+            <livewire:global.card-donasi :data="$ak" :wire:key="$ak['id']"/>
+        @endforeach
+                  
         </div>
-@if($hasMorePages)
-    <div class="load-more">
-       <a href="javascript:void(0);" wire:click="loadPosts">Lihat Selanjutnya</span>
-    </div>
-@endif
-
+        @if($hasMorePages)
+            <div class="load-more">
+            <a href="javascript:void(0);" wire:click="loadPosts">Lihat Selanjutnya</span>
+            </div>
+        @endif
     </div>
 </section>

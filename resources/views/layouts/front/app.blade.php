@@ -38,9 +38,62 @@
     <link href="{{ asset('trusthand/assets/css/responsive.css')}}" rel="stylesheet">
 
 
+
     @vite([])
     @livewireStyles
     @stack('css')
+
+    <style>
+        .sidebar {
+            /* background-color: #ececec; */
+            width: 900px;
+            /*overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;*/
+        }
+
+        .wallet {
+        background-color: #7b67db;
+        background-image: linear-gradient(120deg, #7b67db 0%, #ab8afb 50%, #FFFFFF 100%);
+        width: 90%;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+        height: 167px;
+        widows: 90%;
+        /* margin: 0 auto; */
+        }
+
+        .wallet-body {
+        background-color: #fff;
+        border-radius: 0 10px 10px 0;
+        }
+
+        .addscrollbar{
+
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+        }
+
+        h2{
+            font-size: 40px !important;
+        }
+
+        h3{
+            font-size: 18px !important;
+        }
+
+        p{
+            font-size: 13px !important  ;
+        }
+
+        
+
+
+     
+    </style>
 </head>
 
 
@@ -51,7 +104,7 @@
 
 
         <!-- preloader -->
-        <div class="loader-wrap">
+        {{-- <div class="loader-wrap">
             <div class="preloader">
                 <div class="preloader-close">x</div>
                 <div id="handle-preloader" class="handle-preloader">
@@ -86,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- preloader end -->
 
 
@@ -435,16 +488,19 @@
 
 
         <!--Scroll to top-->
-        <div class="scroll-to-top">
-            <div>
-                <div class="scroll-top-inner">
-                    <div class="scroll-bar">
-                        <div class="bar-inner"></div>
+        <div class="d-none d-md-block">
+            <div class="scroll-to-top">
+                <div>
+                    <div class="scroll-top-inner">
+                        <div class="scroll-bar">
+                            <div class="bar-inner"></div>
+                        </div>
+                        <div class="scroll-bar-text">Go To Top</div>
                     </div>
-                    <div class="scroll-bar-text">Go To Top</div>
                 </div>
             </div>
         </div>
+        
         <!-- Scroll to top end -->
 
     </div>

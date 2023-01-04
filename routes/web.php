@@ -18,6 +18,7 @@ use App\Http\Livewire\Page\Aksi;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DetailDonasiController;
 use App\Http\Livewire\DetailDonasi;
+use App\Http\Livewire\Page\DetailBerita;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ use App\Http\Livewire\DetailDonasi;
 Route::get('/', Home::class)->name('home');
 Route::get('/aksi', Aksi::class)->name('aksi');
 Route::get('/detail-aksi/{id}', DetailDonasi::class)->name('detail-donasi');
+Route::get('/detail-berita/{id}', DetailBerita::class)->name('detail-berita');
+
 //dokumentasi template
 Route::get('documentation', function () {
     return File::get(public_path() . '/documentation.html');

@@ -28,7 +28,7 @@ class DetailDonasi extends Component
     
     public function show($id)
     {
-        $data = Aksi::with('kategorinya', 'sampul')->find($id);
+        $data = Aksi::with(['kategorinya', 'penerimaDonasi'])->withCount("dukung")->find($id);
         $this->datanya = $data;
         $this->sampul = $data->sampul->url_photo?? asset('trusthand/assets/images/resource/cause-1.jpg');
     }
