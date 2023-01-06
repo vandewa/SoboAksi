@@ -1,4 +1,5 @@
-<div>
+{{-- START DESKTOP --}}
+<div class="d-none d-md-block">
     <!-- Page Title -->
     <section class="page-title centred">
         <div class="bg-layer" style="background-image: url({{ $sampul }});"></div>
@@ -41,58 +42,6 @@
                                <p>{!! $datanya->deskripsi !!}</p>
                             </div>
                         </div>
-                        {{-- <div class="content-two">
-                            <div class="text">
-                                <h3>Challenge</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero turpis blandit blandit mauris aliquam condimentum quam suspendisse. Sit bibendum adipiscing enim lacus quis. A nec accumsan aliquam magnis orci. Dui amet scelerisque.</p>
-                                <ul class="list-style-one clearfix">
-                                    <li>Fighting for People</li>
-                                    <li>Act for Homeless</li>
-                                    <li>Respect & Integrating</li>
-                                    <li>Support Homeless People</li>
-                                    <li>Quick Fundraising</li>
-                                </ul>
-                            </div>
-                            <div class="image-box">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img src="assets/images/resource/cause-10.jpg" alt=""></figure>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 image-column">
-                                        <figure class="image"><img src="assets/images/resource/cause-15.jpg" alt=""></figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
-                        {{-- <div class="content-three">
-                            <div class="text">
-                                <h3>Solution</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero turpis blandit blandit mauris aliquam condimentum quam suspendisse. Sit bibendum adipiscing enim lacus quis. A nec accumsan aliquam magnis orci. Dui amet scelerisque lectus commodo iaculis semper. Arcu eget vestibulum amet faucibuseugi augue Odio viverra odio tempor porttitor orc.</p>
-                                <p>Imperdiet consectetur gravida rutrum. Tempus mattis sit massa lacus morbi. Feugiat aliquam aenean sagittis nunc neque sit. Nec lorem tincidunt arcu nunc ac accumsan risus felis in. Mi ornare convallis tincidunt maecenas dui auctor cursus platea velit.</p>
-                            </div>
-                        </div> --}}
-                        {{-- <div class="content-four">
-                            <h3>Leave A Comment</h3>
-                            <form action="causes-details.html" method="post">
-                                <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="text" name="name" placeholder="Your name" required="">
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                                        <input type="email" name="email" placeholder="Email address" required="">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <input type="text" name="phone" placeholder="Phone number" required="">
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                                        <textarea name="message" placeholder="Message"></textarea>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group message-btn">
-                                        <button type="submit" class="theme-btn-one"><span>Send us a message</span></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
@@ -122,21 +71,7 @@
                                 <h3>{{ $donasi->judul??"" }}</h3>
                                 <button class="donate-box-btn theme-btn-one"><span>Donate Now</span></button>
                             </div>
-                            
                         </div>
-                        {{-- <div class="sidebar-widget tags-widget">
-                            <div class="widget-title">
-                                <h3>Popular Tags</h3>
-                            </div>
-                            <div class="widget-content">
-                                <ul class="tags-list clearfix">
-                                    <li><a href="causes-details.html">Education</a></li>
-                                    <li><a href="causes-details.html">Donate</a></li>
-                                    <li><a href="causes-details.html">Food</a></li>
-                                    <li><a href="causes-details.html">Charity</a></li>
-                                </ul>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -144,3 +79,61 @@
     </section>
     <!-- cause-details end -->
 </div>
+{{-- END DESKTOP --}}
+
+{{-- START MOBILE --}}
+<div class="d-block d-md-none">
+    <section class="page-title centred">
+        <div class="bg-layer" style="background-image: url({{ $sampul }});"></div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h1 style="font-size: 25px;">{{ $datanya->judul }}</h1>
+            </div>
+        </div>
+    </section>
+    <section class="cause-details">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                    <div class="cause-details-content">
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><img src="{{ $sampul }}"></figure>
+                                </div>
+                               
+                                    <div class="progress-box">
+                                        <div class="bar">
+                                            <div class="bar-inner count-bar" style="width: {{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%;"><div class="count-text">{{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%</div></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</b></span> 
+                                                    <br> Raised
+                                                </h6>
+                                            </div>
+                                            <div class="col-6">
+                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->target_donasi??0 }}</b></span> 
+                                                    <br> Target
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+                            </div>
+                        </div>
+                        <div class="content-one">
+                            <div class="text" style="text-align:justify; text-justify:auto;text-indent: 40px;  color:black;">
+                               <p>{!! $datanya->deskripsi !!}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="donasi-bottom">
+        <button class="donate-box-btn theme-btn-one" style="margin-bottom: 15px !important; margin-top:15px !important;"><span>Donasi Sekarang</span></button>
+    </div>
+</div>
+{{-- END MOBILE --}}

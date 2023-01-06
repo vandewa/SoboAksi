@@ -1,11 +1,10 @@
-{{-- start web --}}
-  <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+<div class="col-12">
     <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
         <div class="inner-box">
             <div class="image-box">
                 <figure class="image">
                     <a href="{{ route('detail-donasi',$idnya) }}">
-                    <img src="{{ $sampul }}" style="width:350px;height:200px;background-size: cover;
+                    <img src="{{ $sampul }}" style="width:400px;height:300px;background-size: cover;
                     background-position: center center;">
                     </a>
                 </figure>
@@ -13,7 +12,7 @@
             </div>
             <div class="lower-content">
                 <div class="text" style="padding: 32px 30px 7px 40px;">
-                    <h3><a href="{{ route('detail-donasi',$idnya) }}">{{substr($judul,0,40)}}..</a></h3>
+                    <h3><a href="{{ route('detail-donasi',$idnya) }}">{{substr($judul,0,55)}}..</a></h3>
                 </div>
                 <div class="progress-box">
                     @if($penerimaDonasi)
@@ -51,20 +50,13 @@
                     </div>
                     @endif
                     <div class="row mt-1">
-                        <div class="col-md-6">
-                          <li class="admin">
-                            <button class="btn btn-primary btn-block">
-                              <span style="font-size: 13px;width:100%;float: left;">
-                               100 <i class="icon-16"></i> 
-                              </span>
+                        <div class="col-6">
+                            <button class="btn btn-primary btn-block" style="font-size: 12px;width:100%;">0 
+                                <i class="icon-16"> Komentar</i>
                             </button>
-                          </li>
                         </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-danger btn-block" wire:click="like">
-                              <span style="font-size: 13px;width:100%;float: left;">{{ $jumlahLike }} <i class="fa fa-heart"></i> 
-                                
-                              </span>
+                        <div class="col-6">
+                            <button class="btn btn-danger btn-block" style="font-size: 12px;width:100%;" wire:click="like"> {{ $jumlahLike }} <i class="fa fa-heart"> Suka</i>
                             </button>
                         </div>
                     </div>
@@ -73,4 +65,3 @@
         </div>
     </div>
   </div>
-{{-- end web --}}

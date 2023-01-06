@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 column text-center">
                             <div class="form-group message-btn">
-                                <button type="submit" class="theme-btn-one">Registrasi</button>
+                                <button type="submit" class="theme-btn-one btn-block mb-2" style="line-height:11px !important;">Registrasi</button>
                                 <p>Sudah punya akun? <a href="#" wire:click="$emitTo('registrasi', 'register')">Login
                                         sekarang</a></p>
                             </div>

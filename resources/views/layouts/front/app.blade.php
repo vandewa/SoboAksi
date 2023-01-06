@@ -84,7 +84,17 @@
         h3{
             font-size: 18px !important;
         }
-        
+
+        .donasi-bottom {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: white;
+        text-align: center;
+        }
+
      
     </style>
 </head>
@@ -469,7 +479,7 @@
                         </div>
                     </div>
                 </div> --}}
-                <div class="footer-bottom left">
+                <div class="footer-bottom left mt-auto">
                     <div class="copyright">
                         <p>Copyright 2022 All Right Reserved.</p>
                     </div>
