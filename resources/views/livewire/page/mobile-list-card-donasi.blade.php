@@ -1,4 +1,4 @@
-<div class="col-12">
+<div class="col-xs-12 col-sm-12 col-md-4">
     <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
         <div class="inner-box">
             <div class="image-box">
@@ -31,7 +31,7 @@
                                 </span>
                             </h6>
                         </div>
-                       
+
                         <div class="col-6">
                             <h6>
                                 <span style="font-size: 13px;width:100%;float: right;">
@@ -40,7 +40,7 @@
                                 <br>
                                 <span style="font-size: 15px;width:100%;float: left;" >
                                     Target
-                                </span> 
+                                </span>
                             </h6>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
 
                     <div class="row mt-1">
                         <div class="col-6">
-                            <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">0 
+                            <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">0
                                 <i class="icon-16"></i>
                             </button>
                         </div>
