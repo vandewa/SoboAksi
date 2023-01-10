@@ -120,8 +120,8 @@
 
         .round {
             height: 50px;
-            line-height: 50px;  
-            width: 50px;  
+            line-height: 50px;
+            width: 50px;
             font-size: 1.4em;
             font-weight: bold;
             border-radius: 50%;
@@ -156,7 +156,7 @@
             border: none;
         }
 
-     
+
     </style>
 </head>
 
@@ -483,7 +483,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Scroll to top end -->
 
     </div>

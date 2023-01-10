@@ -8,7 +8,7 @@
     <!-- KATEGORI -->
     <livewire:category/>
     <!-- END KATEGORI -->
-    
+
     <!-- GALANG DANA -->
     @if (count($aksi) != 0)
     <section class="cause-section sec-pad">
@@ -23,7 +23,7 @@
                 <h2>Penggalangan Dana Mendesak</h2>
             </div>
             <div class="row clearfix">
-                
+
                 @foreach ($aksi as $ak)
                     <livewire:global.card-donasi :data="$ak" :wire:key="'card-componen'.$ak->id"/>
                 @endforeach
@@ -45,13 +45,13 @@
                 {{-- <h2 style="font-size: 25px !important; ">Penggalangan Dana Mendesak</h2> --}}
             </div>
             {{-- <div class="d-flex justify-content-end">
-                <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}">Lihat Lainnya 
+                <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}">Lihat Lainnya
                     <i class="fas fa-angle-right fa-sm ml-1"></i>
                 </a>
             </div>   --}}
             <div class="text-right col-md-12 float-end d-flex justify-content-end">
                 <div class="float-end d-flex justify-content-end ml-6">
-                    <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}">Lihat Semua <i class="fas fa-angle-right fa-sm ml-1"></i>
+                    <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}"> Lihat Semua <i class="fas fa-angle-right fa-sm ml-1"></i>
                     </a>
                 </div>
             </div>
@@ -67,15 +67,15 @@
                         {{-- END SUPAYA TIDAK KEPOTONG --}}
 
                     </div>
-                </div>    
+                </div>
             </div>
         </div>
         {{-- END MOBILE --}}
     </section>
     @endif
     <!-- END GALANG DANA  -->
-    
-    
+
+
     <!-- featured-causes -->
     {{-- <section class="featured-causes">
         <div class="auto-container">
@@ -106,18 +106,18 @@
         </div>
     </section> --}}
     <!-- featured-causes end -->
-    
+
     <!-- ARTIKEL -->
     <livewire:article/>
     <!-- END ARTIKEL -->
 
 
-    <!-- FOOTER -->    
+    <!-- FOOTER -->
     {{-- START MOBILE --}}
     <div class="d-block d-md-none">
         <livewire:page.footer/>
     </div>
     {{-- END MOBILE --}}
     <!-- END FOOTER -->
-   
+
 </div>
