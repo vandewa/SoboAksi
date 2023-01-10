@@ -1,3 +1,4 @@
+@if(Auth::check())
 <div class="container mt-4">
     <div class="row">
         <div class="col-3 ml-4 d-flex justify-content-end">
@@ -11,3 +12,4 @@
     </div>
     <hr>
 </div>
+@endif
