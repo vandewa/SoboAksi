@@ -37,5 +37,6 @@
     </section>
     <!-- sidebar-page-container end -->
 
+    <livewire:page.footer/>
   
 </div>

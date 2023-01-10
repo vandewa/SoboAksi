@@ -59,9 +59,16 @@
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 column text-center">
                         <div class="form-group message-btn">
-                            <button type="button" class="theme-btn-two btn-warning"
-                                wire:click="lupaPassword">Batal</button>
-                            <button type="submit" class="theme-btn-one btn-primary">Kirim</button>
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="button" class="theme-btn-two btn-warning" style="line-height:11px !important;" wire:click="lupaPassword">Batal</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="submit" class="theme-btn-two btn-info" style="line-height:11px !important; font-color: white !important;">Kirim</button>
+                                </div>
+                            </div>
+                           
+                          
                         </div>
                     </div>
                 </div>

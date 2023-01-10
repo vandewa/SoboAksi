@@ -1,10 +1,10 @@
 <div>
-    <section class="feature-section p_relative sec-pad centred">
+    <section class="feature-section p_relative sec-pad centred" style="padding-bottom:0px !important;">
         {{-- START MOBILE --}}
         <div class="d-block d-md-none">
             <div class="sec-title centred mb_50">
-                <span class="sub-title">Kategori</span>
-                <h2 style="font-size: 25px !important; ">Aksi Kemanusiaan</h2>
+                <span class="sub-title">Aksi Kemanusiaan</span>
+                {{-- <h2 style="font-size: 25px !important; ">Aksi Kemanusiaan</h2> --}}
             </div>
             <div class="container">
                 <div class="row">
@@ -13,10 +13,10 @@
                         <a href="{{ route('aksi', ['kategori' => $data->id]) }}" style="color:black;">
                             <div class="card border-light mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
-                                    <div class="col-md-2">
+                                    <div class="col-md-2 mt-2">
                                     <img src="{{ asset('trusthand/assets/images/icons/'.$data->icon)}}" class="img-fluid rounded-start card-img-top" style="max-width:40%;">
                                     </div>
-                                    <div class="col-md-8 mt-2">
+                                    <div class="col-md-8 mt-2 mb-2">
                                         <h5 style="font-size: 10px;"><a href="{{ route('aksi', ['kategori' => $data->id]) }}" style="color:black;">{{ $data->nama_kategori }}</a></h5>
                                     </div>
                                 </div>

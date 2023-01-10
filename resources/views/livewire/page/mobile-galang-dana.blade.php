@@ -7,21 +7,20 @@
                         <div class="image-box">
                             <figure class="image">
                                 <a href="{{ route('detail-donasi',$idnya) }}">
-                                <img src="{{ $sampul }}" style="width:410px;height:200px;background-size: cover;
-                                background-position: center center;">
+                                <img src="{{ $sampul }}" style="height:200px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
                                 </a>
                             </figure>
                             <div class="category">
-                                <a href="{{ route('detail-donasi',$idnya) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$kategorinya->nama_kategori}}
+                                <a href="{{ route('aksi', ['kategori' => $idnya]) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$kategorinya->nama_kategori}}
                                 </a>
                             </div>
                         </div>
                         <div class="lower-content">
-                            <div class="text" style="padding:12px 30px 13px 26px !important;text-align:center;">
+                            <div class="text" style="padding:12px 30px 13px 26px !important;text-align:left;border-bottom:0px !important;">
                                 <h2 style="font-size: 15px !important;"><a href="{{ route('detail-donasi',$idnya) }}" style=" color:black; ">{{$judul}}</a>
                                 </h2>
                             </div>
-                            <div class="progress-box">
+                            <div class="progress-box" style="padding:40px 20px 26px;">
                                 @if($penerimaDonasi)
                                 <div class="bar">
                                     <div class="bar-inner count-bar" style="width: {{ $peroleh/$target*100 }}%;"><div class="count-text">{{ $peroleh/$target*100 }}%</div></div>

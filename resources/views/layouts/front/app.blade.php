@@ -86,13 +86,74 @@
         }
 
         .donasi-bottom {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: white;
-        color: white;
-        text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+
+        .home-bottom {
+            position: fixed;
+            left: 0;
+            right: 20px;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .brsmall {
+            display: block;
+            margin-bottom: -.4em;
+        }
+
+        .round {
+            height: 50px;
+            line-height: 50px;  
+            width: 50px;  
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 50px;
+            background-image: linear-gradient(#4CAF50 45%, #4CAF50 55%);
+            box-shadow: 4px 0px 2px #888888;
+        }
+
+        .kanan {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            color: black;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .kiri {
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            color: black;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
         }
 
      
@@ -232,6 +293,8 @@
         <!-- main header -->
         <header class="main-header">
             <!-- header-lower -->
+            @if(Auth::check())
+            @else
             <div class="header-lower">
                 <div class="outer-box">
                     <div class="logo-box">
@@ -241,94 +304,12 @@
                             </a>
                         </figure>
                     </div>
-                    <div class="menu-area clearfix">
-                        <!--Mobile Navigation Toggler-->
-                        <div class="mobile-nav-toggler">
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                        </div>
-                        {{-- <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="{{ route('home') }}">Home</a>
-                                        <ul>
-                                            <li><a href="{{ route('home') }}">Child Education</a></li>
-                                            <li><a href="index-2.html">Wildlife</a></li>
-                                            <li><a href="index-3.html">Homeless People</a></li>
-                                            <li><a href="index-onepage.html">OnePage Home</a></li>
-                                            <li><a href="index-rtl.html">RTL Home</a></li>
-                                            <li class="dropdown"><a href="{{ route('home') }}">Header Style</a>
-                                                <ul>
-                                                    <li><a href="{{ route('home') }}">Header Style 01</a></li>
-                                                    <li><a href="index-2.html">Header Style 02</a></li>
-                                                    <li><a href="index-3.html">Header Style 03</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Pages</a>
-                                        <ul>
-                                            <li class="dropdown"><a href="{{ route('home') }}">Volunteer</a>
-                                                <ul>
-                                                    <li><a href="team.html">Our Volunteer</a></li>
-                                                    <li><a href="team-details.html">Volunteer Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="{{ route('home') }}">Events</a>
-                                                <ul>
-                                                    <li><a href="events.html">Our Events</a></li>
-                                                    <li><a href="events-details.html">Events Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="service.html">Services</a></li>
-                                            <li><a href="faq.html">Faq’s</a></li>
-                                            <li><a href="testimonial.html">Testimonials</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="error.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Causes</a>
-                                        <ul>
-                                            <li><a href="causes.html">Causes 1</a></li>
-                                            <li><a href="causes-2.html">Causes 2</a></li>
-                                            <li><a href="causes-details.html">Causes Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Shop</a>
-                                        <ul>
-                                            <li><a href="shop.html">Our Shop</a></li>
-                                            <li><a href="shop-details.html">Shop Details</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog Grid</a></li>
-                                            <li><a href="blog-2.html">Blog Standard</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav> --}}
-                        <ul class="nav-right">
-                            {{-- <li class="search-box-outer search-toggler">
-                                <i class="icon-1"></i>
-                            </li> --}}
-                            <li class="btn-box">
-                                <livewire:button.donasi />
-                            </li>
-                            <li class="nav-btn nav-toggler navSidebar-button clearfix">
-                                <i class="icon-3"></i>
-                            </li>
-                        </ul>
+                    <div class="d-none d-md-block">
+                        <livewire:button.donasi />
                     </div>
                 </div>
             </div>
+            @endif
 
             <!--sticky Header-->
             <div class="sticky-header">
@@ -341,14 +322,10 @@
                                 </a>
                             </figure>
                         </div>
-                        <div class="menu-area clearfix">
+                        {{-- <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
-                                <!--Keep This Empty / Menu will come through Javascript-->
                             </nav>
                             <ul class="nav-right">
-                                {{-- <li class="search-box-outer search-toggler">
-                                    <i class="icon-1"></i>
-                                </li> --}}
                                 <li class="btn-box">
                                     <livewire:button.donasi />
                                 </li>
@@ -356,6 +333,9 @@
                                     <i class="icon-3"></i>
                                 </li>
                             </ul>
+                        </div> --}}
+                        <div class="d-none d-md-block">
+                            <livewire:button.donasi />
                         </div>
                     </div>
                 </div>

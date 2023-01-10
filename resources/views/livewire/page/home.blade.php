@@ -1,11 +1,19 @@
 <div>
+
+    {{-- START MOBILE --}}
+    <div class="d-block d-md-none">
+        <livewire:page.mobile-selamat-datang/>
+    </div>
+    {{-- END MOBILE --}}
+
+
     <!-- KATEGORI -->
     <livewire:category/>
     <!-- END KATEGORI -->
     
     <!-- GALANG DANA -->
     @if (count($aksi) != 0)
-    <section class="cause-section sec-pad">
+    <section class="cause-section sec-pad" style="padding-bottom:0px !important;">
         <div class="shape">
             <div class="shape-1" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-3.png')}});"></div>
             <div class="shape-2" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-4.png')}});"></div>
@@ -36,8 +44,13 @@
         <div class="auto-container d-block d-md-none">
             <div class="sec-title centred">
                 <span class="sub-title">Penggalangan Dana</span>
-                <h2 style="font-size: 25px !important; ">Penggalangan Dana Mendesak</h2>
+                {{-- <h2 style="font-size: 25px !important; ">Penggalangan Dana Mendesak</h2> --}}
             </div>
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}">Lihat Lainnya 
+                    <i class="fas fa-angle-right fa-sm ml-1"></i>
+                </a>
+            </div>  
             <div class="row clearfix">
                     <div class="row scroller">
                         <div class="col-7 sidebar addscrollbar">
@@ -51,12 +64,12 @@
 
                         </div>
                     </div>    
-                <div class="text-right col-md-12 float-end mt-3 d-flex justify-content-center">
+                {{-- <div class="text-right col-md-12 float-end mt-3 d-flex justify-content-center">
                     <div class="float-end d-flex justify-content-end ml-6">
                         <a class="btn btn-primary btn-md" href="{{ route('aksi') }}">Lihat Selengkapnya <i class="fas fa-angle-right fa-sm ml-1"></i>
                         </a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         {{-- END MOBILE --}}
@@ -99,5 +112,14 @@
     <!-- ARTIKEL -->
     <livewire:article/>
     <!-- END ARTIKEL -->
-    
+
+
+    <!-- FOOTER -->    
+    {{-- START MOBILE --}}
+    <div class="d-block d-md-none">
+        <livewire:page.footer/>
+    </div>
+    {{-- END MOBILE --}}
+    <!-- END FOOTER -->
+   
 </div>

@@ -24,7 +24,7 @@
     {{-- END DESKTOP --}}
 
    {{-- START MOBILE --}}
-    {{-- <div class="auto-container d-block d-md-none">
+    <div class="auto-container d-block d-md-none">
         <div class="sec-title centred mb_50">
             <span class="sub-title">Penggalangan Dana</span>
             <h2 style="font-size:25px !important;">Penggalangan Dana Mendesak</h2>
@@ -40,7 +40,7 @@
             <a href="javascript:void(0);" wire:click="loadPosts">Lihat Selanjutnya</span>
             </div>
         @endif
-    </div> --}}
+    </div>
     {{-- END MOBILE --}}
 
 </section>

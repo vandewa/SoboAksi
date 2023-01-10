@@ -83,25 +83,31 @@
 
 {{-- START MOBILE --}}
 <div class="d-block d-md-none">
-    <section class="page-title centred">
-        <div class="bg-layer" style="background-image: url({{ $sampul }});"></div>
-        <div class="auto-container">
-            <div class="content-box">
-                <h1 style="font-size: 25px;">{{ $datanya->judul }}</h1>
-            </div>
-        </div>
-    </section>
     <section class="cause-details">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                     <div class="cause-details-content">
                         <div class="cause-block-one">
-                            <div class="inner-box">
-                                <div class="image-box">
-                                    <figure class="image"><img src="{{ $sampul }}"></figure>
+                            <div class="inner-box" >
+                                <div class="image-box mb-4">
+                                    <figure class="image"><img src="{{ $sampul }}" ></figure>
                                 </div>
-                               
+                                <div class="container mb-3">
+                                    <h1 style="font-size: 20px;">{{ $datanya->judul }}</h1>
+                                    <a href="{{ route('aksi', ['kategori' => $datanya->id]) }}"><span style="font-size: 13px; color:#E04237 !important;">{{ $datanya->kategorinya->nama_kategori }}</span>
+                                    </a>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-4" style="max-width: 20% !important;">
+                                        <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
+                                    </div>
+                                    <div class="col-8" style="padding-left:0px !important;">
+                                        <span style="font-size: 13px;" class="brsmall">by {{ $datanya->user->name }}</span>
+                                        <span style="font-size: 10px;">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $datanya->publish_at)->diffForHumans() }}</span>
+                                    </div>
+                                </div>
                                     <div class="progress-box">
                                         <div class="bar">
                                             <div class="bar-inner count-bar" style="width: {{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%;"><div class="count-text">{{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%</div></div>
@@ -109,7 +115,7 @@
                                         <div class="row">
                                             <div class="col-6">
                                                 <h6><span><b>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</b></span> 
-                                                    <br> Raised
+                                                    <br> Diperoleh
                                                 </h6>
                                             </div>
                                             <div class="col-6">
@@ -119,7 +125,7 @@
                                             </div>
                                         </div>
                                     </div>
-                               
+                                </span>
                             </div>
                         </div>
                         <div class="content-one">
@@ -133,7 +139,8 @@
         </div>
     </section>
     <div class="donasi-bottom">
-        <button class="donate-box-btn theme-btn-one" style="margin-bottom: 15px !important; margin-top:15px !important;"><span>Donasi Sekarang</span></button>
+        <button class="donate-box-btn theme-btn-one" style="margin-bottom: 30px !important; margin-top:15px !important; font-size: 14px !important; line-height:10px !important;"><span>Donasi Sekarang</span>
+        </button>
     </div>
 </div>
 {{-- END MOBILE --}}
