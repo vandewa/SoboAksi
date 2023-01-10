@@ -43,12 +43,27 @@
             </a>
         </div>
         <div class="col-12 mt-5 ml-4">
-            <a href="{{ route('logout') }}" style="color: black;">
+
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: black;">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <span>
+                        &nbsp; Logout
+                    </span>
+            
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </a>
+            
+            {{-- <a href="{{ route('logout') }}" style="color: black;">
                 <i class="fa fa-sign-out" aria-hidden="true"></i>
                 <span>
                     &nbsp; Logout
                 </span>
-            </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </a> --}}
         </div>
     </div>
 </div>
