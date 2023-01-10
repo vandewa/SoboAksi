@@ -1,9 +1,7 @@
 <div>
 
-    {{-- START MOBILE --}}
-    <div class="d-block d-md-none">
+    {{-- START MOBILE SELAMAT DATANG --}}
         <livewire:page.mobile-selamat-datang/>
-    </div>
     {{-- END MOBILE --}}
 
 
@@ -13,7 +11,7 @@
     
     <!-- GALANG DANA -->
     @if (count($aksi) != 0)
-    <section class="cause-section sec-pad" style="padding-bottom:0px !important;">
+    <section class="cause-section sec-pad">
         <div class="shape">
             <div class="shape-1" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-3.png')}});"></div>
             <div class="shape-2" style="background-image: url({{ asset('trusthand/assets/images/shape/shape-4.png')}});"></div>
@@ -46,30 +44,30 @@
                 <span class="sub-title">Penggalangan Dana</span>
                 {{-- <h2 style="font-size: 25px !important; ">Penggalangan Dana Mendesak</h2> --}}
             </div>
-            <div class="d-flex justify-content-end">
+            {{-- <div class="d-flex justify-content-end">
                 <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}">Lihat Lainnya 
                     <i class="fas fa-angle-right fa-sm ml-1"></i>
                 </a>
-            </div>  
+            </div>   --}}
+            <div class="text-right col-md-12 float-end d-flex justify-content-end">
+                <div class="float-end d-flex justify-content-end ml-6">
+                    <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}">Lihat Semua <i class="fas fa-angle-right fa-sm ml-1"></i>
+                    </a>
+                </div>
+            </div>
             <div class="row clearfix">
-                    <div class="row scroller">
-                        <div class="col-7 sidebar addscrollbar">
-                            @foreach ($aksi as $ak)
-                                <livewire:page.mobile-galang-dana :data="$ak" :wire:key="'card-componen'.$ak->id"/>
-                            @endforeach
+                <div class="row scroller">
+                    <div class="col-7 sidebar addscrollbar">
+                        @foreach ($aksi as $ak)
+                            <livewire:page.mobile-galang-dana :data="$ak" :wire:key="'card-componen'.$ak->id"/>
+                        @endforeach
 
-                            {{-- SUPAYA TIDAK KEPOTONG --}}
-                            <div class="col-4 full-wallet float-left d-inline-block"></div>
-                            {{-- END SUPAYA TIDAK KEPOTONG --}}
+                        {{-- SUPAYA TIDAK KEPOTONG --}}
+                        <div class="col-4 full-wallet float-left d-inline-block"></div>
+                        {{-- END SUPAYA TIDAK KEPOTONG --}}
 
-                        </div>
-                    </div>    
-                {{-- <div class="text-right col-md-12 float-end mt-3 d-flex justify-content-center">
-                    <div class="float-end d-flex justify-content-end ml-6">
-                        <a class="btn btn-primary btn-md" href="{{ route('aksi') }}">Lihat Selengkapnya <i class="fas fa-angle-right fa-sm ml-1"></i>
-                        </a>
                     </div>
-                </div> --}}
+                </div>    
             </div>
         </div>
         {{-- END MOBILE --}}
