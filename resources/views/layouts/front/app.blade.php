@@ -241,6 +241,7 @@
         <!-- donate popup -->
         <livewire:donate-popup />
         <livewire:registrasi />
+        <livewire:donate-form />
 
 
         <!-- sidebar cart item -->
