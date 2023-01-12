@@ -1,9 +1,3 @@
-<a href="{{ url()->previous() }}">
-    <div class="round">
-        <i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i>
-    </div>
-</a>
-
 <div class="kiri">
     <p style="font-size: 18px; color:black;"><b>Donasiku (4)</b></p>
    

@@ -1,8 +1,4 @@
 <div class="container mb-5 ">
-    <a href="{{ url()->previous() }}">
-        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
-    </a>    
-    
     <div class="row">
         <div class="col-md-6">
             <div class="myLeftCtn"> 

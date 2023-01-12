@@ -1,11 +1,5 @@
-<a href="{{ url()->previous() }}">
-    <div class="round">
-        <i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i>
-    </div>
-</a>
-
 <div class="kiri">
-    <p style="font-size: 18px; color:black;"><b>Postingku (4)</b></p>
+    <p style="font-size: 18px; color:black;"><b>Postingan (4)</b></p>
    
 </div>
 
