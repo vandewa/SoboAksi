@@ -1,4 +1,5 @@
 {{-- START DESKTOP --}}
+<div>
 <div class="d-none d-md-block">
     <!-- Page Title -->
     <section class="page-title centred">
@@ -21,20 +22,22 @@
                                     <figure class="image"><img src="{{ $sampul }}" alt=""></figure>
                                     <div class="category"><a href="causes-details.html">{{ $datanya->kategorinya->nama_kategori??"" }}</a></div>
                                 </div>
-                                <div class="lower-content">
-                                    <div class="progress-box">
-                                        <div class="bar">
-                                            <div class="bar-inner count-bar" style="width: {{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%;"><div class="count-text">{{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%</div></div>
+                                @if($datanya->penerimaDonasi)
+                                    <div class="lower-content">
+                                        <div class="progress-box">
+                                            <div class="bar">
+                                                <div class="bar-inner count-bar" style="width: {{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%;"><div class="count-text">{{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%</div></div>
+                                            </div>
+                                            <div class="donate-text">
+                                                <h6><span>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</span> Raised</h6>
+                                                <h6><span>Rp {{ $datanya->penerimaDonasi->target_donasi??0 }}</span> Target</h6>
+                                            </div>
                                         </div>
-                                        <div class="donate-text">
-                                            <h6><span>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</span> Raised</h6>
-                                            <h6><span>Rp {{ $datanya->penerimaDonasi->target_donasi??0 }}</span> Target</h6>
+                                        <div class="btn-box">
+                                            <button class="donate-box-btn theme-btn-one" wire:click="$emitTo('donate-form', 'tampilModal',  {{ $datanya->id }})"><span>Donate Now</span></button>
                                         </div>
                                     </div>
-                                    <div class="btn-box">
-                                        <button class="donate-box-btn theme-btn-one"><span>Donate Now</span></button>
-                                    </div>
-                                </div>
+                                @endif
                             </div>
                         </div>
                         <div class="content-one">
@@ -69,7 +72,7 @@
                             <div class="inner-box" style="background-image: url({{ $devan }});">
                                 <div class="icon-box"><img src="{{ $devan }}" alt=""></div>
                                 <h3>{{ $donasi->judul??"" }}</h3>
-                                <button class="donate-box-btn theme-btn-one"><span>Donate Now</span></button>
+                                <button class="donate-box-btn theme-btn-one" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donate Now</span></button>
                             </div>
                         </div>
                     </div>
@@ -100,33 +103,37 @@
                                     <a href="{{ route('aksi', ['kategori' => $datanya->id]) }}"><span style="font-size: 13px; color:#E04237 !important;">{{ $datanya->kategorinya->nama_kategori }}</span>
                                     </a>
                                 </div>
-                                
+
                                 <div class="row">
                                     <div class="col-4" style="max-width: 20% !important;">
                                         <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
                                     </div>
                                     <div class="col-8" style="padding-left:0px !important;">
                                         <span style="font-size: 13px;" class="brsmall">by {{ $datanya->user->name }}</span>
+                                        @if($datanya->publish_at)
                                         <span style="font-size: 10px;">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $datanya->publish_at)->diffForHumans() }}</span>
+                                        @endif
                                     </div>
                                 </div>
+                                @if($datanya->penerimaDonasi)
                                     <div class="progress-box">
                                         <div class="bar">
                                             <div class="bar-inner count-bar" style="width: {{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%;"><div class="count-text">{{ ($datanya->penerimaDonasi->donasi_tercapai??0)/($datanya->penerimaDonasi->target_donasi??0)*100 }}%</div></div>
                                         </div>
                                         <div class="row">
                                             <div class="col-6">
-                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</b></span> 
+                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</b></span>
                                                     <br> Diperoleh
                                                 </h6>
                                             </div>
                                             <div class="col-6">
-                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->target_donasi??0 }}</b></span> 
+                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->target_donasi??0 }}</b></span>
                                                     <br> Target
                                                 </h6>
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 </span>
                             </div>
                         </div>
@@ -141,9 +148,9 @@
         </div>
     </section>
     @if (Auth::check())
-    <div class="donasi-bottom">
+    <div class="donasi-bottom"> 
         <div class="tombol d-flex justify-content-center mt-3">
-            <button type="submit" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:15px !important; width:80% !important;">Donasi Sekarang</button>
+            <button type="submit" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:15px !important; width:80% !important;" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi Sekarang</span>
         </div>
     </div>
     @else
@@ -151,8 +158,7 @@
         <div class="tombol d-flex justify-content-center mt-3">
             <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:10px !important; width:80% !important;">Donasi Sekarang</button>
         </div>
-    </div>
     @endif
     
 </div>
-{{-- END MOBILE --}}
+</div>

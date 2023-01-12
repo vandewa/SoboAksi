@@ -120,8 +120,8 @@
 
         .round {
             height: 50px;
-            line-height: 50px;  
-            width: 50px;  
+            line-height: 50px;
+            width: 50px;
             font-size: 1.4em;
             font-weight: bold;
             border-radius: 50%;
@@ -286,10 +286,10 @@
             outline: none;
             }
 
-            
 
 
-     
+
+
     </style>
 </head>
 
@@ -374,6 +374,7 @@
         <!-- donate popup -->
         <livewire:donate-popup />
         <livewire:registrasi />
+        <livewire:donate-form />
 
 
         <!-- sidebar cart item -->
@@ -453,9 +454,7 @@
                         <livewire:button.donasi />
                     </div>
                 </div>
-            </div>
             {{-- END DESKTOP --}}
-            
             @else
             {{-- START MOBILE --}}
             <div class="d-block d-md-none">
@@ -488,6 +487,8 @@
                 </div>
             </div>       
             {{-- END DESKTOP --}}       
+            </div>
+
             @endif
 
             <!--sticky Header-->
@@ -662,7 +663,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Scroll to top end -->
 
     </div>
