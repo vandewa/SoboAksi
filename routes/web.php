@@ -22,6 +22,8 @@ use App\Http\Livewire\Page\DetailBerita;
 use App\Http\Livewire\Page\MobileAkun;
 use App\Http\Livewire\Page\MobileDonasiku;
 use App\Http\Livewire\Page\MobilePostingku;
+use App\Http\Livewire\Page\MobileEditProfile;
+use App\Http\Livewire\Page\GantiPassword;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +44,8 @@ Route::get('/detail-berita/{id}', DetailBerita::class)->name('detail-berita');
 Route::get('/akun-profile', MobileAkun::class)->name('detail-akun');
 Route::get('/donasiku', MobileDonasiku::class)->name('donasiku');
 Route::get('/postingku', MobilePostingku::class)->name('postingku');
+Route::get('/edit-profile', MobileEditProfile::class)->name('edit-profile');
+Route::get('/ganti-password', GantiPassword::class)->name('ganti-password');
 
 
 //dokumentasi template

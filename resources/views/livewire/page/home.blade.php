@@ -114,9 +114,9 @@
 
     <!-- FOOTER -->
     {{-- START MOBILE --}}
-    <div class="d-block d-md-none">
-        <livewire:page.footer/>
-    </div>
+        <div class="d-block d-md-none">
+            <livewire:page.footer/>
+        </div>
     {{-- END MOBILE --}}
     <!-- END FOOTER -->
 

@@ -21,7 +21,7 @@
                     <div class="progress-box" style="padding:7px 1px 26px;">
 
                         <div class="bar">
-                            <div class="bar-inner count-bar" style="width: 80%;"></div>
+                            <div class="bar-inner count-bar" style="width: 80%; background:blue;"></div>
                         </div>
 
                         <div class="row">
@@ -64,3 +64,6 @@
         </div>
     </div>
 </div>
+
+<livewire:page.footer/>
+

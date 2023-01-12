@@ -86,7 +86,9 @@
 
 {{-- START MOBILE --}}
 <div class="d-block d-md-none">
-    <section class="cause-details">
+
+    
+    <section class="cause-details" style="margin-top: 0px;">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
@@ -145,10 +147,13 @@
             </div>
         </div>
     </section>
+    @if (Auth::check())
     <div class="donasi-bottom">
         <button class="donate-box-btn theme-btn-one" style="margin-bottom: 30px !important; margin-top:15px !important; font-size: 14px !important; line-height:10px !important;" wire:click="$emitTo('donate-form', 'tampilModal',  {{ $donasi->id }})"><span>Donasi Sekarang</span>
         </button>
     </div>
+    @endif
+    
 </div>
 {{-- END MOBILE --}}
 </div>

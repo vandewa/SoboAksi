@@ -125,14 +125,14 @@
             font-size: 1.4em;
             font-weight: bold;
             border-radius: 50%;
-            background-color: #4CAF50;
+            background-color: rgb(231, 56, 56);
             color: white;
             text-align: center;
             cursor: pointer;
             margin-left: 10px;
             margin-top: 10px;
             border-radius: 50px;
-            background-image: linear-gradient(#4CAF50 45%, #4CAF50 55%);
+            background-image: linear-gradient(rgb(231, 56, 56), rgb(231, 56, 56));
             box-shadow: 4px 0px 2px #888888;
         }
 
@@ -155,6 +155,139 @@
             font-size: 16px;
             border: none;
         }
+
+        .myRightCtn {
+            position: relative;
+            background-image: linear-gradient(45deg, #f046ff, #9b00e8);
+            border-radius: 25px;
+            height: 100%;
+            padding: 25px;
+            color: rgb(192, 192, 192);
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+            .myLeftCtn {
+            position: relative;
+            background: #fff;
+            border-radius: 25px;
+            height: 100%;
+            padding: 55px;
+            padding-left: 50px;
+            }
+            .myLeftCtn header {
+            color: blueviolet;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            }
+            .row {
+            height: 100%;
+            }
+            .myCard {
+            position: relative;
+            background: #fff;
+            height: 100%;
+            border-radius: 25px;
+            -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            }
+            .myRightCtn header {
+            color: #fff;
+            font-size: 44px;
+            }
+            .box {
+            position: relative;
+            margin: 20px;
+            margin-bottom: 100px;
+            }
+            .myLeftCtn .myInput {
+            width: 230px;
+            border-radius: 25px;
+            padding: 10px;
+            padding-left: 50px;
+            border: none;
+            -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            }
+            .myLeftCtn .myInput:focus {
+            outline: none;
+            }
+            .myForm {
+            position: relative;
+            margin-top: 50px;
+            }
+            .myLeftCtn .butt {
+            background: linear-gradient(45deg, #fdb736, #E04237);
+            color: #fff;
+            width: 230px;
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            }
+            .myLeftCtn .butt:hover {
+            background: linear-gradient(45deg, #E04237, #E04237);
+            }
+            .myLeftCtn .butt:focus {
+            outline: none;
+            }
+            .myLeftCtn .fas {
+            position: relative;
+            color: #E04237;
+            left: 36px;
+            }
+            .butt_out {
+            background: transparent;
+            color: #fff;
+            width: 120px;
+            border: 2px solid#fff;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            }
+            .butt_out:hover {
+            border: 2px solid#eecbff;
+            }
+            .butt_out:focus {
+            outline: none;
+            }
+            .containerlogin {
+            position: absolute;
+            max-width: 800px;
+            height: 500px;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            }
+            .tombol .butt {
+            background: linear-gradient(45deg, #fdb736, #E04237);
+            color: #fff;
+            width: 100%;
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            }
+            .tombol .butt:hover {
+            background: linear-gradient(45deg, #E04237, #E04237);
+            }
+            .tombol .butt:focus {
+            outline: none;
+            }
+
+
+
 
 
     </style>
@@ -295,21 +428,37 @@
         <header class="main-header">
             <!-- header-lower -->
             @if(Auth::check())
-            @else
-            <div class="header-lower">
-                <div class="outer-box">
-                    <div class="logo-box">
-                        <figure class="logo">
-                            <a href="{{ route('home') }}">
-                                <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="d-none d-md-block">
+            <div class="d-none d-md-block">
+                <div class="header-lower">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                                </a>
+                            </figure>
+                        </div>
                         <livewire:button.donasi />
                     </div>
                 </div>
             </div>
+
+            @else
+            <div class="header-lower">
+                @if(Request::segment(1) != '')
+                <a href="{{ url()->previous() }}">
+                    <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
+                </a>
+                @else
+                @endif
+                <a href="{{ route('home') }}">
+                    <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-2"></center>
+                </a>
+            </div>
+            <div class="d-none d-md-block">
+                <livewire:button.donasi />
+            </div>
+
             @endif
 
             <!--sticky Header-->
