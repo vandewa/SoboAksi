@@ -8,21 +8,22 @@
             <div class="myLeftCtn"> 
                 <center><img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar"></center>
                 <form class="myForm text-center">
-                    <div class="form-group" style="margin-right:4px;">
-                        <i class="fas fa-user"></i>
-                        <input class="myInput" type="text" wire:model="nama" placeholder="Nama" id="username" required > 
+
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input class="myInput" type="password" wire:model="password" id="password" placeholder="Password Baru" required> 
                     </div>
 
                     <div class="form-group">
-                        <i class="fas fa-envelope"></i>
-                        <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
+                        <i class="fas fa-lock"></i>
+                        <input class="myInput" type="password" id="password2" placeholder="Konfirmasi Password" required> 
                     </div>
 
-                    <input type="submit" wire:click="editProfile" class="butt mt-4" value="Simpan">
+                    <input type="submit" wire:click="gantiPassword" class="butt mt-4" value="Simpan">
+                    
                 </form>
             </div>
         </div> 
     </div>     
 </div>
-
 <livewire:page.footer/>

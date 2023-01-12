@@ -40,6 +40,7 @@
             </div>
         @endif
     </div>
+    <livewire:page.footer/>
     {{-- END MOBILE --}}
 
 </section>

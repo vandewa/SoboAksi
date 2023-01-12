@@ -5,7 +5,7 @@
         <div class="container mt-4">
             <div class="row">
                 <div class="col-3 ml-4 d-flex justify-content-end">
-                    <img src="https://diskominfo.wonosobokab.go.id/uploads/2023/Januari/20230106080233-1_1008.jpg" alt="" class="avatar">
+                    <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
                 </div>
                 <div class="col-8">
                     <span style="font-size: 12px;">Selamat Datang!</span>

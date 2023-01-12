@@ -32,7 +32,9 @@
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 column text-center">
                             <div class="form-group message-btn">
-                                <button type="submit" class="theme-btn-one btn-block mb-2" style="line-height:11px !important;">Login</button>
+                                <div class="tombol d-flex justify-content-center btn-block">
+                                    <button type="submit" class="butt mb-2" style="line-height:25px !important;">Login</button>
+                                </div>
                                 <p>Belum punya akun? <a href="#" wire:click="$emitTo('registrasi', 'register')">Registrasi
                                         Sekarang</a></p>
                                 <p><a href="#" wire:click="lupaPassword">Lupa Password</a></p>

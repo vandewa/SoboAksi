@@ -5,7 +5,7 @@
 </a>
 
 <div class="kiri">
-    <p style="font-size: 18px; color:black;"><b>Donasiku (4)</b></p>
+    <p style="font-size: 18px; color:black;"><b>Postingku (4)</b></p>
    
 </div>
 
@@ -64,3 +64,5 @@
         </div>
     </div>
 </div>
+
+<livewire:page.footer/>
