@@ -6,7 +6,7 @@
             <div class="title-text centred">
                 <h2>Jumlah Donasi Anda</h2>
             </div>
-            <form action="index.html" method="post" class="default-form">
+            <form action="" wire:submit.prevent="simpanDonasi" method="post" class="default-form">
                 <div class="row clearfix">
                     <div class=" col-md-12 col-sm-12 donate-column">
                         <div class="donate-box">
@@ -26,7 +26,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <button class="btn btn-primary" type="submit">Donasi</button>
                         </div>
                     </div>
 

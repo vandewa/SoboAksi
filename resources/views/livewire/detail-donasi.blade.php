@@ -34,7 +34,7 @@
                                             </div>
                                         </div>
                                         <div class="btn-box">
-                                            <button class="donate-box-btn theme-btn-one" wire:click="$emitTo('donate-form', 'tampilModal',  {{ $donasi->id }})"><span>Donate Now</span></button>
+                                            <button class="donate-box-btn theme-btn-one" wire:click="$emitTo('donate-form', 'tampilModal',  {{ $datanya->id }})"><span>Donate Now</span></button>
                                         </div>
                                     </div>
                                 @endif
@@ -72,7 +72,7 @@
                             <div class="inner-box" style="background-image: url({{ $devan }});">
                                 <div class="icon-box"><img src="{{ $devan }}" alt=""></div>
                                 <h3>{{ $donasi->judul??"" }}</h3>
-                                <button class="donate-box-btn theme-btn-one" wire:click="$emitTo('donate-form', 'tampilModal', {{ $donasi->id }})"><span>Donate Now</span></button>
+                                <button class="donate-box-btn theme-btn-one" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donate Now</span></button>
                             </div>
                         </div>
                     </div>
