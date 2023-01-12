@@ -142,8 +142,15 @@
     </section>
     @if (Auth::check())
     <div class="donasi-bottom">
-        <button class="donate-box-btn theme-btn-one" style="margin-bottom: 30px !important; margin-top:15px !important; font-size: 14px !important; line-height:10px !important;"><span>Donasi Sekarang</span>
-        </button>
+        <div class="tombol d-flex justify-content-center mt-3">
+            <button type="submit" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:15px !important; width:80% !important;">Donasi Sekarang</button>
+        </div>
+    </div>
+    @else
+    <div class="donasi-bottom">
+        <div class="tombol d-flex justify-content-center mt-3">
+            <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:10px !important; width:80% !important;">Donasi Sekarang</button>
+        </div>
     </div>
     @endif
     

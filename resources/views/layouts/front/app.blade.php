@@ -427,6 +427,19 @@
         <header class="main-header">
             <!-- header-lower -->
             @if(Auth::check())
+            {{-- START MOBILE --}}
+            <div class="d-block d-md-none">
+                <div class="header-lower">
+                    @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile')
+                    <a href="{{ url()->previous() }}">
+                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
+                    </a>    
+                    @else
+                    @endif  
+                </div>
+            </div>
+            {{-- END MOBILE --}}
+            {{-- START DEKSTOP --}}
             <div class="d-none d-md-block">
                 <div class="header-lower">
                     <div class="outer-box">
@@ -441,23 +454,40 @@
                     </div>
                 </div>
             </div>
+            {{-- END DESKTOP --}}
             
             @else
-            <div class="header-lower">
-                @if(Request::segment(1) != '')
-                <a href="{{ url()->previous() }}">
-                    <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
-                </a>    
-                @else
-                @endif
-                <a href="{{ route('home') }}">
-                    <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-2"></center>
-                </a>
+            {{-- START MOBILE --}}
+            <div class="d-block d-md-none">
+                <div class="header-lower">
+                    @if(Request::segment(1) != '')
+                    <a href="{{ url()->previous() }}">
+                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
+                    </a>    
+                    @else
+                    @endif
+                    <a href="{{ route('home') }}">
+                        <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-2"></center>
+                    </a>
+                </div>
             </div>
+            {{-- END MOBILE --}}
+            {{-- START DEKSTOP --}}
             <div class="d-none d-md-block">
-                <livewire:button.donasi />
-            </div>
-                    
+                <div class="header-lower">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                                </a>
+                            </figure>
+                        </div>
+                        <livewire:button.donasi />
+                    </div>
+                </div>
+            </div>       
+            {{-- END DESKTOP --}}       
             @endif
 
             <!--sticky Header-->
