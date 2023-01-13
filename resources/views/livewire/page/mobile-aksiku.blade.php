@@ -1,16 +1,17 @@
 <div class="kiri">
-    <p style="font-size: 18px; color:black;"><b>Donasiku (4)</b></p>
+    <p style="font-size: 18px; color:black;"><b>Aksiku ({{ $count }})</b></p>
 </div>
 
-<div class="container mt-3">
-    <div class="card" style="max-width: 540px;border-radius: 2%;">
+<div class="container mt-3" style="margin-bottom: 100px !important;">
+    @foreach ($data as $datanya)
+    <div class="card mb-4" style="max-width: 540px;border-radius: 2%;">
         <div class="row no-gutters mt-3 ml-3 mr-3 mb-3">
             <div class="col-4">
-                <img src="https://diskominfo.wonosobokab.go.id/uploads/2023/Januari/20230102081134-1_1008.jpg" class="card-img" alt="...">
+                <img src="{{ $datanya->sampul->url_photo?? asset('trusthand/assets/images/resource/cause-1.jpg') }}" class="card-img" style="height:100px !important; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
             </div>
             <div class="col-8">
                 <div class="ml-3">
-                    <p style="font-size: 12px;"><b>Bantu penduduk desa A...</b></p>
+                    <p style="font-size: 12px;line-height: 17px"><b>{{ $datanya->judul }}</b></p>
                     <div class="progress-box" style="padding:7px 1px 26px;">
 
                         <div class="bar">
@@ -43,20 +44,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
+                </div>  
             </div>
-            
-            <div class="col-8">
-                <span style="font-size: 10px;"><b>Kamu telah berdonasi</b><span style="font-size: 10px;color:green;"> Rp 200.000,-</span></span>
-            </div>
-            <div class="col-4 d-flex justify-content-end">
-                <button type="button" class="btn btn-outline-success" style="font-size:10px; width:90px;font-weight:200;line-height:1;">Donasi lagi</button>
-            </div>
-               
         </div>
     </div>
+    @endforeach
 </div>
-
 <livewire:page.footer/>
+<livewire:button-plus/>
+
 

@@ -132,7 +132,25 @@
             margin-left: 10px;
             margin-top: 10px;
             border-radius: 50px;
-            background-image: linear-gradient(rgb(231, 56, 56), rgb(231, 56, 56));
+            background-image: linear-gradient(rgb(255, 43, 43), rgb(141, 34, 34));
+            box-shadow: 4px 0px 2px #888888;
+        }
+
+        .tambah {
+            height: 50px;
+            line-height: 50px;
+            width: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50%;
+            background-color: rgb(45, 189, 52);
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 50px;
+            background-image: linear-gradient(rgb(65, 255, 75), rgb(55, 143, 58));
             box-shadow: 4px 0px 2px #888888;
         }
 
@@ -286,9 +304,11 @@
             outline: none;
             }
 
-
-
-
+            .bawahkanan {
+                position: fixed;
+                right: 10%;
+                bottom: 100px;
+            }
 
     </style>
 </head>
@@ -457,8 +477,10 @@
             {{-- END DESKTOP --}}
             @else
             {{-- START MOBILE --}}
+            {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
             <div class="d-block d-md-none">
                 <div class="header-lower">
+                    {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
                     @if(Request::segment(1) != '')
                     <a href="{{ url()->previous() }}">
                         <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
@@ -466,7 +488,7 @@
                     @else
                     @endif
                     <a href="{{ route('home') }}">
-                        <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-2"></center>
+                        <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-4"></center>
                     </a>
                 </div>
             </div>

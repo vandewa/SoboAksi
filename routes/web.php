@@ -24,6 +24,7 @@ use App\Http\Livewire\Page\MobileDonasiku;
 use App\Http\Livewire\Page\MobilePostingku;
 use App\Http\Livewire\Page\MobileEditProfile;
 use App\Http\Livewire\Page\GantiPassword;
+use App\Http\Livewire\Page\MobileAksiku;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ Route::get('/donasiku', MobileDonasiku::class)->name('donasiku');
 Route::get('/postingku', MobilePostingku::class)->name('postingku');
 Route::get('/edit-profile', MobileEditProfile::class)->name('edit-profile');
 Route::get('/ganti-password', GantiPassword::class)->name('ganti-password');
+Route::get('/aksiku', MobileAksiku::class)->name('aksiku');
 
 
 //dokumentasi template

@@ -151,8 +151,8 @@
                         </div>
                         @endif
                        
-                        <div class="tombol d-flex justify-content-center btn-block mt-3">
-                            <button type="submit" class="butt mb-2" style="line-height:25px !important;">Beraksi</button>
+                        <div class="tombol d-flex justify-content-center btn-block mt-3 mb-4">
+                            <button type="submit" class="butt" style="line-height:25px !important;">Beraksi</button>
                         </div>
                     </div>
                 </form>

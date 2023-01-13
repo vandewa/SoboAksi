@@ -55,12 +55,12 @@
 
                                 <div class="row mt-1">
                                     <div class="col-6">
-                                        <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">0 
-                                            <i class="icon-16"></i>
+                                        <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
+                                            <i class="icon-16"></i> 0 
                                         </button>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like"> {{ $jumlahLike }} <i class="fa fa-heart"></i>
+                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like"> <i class="fa fa-heart"></i> {{ $jumlahLike }} 
                                         </button>
                                     </div>
                                 </div>

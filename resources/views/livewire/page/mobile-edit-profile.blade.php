@@ -14,6 +14,36 @@
                         <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
                     </div>
 
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input class="myInput" wire:model="nik" placeholder="nik" type="text" id="nik" required> 
+                    </div>
+                    
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input class="myInput" wire:model="email" placeholder="Email" type="text" id="email" required> 
+                    </div>
+
                     <input type="submit" wire:click="editProfile" class="butt mt-4" value="Simpan">
                 </form>
             </div>

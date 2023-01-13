@@ -17,6 +17,11 @@ class MobileEditProfile extends Component
         $user = User::find(auth()->user()->id);
         $this->email =  $user->email;
         $this->nama =  $user->name;
+        $this->nik =  $user->nik;
+        $this->nama =  $user->name;
+        $this->nama =  $user->name;
+        $this->nama =  $user->name;
+        $this->nama =  $user->name;
     }
 
     public function render()

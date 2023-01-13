@@ -14,8 +14,8 @@
         </div>
         <div class="col-3">
             @if(Auth::check())
-            <a wire:click="$emitTo('donate-popup', 'tampilModal')">
-                @if(Request::segment(1) == 'aksi' )
+            <a href="{{ route('aksiku') }}">
+                @if(Request::segment(1) == 'aksiku' )
                     <img src="{{ asset('trusthand/assets/images/galang-dana.svg') }}" class="mt-3">
                 @else
                     <img src="{{ asset('trusthand/assets/images/galang-dana-off.svg') }}" class="mt-3">

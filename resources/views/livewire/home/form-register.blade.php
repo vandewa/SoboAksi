@@ -12,7 +12,7 @@
                             <div class="form-group">
                                 <label>Nama <span>*</span></label>
                                 <input type="text" name="name" placeholder="example name" required=""
-                                    wire:model.lazy="name">
+                                    >
                                 @error('name') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
