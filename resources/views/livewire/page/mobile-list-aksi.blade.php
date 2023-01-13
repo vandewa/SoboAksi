@@ -7,8 +7,7 @@
    {{-- START MOBILE --}}
     <div class="auto-container">
         <div class="sec-title centred mb_50">
-            <span class="sub-title">Donasi</span><br>
-            <span>Kategori: {{ $aksi->kategorinya->nama_kategori??'' }} ({{ $jumlah??"0" }})</span>
+            <span class="sub-title">Penggalangan Dana</span>
         </div>
 
         <div class="row clearfix">

@@ -11,7 +11,7 @@
                                 </a>
                             </figure>
                             <div class="category">
-                                <a href="{{ route('aksi', ['kategori' => $idnya]) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$kategorinya->nama_kategori}}
+                                <a href="{{ route('aksi', ['kategori' => $kategori]) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$kategorinya->nama_kategori}}
                                 </a>
                             </div>
                         </div>

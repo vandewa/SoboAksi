@@ -1,6 +1,6 @@
 <div>
 <div id="registrasi-popup" class="donate-popup {{$modal ? "popup-visible": ""}}">
-    <div class="close-donate" wire:click="tampilModal" style="top:20px !important"><i class="fal fa-times"></i></div>
+    <div class="close-donate" wire:click="tutupModal" style="top:20px !important"><i class="fal fa-times"></i></div>
     <div class="popup-inner">
         <div class="donate-content">
             <div class="title-text centred">

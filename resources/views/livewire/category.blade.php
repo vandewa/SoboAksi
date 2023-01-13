@@ -3,7 +3,7 @@
         {{-- START MOBILE --}}
         <div class="d-block d-md-none">
             <div class="sec-title centred mb_50">
-                <span class="sub-title">Aksi Kemanusiaan</span>
+                <span class="sub-title">Kategori</span>
                 {{-- <h2 style="font-size: 25px !important; ">Aksi Kemanusiaan</h2> --}}
             </div>
             <div class="container">

@@ -5,27 +5,16 @@ namespace App\Http\Livewire\Page;
 use Livewire\Component;
 use App\Models\Aksi as Beraksi;
 use Illuminate\Support\Collection;
-use App\Models\Kategori;
 
-class Aksi extends Component
+class MobileListAksi extends Component
 {
+
     public $item ;
     public $pageNumber = 1;
     public $hasMorePages;
     public $kategori;
 
-
-
     protected $listeners = ['newAksi' => '$refresh'];
-
-    // public function newAksi($id)
-    // {
-
-    //    $a = Beraksi::with(['kategorinya', 'penerimaDonasi'])->withCount("dukung")->find($id);
-
-    //    $this->item->prepend($a);
-    // }
-
     protected $queryString = ['kategori'];
 
     public function mount()
@@ -36,7 +25,7 @@ class Aksi extends Component
     }
     public function loadPosts()
     {
-        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->orderBy("created_at", "desc")->whereHas('penerimaDonasi');
+        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->orderBy("created_at", "desc")->whereDoesntHave('penerimaDonasi');
         if($this->kategori){
             $posts->whereHas('kategorinya', function($a){
                 $a->where('id', $this->kategori);
@@ -53,12 +42,9 @@ class Aksi extends Component
         $this->item->push(...$posts->items());
     }
 
+
     public function render()
     {
-        // dd($this->kategori);
-        return view('livewire.page.aksi',[
-            'aksi' => Beraksi::with(['kategorinya'])->where('kategori', $this->kategori)->first(),
-            'jumlah' => Beraksi::where('kategori', $this->kategori)->count(),
-        ]);
+        return view('livewire.page.mobile-list-aksi');
     }
 }

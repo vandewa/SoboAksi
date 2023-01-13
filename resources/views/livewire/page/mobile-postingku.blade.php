@@ -57,10 +57,6 @@
                         <button type="button" class="btn btn-outline-info" style="font-size:11px; width:70px;font-weight:200;line-height:1;">Edit
                         </button>
                     </a>
-                    <a href="{{ route('detail-donasi',$datanya->id) }}">
-                        <button type="button" class="btn btn-outline-danger" style="font-size:11px; width:70px;font-weight:200;line-height:1;">Hapus
-                        </button>
-                    </a>
                 </div>
             </div>
             <div class="col-4 d-flex justify-content-end mt-2   ">

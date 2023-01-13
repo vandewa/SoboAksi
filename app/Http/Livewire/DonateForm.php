@@ -16,7 +16,7 @@ class DonateForm extends Component
     public $terbilang;
     public $penerimaId;
 
-    protected $listeners = ["tampilModal"];
+    protected $listeners = ["tampilModal", "tutupModal"];
 
     public function updated()
     {
@@ -29,6 +29,10 @@ class DonateForm extends Component
         $this->idnya = $id;
         $aksi = Aksi::with(['penerimaDonasi'])->find($id);
         $this->penerimaId = $aksi->penerimaDonasi->id;
+    }
+    public function tutupModal()
+    {
+        $this->modal = !$this->modal;
     }
     public function render()
     {
