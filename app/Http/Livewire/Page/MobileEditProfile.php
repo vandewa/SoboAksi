@@ -9,6 +9,9 @@ class MobileEditProfile extends Component
 {
     public $email;
     public $nama;
+    public $nik;
+    public $nomor_hp;
+    public $alamat;
 
     protected $listeners = ['refreshComponent' => '$refresh'];
 
@@ -18,10 +21,8 @@ class MobileEditProfile extends Component
         $this->email =  $user->email;
         $this->nama =  $user->name;
         $this->nik =  $user->nik;
-        $this->nama =  $user->name;
-        $this->nama =  $user->name;
-        $this->nama =  $user->name;
-        $this->nama =  $user->name;
+        $this->nomor_hp =  $user->nomor_hp;
+        $this->alamat =  $user->alamat;
     }
 
     public function render()
@@ -34,6 +35,9 @@ class MobileEditProfile extends Component
         $data = User::find(auth()->user()->id);
         $data->email = $this->email;
         $data->name = $this->nama;
+        $data->nik = $this->nik;
+        $data->nomor_hp = $this->nomor_hp;
+        $data->alamat = $this->alamat;
         $data->save();
         return redirect()->to('/edit-profile');
     }
