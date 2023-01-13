@@ -99,7 +99,7 @@
             position: fixed;
             left: 0;
             right: 20px;
-            bottom: 0;
+            bottom: 0px;
             width: 100%;
             background-color: white;
             color: white;
@@ -451,7 +451,7 @@
             {{-- START MOBILE --}}
             <div class="d-block d-md-none">
                 <div class="header-lower">
-                    @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile')
+                    @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile' && Request::segment(1) != 'detail-berita')
                     <a href="{{ url()->previous() }}">
                         <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
                     </a>    

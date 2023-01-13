@@ -54,7 +54,7 @@
         <div class="col-3">
             @if(Auth::check())
             <a href="{{ route('detail-akun') }}">
-                @if(Request::segment(1) == 'akun-profile')
+                @if(Request::segment(1) == 'akun-profile' || Request::segment(1) == 'edit-profile' || Request::segment(1) == 'ganti-password' )
                 <img src="{{ asset('trusthand/assets/images/akun.svg') }}" class="mt-3">
                 @else
                 <img src="{{ asset('trusthand/assets/images/akun-off.svg') }}" class="mt-3">

@@ -12,20 +12,24 @@
             <div class="col-8">
                 <div class="ml-3">
                     <p style="font-size: 12px;line-height: 17px"><b>{{ $datanya->judul }}</b></p>
+                    @if($datanya->penerimaDonasi)
                     <div class="progress-box" style="padding:7px 1px 26px;">
 
                         <div class="bar">
-                            <div class="bar-inner count-bar" style="width: 80%; background:blue;"></div>
+                            <div class="bar-inner count-bar" style="width: {{ $datanya->penerimaDonasi->donasi_tercapai??0/$datanya->penerimaDonasi->$target_donasi??0*100 }}%;">
+                            </div>
+                            <div class="count-text mt-2">{{  $datanya->penerimaDonasi->donasi_tercapai??0/$datanya->penerimaDonasi->$target_donasi??0*100 }}%
+                            </div>
                         </div>
 
                         <div class="row">
                             <div class="col-6">
                                 <h6>
-                                    <span style="font-size: 9px;width:100%;float: left;" >
-                                        <b> Rp. {{ number_format(2000,0,',','.') }}</b>
+                                    <span style="font-size: 10px;width:100%;float: left;" >
+                                        <b> Rp. {{ number_format($datanya->penerimaDonasi->donasi_tercapai??0,0,',','.') }}</b>
                                     </span>
                                     
-                                    <span style="font-size: 11px;width:100%;float: left;" >
+                                    <span style="font-size: 13px;width:100%;float: left;" >
                                      Diperoleh
                                     </span>
                                 </h6>
@@ -33,27 +37,33 @@
                            
                             <div class="col-6">
                                 <h6>
-                                    <span style="font-size: 9px;width:100%;float: right;">
-                                        <b> Rp. {{ number_format(2000,0,',','.') }} </b>
+                                    <span style="font-size: 10px;width:100%;float: right;">
+                                        <b> Rp. {{ number_format($datanya->penerimaDonasi->target_donasi??0,0,',','.') }} </b>
                                     </span>
                          
-                                    <span style="font-size: 11px;width:100%;float: left;" >
+                                    <span style="font-size: 13px;width:100%;float: left;" >
                                         Target
                                     </span> 
                                 </h6>
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>  
             </div>
-            <div class="col-8">
+            <div class="col-8 mt-2">
                 <div>
-                    <span style="font-size: 12px;"> 
-                        <i class="fa fa-edit fa-lg" style="font-weight:0 !important; color:green;"></i> Edit
-                    </span>
+                    <a href="{{ route('detail-donasi',$datanya->id) }}">
+                        <button type="button" class="btn btn-outline-info" style="font-size:11px; width:70px;font-weight:200;line-height:1;">Edit
+                        </button>
+                    </a>
+                    <a href="{{ route('detail-donasi',$datanya->id) }}">
+                        <button type="button" class="btn btn-outline-danger" style="font-size:11px; width:70px;font-weight:200;line-height:1;">Hapus
+                        </button>
+                    </a>
                 </div>
             </div>
-            <div class="col-4 d-flex justify-content-end">
+            <div class="col-4 d-flex justify-content-end mt-2   ">
                 <a href="{{ route('detail-donasi',$datanya->id) }}">
                 <button type="button" class="btn btn-outline-success" style="font-size:11px; width:90px;font-weight:200;line-height:1;">Lihat</button>
             </a>
