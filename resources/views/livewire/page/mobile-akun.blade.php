@@ -32,7 +32,7 @@
             <a href="{{ route('donasiku') }}" style="color: black;">
                 <i class="fas fa-donate"></i>
                 <span>
-                    &nbsp; Donasiku
+                    &nbsp; Donasiku 
                 </span>
             </a>
         </div>
@@ -40,7 +40,7 @@
             <a href="{{ route('postingku') }}" style="color: black;">
                 <i class="fa fa-comment" aria-hidden="true"></i>
                 <span>
-                    &nbsp; Posting
+                    &nbsp; Postingan
                 </span>
             </a>
         </div>

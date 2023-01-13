@@ -3,11 +3,19 @@
 namespace App\Http\Livewire\Page;
 
 use Livewire\Component;
+use App\Models\Aksi;
 
 class MobilePostingku extends Component
 {
     public function render()
     {
-        return view('livewire.page.mobile-postingku');
+        $data = Aksi::with(['sampul', 'penerimaDonasi'])->where('creator_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
+        $count = Aksi::with(['sampul'])->where('creator_id', auth()->user()->id)->count();
+
+        // dd($data);
+        return view('livewire.page.mobile-postingku',[
+            "data" => $data,
+            "count" => $count
+        ]);
     }
 }

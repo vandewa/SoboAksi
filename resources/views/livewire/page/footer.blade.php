@@ -14,21 +14,21 @@
         </div>
         <div class="col-3">
             @if(Auth::check())
-            <a href="{{ route('aksiku') }}">
-                @if(Request::segment(1) == 'aksiku' )
+            <a href="{{ route('postingku') }}">
+                @if(Request::segment(1) == 'postingku' )
                     <img src="{{ asset('trusthand/assets/images/galang-dana.svg') }}" class="mt-3">
                 @else
                     <img src="{{ asset('trusthand/assets/images/galang-dana-off.svg') }}" class="mt-3">
                 @endif
                 <span class="brsmall"></span>
-                <button style="margin-bottom: 20px !important; margin-top:10px !important; font-size: 10px !important; line-height:10px !important;"><span>Galang Dana</span>
+                <button style="margin-bottom: 20px !important; margin-top:10px !important; font-size: 10px !important; line-height:10px !important;"><span>Postingan Saya</span>
                 </button> 
             </a>
             @else
             <a wire:click="$emitTo('registrasi', 'tampilModal')">
                 <img src="{{ asset('trusthand/assets/images/galang-dana-off.svg') }}" class="mt-3">
                 <span class="brsmall"></span>
-                <button style="margin-bottom: 20px !important; margin-top:10px !important; font-size: 10px !important; line-height:10px !important;"><span>Galang Dana</span></button> 
+                <button style="margin-bottom: 20px !important; margin-top:10px !important; font-size: 10px !important; line-height:10px !important;"><span>Postingan Saya</span></button> 
             </a>
             @endif
         </div>
@@ -54,7 +54,7 @@
         <div class="col-3">
             @if(Auth::check())
             <a href="{{ route('detail-akun') }}">
-                @if(Request::segment(1) == 'akun-profile')
+                @if(Request::segment(1) == 'akun-profile' || Request::segment(1) == 'edit-profile' || Request::segment(1) == 'ganti-password' )
                 <img src="{{ asset('trusthand/assets/images/akun.svg') }}" class="mt-3">
                 @else
                 <img src="{{ asset('trusthand/assets/images/akun-off.svg') }}" class="mt-3">
