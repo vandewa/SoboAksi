@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Page;
 
 use Livewire\Component;
-use App\Models\Aksi;    
+use App\Models\Aksi;
 use App\Models\AksiDukung;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,11 +13,12 @@ class MobileAksi extends Component
 
     public function render()
     {
-        $data = Aksi::with(['sampul', 'penerimaDonasi', 'kategorinya'])->where('creator_id', auth()->user()->id)->orderBy('publish_at', 'desc')->whereDoesntHave('penerimaDonasi')->limit(5)->get();
+        $data = Aksi::with(['sampul', 'penerimaDonasi', 'kategorinya'])->orderBy('publish_at', 'desc')->whereDoesntHave('penerimaDonasi')->limit(5)->get();
 
         return view('livewire.page.mobile-aksi',[
             "data" => $data
-        ]); 
+        ]);       
+         
     }
 
     public function like($id)

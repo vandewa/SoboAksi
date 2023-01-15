@@ -86,9 +86,7 @@
 
 {{-- START MOBILE --}}
 <div class="d-block d-md-none">
-
-    
-    <section class="cause-details" style="margin-top: 0px;">
+    <section class="cause-details" style="margin-top: 0px;margin-bottom: 40px;">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
@@ -109,7 +107,7 @@
                                         <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
                                     </div>
                                     <div class="col-8" style="padding-left:0px !important;">
-                                        <span style="font-size: 13px;" class="brsmall">by {{ $datanya->user->name }}</span>
+                                        <span style="font-size: 13px;" class="brsmall">by {{ $datanya->user->name??'' }}</span>
                                         @if($datanya->publish_at)
                                         <span style="font-size: 10px;">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $datanya->publish_at)->diffForHumans() }}</span>
                                         @endif
@@ -142,23 +140,27 @@
                                <p>{!! $datanya->deskripsi !!}</p>
                             </div>
                         </div>
+                        <div>
+                        <livewire:page.komentar :idnya="$datanya->id">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    {{-- @if($datanya->penerimaDonasi) --}}
     @if (Auth::check())
     <div class="donasi-bottom"> 
         <div class="tombol d-flex justify-content-center mt-3">
-            <button type="submit" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:15px !important; width:80% !important;" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi Sekarang</span>
+            <button type="submit" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:5px !important; width:80% !important;" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi Sekarang</span>
         </div>
     </div>
     @else
     <div class="donasi-bottom">
         <div class="tombol d-flex justify-content-center mt-3">
-            <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:10px !important; width:80% !important;">Donasi Sekarang</button>
+            <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2" style="line-height:25px !important; margin-bottom: 30px !important;margin-top:5px !important; width:80% !important;">Donasi Sekarang</button>
         </div>
     @endif
-    
+    {{-- @endif --}}
 </div>
 </div>

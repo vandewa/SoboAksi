@@ -9,7 +9,7 @@ class Home extends Component
 {
     public function render()
     {
-        $aksi = Aksi::with(['kategorinya', 'penerimaDonasi'])->withCount("dukung")->orderBy('publish_at', 'desc')->limit(3)->get();
+        $aksi = Aksi::with(['kategorinya', 'penerimaDonasi'])->withCount("dukung")->whereHas('penerimaDonasi')->orderBy('publish_at', 'desc')->limit(3)->get();
         return view('livewire.page.home', [
             "aksi" => $aksi
         ]);
