@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-<div class="content-body">  
+<div class="content-body">
     <div class="row justify-content-md-center">
         <div class="col-md-6">
             <div class="card">
@@ -31,9 +31,9 @@
                     <div class="card-body">
                         {{Form::model($data, ['route' => ['admin:user.update', $data->id],'method' => 'put', 'files' =>
                         'true', 'id' => 'my-form'])}}
-                        
+
                         @include('admin.user.form')
-                        
+
                         {{Form::close()}}
                     </div>
                 </div>
@@ -46,37 +46,31 @@
 
 @push('js')
 {!! JsValidator::formRequest('App\Http\Requests\UserUpdateValidation','#my-form') !!}
- <script>
-    function change()
-     {
+<script>
+    function change() {
         var x = document.getElementById('pass').type;
-        if (x == 'password')
-        {
-           document.getElementById('pass').type = 'text';
-           document.getElementById('mybutton').innerHTML = '<i class="feather icon-eye-off"></i>';
+        if (x == 'password') {
+            document.getElementById('pass').type = 'text';
+            document.getElementById('mybutton').innerHTML = '<i class="feather icon-eye-off"></i>';
         }
-        else
-        {
-           document.getElementById('pass').type = 'password';
-           document.getElementById('mybutton').innerHTML = '<i class="feather icon-eye"></i>';
+        else {
+            document.getElementById('pass').type = 'password';
+            document.getElementById('mybutton').innerHTML = '<i class="feather icon-eye"></i>';
         }
-     }
+    }
 </script>
 
 <script>
-    function change2()
-     {
+    function change2() {
         var x = document.getElementById('passs').type;
-        if (x == 'password')
-        {
-           document.getElementById('passs').type = 'text';
-           document.getElementById('mybutton2').innerHTML = '<i class="feather icon-eye-off"></i>';
+        if (x == 'password') {
+            document.getElementById('passs').type = 'text';
+            document.getElementById('mybutton2').innerHTML = '<i class="feather icon-eye-off"></i>';
         }
-        else
-        {
-           document.getElementById('passs').type = 'password';
-           document.getElementById('mybutton2').innerHTML = '<i class="feather icon-eye"></i>';
+        else {
+            document.getElementById('passs').type = 'password';
+            document.getElementById('mybutton2').innerHTML = '<i class="feather icon-eye"></i>';
         }
-     }
+    }
 </script>
 @endpush
