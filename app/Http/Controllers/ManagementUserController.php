@@ -128,7 +128,7 @@ class ManagementUserController extends Controller
         if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
         } else {
-            $input = Arr::except($input, array('password'));
+            $input = Arr::except($request->all(), array('password'));
         }
 
         $user = User::find($id);

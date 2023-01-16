@@ -21,9 +21,14 @@ class MobileEditProfile extends Component
     public $region_kec;
     public $region_kel;
 
-    // public $provinsi;
-    // public $kabupaten;
-    // public $selectedProv = NULL;
+    public $provinsi;
+    public $kabupaten;
+    public $kecamatan;
+    public $kelurahan;
+    public $selectedProv = NULL;
+    public $selectedKab = NULL;
+    public $selectedKec = NULL;
+    public $selectedKel = NULL;
 
     protected $listeners = ['refreshComponent' => '$refresh'];
 
@@ -37,29 +42,45 @@ class MobileEditProfile extends Component
         $this->alamat =  $user->alamat;
         $this->jKel =  $user->jenis_kelamin_st;
         $this->pekerjaan_st =  $user->pekerjaan_st;
-        // $this->provinsi =  get_prov();
-        // $this->kabupaten =  collect();
+
         $this->region_prop =  $user->region_prop;
+        $this->provinsi =  get_prov();
+
         $this->region_kab =  $user->region_kab;
+        $this->kabupaten =  collect();
+
         $this->region_kec =  $user->region_kec;
+        $this->kecamatan =  collect();
+
         $this->region_kel =  $user->region_kel;
+        $this->kelurahan =  collect();
     }
 
     public function render()
     {
-        $data = User::find(auth()->user()->id);
-        $kabupaten = ComRegion::where('region_cd', $data->region_kab)->pluck('region_cd', 'region_nm');
-        $kecamatan = ComRegion::where('region_cd', $data->region_kec)->pluck('region_cd', 'region_nm');
-        $kelurahan = ComRegion::where('region_cd', $data->region_kel)->pluck('region_cd', 'region_nm');
-        return view('livewire.page.mobile-edit-profile', compact('data', 'kabupaten', 'kecamatan', 'kelurahan'));
+        return view('livewire.page.mobile-edit-profile');
     }
 
-    // public function updatedSelectedProv($id)
-    // {
-    //     if (!is_null($id)) {
-    //         $this->kabupaten = get_kab($id);
-    //     }
-    // }
+    public function updatedSelectedProv($id)
+    {
+        if (!is_null($id)) {
+            $this->kabupaten = get_kab($id);
+        }
+    }
+
+    public function updatedselectedKab($id)
+    {
+        if (!is_null($id)) {
+            $this->kecamatan = get_kec($id);
+        }
+    }
+
+    public function updatedselectedKec($id)
+    {
+        if (!is_null($id)) {
+            $this->kelurahan = get_kel($id);
+        }
+    }
 
     public function editProfile()
     {
@@ -72,9 +93,9 @@ class MobileEditProfile extends Component
         $data->jenis_kelamin_st = $this->jKel;
         $data->pekerjaan_st = $this->pekerjaan_st;
         $data->region_prop = $this->selectedProv;
-        $data->region_kab = $this->region_kab;
-        $data->region_kec = $this->region_kec;
-        $data->region_kel = $this->region_kel;
+        $data->region_kab = $this->selectedKab;
+        $data->region_kec = $this->selectedKec;
+        $data->region_kel = $this->selectedKel;
         $data->save();
         return redirect()->to('/edit-profile');
     }
