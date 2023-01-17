@@ -43,17 +43,17 @@ class MobileEditProfile extends Component
         $this->jKel =  $user->jenis_kelamin_st;
         $this->pekerjaan_st =  $user->pekerjaan_st;
 
-        $this->region_prop =  $user->region_prop;
+        $this->selectedProv =  $user->region_prop;
         $this->provinsi =  get_prov();
 
-        $this->region_kab =  $user->region_kab;
-        $this->kabupaten =  collect();
+        $this->selectedKab =  $user->region_kab;
+        // $this->kabupaten =  get_kab($this->selectedProv);
 
-        $this->region_kec =  $user->region_kec;
-        $this->kecamatan =  collect();
+        $this->selectedKec =  $user->region_kec;
+        // $this->kecamatan =  get_kec($this->selectedKab);
 
-        $this->region_kel =  $user->region_kel;
-        $this->kelurahan =  collect();
+        $this->selectedKel =  $user->region_kel;
+        // $this->kelurahan =  collect();
     }
 
     public function render()

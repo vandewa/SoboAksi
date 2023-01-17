@@ -53,35 +53,35 @@
         }
 
         .wallet {
-        background-color: #7b67db;
-        background-image: linear-gradient(120deg, #7b67db 0%, #ab8afb 50%, #FFFFFF 100%);
-        width: 90%;
-        border-radius: 5px;
-        -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-        height: 167px;
-        widows: 90%;
-        /* margin: 0 auto; */
+            background-color: #7b67db;
+            background-image: linear-gradient(120deg, #7b67db 0%, #ab8afb 50%, #FFFFFF 100%);
+            width: 90%;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+            height: 167px;
+            widows: 90%;
+            /* margin: 0 auto; */
         }
 
         .wallet-body {
-        background-color: #fff;
-        border-radius: 0 10px 10px 0;
+            background-color: #fff;
+            border-radius: 0 10px 10px 0;
         }
 
-        .addscrollbar{
+        .addscrollbar {
 
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
             display: flex;
         }
 
-        h2{
+        h2 {
             font-size: 40px !important;
         }
 
-        h3{
+        h3 {
             font-size: 18px !important;
         }
 
@@ -185,25 +185,29 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            }
-            .myLeftCtn {
+        }
+
+        .myLeftCtn {
             position: relative;
             background: #fff;
             border-radius: 25px;
             height: 100%;
             padding: 55px;
             padding-left: 50px;
-            }
-            .myLeftCtn header {
+        }
+
+        .myLeftCtn header {
             color: blueviolet;
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 20px;
-            }
-            .row {
+        }
+
+        .row {
             height: 100%;
-            }
-            .myCard {
+        }
+
+        .myCard {
             position: relative;
             background: #fff;
             height: 100%;
@@ -211,17 +215,20 @@
             -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
             -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
             box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
-            }
-            .myRightCtn header {
+        }
+
+        .myRightCtn header {
             color: #fff;
             font-size: 44px;
-            }
-            .box {
+        }
+
+        .box {
             position: relative;
             margin: 20px;
             margin-bottom: 100px;
-            }
-            .myLeftCtn .myInput {
+        }
+
+        .myLeftCtn .myInput {
             width: 230px;
             border-radius: 25px;
             padding: 10px;
@@ -230,15 +237,18 @@
             -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
             -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
             box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-            }
-            .myLeftCtn .myInput:focus {
+        }
+
+        .myLeftCtn .myInput:focus {
             outline: none;
-            }
-            .myForm {
+        }
+
+        .myForm {
             position: relative;
             margin-top: 50px;
-            }
-            .myLeftCtn .butt {
+        }
+
+        .myLeftCtn .butt {
             background: linear-gradient(45deg, #fdb736, #E04237);
             color: #fff;
             width: 230px;
@@ -248,19 +258,23 @@
             -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
             -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
             box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-            }
-            .myLeftCtn .butt:hover {
+        }
+
+        .myLeftCtn .butt:hover {
             background: linear-gradient(45deg, #E04237, #E04237);
-            }
-            .myLeftCtn .butt:focus {
+        }
+
+        .myLeftCtn .butt:focus {
             outline: none;
-            }
-            .myLeftCtn .fas {
+        }
+
+        .myLeftCtn .fas {
             position: relative;
             color: #E04237;
             left: 36px;
-            }
-            .butt_out {
+        }
+
+        .butt_out {
             background: transparent;
             color: #fff;
             width: 120px;
@@ -270,14 +284,17 @@
             -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
             -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
             box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
-            }
-            .butt_out:hover {
+        }
+
+        .butt_out:hover {
             border: 2px solid#eecbff;
-            }
-            .butt_out:focus {
+        }
+
+        .butt_out:focus {
             outline: none;
-            }
-            .containerlogin {
+        }
+
+        .containerlogin {
             position: absolute;
             max-width: 800px;
             height: 500px;
@@ -285,8 +302,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            }
-            .tombol .butt {
+        }
+
+        .tombol .butt {
             background: linear-gradient(45deg, #fdb736, #E04237);
             color: #fff;
             width: 100%;
@@ -296,20 +314,21 @@
             -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
             -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
             box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
-            }
-            .tombol .butt:hover {
+        }
+
+        .tombol .butt:hover {
             background: linear-gradient(45deg, #E04237, #E04237);
-            }
-            .tombol .butt:focus {
+        }
+
+        .tombol .butt:focus {
             outline: none;
-            }
+        }
 
-            .bawahkanan {
-                position: fixed;
-                right: 10%;
-                bottom: 100px;
-            }
-
+        .bawahkanan {
+            position: fixed;
+            right: 10%;
+            bottom: 100px;
+        }
     </style>
 </head>
 
@@ -366,9 +385,9 @@
                 <div class="upper-box clearfix">
                     <figure class="logo-box pull-left">
                         {{-- <a href="{{ route('home') }}"> --}}
-                        <a href="{{ route('home') }}">
-                            <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
-                        </a>
+                            <a href="{{ route('home') }}">
+                                <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
+                            </a>
                     </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
@@ -376,15 +395,15 @@
                 <div class="auto-container">
                     <div class="search-form">
                         {{-- <form method="post" action="{{ route('home') }}"> --}}
-                        <form method="post" action="{{ route('home') }}">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value=""
-                                        placeholder="Type your keyword and hit" required>
-                                    <button type="submit"><i class="far fa-search"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
+                            <form method="post" action="{{ route('home') }}">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <input type="search" class="form-control" name="search-input" value=""
+                                            placeholder="Type your keyword and hit" required>
+                                        <button type="submit"><i class="far fa-search"></i></button>
+                                    </fieldset>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div>
@@ -451,45 +470,14 @@
             {{-- START MOBILE --}}
             <div class="d-block d-md-none">
                 <div class="header-lower">
-                    @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile' && Request::segment(1) != 'detail-berita')
+                    @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile' && Request::segment(1) !=
+                    'detail-berita')
                     <a href="{{ url()->previous() }}">
-                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
-                    </a>    
-                    @else
-                    @endif  
-                </div>
-            </div>
-            {{-- END MOBILE --}}
-            {{-- START DEKSTOP --}}
-            <div class="d-none d-md-block">
-                <div class="header-lower">
-                    <div class="outer-box">
-                        <div class="logo-box">
-                            <figure class="logo">
-                                <a href="{{ route('home') }}">
-                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
-                                </a>
-                            </figure>
-                        </div>
-                        <livewire:button.donasi />
-                    </div>
-                </div>
-            {{-- END DESKTOP --}}
-            @else
-            {{-- START MOBILE --}}
-            {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
-            <div class="d-block d-md-none">
-                <div class="header-lower">
-                    {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
-                    @if(Request::segment(1) != '')
-                    <a href="{{ url()->previous() }}">
-                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
-                    </a>    
+                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
+                                style="height:10px !important;"></i></div>
+                    </a>
                     @else
                     @endif
-                    <a href="{{ route('home') }}">
-                        <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-4"></center>
-                    </a>
                 </div>
             </div>
             {{-- END MOBILE --}}
@@ -507,8 +495,43 @@
                         <livewire:button.donasi />
                     </div>
                 </div>
-            </div>       
-            {{-- END DESKTOP --}}       
+                {{-- END DESKTOP --}}
+                @else
+                {{-- START MOBILE --}}
+                {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
+                <div class="d-block d-md-none">
+                    <div class="header-lower">
+                        {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
+                        @if(Request::segment(1) != '')
+                        <a href="{{ url()->previous() }}">
+                            <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
+                                    style="height:10px !important;"></i></div>
+                        </a>
+                        @else
+                        @endif
+                        <a href="{{ route('home') }}">
+                            <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-4">
+                            </center>
+                        </a>
+                    </div>
+                </div>
+                {{-- END MOBILE --}}
+                {{-- START DEKSTOP --}}
+                <div class="d-none d-md-block">
+                    <div class="header-lower">
+                        <div class="outer-box">
+                            <div class="logo-box">
+                                <figure class="logo">
+                                    <a href="{{ route('home') }}">
+                                        <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                                    </a>
+                                </figure>
+                            </div>
+                            <livewire:button.donasi />
+                        </div>
+                    </div>
+                </div>
+                {{-- END DESKTOP --}}
             </div>
 
             @endif
@@ -704,7 +727,7 @@
     <script src="{{ asset('trusthand/assets/js/appear.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/scrollbar.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/isotope.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/jquery.nice-select.min.js')}}"></script>
+    <!-- <script src="{{ asset('trusthand/assets/js/jquery.nice-select.min.js')}}"></script> -->
     <script src="{{ asset('trusthand/assets/js/parallax-scroll.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/jquery-ui.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/nav-tool.js')}}"></script>
