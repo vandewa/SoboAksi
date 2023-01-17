@@ -24,7 +24,7 @@
                         <input class="myInput" wire:model="nomor_hp" placeholder="Nomor WhatsApp" type="text"
                             id="nomor_hp" required>
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <i class="fas fa-phone"></i>
                         <select class="myInput" wire:model="jKel">
                             <option disabled>Pilih Jenis Kelamin</option>
@@ -39,28 +39,30 @@
                         <select class="myInput" wire:model="pekerjaan_st">
                             <option disabled>Pilih Pekerjaan</option>
                             @foreach(get_code_group('PEKERJAAN_ST') as $key => $value)
-                            <option value="{{ $key }}" {{ ( $key==$pekerjaan_st) ? 'selected' : '' }}>{{
+                            <option value="{{ $key }}" @selected($key==$pekerjaan_st)>{{
                                 $value }}</option>
                             @endforeach
                         </select>
-                    </div> -->
-
+                    </div>
                     <div class="form-group">
                         <i class="fas fa-phone"></i>
                         <select wire:model="selectedProv" class="myInput">
                             <option disabled>Pilih Provinsi</option>
-                            @foreach(get_prov() as $key => $value)
+                            @foreach($provinsi as $key => $value)
                             <option value="{{ $key }}" {{ ($key==$region_prop) ? 'selected' : '' }}>{{
                                 $value }}</option>
                             @endforeach
                         </select>
                         {{ $selectedProv }}
+                        @if($region_prop)
+                        ada
+                        @endif
                     </div>
                     <div class="form-group">
                         <i class="fas fa-phone"></i>
                         <select wire:model="selectedKab" class="myInput" name="city_id">
                             <option disabled>Pilih Kabupaten</option>
-                            @foreach($kabupaten as $key => $value)
+                            @foreach($kabupaten??[] as $key => $value)
                             <option value="{{ $key }}" {{ ($key==$region_kab) ? 'selected' : '' }}>{{ $value }}</option>
                             @endforeach
                         </select>
@@ -70,7 +72,7 @@
                         <i class="fas fa-phone"></i>
                         <select wire:model="selectedKec" class="myInput" name="city_id">
                             <option disabled>Pilih Kecamatan</option>
-                            @foreach($kecamatan as $key => $value)
+                            @foreach($kecamatan??[] as $key => $value)
                             <option value="{{ $key }}" {{ ($key==$region_kec) ? 'selected' : '' }}>{{ $value }}</option>
                             @endforeach
                         </select>
@@ -80,7 +82,7 @@
                         <i class="fas fa-phone"></i>
                         <select wire:model="selectedKel" class="myInput" name="city_id">
                             <option disabled>Pilih Kelurahan</option>
-                            @foreach($kelurahan as $key => $value)
+                            @foreach($kelurahan??[] as $key => $value)
                             <option value="{{ $key }}" {{ ($key==$region_kel) ? 'selected' : '' }}>{{ $value }}</option>
                             @endforeach
                         </select>
