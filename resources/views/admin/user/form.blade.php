@@ -108,8 +108,7 @@
                         {{Form::select('region_kel',[], null, ['class' => 'form-control select2', 'placeholder' =>
                         'Pilih Kelurahan', 'id' => 'kelurahan'])}}
                         @else
-                        {{Form::select('region_kel', get_kel($data->region_kec), $kelurahan, ['class' => 'form-control
-                        select2', 'placeholder' => 'Pilih Kelurahan', 'id' => 'kelurahan'])}}
+                       
                         @endif
                     </div>
                 </div>
