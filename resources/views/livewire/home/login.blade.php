@@ -1,3 +1,4 @@
+<div>
 <form method="POST" action="#" class="default-form" wire:submit.prevent="{{ !$lupa ? 'userlogin' : 'lupa.html' }}">
     @csrf
     <div class="row clearfix" style="display:block;">
@@ -85,3 +86,4 @@
 
     })();
 </script>
+</div>
