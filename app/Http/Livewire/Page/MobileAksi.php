@@ -13,7 +13,7 @@ class MobileAksi extends Component
 
     public function render()
     {
-        $data = Aksi::with(['sampul', 'penerimaDonasi', 'kategorinya'])->orderBy('publish_at', 'desc')->whereDoesntHave('penerimaDonasi')->limit(5)->get();
+        $data = Aksi::with(['sampul', 'penerimaDonasi', 'kategorinya', 'dukung', 'komentar'])->orderBy('publish_at', 'desc')->whereDoesntHave('penerimaDonasi')->limit(5)->withCount('dukung')->withCount('komentar')->get();
 
         return view('livewire.page.mobile-aksi',[
             "data" => $data

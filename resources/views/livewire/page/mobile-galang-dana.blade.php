@@ -55,13 +55,24 @@
 
                                 <div class="row mt-1">
                                     <div class="col-6">
-                                        <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
-                                            <i class="icon-16"></i> 0 
-                                        </button>
+                                        <a href="{{ route('detail-donasi',$idnya) }}">
+                                            <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
+                                                <i class="icon-16"></i> {{ $jumlahKomentar }}
+                                            </button>
+                                        </a>
                                     </div>
                                     <div class="col-6">
-                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like"> <i class="fa fa-heart"></i> {{ $jumlahLike }} 
+                                        @if ($jumlahLike != 0)
+                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like">
+                                            <i class="fa fa-heart me-2"></i>
+                                            {{ $jumlahLike }}
                                         </button>
+                                        @else
+                                        <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;" wire:click="like">
+                                            <i class="fa fa-heart me-2"></i>
+                                            {{ $jumlahLike }}
+                                        </button>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

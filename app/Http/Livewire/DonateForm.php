@@ -47,7 +47,11 @@ class DonateForm extends Component
 
     public function terbilang()
     {
-        $this->terbilang = Terbilang::make($this->amount);
+        if($this->amount ){
+            $this->terbilang = Terbilang::make($this->amount).' Rupiah';
+        } else {
+            $this->terbilang = Terbilang::make($this->amount);
+        }
     }
 
     public function simpanDonasi()
@@ -97,7 +101,7 @@ class DonateForm extends Component
                     'email',
                 ]
             ],
-            'success_redirect_url' => 'http//soboaksi.test',
+            'success_redirect_url' => url('/'),
             'failure_redirect_url' => 'http//soboaksi.test',
             'currency' => 'IDR',
             'fees' => [

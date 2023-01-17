@@ -13,20 +13,25 @@
                             <div class="donate-option">
                                 <h3>Berapa Banyak?</h3>
                                 <div class="donate-list">
-                                    <div class="row mb-3 flex-container">
-                                        <div class="list-donasi" wire:click="tambahDonasi(5000)">5K</div>
-                                        <div class="list-donasi" wire:click="tambahDonasi(10000)">10K</div>
-                                        <div class="list-donasi" wire:click="tambahDonasi(20000)">20k</div>
-                                        <div class="list-donasi" wire:click="tambahDonasi(50000)">50k</div>
-                                        <div class="list-donasi" wire:click="tambahDonasi(100000)">100k</div>
+                                    <div class="row mb-3 flex-container" style="width: 100%;">
+                                        <div class="list-donasi mb-3" wire:click="tambahDonasi(5000)">5K</div>
+                                        <div class="list-donasi mb-3" wire:click="tambahDonasi(10000)">10K</div>
+                                        <div class="list-donasi mb-3" wire:click="tambahDonasi(20000)">20k</div>
+                                        <div class="list-donasi mb-3" wire:click="tambahDonasi(50000)">50k</div>
+                                        <div class="list-donasi mb-3" wire:click="tambahDonasi(100000)">100k</div>
                                     </div>
                                     <div class="nilai-donasi">
                                         <input type="text"  name="" id="" wire:model="amount">
-                                        <p>{{ $terbilang }}</p>
+                                        <p>{{ ucwords($terbilang) }}</p>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit">Donasi</button>
+                            <div class="form-group message-btn">
+                                <div class="tombol d-flex justify-content-center btn-block">
+                                    <button type="submit" class="butt mb-2" style="line-height:25px !important;">Donasi</button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
@@ -46,11 +51,12 @@
     border: 1px;
     padding: 4px;
     margin-right: 4px;
-    color: white;
+    color:black;
     text-align: center;
     border-radius: 20px;
     width: 100px;
-    background: rgb(236, 6, 6);
+    background: rgba(253, 216, 3, 0.774);
+
 
 }
 

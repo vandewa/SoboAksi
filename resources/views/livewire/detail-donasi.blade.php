@@ -89,16 +89,16 @@
     <section class="cause-details" style="margin-top: 0px;margin-bottom: 40px;">
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="col-lg-8 col-md-12 col-sm-12 content-side">
-                    <div class="cause-details-content">
-                        <div class="cause-block-one">
+                <div class="col-lg-8 col-md-12 col-sm-12 content-side" >
+                    <div class="cause-details-content" >
+                        <div class="cause-block-one" >
                             <div class="inner-box" >
                                 <div class="image-box mb-4">
                                     <figure class="image"><img src="{{ $sampul }}" ></figure>
                                 </div>
                                 <div class="container mb-3">
                                     <h1 style="font-size: 20px;">{{ $datanya->judul }}</h1>
-                                    <a href="{{ route('aksi', ['kategori' => $datanya->id]) }}"><span style="font-size: 13px; color:#E04237 !important;">{{ $datanya->kategorinya->nama_kategori }}</span>
+                                    <a href="{{ route('aksi', ['kategori' => $datanya->kategori]) }}"><span style="font-size: 13px; color:#E04237 !important;">{{ $datanya->kategorinya->nama_kategori }}</span>
                                     </a>
                                 </div>
 

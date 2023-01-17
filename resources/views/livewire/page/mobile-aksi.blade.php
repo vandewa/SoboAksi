@@ -26,7 +26,7 @@
                                                 </a>
                                             </figure>
                                             <div class="category">
-                                                <a href="{{ route('aksi', ['kategori' => $aksi->id]) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$aksi->kategorinya->nama_kategori}}
+                                                <a href="{{ route('aksi', ['kategori' => $aksi->kategori]) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$aksi->kategorinya->nama_kategori}}
                                                 </a>
                                             </div>
                                         </div>
@@ -39,13 +39,24 @@
 
                                                 <div class="row mt-1">
                                                     <div class="col-6">
-                                                        <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
-                                                            <i class="icon-16"></i> 0 
-                                                        </button>
+                                                        <a href="{{ route('detail-donasi',$aksi->id) }}">
+                                                            <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
+                                                                <i class="icon-16"></i> {{ $aksi->komentar_count }}
+                                                            </button>
+                                                        </a>
                                                     </div>
                                                     <div class="col-6">
-                                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like({{ $aksi->id }})"> <i class="fa fa-heart"></i> {{ $jumlahLike }} 
+                                                        @if ($aksi->dukung_count != 0)
+                                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like({{ $aksi->id }})">
+                                                            <i class="fa fa-heart me-2"></i>
+                                                            {{ $aksi->dukung_count }}
                                                         </button>
+                                                        @else
+                                                        <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;" wire:click="like({{ $aksi->id }})">
+                                                            <i class="fa fa-heart me-2"></i>
+                                                            {{ $aksi->dukung_count }}
+                                                        </button>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>

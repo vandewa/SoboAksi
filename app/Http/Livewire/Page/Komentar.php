@@ -8,23 +8,18 @@ use App\Models\Komentar as Comment;
 use App\Models\Aksi;
 use App\Models\Like;
 use SebastianBergmann\Type\NullType;
+use Livewire\WithPagination;
 
 class Komentar extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
     public $body;
     public $body2;
     public $aksi;
     public $idnya;
     public $edit_comment_id;
     public $comment_id;
-
-
-    protected $listeners = ['postAdded'];
-
-    public function postAdded()
-    {
-       
-    }
 
     public function mount($idnya)
     {
@@ -36,7 +31,9 @@ class Komentar extends Component
         return view('livewire.page.komentar',[
             'comments' => Comment::with(['user', 'childrens'])
             ->where('aksi_id', $this->aksi->id)
-            ->whereNull('comment_id')->get(),
+            ->whereNull('comment_id')
+            ->orderBy('created_at', 'desc')
+            ->paginate(20),
             'total_comments' => Comment::where('aksi_id', $this->aksi->id)->count(),
         ]);
     }
@@ -46,12 +43,16 @@ class Komentar extends Component
         $this->validate([
             'body' => 'required'
         ]);
-        Comment::create([
+        $comment = Comment::create([
             'user_id' => Auth::user()->id,
             'aksi_id' => $this->aksi->id,
             'body' => $this->body
         ]);
-        $this->emitSelf('postAdded');
+
+        if($comment){
+            $this->emit('komentar_store', $comment->id);
+            $this->body = NULL;
+        }
     }
 
     public function selectReply($id)
