@@ -714,14 +714,14 @@
     <!-- main-js -->
     <script src="{{ asset('trusthand/assets/js/script.js')}}"></script>
 
-    @stack('js')
     @livewireScripts
-
+    @stack('js')
     <script>
         Livewire.on('registrasi', postId => {
             alert('A post was added with the id of: ' + postId);
         })
     </script>
+
 </body><!-- End of .page_wrapper -->
 
 </html>
