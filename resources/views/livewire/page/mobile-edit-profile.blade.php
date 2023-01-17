@@ -28,7 +28,7 @@
                                 id="nomor_hp" required>
                         </div>
                         <div class="form-group">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-restroom"></i>
                             <select class="myInput" wire:model="jKel">
                                 <option disabled>Pilih Jenis Kelamin</option>
                                 @foreach(get_code_group('JENIS_KELAMIN_ST') as $key => $value)
@@ -38,7 +38,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-user-tie"></i>
                             <select class="myInput" wire:model="pekerjaan_st">
                                 <option disabled>Pilih Pekerjaan</option>
                                 @foreach(get_code_group('PEKERJAAN_ST') as $key => $value)
@@ -48,7 +48,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-building"></i>
                             <select wire:model="selectedProv" class="myInput">
                                 <option value="">Pilih Provinsi</option>
                                 @foreach($provinsi as $key => $value)
@@ -62,7 +62,7 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-house-damage"></i>
                             <select wire:model="selectedKab" class="myInput" name="city_id">
                                 <option value="">Pilih Kabupaten</option>
                                 @foreach($kabupaten??[] as $key => $value)
@@ -73,7 +73,7 @@
                             {{ $selectedKab }}
                         </div>
                         <div class="form-group">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-city"></i>
                             <select wire:model="selectedKec" class="myInput" name="city_id">
                                 <option value="">Pilih Kecamatan</option>
                                 @foreach($kecamatan??[] as $key => $value)
@@ -84,7 +84,7 @@
                             {{ $selectedKec }}
                         </div>
                         <div class="form-group">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-university"></i>
                             <select wire:model="selectedKel" class="myInput" name="city_id">
                                 <option value="">Pilih Kelurahan</option>
                                 @foreach($kelurahan??[] as $key => $value)

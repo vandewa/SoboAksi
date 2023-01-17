@@ -3,7 +3,7 @@
         <p style="font-size: 18px; color:black;"><b>Postingan ({{ $count }})</b></p>
     </div>
     
-    <div class="container mt-3" style="margin-bottom: 100px !important;">
+    <div class="container mt-3" style="margin-bottom: 150px !important;">
         @foreach ($data as $datanya)
         <div class="card mb-4" style="max-width: 540px;border-radius: 2%;">
             <div class="row no-gutters mt-3 ml-3 mr-3 mb-3">

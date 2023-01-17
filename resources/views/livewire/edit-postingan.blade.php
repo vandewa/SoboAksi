@@ -3,21 +3,20 @@
     <div class="popup-inner">
         <div class="d-flex justify-content-center">
             <div class="col-lg-6 col-md-12 col-sm-12 donate-content" style="padding:0px !important; margin-top:60px !important">
-                <form action="" class="form-inner" wire:submit.prevent='simpan'>
+                <form action="" class="form-inner" wire:submit.prevent='simpan({{ $idnya }})'>
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center">
-                            <h3>Tambah Aksi</h3>
+                            <h3>Edit Aksi</h3>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Halaman Sampul<span>*</span></label>
                                 @if ($photo)
                                     <img src="{{ $photo->temporaryUrl() }}"  width="200px" height="200px">
-                                    @else
+                                @else
                                     <img src="{{ $photo2 }}"  width="200px" height="200px">
-
                                 @endif
-                                <input type="file" wire:model.lazy="photo" accept="image/*" class="form-control" name="name" placeholder="example name" required>
+                                <input type="file" wire:model.lazy="photo" accept="image/*" class="form-control" name="name" placeholder="example name">
                             </div>
                             <div class="form-group">
                                 <label>Judul <span>*</span></label>
@@ -120,6 +119,8 @@
                                 <label>Foto Identitas <span>*</span></label>
                                 @if ($foto_ktp)
                                     <img src="{{ $foto_ktp->temporaryUrl() }}"  width="200px" height="200px">
+                                @else
+                                    <img src="{{ $foto_ktp2 }}"  width="200px" height="200px">
                                 @endif
                                 <input type="file" wire:model.lazy="foto_ktp" accept="image/*" name="" class="form-control" id="">
                             </div>
@@ -132,7 +133,9 @@
                             <div class="form-group">
                                 <label>Foto Calon Penerima <span>*</span></label>
                                 @if ($foto_penerima)
-                                <img src="{{ $foto_penerima->temporaryUrl() }}" width="200px" height="200px">
+                                    <img src="{{ $foto_penerima->temporaryUrl() }}" width="200px" height="200px">
+                                @else
+                                    <img src="{{ $foto_penerima2 }}" width="200px" height="200px">
                                 @endif
                                 <input type="file" name="" wire:model.lazy="foto_penerima" accept="image/*" class="form-control" id="">
                             </div>

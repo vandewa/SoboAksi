@@ -37,6 +37,7 @@
     <link href="{{ asset('trusthand/assets/css/style.css')}}" rel="stylesheet">
     <link href="{{ asset('trusthand/assets/css/responsive.css')}}" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/bb9305debb.js" crossorigin="anonymous"></script>   
 
 
     @vite([])

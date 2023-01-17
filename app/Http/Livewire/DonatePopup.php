@@ -76,6 +76,7 @@ class DonatePopup extends Component
             $a = DB::transaction(function () {
                 $this->validate(
                     [
+                        "photo" => "required|max:4096",
                         "nama" => "required",
                         "alamat" => "required",
                         "region_prop" => "required",
