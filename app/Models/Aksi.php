@@ -28,7 +28,7 @@ class Aksi extends Model
     public function fotonya(){
         return $this->hasMany(AksiPhoto::class, 'aksi_id');
     }
-    
+
     public function sampul(){
         return $this->hasOne(AksiPhoto::class, 'aksi_id');
     }

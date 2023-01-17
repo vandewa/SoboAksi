@@ -16,6 +16,7 @@ use App\Http\Controllers\WilayahController;
 use App\Http\Livewire\Page\Home;
 use App\Http\Livewire\Page\Aksi;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PostingController;
 use App\Http\Controllers\DetailDonasiController;
 use App\Http\Livewire\DetailDonasi;
 use App\Http\Livewire\Page\DetailBerita;
@@ -72,6 +73,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('profile', ProfileController::class);
 
     Route::group(['prefix' => 'admin', 'as' => 'admin:'], function () {
+        Route::resource('posting', PostingController::class);
         Route::resource('user', ManagementUserController::class);
         Route::resource('role', RoleController::class);
         Route::resource('permission', PermissionController::class);

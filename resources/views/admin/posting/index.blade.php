@@ -7,10 +7,10 @@
         <h3 class="content-header-title mb-0">Penerima</h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Posting</a>
+                <ol class="breadcrumb"> 
+                    <li class="breadcrumb-item"><a href="#">Penerima</a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#">Data Posting</a>
+                    <li class="breadcrumb-item"><a href="#">Data Penerima</a>
                     </li>
                 </ol>
             </div>
@@ -18,7 +18,7 @@
     </div>
     <div class="content-header-right text-md-right col-md-6 col-12">
         <div class="form-group">
-           <a href="{{ route('admin:posting.create') }}" class="btn btn-lg round mr-1 mb-1" style="color: rgb(255, 255, 255);
+           <a href="{{ route('admin:penerima.create') }}" class="btn btn-lg round mr-1 mb-1" style="color: rgb(255, 255, 255);
            box-shadow: none;
            background-color: rgb(51, 88, 244) !important;
            background-image: linear-gradient(to left bottom, rgb(29, 140, 248), rgb(51, 88, 244), rgb(29, 140, 248)) !important;">
@@ -42,12 +42,12 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Judul</th>
-                                        <th>Kategori</th>
-                                        <th>Creator</th>
-                                        <th>Target Donasi</th>
-                                        <th>Terbit</th>
-                                        <th>Tanggal Terbit</th>
+                                        <th>Nama</th>
+                                        <th>Alamat</th>
+                                        <th>Provinsi</th>
+                                        <th>Kabupaten</th>
+                                        <th>Kecamatan</th>
+                                        <th>Kelurahan</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -68,7 +68,7 @@
 
 @push('js')
 
-<script type="text/javascript">
+<script type="text/javascript">			
     var table = $('.devan').DataTable({
         processing: true,
         serverSide: true,
@@ -76,20 +76,20 @@
         ajax: window.location.href,
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-left"},
-            { data: 'judul'},
-            { data: 'kategorinya.nama_kategori', name: "kategorinya.nama_kategori"},
-            { data: 'user.name', name: 'user.name'},
-            { data: 'penerima_donasi.target_donasi', name: "penerimaDonasi.target_donasi", defaultContent: "0", orderable: false},
-            { data: 'publikasi.code_nm', name: 'publikasi.code_nm', defaultContent: "Ya"},
-            { data: 'publish_at'},
+            { data: 'nama'},
+            { data: 'alamat'},
+            { data: 'provinsi.region_nm'},
+            { data: 'kabupaten.region_nm'},
+            { data: 'kecamatan.region_nm'},
+            { data: 'kelurahan.region_nm'},
             { data: 'action', name: 'action',  orderable: false, searchable: false },
         ]
     });
 </script>
 
 <script type="text/javascript">
-    function sweetAlert()
-    {
+    function sweetAlert() 
+    {  
         Swal.fire({
         position: 'top-end',
         icon: 'success',
