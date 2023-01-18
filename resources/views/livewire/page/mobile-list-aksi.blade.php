@@ -7,10 +7,13 @@
    {{-- START MOBILE --}}
     <div class="auto-container">
         <div class="sec-title centred mb_50">
-            <span class="sub-title">Penggalangan Dana</span>
+            <span class="sub-title">Aksi</span><br>
+            @if ($kategori)
+            <span>Kategori: {{ $aksi->kategorinya->nama_kategori??'' }} ({{ $jumlah??"0" }})</span>
+            @endif
         </div>
 
-        <div class="row clearfix">
+        <div class="row clearfix" style="margin-bottom:100px;">
             @foreach ($item as $index => $ak)
                 <livewire:page.mobile-list-card-donasi :data="$ak" :wire:key="$ak['id']"/>
             @endforeach

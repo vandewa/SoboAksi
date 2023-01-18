@@ -19,7 +19,7 @@
     @foreach($comments as $item)
     <div class="mb-3" id="comment-{{ $item->id }}" >
         <div class="d-flex align-items-start mb-2">
-            <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" class="img-fluid rounded-circle mr-2" width="40">
+            <img src="{{ asset('images/png/avatar4.png') }}" class="img-fluid rounded-circle mr-2" width="40">
             <div style="background-color:rgba(207, 207, 207, 0.096);border-radius: 15px; width:100%;">
                 <div class="ml-3 mr-3">
                     <span class="komentar"><b>{{ $item->user->name }}</b></span>
@@ -82,7 +82,7 @@
             @foreach ($item->childrens as $item2)
             <div class="ml-4">
                 <div class="d-flex align-items-start ml-4 mb-2">
-                    <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" class="img-fluid rounded-circle me-2" width="40">
+                    <img src="{{ asset('images/png/avatar4.png') }}" class="img-fluid rounded-circle mr-2" width="40">
                     <div style="background-color:rgba(207, 207, 207, 0.096);border-radius: 15px;width: 100%;">
                         <div class="ml-3 mr-3">
                             <span class="komentar"><b>{{ $item2->user->name }}</b></span>

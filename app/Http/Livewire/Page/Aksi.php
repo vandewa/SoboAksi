@@ -36,7 +36,7 @@ class Aksi extends Component
     }
     public function loadPosts()
     {
-        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->orderBy("created_at", "desc")->whereHas('penerimaDonasi');
+        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->withCount("komentar")->orderBy("created_at", "desc")->whereHas('penerimaDonasi');
         if($this->kategori){
             $posts->whereHas('kategorinya', function($a){
                 $a->where('id', $this->kategori);

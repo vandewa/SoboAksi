@@ -17,7 +17,7 @@
                         @error('password_confirmation') <span class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 
-                    <input type="submit" class="butt mt-4" value="Simpan">
+                    <input type="submit" class="butt mt-4" value="Update" style="width: 100%;">
                     
                 </form>
             </div>

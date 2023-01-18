@@ -86,6 +86,11 @@
 
 {{-- START MOBILE --}}
 <div class="">
+    {{-- TOMBOL BACK --}}
+    <a href="{{ route('home') }}">
+        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
+    </a>
+    {{-- END TOMBOL BACK --}}
     <section class="cause-details" style="margin-top: 0px;margin-bottom: 40px;">
         <div class="auto-container">
             <div class="row clearfix">
@@ -107,7 +112,9 @@
                                         <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
                                     </div>
                                     <div class="col-8" style="padding-left:0px !important;">
-                                        <span style="font-size: 13px;" class="brsmall">by {{ $datanya->user->name??'' }}</span>
+                                        <span style="font-size: 13px;" class="brsmall">{{ $datanya->user->name??'' }}
+                                            <img src="{{ asset('images/png/verified.png') }}" alt="" style="max-width: 16px;">
+                                        </span>
                                         @if($datanya->publish_at)
                                         <span style="font-size: 10px;">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $datanya->publish_at)->diffForHumans() }}</span>
                                         @endif
@@ -120,12 +127,15 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-6">
-                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->donasi_tercapai??0 }}</b></span>
-                                                    <br> Diperoleh
+                                                <h6><span><b>Rp. {{ number_format($datanya->penerimaDonasi->donasi_tercapai,0,',','.') }}</b></span>
+                                                    <br> Diperoleh 
                                                 </h6>
                                             </div>
-                                            <div class="col-6">
-                                                <h6><span><b>Rp {{ $datanya->penerimaDonasi->target_donasi??0 }}</b></span>
+                                            <div class="col-6"> 
+                                                <h6>
+                                                    <span> 
+                                                        <b> Rp. {{ number_format($datanya->penerimaDonasi->target_donasi,0,',','.') }}</b>
+                                                    </span>
                                                     <br> Target
                                                 </h6>
                                             </div>

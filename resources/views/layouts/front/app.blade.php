@@ -191,10 +191,11 @@
         .myLeftCtn {
             position: relative;
             background: #fff;
-            border-radius: 25px;
+            border-radius: 25%;
             height: 100%;
-            padding: 55px;
-            padding-left: 50px;
+            padding: 5px;
+            padding-left: 40px;
+            padding-right: 40px;
         }
 
         .myLeftCtn header {
@@ -230,7 +231,7 @@
         }
 
         .myLeftCtn .myInput {
-            width: 230px;
+            width: 100%;
             border-radius: 25px;
             padding: 10px;
             padding-left: 50px;
@@ -270,9 +271,10 @@
         }
 
         .myLeftCtn .fas {
-            position: relative;
+            position: absolute;
             color: #E04237;
-            left: 36px;
+            left: 5%;
+            margin-top: 5%;
         }
 
         .butt_out {
@@ -471,11 +473,11 @@
             {{-- START MOBILE --}}
             <div class="d-block d-md-none">
                 <div class="header-lower">
+                    {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
                     @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile' && Request::segment(1) !=
-                    'detail-berita')
+                    'detail-berita' && Request::segment(1) !='detail-aksi')
                     <a href="{{ url()->previous() }}">
-                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
-                                style="height:10px !important;"></i></div>
+                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
                     </a>
                     @else
                     @endif
@@ -502,8 +504,7 @@
                 {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
                 <div class="d-block d-md-none">
                     <div class="header-lower">
-                        {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
-                        @if(Request::segment(1) != '')
+                        @if(Request::segment(1) != '' )
                         <a href="{{ url()->previous() }}">
                             <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
                                     style="height:10px !important;"></i></div>

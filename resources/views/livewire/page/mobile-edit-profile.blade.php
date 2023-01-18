@@ -1,5 +1,5 @@
 <div>
-    <div class="container mb-5 ">
+    <div class="container" style="margin-bottom: 120px;">
         <div class="row">
             <div class="col-md-6">
                 <div class="myLeftCtn">
@@ -101,7 +101,7 @@
                             <input class="myInput" wire:model="alamat" placeholder="Alamat" type="text" id="alamat"
                                 required>
                         </div>
-                        <input type="submit" wire:click="editProfile" class="butt mt-4" value="Simpan">
+                        <input type="submit" wire:click="editProfile" class="butt mt-4" value="Simpan" style="width: 100%;">
                     </form>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 </a>
 <div class="kanan">
     <a href="{{ route('edit-profile') }}">
-        <i class="fa fa-edit fa-lg" style="font-weight:0 !important;"></i></i>
+        <i class="fa-solid fa-pen-to-square fa-beat fa-lg" style="--fa-animation-duration: 1.4s;"></i>
     </a>
 </div>
 
@@ -65,7 +65,7 @@
                 </form>
             </a>
         </div>
-    </div>
+    </div>  
 </div>
 
 <livewire:page.footer/>

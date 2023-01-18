@@ -1,11 +1,10 @@
 <div>
-    
       <!-- Page Title -->
       <section class="page-title-two">
         <div class="bg-layer" style="background-image: url(https://diskominfo.wonosobokab.go.id/{{ $berita["gambar_muka"] ["path"] }}{{ $berita["gambar_muka"] ["file_name"] }});"></div>
         <div class="auto-container d-flex justify-content-center">
             <div class="content-box">
-                <h1>{{ $berita["judul_posting"] }}</h1>
+                <h3 style="color: white;font-size:25px !important;">{{ $berita["judul_posting"] }}</h3 style="color: white;"><br>
                 <ul class="post-info clearfix">
                     <li><i class="far fa-calendar"></i>{{ Carbon\Carbon::parse($berita["created_at"])->isoFormat('LLLL') }}
                         WIB</li>

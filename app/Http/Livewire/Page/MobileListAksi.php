@@ -25,7 +25,7 @@ class MobileListAksi extends Component
     }
     public function loadPosts()
     {
-        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->orderBy("created_at", "desc")->whereDoesntHave('penerimaDonasi');
+        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->withCount("komentar")->orderBy("created_at", "desc")->whereDoesntHave('penerimaDonasi');
         if($this->kategori){
             $posts->whereHas('kategorinya', function($a){
                 $a->where('id', $this->kategori);
@@ -45,6 +45,9 @@ class MobileListAksi extends Component
 
     public function render()
     {
-        return view('livewire.page.mobile-list-aksi');
+        return view('livewire.page.mobile-list-aksi', [
+            'aksi' => Beraksi::with(['kategorinya'])->where('kategori', $this->kategori)->first(),
+            'jumlah' => Beraksi::where('kategori', $this->kategori)->count(),
+        ]);
     }
 }

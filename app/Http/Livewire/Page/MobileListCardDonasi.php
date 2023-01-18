@@ -18,6 +18,7 @@ class MobileListCardDonasi extends Component
     public $sampul;
     public $peroleh;
     public $target;
+    public $jumlahKomentar;
 
     public function mount($data)
     {
@@ -31,6 +32,7 @@ class MobileListCardDonasi extends Component
         $this->jumlahLike = $data['dukung_count'];
         $this->penerimaDonasi = $data['penerimaDonasi'];
         $this->sampul = $data['sampul']['url_photo']?? asset('trusthand/assets/images/resource/cause-1.jpg');
+        $this->jumlahKomentar = $data['komentar_count'];
 
     }
 

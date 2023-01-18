@@ -12,8 +12,7 @@
             <span>Kategori: {{ $aksi->kategorinya->nama_kategori??'' }} ({{ $jumlah??"0" }})</span>
             @endif
         </div>
-
-        <div class="row clearfix">
+        <div class="row clearfix" style="margin-bottom: 100px;">
             @foreach ($item as $index => $ak)
                 <livewire:page.mobile-list-card-donasi :data="$ak" :wire:key="$ak['id']"/>
             @endforeach
