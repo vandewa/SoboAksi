@@ -58,4 +58,5 @@ class Aksi extends Model
         return $this->hasMany(Komentar::class, 'aksi_id');
     }
 
+
 }

@@ -36,7 +36,7 @@ class Aksi extends Component
     }
     public function loadPosts()
     {
-        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->withCount("komentar")->orderBy("created_at", "desc")->whereHas('penerimaDonasi');
+        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount('dukung')->withCount('komentar')->orderBy('publish_at', 'desc')->whereHas('penerimaDonasi')->where('publish_st', 'PUBLISH_ST_01');
         if($this->kategori){
             $posts->whereHas('kategorinya', function($a){
                 $a->where('id', $this->kategori);
@@ -55,7 +55,6 @@ class Aksi extends Component
 
     public function render()
     {
-        // dd($this->kategori);
         return view('livewire.page.aksi',[
             'aksi' => Beraksi::with(['kategorinya'])->where('kategori', $this->kategori)->first(),
             'jumlah' => Beraksi::where('kategori', $this->kategori)->count(),

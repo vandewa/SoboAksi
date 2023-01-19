@@ -25,7 +25,7 @@ class PenerimaController extends Controller
     {
         if($request->ajax()){
 
-            $data = Penerima::with('provinsi', 'kabupaten', 'kecamatan', 'kelurahan')->select('*');
+            $data = Penerima::with(['provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'identitas'])->select('*');
 
             return DataTables::of($data)
             ->addIndexColumn()
@@ -65,19 +65,21 @@ class PenerimaController extends Controller
      */
     public function store(PenerimaStoreValidation $request)
     {
-        $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
+        // $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
 
         if($request->hasFile('foto_ktp') || $request->hasFile('foto_penerima')){
             if($request->hasFile('foto_ktp')){
                 // $name_foto_ktp = $request->file('foto_ktp')->getClientOriginalName();
-                $path_foto_ktp = $request->file('foto_ktp')->store($paths);
+                // $path_foto_ktp = $request->file('foto_ktp')->store($paths);
+                $path_foto_ktp = $request->file('foto_ktp')->store('aksi/identitas/', 'public');
             } else {
                 $path_foto_ktp = '';
 
             }
             if($request->hasFile('foto_penerima')){
                 // $name_foto_penerima = $request->file('foto_penerima')->getClientOriginalName();
-                $path_foto_penerima = $request->file('foto_penerima')->store($paths);
+                // $path_foto_penerima = $request->file('foto_penerima')->store($paths);
+                $path_foto_penerima = $request->file('foto_penerima')->store('aksi/penerima', 'public');
             } else {
                 $path_foto_penerima = '';
             }
@@ -157,8 +159,6 @@ class PenerimaController extends Controller
     public function update(PenerimaUpdateValidation $request, $id)
     {
 
-        $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
-
         if($request->hasFile('foto_ktp') || $request->hasFile('foto_penerima')){
             $gambar = Penerima::where('id', $id)->first();
 
@@ -167,7 +167,7 @@ class PenerimaController extends Controller
                     Storage::delete($gambar->foto_ktp);
                 }
 
-                $path_foto_ktp = $request->file('foto_ktp')->store($paths);
+                $path_foto_ktp = $request->file('foto_ktp')->store('aksi/identitas/', 'public');
             } else {
                 $path_foto_ktp = $gambar->foto_ktp;
 
@@ -177,7 +177,7 @@ class PenerimaController extends Controller
                     Storage::delete($gambar->foto_penerima);
                 }
 
-                $path_foto_penerima = $request->file('foto_penerima')->store($paths);
+                $path_foto_penerima = $request->file('foto_penerima')->store('aksi/penerima', 'public');
             } else {
                 $path_foto_penerima =  $gambar->foto_penerima;
             }

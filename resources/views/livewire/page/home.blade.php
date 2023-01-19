@@ -1,5 +1,8 @@
 <div>
 
+    {{-- LOADING SCREEN SOBO AKSI --}}
+    <livewire:preloader/>
+
     {{-- START MOBILE SELAMAT DATANG --}}
         <livewire:page.mobile-selamat-datang/>
     {{-- END MOBILE --}}
@@ -33,7 +36,7 @@
                         <a class="btn btn-primary btn-md" href="{{ route('aksi') }}">Lihat Selengkapnya <i class="fas fa-angle-right fa-sm ml-1"></i>
                         </a>
                     </div>
-                </div>
+            </div>
             </div>
         </div>
         {{-- END DESKTOP --}}
@@ -42,13 +45,7 @@
         <div class="auto-container d-block d-md-none">
             <div class="sec-title centred">
                 <span class="sub-title">Donasi</span>
-                {{-- <h2 style="font-size: 25px !important; ">Penggalangan Dana Mendesak</h2> --}}
             </div>
-            {{-- <div class="d-flex justify-content-end">
-                <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}">Lihat Lainnya
-                    <i class="fas fa-angle-right fa-sm ml-1"></i>
-                </a>
-            </div>   --}}
             <div class="text-right col-md-12 float-end d-flex justify-content-end">
                 <div class="float-end d-flex justify-content-end ml-6">
                     <a class="btn btn-primary btn-sm" href="{{ route('aksi') }}"> Lihat Semua <i class="fas fa-angle-right fa-sm ml-1"></i>

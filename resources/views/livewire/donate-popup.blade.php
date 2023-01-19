@@ -14,7 +14,7 @@
                                 @if ($photo)
                                     <img src="{{ $photo->temporaryUrl() }}"  width="200px" height="200px">
                                 @endif
-                                <input type="file" wire:model.lazy="photo" accept="image/*" class="form-control" name="name" placeholder="example name" required>
+                                <input type="file" wire:model.lazy="photo" accept="image/png, image/jpeg" class="form-control" name="name" placeholder="example name" required>
                             </div>
                             <div class="form-group">
                                 <label>Judul <span>*</span></label>

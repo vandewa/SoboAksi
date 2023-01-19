@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AksiStoreValidation extends FormRequest
+class DonasiStoreValidation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,8 +28,10 @@ class AksiStoreValidation extends FormRequest
             'judul' => 'required',
             'kategori' => 'required',
             'deskripsi' => 'required',
-            'setuju' => 'required',
-            'publish_st' => 'required',
+            'penerima_id' => 'required',
+            'publish_at ' => 'required',
+            'target_waktu ' => 'required',
+            'target_donasi ' => 'required',
         ];
     }
 }

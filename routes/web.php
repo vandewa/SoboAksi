@@ -25,6 +25,7 @@ use App\Http\Livewire\Page\MobilePostingku;
 use App\Http\Livewire\Page\MobileEditProfile;
 use App\Http\Livewire\Page\GantiPassword;
 use App\Http\Livewire\Page\MobileListAksi;
+use App\Http\Controllers\DonasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +68,7 @@ Route::get('kabupaten', [RegionController::class, 'kabupaten'])->name('kabupaten
 Route::get('kecamatan', [RegionController::class, 'kecamatan'])->name('kecamatan');
 Route::get('kelurahan', [RegionController::class, 'kelurahan'])->name('kelurahan');
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'role:diaspora']], function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::resource('profile', ProfileController::class);
 
@@ -78,6 +79,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('penerima', PenerimaController::class);
         Route::resource('kategori', KategoriController::class);
         Route::resource('aksi', AksiController::class);
+        Route::resource('donasi', DonasiController::class);
         Route::resource('wilayah', WilayahController::class);
         Route::get('filter', [WilayahController::class, 'index']);
     });

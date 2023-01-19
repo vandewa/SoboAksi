@@ -9,7 +9,7 @@ class MobilePostingku extends Component
 {
     public function render()
     {
-        $data = Aksi::with(['sampul', 'penerimaDonasi'])->where('creator_id', auth()->user()->id)->orderBy('publish_at', 'desc')->get();
+        $data = Aksi::with(['sampul', 'penerimaDonasi'])->where('creator_id', auth()->user()->id)->where('publish_st', 'PUBLISH_ST_01')->orderBy('publish_at', 'desc')->get();
         $count = Aksi::with(['sampul'])->where('creator_id', auth()->user()->id)->count();
 
         // dd($data);

@@ -22,7 +22,7 @@ class AksiController extends Controller
         // return $data = Aksi::with('publikasi', 'user', 'kategorinya')->get();
         if($request->ajax()){
 
-            $data = Aksi::with('publikasi', 'user', 'kategorinya')->select('*');
+            $data = Aksi::with('publikasi', 'user', 'kategorinya')->whereDoesntHave('penerimaDonasi')->select('*');
 
             return DataTables::of($data)
             ->addIndexColumn()
@@ -62,6 +62,10 @@ class AksiController extends Controller
                     return '-';
                 }
             })
+            ->editColumn('created_at', function($a){
+                return Carbon::createFromTimeStamp(strtotime($a->created_at))->isoFormat('D MMMM Y');
+                
+            })
             ->rawColumns(['action', 'setuju', 'publikasinya'])
             ->make(true);
         }
@@ -94,8 +98,8 @@ class AksiController extends Controller
             'kategori' => $request->kategori,
             'deskripsi' => $request->deskripsi,
             'creator_id' => auth()->user()->id,
-            'setuju' => $request->setuju,
-            'publish_st' => $request->publish_st,
+            'setuju' => 1,
+            'publish_st' => 'PUBLISH_ST_01',
             'publish_at' => $request->publish_at,
         ]);
 

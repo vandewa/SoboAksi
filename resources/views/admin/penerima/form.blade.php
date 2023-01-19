@@ -86,7 +86,7 @@
                         @if(empty($data->foto_ktp) || is_null($data->foto_ktp))
                         <img id="preview-image-before-upload" src="{{ asset('images/png/notfound.gif')}}" alt="preview image" style="max-height: 250px;">
                         @else
-                        <img id="preview-image-before-upload" src="{{ $data->preview_ktp }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
+                        <img id="preview-image-before-upload" src="{{ $data->UrlKtp }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
                         @endif
                     </div>
                 </div> 
@@ -97,7 +97,7 @@
                         @if(empty($data->foto_penerima) || is_null($data->foto_penerima))
                         <img id="preview-image-before-upload2" src="{{ asset('images/png/notfound.gif')}}" alt="preview image" style="max-height: 250px;">
                         @else
-                        <img id="preview-image-before-upload2" src="{{ $data->preview_penerima }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
+                        <img id="preview-image-before-upload2" src="{{ $data->UrlPenerima }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
                         @endif
                     </div>
                 </div>

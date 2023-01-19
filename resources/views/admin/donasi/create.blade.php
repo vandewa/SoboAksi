@@ -1,16 +1,16 @@
-@section('title', 'Tambah Aksi | Sobo Aksi')
+@section('title', 'Tambah Donasi | Sobo Aksi')
 @extends('layouts.utama')
 
 @section('content')
 <div class="content-header row">
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title mb-0">Tambah Aksi</h3>
+        <h3 class="content-header-title mb-0">Tambah Donasi</h3>
         <div class="row breadcrumbs-top">
             <div class="breadcrumb-wrapper col-12">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Data Aksi</a>
+                    <li class="breadcrumb-item"><a href="#">Data Donasi</a>
                     </li>
-                    <li class="breadcrumb-item active">Tambah Aksi
+                    <li class="breadcrumb-item active">Tambah Donasi
                     </li>
                 </ol>
             </div>
@@ -22,12 +22,12 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" id="horz-layout-colored-controls">Tambah Aksi</h4>
+                    <h4 class="card-title" id="horz-layout-colored-controls">Tambah Donasi</h4>
                     <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
-                        {{Form::open(['route' => 'admin:aksi.store','method' => 'post', 'id' => 'my-form', 'files' => true])}} 
+                        {{Form::open(['route' => 'admin:donasi.store','method' => 'post', 'id' => 'my-form', 'files' => true])}} 
                         
                         @include('admin.aksi.form')
                             
@@ -42,7 +42,7 @@
 @endsection
 
 @push('js')
-{!! JsValidator::formRequest('App\Http\Requests\AksiStoreValidation','#my-form') !!}
+{!! JsValidator::formRequest('App\Http\Requests\DonasiStoreValidation','#my-form') !!}
  <script>
     function change()
      {
