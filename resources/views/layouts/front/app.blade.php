@@ -338,7 +338,7 @@
 
 <!-- page wrapper -->
 
-<body style="margin-top: 30px;">
+<body style="margin-top: 40px;">
     <div class="boxed_wrapper">
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
