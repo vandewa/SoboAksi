@@ -13,11 +13,10 @@ class MobileDonasiku extends Component
        
         return view('livewire.page.mobile-donasiku', [
             'data' => $data,
-            'jumlah' => $data = DonasiPayment::with(['aksi'])
+            'jumlah' => DonasiPayment::with(['aksi'])
             ->where('payment_user_id', auth()->user()->id)
             ->where('payment_status','PAID')
             ->count(),
-            
         ]);
     }
 }

@@ -85,44 +85,67 @@
 {{-- END DESKTOP --}}
 
 {{-- START MOBILE --}}
-<div class="">
     {{-- TOMBOL BACK --}}
+    <div class="d-block d-md-none">
+        {{-- Hanya untuk mobile --}}
     @if (Auth::check())
         <a href="{{ route('home') }}">
             <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
         </a>
     @endif
+    </div>
     
     {{-- END TOMBOL BACK --}}
     <section class="cause-details" style="margin-top: 0px;margin-bottom: 40px;">
         <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-8 col-md-12 col-sm-12 content-side" >
+            <div class="row clearfix d-flex justify-content-center">
+                <div class="col-lg-10 col-md-12 col-sm-12 content-side" >
                     <div class="cause-details-content" >
                         <div class="cause-block-one" >
                             <div class="inner-box" >
                                 <div class="image-box mb-4">
-                                    <figure class="image"><img src="{{ $sampul }}" ></figure>
-                                </div>
+                                <figure class="image"><img src="{{ $sampul }}" ></figure>
+                                </div>  
                                 <div class="container mb-3">
                                     <h1 style="font-size: 20px;">{{ $datanya->judul }}</h1>
                                     <a href="{{ route('aksi', ['kategori' => $datanya->kategori]) }}"><span style="font-size: 13px; color:#E04237 !important;">{{ $datanya->kategorinya->nama_kategori }}</span>
                                     </a>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-4" style="max-width: 20% !important;">
-                                        <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
-                                    </div>
-                                    <div class="col-8" style="padding-left:0px !important;">
-                                        <span style="font-size: 13px;" class="brsmall">{{ $datanya->user->name??'' }}
-                                            <img src="{{ asset('images/png/verified.png') }}" alt="" style="max-width: 16px;">
-                                        </span>
-                                        @if($datanya->publish_at)
-                                        <span style="font-size: 10px;">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $datanya->publish_at)->diffForHumans() }}</span>
-                                        @endif
+                                {{-- MOBILE --}}
+                                <div class="d-block d-md-none">
+                                    <div class="row">
+                                        <div class="col-4" style="max-width: 20% !important;">
+                                            <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
+                                        </div>
+                                        <div class="col-8" style="padding-left:0px !important;">
+                                            <span style="font-size: 13px;" class="brsmall">{{ $datanya->user->name??'' }}
+                                                <img src="{{ asset('images/png/verified.png') }}" alt="" style="max-width: 16px;">
+                                            </span>
+                                            @if($datanya->publish_at)
+                                            <span style="font-size: 10px;">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $datanya->publish_at)->diffForHumans() }}</span>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
+                                {{-- desktop --}}
+                                <div class="d-none d-md-block">
+                                    <div class="row">
+                                        <div class="col-1" style="max-width: 20% !important;">
+                                            <img src="{{ asset('trusthand/assets/images/sobo-avatar.png') }}" alt="" class="avatar">
+                                        </div>
+                                        <div class="col-8" style="padding-left:0px !important;">
+                                            <span style="font-size: 13px;" class="brsmall">{{ $datanya->user->name??'' }}
+                                                <img src="{{ asset('images/png/verified.png') }}" alt="" style="max-width: 16px;">
+                                            </span>
+                                            @if($datanya->publish_at)
+                                            <span style="font-size: 10px;">{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $datanya->created_at)->diffForHumans() }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
                                 @if($datanya->penerimaDonasi)
                                     <div class="progress-box">
                                         <div class="bar">
@@ -161,6 +184,8 @@
             </div>
         </div>
     </section>
+    {{-- MOBILE --}}
+    <div class="d-block d-md-none">
     @if($datanya->penerimaDonasi)
         @if (Auth::check())
         <div class="donasi-bottom"> 
@@ -175,5 +200,23 @@
             </div>
         @endif
     @endif
+    </div>
+    {{-- DESKTOP --}}
+    <div class="d-none d-md-block">
+    @if($datanya->penerimaDonasi)
+        @if (Auth::check())
+        <div class="donasi-bottom"> 
+            <div class="tombol d-flex justify-content-center mt-3">
+                <button type="submit" class="butt mb-2" style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:55% !important;" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi Sekarang</span>
+            </div>
+        </div>
+        @else
+        <div class="donasi-bottom">
+            <div class="tombol d-flex justify-content-center mt-3">
+                <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2" style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:55% !important;">Donasi Sekarang</button>
+            </div>
+        @endif
+    @endif
+    </div>
 </div>
-</div>
+

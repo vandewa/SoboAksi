@@ -337,8 +337,8 @@
 
 
 <!-- page wrapper -->
-
-<body style="margin-top: 40px;">
+<div class="d-block d-md-none" style="margin-top: 40px;"></div>
+<body >
     <div class="boxed_wrapper">
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
@@ -453,7 +453,18 @@
                                 </a>
                             </figure>
                         </div>
-                        <livewire:button.donasi />
+                        <div class="menu-area clearfix">
+                            <nav class="main-menu clearfix">
+                            </nav>
+                            <ul class="nav-right">
+                                <li class="btn-box">
+                                    <livewire:button.donasi />
+                                </li>
+                                <li class="nav-btn nav-toggler navSidebar-button clearfix">
+                                    <i class="icon-3"></i>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -506,21 +517,23 @@
                                 </a>
                             </figure>
                         </div>
-                        {{-- <div class="menu-area clearfix">
+                        <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
                             </nav>
                             <ul class="nav-right">
                                 <li class="btn-box">
                                     <livewire:button.donasi />
                                 </li>
+                                @if(Auth::check())
                                 <li class="nav-btn nav-toggler navSidebar-button clearfix">
                                     <i class="icon-3"></i>
                                 </li>
+                                @endif
                             </ul>
-                        </div> --}}
-                        <div class="d-none d-md-block">
-                            <livewire:button.donasi />
                         </div>
+                        {{-- <div class="d-none d-md-block">
+                            <livewire:button.donasi />
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -567,7 +580,7 @@
         @yield('content')
 
         <!-- main-footer -->
-        <footer class="main-footer d-none d-sm-block d-sm-none d-md-block">
+        {{-- <footer class="main-footer d-none d-sm-block d-sm-none d-md-block">
             <div class="auto-container">
                 <div class="footer-top">
                     <figure class="footer-logo"><a href="{{ route('home') }}">
@@ -579,77 +592,13 @@
                         <li><a href="{{ route('home') }}"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                {{-- <div class="widget-section">
-                    <div class="row clearfix">
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="about-widget footer-widget">
-                                <div class="widget-title">
-                                    <h3>About</h3>
-                                </div>
-                                <div class="text">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elitsollicit udin netus quis
-                                        ornare. Massa pharetra in nec sed nunc.</p>
-                                    <p>nisl viverra massa imperdiet. Dui mattis quis congue fames.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="links-widget footer-widget ml_50">
-                                <div class="widget-title">
-                                    <h3>Quick Link</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="{{ route('home') }}">About Us</a></li>
-                                        <li><a href="{{ route('home') }}">Services</a></li>
-                                        <li><a href="{{ route('home') }}">Case</a></li>
-                                        <li><a href="{{ route('home') }}">Pricing</a></li>
-                                        <li><a href="{{ route('home') }}">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="links-widget footer-widget ml_30">
-                                <div class="widget-title">
-                                    <h3>Usefull Links</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <ul class="links-list clearfix">
-                                        <li><a href="{{ route('home') }}">Privacy Policy</a></li>
-                                        <li><a href="{{ route('home') }}">Terms & Condition</a></li>
-                                        <li><a href="{{ route('home') }}">Support</a></li>
-                                        <li><a href="{{ route('home') }}">Disclaimer</a></li>
-                                        <li><a href="{{ route('home') }}">Faq</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
-                            <div class="contact-widget footer-widget ml_30">
-                                <div class="widget-title">
-                                    <h3>Contact</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <p>Tincidunt neque pretium lectus donec risus.</p>
-                                    <ul class="info-list clearfix">
-                                        <li><i class="icon-17"></i>New Hyde Park, NY 11040</li>
-                                        <li><i class="icon-18"></i><a
-                                                href="mailto:example@info.com">example@info.com</a></li>
-                                        <li><i class="icon-19"></i><a href="tel:3336660000">333 666 0000</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
                 <div class="footer-bottom left mt-auto">
                     <div class="copyright">
                         <p>Copyright 2022 All Right Reserved.</p>
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> --}}
         <!-- main-footer end -->
 
 
