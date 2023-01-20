@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\Aksi;
 use App\Models\Kategori;
-use Yajra\DataTables\Facades\DataTables;    
+use App\Models\AksiPhoto;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\AksiStoreValidation;
-use Carbon\Carbon;
+use Yajra\DataTables\Facades\DataTables;    
 
 class AksiController extends Controller
 {
@@ -93,15 +94,23 @@ class AksiController extends Controller
      */
     public function store(Request $request)
     {
-        Aksi::create([
+        $aksi = Aksi::create([
             'judul' => $request->judul,
             'kategori' => $request->kategori,
             'deskripsi' => $request->deskripsi,
             'creator_id' => auth()->user()->id,
             'setuju' => 1,
             'publish_st' => 'PUBLISH_ST_01',
-            'publish_at' => $request->publish_at,
+            'publish_at' => now(),
         ]);
+
+        if($request->photo){
+            $path_photo = $request->file('photo')->store('aksi', 'public');
+            AksiPhoto::create([
+                'aksi_id' => $aksi->id,
+                'url' => $path_photo
+            ]);
+        }
 
         return redirect()->route('admin:aksi.index')->with('status', 'berhasil');
     }
@@ -140,29 +149,31 @@ class AksiController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request->all();
         if($request->publish_st == 'PUBLISH_ST_02'){
-            Aksi::find($id)->update([
-                'judul' => $request->judul,
-                'kategori' => $request->kategori,
-                'deskripsi' => $request->deskripsi,
-                'updated_by' => auth()->user()->id,
-                'setuju' => $request->setuju,
-                'publish_st' => $request->publish_st,
-                'publish_at' => null,
-                
-            ]);
+            $publikasi_tanggal = NULL;
         } else {
-            Aksi::find($id)->update([
-                'judul' => $request->judul,
-                'kategori' => $request->kategori,
-                'deskripsi' => $request->deskripsi,
-                'updated_by' => auth()->user()->id,
-                'setuju' => $request->setuju,
-                'publish_st' => $request->publish_st,
-                'publish_at' => null,
-                'publish_at' => $request->publish_at,
+            $publikasi_tanggal = $request->publish_at;
+        }
+
+        if($request->photo){
+            $path_photo = $request->file('photo')->store('aksi', 'public');
+            AksiPhoto::where('aksi_id', $id)->update([
+                'url' => $path_photo
             ]);
         }
+
+        Aksi::find($id)->update([
+            'judul' => $request->judul,
+            'kategori' => $request->kategori,
+            'deskripsi' => $request->deskripsi,
+            'updated_by' => auth()->user()->id,
+            'setuju' => $request->setuju,
+            'publish_st' => $request->publish_st,
+            'publish_at' => $publikasi_tanggal,
+            
+        ]);
+
         
 
         return redirect()->route('admin:aksi.index')->with('status', 'berhasil');
