@@ -456,44 +456,43 @@
                         <livewire:button.donasi />
                     </div>
                 </div>
-                {{-- END DESKTOP --}}
-                @else
-                {{-- START MOBILE --}}
-                {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
-                <div class="d-block d-md-none">
-                    <div class="header-lower">
-                        @if(Request::segment(1) != '' )
-                        <a href="{{ url()->previous() }}">
-                            <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
-                                    style="height:10px !important;"></i></div>
-                        </a>
-                        @else
-                        @endif
-                        <a href="{{ route('home') }}">
-                            <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-4">
-                            </center>
-                        </a>
-                    </div>
-                </div>
-                {{-- END MOBILE --}}
-                {{-- START DEKSTOP --}}
-                <div class="d-none d-md-block">
-                    <div class="header-lower">
-                        <div class="outer-box">
-                            <div class="logo-box">
-                                <figure class="logo">
-                                    <a href="{{ route('home') }}">
-                                        <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
-                                    </a>
-                                </figure>
-                            </div>
-                            <livewire:button.donasi />
-                        </div>
-                    </div>
-                </div>
-                {{-- END DESKTOP --}}
             </div>
-
+            {{-- END DESKTOP --}}
+            @else
+            {{-- START MOBILE --}}
+            {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
+            <div class="d-block d-md-none">
+                <div class="header-lower">
+                    @if(Request::segment(1) != '' )
+                    <a href="{{ url()->previous() }}">
+                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
+                                style="height:10px !important;"></i></div>
+                    </a>
+                    @else
+                    @endif
+                    <a href="{{ route('home') }}">
+                        <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-4">
+                        </center>
+                    </a>
+                </div>
+            </div>
+            {{-- END MOBILE --}}
+            {{-- START DEKSTOP --}}
+            <div class="d-none d-md-block">
+                <div class="header-lower">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                                </a>
+                            </figure>
+                        </div>
+                        <livewire:button.donasi />
+                    </div>
+                </div>
+            </div>
+            {{-- END DESKTOP --}}
             @endif
 
             <!--sticky Header-->

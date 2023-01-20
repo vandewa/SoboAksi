@@ -87,9 +87,12 @@
 {{-- START MOBILE --}}
 <div class="">
     {{-- TOMBOL BACK --}}
-    <a href="{{ route('home') }}">
-        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
-    </a>
+    @if (Auth::check())
+        <a href="{{ route('home') }}">
+            <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
+        </a>
+    @endif
+    
     {{-- END TOMBOL BACK --}}
     <section class="cause-details" style="margin-top: 0px;margin-bottom: 40px;">
         <div class="auto-container">
