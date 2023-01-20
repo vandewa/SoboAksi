@@ -91,7 +91,7 @@ class AksiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AksiStoreValidation $request)
+    public function store(Request $request)
     {
         Aksi::create([
             'judul' => $request->judul,
@@ -138,7 +138,7 @@ class AksiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AksiStoreValidation $request, $id)
+    public function update(Request $request, $id)
     {
         if($request->publish_st == 'PUBLISH_ST_02'){
             Aksi::find($id)->update([
