@@ -26,7 +26,7 @@ use App\Http\Livewire\Page\MobileEditProfile;
 use App\Http\Livewire\Page\GantiPassword;
 use App\Http\Livewire\Page\MobileListAksi;
 use App\Http\Controllers\DonasiController;
-
+use App\Http\Livewire\WebListAksi;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +49,7 @@ Route::get('/postingku', MobilePostingku::class)->name('postingku');
 Route::get('/edit-profile', MobileEditProfile::class)->name('edit-profile');
 Route::get('/ganti-password', GantiPassword::class)->name('ganti-password');
 Route::get('/list-aksi', MobileListAksi::class)->name('list-aksi');
+Route::get('/web-list-aksi', WebListAksi::class)->name('web-list-aksi');
 
 
 //dokumentasi template

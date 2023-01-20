@@ -5,10 +5,10 @@
             <div class="image-box">
                 <figure class="image">
                     <a href="{{ route('detail-donasi',$idnya) }}">
-                    <img src="{{ $sampul }}" style="height:200px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
+                    <img src="{{ $sampul }}" style="height:300px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
                     </a>
                 </figure>
-                <div class="category"><a href="{{ route('aksi', ['kategori' => $idnya]) }}">{{$kategorinya->nama_kategori}}</a></div>
+                <div class="category"><a href="{{ route('aksi', ['kategori' => $kategorinya->id]) }}">{{$kategorinya->nama_kategori}}</a></div>
             </div>
             <div class="lower-content">
                 <div class="text" style="padding: 32px 30px 7px 40px;">
@@ -54,7 +54,7 @@
                           <li class="admin">
                             <button class="btn btn-primary btn-block">
                               <span style="font-size: 13px;width:100%;float: left;">
-                               100 <i class="icon-16"></i> 
+                               {{ $jumlahKomentar }} <i class="icon-16"></i> 
                               </span>
                             </button>
                           </li>
@@ -62,7 +62,6 @@
                         <div class="col-md-6">
                             <button class="btn btn-danger btn-block" wire:click="like">
                               <span style="font-size: 13px;width:100%;float: left;">{{ $jumlahLike }} <i class="fa fa-heart"></i> 
-                                
                               </span>
                             </button>
                         </div>

@@ -1,7 +1,7 @@
 
 <div>
     <div class="kiri">
-        <p style="font-size: 18px; color:black;"><b>Donasiku (4)</b></p>
+        <p style="font-size: 18px; color:black;"><b>Donasiku ({{ $jumlah }})</b></p>
     </div>
 
     <div class="container mt-3" style="margin-bottom: 100px;">
