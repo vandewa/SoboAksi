@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Livewire\Page;
+namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Aksi as Beraksi;
 use Illuminate\Support\Collection;
+use App\Models\Aksi as Beraksi;
 
-class MobileListAksi extends Component
+
+
+class WebListAksi extends Component
 {
-
     public $item ;
     public $pageNumber = 1;
     public $hasMorePages;
@@ -45,7 +46,7 @@ class MobileListAksi extends Component
 
     public function render()
     {
-        return view('livewire.page.mobile-list-aksi', [
+        return view('livewire.web-list-aksi', [
             'aksi' => Beraksi::with(['kategorinya'])->where('kategori', $this->kategori)->first(),
             'jumlah' => Beraksi::where('kategori', $this->kategori)->whereDoesntHave('penerimaDonasi')->count(),
         ]);

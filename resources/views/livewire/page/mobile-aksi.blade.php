@@ -1,5 +1,5 @@
 {{-- START MOBILE --}}
-<section class="cause-section sec-pad">
+<div>
     <div class="auto-container d-block d-md-none">
         <div class="sec-title centred">
             <span class="sub-title">Aksi</span>
@@ -76,5 +76,7 @@
             </div>
         </div>
     </div>
-</section>
+</div>
+   
+
 {{-- END MOBILE --}}

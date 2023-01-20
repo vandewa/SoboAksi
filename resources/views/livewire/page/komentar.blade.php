@@ -22,7 +22,7 @@
             <img src="{{ asset('images/png/avatar4.png') }}" class="img-fluid rounded-circle mr-2" width="40">
             <div style="background-color:rgba(207, 207, 207, 0.096);border-radius: 15px; width:100%;">
                 <div class="ml-3 mr-3">
-                    <span class="komentar"><b>{{ $item->user->name }}</b></span>
+                    <span class="komentar"><b>{{ $item->user->name??'' }}</b></span>
                     <span class="waktu">&nbsp;{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->created_at)->diffForHumans() }}</span>
                 </div>
                 <div class="text-secondary komentar mb-2 ml-3 mr-3">
@@ -85,7 +85,7 @@
                     <img src="{{ asset('images/png/avatar4.png') }}" class="img-fluid rounded-circle mr-2" width="40">
                     <div style="background-color:rgba(207, 207, 207, 0.096);border-radius: 15px;width: 100%;">
                         <div class="ml-3 mr-3">
-                            <span class="komentar"><b>{{ $item2->user->name }}</b></span>
+                            <span class="komentar"><b>{{ $item2->user->name??'' }}</b></span>
                             <span class="waktu">&nbsp;{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item2->created_at)->diffForHumans() }}</span>
                         </div>
                         <div class="text-secondary komentar mb-2 ml-3 mr-3">
