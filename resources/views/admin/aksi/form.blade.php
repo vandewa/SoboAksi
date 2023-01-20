@@ -6,7 +6,7 @@
                     <div class="form-group">
                         <label>Sampul Gambar</label><br>    
                         @if(Request::segment(4) == 'edit')
-                        <img id="preview-image-before-upload2" src="{{ $data->sampul->url_photo }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
+                        <img id="preview-image-before-upload2" src="{{ $data->sampul->url_photo??"" }}" alt="preview image" style="max-height: 250px; max-width: 400px;">
                         @endif
                         {!! Form::file('photo', ['class' => 'form-control', 'accept' => 'image/png, image/jpeg', 'id' => 'foto_penerima']) !!}
                     </div>
