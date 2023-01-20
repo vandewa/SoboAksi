@@ -37,6 +37,7 @@
     <link href="{{ asset('trusthand/assets/css/style.css')}}" rel="stylesheet">
     <link href="{{ asset('trusthand/assets/css/responsive.css')}}" rel="stylesheet">
 
+    <script src="https://kit.fontawesome.com/bb9305debb.js" crossorigin="anonymous"></script>   
 
 
     @vite([])
@@ -53,98 +54,301 @@
         }
 
         .wallet {
-        background-color: #7b67db;
-        background-image: linear-gradient(120deg, #7b67db 0%, #ab8afb 50%, #FFFFFF 100%);
-        width: 90%;
-        border-radius: 5px;
-        -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
-        height: 167px;
-        widows: 90%;
-        /* margin: 0 auto; */
+            background-color: #7b67db;
+            background-image: linear-gradient(120deg, #7b67db 0%, #ab8afb 50%, #FFFFFF 100%);
+            width: 90%;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.1);
+            height: 167px;
+            widows: 90%;
+            /* margin: 0 auto; */
         }
 
         .wallet-body {
-        background-color: #fff;
-        border-radius: 0 10px 10px 0;
+            background-color: #fff;
+            border-radius: 0 10px 10px 0;
         }
 
-        .addscrollbar{
+        .addscrollbar {
 
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch;
             display: flex;
         }
 
-        h2{
+        h2 {
             font-size: 40px !important;
         }
 
-        h3{
+        h3 {
             font-size: 18px !important;
         }
-        
-     
+
+        .donasi-bottom {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+
+        .home-bottom {
+            position: fixed;
+            left: 0;
+            right: 20px;
+            bottom: 0px;
+            width: 100%;
+            background-color: white;
+            color: white;
+            text-align: center;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .brsmall {
+            display: block;
+            margin-bottom: -.4em;
+        }
+
+        .round {
+            height: 50px;
+            line-height: 50px;
+            width: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50%;
+            background-color: rgb(231, 56, 56);
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 50px;
+            background-image: linear-gradient(rgb(255, 43, 43), rgb(141, 34, 34));
+            box-shadow: 4px 0px 2px #888888;
+        }
+
+        .tambah {
+            height: 50px;
+            line-height: 50px;
+            width: 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50%;
+            background-color: rgb(45, 189, 52);
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 50px;
+            background-image: linear-gradient(rgb(65, 255, 75), rgb(55, 143, 58));
+            box-shadow: 4px 0px 2px #888888;
+        }
+
+        .kanan {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            color: black;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .kiri {
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            color: black;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .myRightCtn {
+            position: relative;
+            background-image: linear-gradient(45deg, #f046ff, #9b00e8);
+            border-radius: 25px;
+            height: 100%;
+            padding: 25px;
+            color: rgb(192, 192, 192);
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .myLeftCtn {
+            position: relative;
+            background: #fff;
+            border-radius: 25%;
+            height: 100%;
+            padding: 5px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .myLeftCtn header {
+            color: blueviolet;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            height: 100%;
+        }
+
+        .myCard {
+            position: relative;
+            background: #fff;
+            height: 100%;
+            border-radius: 25px;
+            -webkit-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.7);
+        }
+
+        .myRightCtn header {
+            color: #fff;
+            font-size: 44px;
+        }
+
+        .box {
+            position: relative;
+            margin: 20px;
+            margin-bottom: 100px;
+        }
+
+        .myLeftCtn .myInput {
+            width: 100%;
+            border-radius: 25px;
+            padding: 10px;
+            padding-left: 50px;
+            border: none;
+            -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+        }
+
+        .myLeftCtn .myInput:focus {
+            outline: none;
+        }
+
+        .myForm {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .myLeftCtn .butt {
+            background: linear-gradient(45deg, #fdb736, #E04237);
+            color: #fff;
+            width: 230px;
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+        }
+
+        .myLeftCtn .butt:hover {
+            background: linear-gradient(45deg, #E04237, #E04237);
+        }
+
+        .myLeftCtn .butt:focus {
+            outline: none;
+        }
+
+        .myLeftCtn .fas {
+            position: absolute;
+            color: #E04237;
+            left: 5%;
+            margin-top: 5%;
+        }
+
+        .butt_out {
+            background: transparent;
+            color: #fff;
+            width: 120px;
+            border: 2px solid#fff;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 49px -14px rgba(0, 0, 0, 0.7);
+        }
+
+        .butt_out:hover {
+            border: 2px solid#eecbff;
+        }
+
+        .butt_out:focus {
+            outline: none;
+        }
+
+        .containerlogin {
+            position: absolute;
+            max-width: 800px;
+            height: 500px;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .tombol .butt {
+            background: linear-gradient(45deg, #fdb736, #E04237);
+            color: #fff;
+            width: 100%;
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            -webkit-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            -moz-box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 10px 41px -11px rgba(0, 0, 0, 0.7);
+        }
+
+        .tombol .butt:hover {
+            background: linear-gradient(45deg, #E04237, #E04237);
+        }
+
+        .tombol .butt:focus {
+            outline: none;
+        }
+
+        .bawahkanan {
+            position: fixed;
+            right: 10%;
+            bottom: 100px;
+        }
     </style>
 </head>
 
 
 <!-- page wrapper -->
 
-<body>
+<body style="margin-top: 30px;">
     <div class="boxed_wrapper">
-
-
-        <!-- preloader -->
-        {{-- <div class="loader-wrap">
-            <div class="preloader">
-                <div class="preloader-close">x</div>
-                <div id="handle-preloader" class="handle-preloader">
-                    <div class="animation-preloader">
-                        <div class="spinner"></div>
-                        <div class="txt-loading">
-                            <span data-text-preloader="s" class="letters-loading">
-                                s
-                            </span>
-                            <span data-text-preloader="o" class="letters-loading">
-                                o
-                            </span>
-                            <span data-text-preloader="b" class="letters-loading">
-                                b
-                            </span>
-                            <span data-text-preloader="o" class="letters-loading">
-                                o
-                            </span>
-                            <span data-text-preloader="a" class="letters-loading">
-                                a
-                            </span>
-                            <span data-text-preloader="k" class="letters-loading">
-                                k
-                            </span>
-                            <span data-text-preloader="s" class="letters-loading">
-                                s
-                            </span>
-                            <span data-text-preloader="i" class="letters-loading">
-                                i
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- preloader end -->
-
-
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
                     <figure class="logo-box pull-left">
                         {{-- <a href="{{ route('home') }}"> --}}
-                        <a href="{{ route('home') }}">
-                            <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
-                        </a>
+                            <a href="{{ route('home') }}">
+                                <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
+                            </a>
                     </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
@@ -152,15 +356,15 @@
                 <div class="auto-container">
                     <div class="search-form">
                         {{-- <form method="post" action="{{ route('home') }}"> --}}
-                        <form method="post" action="{{ route('home') }}">
-                            <div class="form-group">
-                                <fieldset>
-                                    <input type="search" class="form-control" name="search-input" value=""
-                                        placeholder="Type your keyword and hit" required>
-                                    <button type="submit"><i class="far fa-search"></i></button>
-                                </fieldset>
-                            </div>
-                        </form>
+                            <form method="post" action="{{ route('home') }}">
+                                <div class="form-group">
+                                    <fieldset>
+                                        <input type="search" class="form-control" name="search-input" value=""
+                                            placeholder="Type your keyword and hit" required>
+                                        <button type="submit"><i class="far fa-search"></i></button>
+                                    </fieldset>
+                                </div>
+                            </form>
                     </div>
                 </div>
             </div>
@@ -170,6 +374,7 @@
         <!-- donate popup -->
         <livewire:donate-popup />
         <livewire:registrasi />
+        <livewire:donate-form />
 
 
         <!-- sidebar cart item -->
@@ -220,105 +425,75 @@
 
 
         <!-- main header -->
-        <header class="main-header">
+        <header class="main-header" >
             <!-- header-lower -->
-            <div class="header-lower">
-                <div class="outer-box">
-                    <div class="logo-box">
-                        <figure class="logo">
-                            <a href="{{ route('home') }}">
-                                <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="menu-area clearfix">
-                        <!--Mobile Navigation Toggler-->
-                        <div class="mobile-nav-toggler">
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
-                            <i class="icon-bar"></i>
+            @if(Auth::check())
+            {{-- START MOBILE --}}
+            <div class="d-block d-md-none">
+                <div class="header-lower">
+                    {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
+                    @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile' && Request::segment(1) !=
+                    'detail-berita' && Request::segment(1) !='detail-aksi')
+                    <a href="{{ url()->previous() }}">
+                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
+                    </a>
+                    @else
+                    @endif
+                </div>
+            </div>
+            {{-- END MOBILE --}}
+            {{-- START DEKSTOP --}}
+            <div class="d-none d-md-block">
+                <div class="header-lower">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                                </a>
+                            </figure>
                         </div>
-                        {{-- <nav class="main-menu navbar-expand-md navbar-light">
-                            <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="{{ route('home') }}">Home</a>
-                                        <ul>
-                                            <li><a href="{{ route('home') }}">Child Education</a></li>
-                                            <li><a href="index-2.html">Wildlife</a></li>
-                                            <li><a href="index-3.html">Homeless People</a></li>
-                                            <li><a href="index-onepage.html">OnePage Home</a></li>
-                                            <li><a href="index-rtl.html">RTL Home</a></li>
-                                            <li class="dropdown"><a href="{{ route('home') }}">Header Style</a>
-                                                <ul>
-                                                    <li><a href="{{ route('home') }}">Header Style 01</a></li>
-                                                    <li><a href="index-2.html">Header Style 02</a></li>
-                                                    <li><a href="index-3.html">Header Style 03</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Pages</a>
-                                        <ul>
-                                            <li class="dropdown"><a href="{{ route('home') }}">Volunteer</a>
-                                                <ul>
-                                                    <li><a href="team.html">Our Volunteer</a></li>
-                                                    <li><a href="team-details.html">Volunteer Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"><a href="{{ route('home') }}">Events</a>
-                                                <ul>
-                                                    <li><a href="events.html">Our Events</a></li>
-                                                    <li><a href="events-details.html">Events Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="service.html">Services</a></li>
-                                            <li><a href="faq.html">Faq’s</a></li>
-                                            <li><a href="testimonial.html">Testimonials</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="error.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Causes</a>
-                                        <ul>
-                                            <li><a href="causes.html">Causes 1</a></li>
-                                            <li><a href="causes-2.html">Causes 2</a></li>
-                                            <li><a href="causes-details.html">Causes Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Shop</a>
-                                        <ul>
-                                            <li><a href="shop.html">Our Shop</a></li>
-                                            <li><a href="shop-details.html">Shop Details</a></li>
-                                            <li><a href="cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="{{ route('home') }}">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog Grid</a></li>
-                                            <li><a href="blog-2.html">Blog Standard</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </nav> --}}
-                        <ul class="nav-right">
-                            {{-- <li class="search-box-outer search-toggler">
-                                <i class="icon-1"></i>
-                            </li> --}}
-                            <li class="btn-box">
-                                <livewire:button.donasi />
-                            </li>
-                            <li class="nav-btn nav-toggler navSidebar-button clearfix">
-                                <i class="icon-3"></i>
-                            </li>
-                        </ul>
+                        <livewire:button.donasi />
                     </div>
                 </div>
             </div>
+            {{-- END DESKTOP --}}
+            @else
+            {{-- START MOBILE --}}
+            {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
+            <div class="d-block d-md-none">
+                <div class="header-lower">
+                    @if(Request::segment(1) != '' )
+                    <a href="{{ url()->previous() }}">
+                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
+                                style="height:10px !important;"></i></div>
+                    </a>
+                    @else
+                    @endif
+                    <a href="{{ route('home') }}">
+                        <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-4">
+                        </center>
+                    </a>
+                </div>
+            </div>
+            {{-- END MOBILE --}}
+            {{-- START DEKSTOP --}}
+            <div class="d-none d-md-block">
+                <div class="header-lower">
+                    <div class="outer-box">
+                        <div class="logo-box">
+                            <figure class="logo">
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                                </a>
+                            </figure>
+                        </div>
+                        <livewire:button.donasi />
+                    </div>
+                </div>
+            </div>
+            {{-- END DESKTOP --}}
+            @endif
 
             <!--sticky Header-->
             <div class="sticky-header">
@@ -331,14 +506,10 @@
                                 </a>
                             </figure>
                         </div>
-                        <div class="menu-area clearfix">
+                        {{-- <div class="menu-area clearfix">
                             <nav class="main-menu clearfix">
-                                <!--Keep This Empty / Menu will come through Javascript-->
                             </nav>
                             <ul class="nav-right">
-                                {{-- <li class="search-box-outer search-toggler">
-                                    <i class="icon-1"></i>
-                                </li> --}}
                                 <li class="btn-box">
                                     <livewire:button.donasi />
                                 </li>
@@ -346,6 +517,9 @@
                                     <i class="icon-3"></i>
                                 </li>
                             </ul>
+                        </div> --}}
+                        <div class="d-none d-md-block">
+                            <livewire:button.donasi />
                         </div>
                     </div>
                 </div>
@@ -469,7 +643,7 @@
                         </div>
                     </div>
                 </div> --}}
-                <div class="footer-bottom left">
+                <div class="footer-bottom left mt-auto">
                     <div class="copyright">
                         <p>Copyright 2022 All Right Reserved.</p>
                     </div>
@@ -493,7 +667,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Scroll to top end -->
 
     </div>
@@ -512,7 +686,7 @@
     <script src="{{ asset('trusthand/assets/js/appear.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/scrollbar.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/isotope.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/jquery.nice-select.min.js')}}"></script>
+    <!-- <script src="{{ asset('trusthand/assets/js/jquery.nice-select.min.js')}}"></script> -->
     <script src="{{ asset('trusthand/assets/js/parallax-scroll.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/jquery-ui.js')}}"></script>
     <script src="{{ asset('trusthand/assets/js/nav-tool.js')}}"></script>
@@ -522,14 +696,14 @@
     <!-- main-js -->
     <script src="{{ asset('trusthand/assets/js/script.js')}}"></script>
 
-    @stack('js')
     @livewireScripts
-
+    @stack('js')
     <script>
         Livewire.on('registrasi', postId => {
             alert('A post was added with the id of: ' + postId);
         })
     </script>
+
 </body><!-- End of .page_wrapper -->
 
 </html>

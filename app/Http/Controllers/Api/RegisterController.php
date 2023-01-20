@@ -37,8 +37,7 @@ class RegisterController extends Controller
             'password'  => bcrypt($request->password)
         ]);
 
-        $role = Role::create(['name' => 'masyarakat']);   
-        $user->assignRole([$role->id]);
+        $user->syncRoles(['masyarakat']);
 
         //return response JSON user is created
         if ($user) {

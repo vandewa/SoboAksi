@@ -11,8 +11,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 column">
                             <div class="form-group">
                                 <label>Nama <span>*</span></label>
-                                <input type="text" name="name" placeholder="example name" required=""
-                                    wire:model.lazy="name">
+                                <input type="text" name="name" placeholder="example name" required="" wire:model.lazy="name">
                                 @error('name') <span class="error">{{ $message }}</span> @enderror
                             </div>
                         </div>
@@ -55,7 +54,9 @@
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 column text-center">
                             <div class="form-group message-btn">
-                                <button type="submit" class="theme-btn-one">Registrasi</button>
+                                <div class="tombol d-flex justify-content-center btn-block">
+                                    <button type="submit" class="butt mb-2" style="line-height:25px !important;">Registrasi</button>
+                                </div>
                                 <p>Sudah punya akun? <a href="#" wire:click="$emitTo('registrasi', 'register')">Login
                                         sekarang</a></p>
                             </div>

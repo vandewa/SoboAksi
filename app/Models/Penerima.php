@@ -48,4 +48,20 @@ class Penerima extends Model
         return $this->belongsTo(ComCode::class, 'kode_identitas');
     }
 
+    public function getUrlKtpAttribute(){
+        $data = $this->attributes['foto_ktp'];
+        if($data){
+         return asset('storage/'.$data);
+        }
+        return asset('trusthand/assets/images/resource/cause-1.jpg');
+    }
+
+    public function getUrlPenerimaAttribute(){
+        $data = $this->attributes['foto_penerima'];
+        if($data){
+         return asset('storage/'.$data);
+        }
+        return asset('trusthand/assets/images/resource/cause-1.jpg');
+    }
+
 }

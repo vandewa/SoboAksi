@@ -42,6 +42,7 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>Tanggal Buat</th>
                                         <th>Creator</th>
                                         <th>Judul</th>
                                         <th>Kategori</th>
@@ -74,14 +75,15 @@
         serverSide: true,
         responsive: true,
         ajax: window.location.href,
+        "order": [[ 1, "desc" ]],
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-center"},
+            { data: 'created_at'},
             { data: 'user.name'},
             { data: 'judul'},
-            { data: 'kategori.nama_kategori', defaultContent: '-'},
+            { data: 'kategorinya.nama_kategori', defaultContent: '-'},
             { data: 'publikasinya', orderable: false, searchable: false},
             { data: 'tanggal', orderable: false, searchable: false},
-            // { data: 'setuju', orderable: false, searchable: false},
             { data: 'action', name: 'action',  orderable: false, searchable: false },
         ]
     });

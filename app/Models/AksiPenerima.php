@@ -14,4 +14,9 @@ class AksiPenerima extends Model
     protected $casts = [
         "donasi_tercapai" => "double"
     ];
+
+    public function penerima()
+    {
+        return $this->belongsTo(Penerima::class, 'penerima_id');
+    }
 }
