@@ -1,3 +1,4 @@
+<input type="hidden" name="profile_photo_path" value="images/profile/pemda.png">
 <div class="form-body">
     <h4 class="form-section"><i class="fa fa-user-secret"></i> Management User</h4>
     <div class="row">

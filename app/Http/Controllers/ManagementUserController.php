@@ -79,6 +79,7 @@ class ManagementUserController extends Controller
         // return $request->all();
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
+        
 
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
