@@ -338,7 +338,7 @@
 
 <!-- page wrapper -->
 
-<body>
+<body style="margin-top: 30px;">
     <div class="boxed_wrapper">
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
@@ -425,7 +425,7 @@
 
 
         <!-- main header -->
-        <header class="main-header">
+        <header class="main-header" >
             <!-- header-lower -->
             @if(Auth::check())
             {{-- START MOBILE --}}
