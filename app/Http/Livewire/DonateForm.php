@@ -76,7 +76,7 @@ class DonateForm extends Component
             'external_id' => "$data->id",
             'amount' => $this->amount,
             'description' => 'Donasi Sobo Aksi #'.str_pad($data->id,5,"0",STR_PAD_LEFT),
-            'invoice_duration' => 86400,
+            'invoice_duration' => 3600*48,
             'customer' => [
                 'given_names' => $user->name,
                 'surname' => $user->name,
