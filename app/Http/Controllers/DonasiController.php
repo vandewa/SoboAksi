@@ -190,7 +190,7 @@ class DonasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request->all();
+        // return $request->all();
         if($request->publish_st == 'PUBLISH_ST_02'){
             $publikasi_tanggal = NULL;
         } else {
@@ -216,6 +216,13 @@ class DonasiController extends Controller
             'donasi_st' => 'DONASI_ST_00',
             'donasi_tercapai' => '0'
         ]);
+
+        if($request->photo){
+            $path_photo = $request->file('photo')->store('aksi', 'public');
+            AksiPhoto::where('aksi_id', $id)->update([
+                'url' => $path_photo
+            ]);
+        }
         
 
         return redirect()->route('admin:donasi.index')->with('status', 'berhasil');
