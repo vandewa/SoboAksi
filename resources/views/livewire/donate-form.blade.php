@@ -21,7 +21,7 @@
                                         <div class="list-donasi mb-3" wire:click="tambahDonasi(100000)">100k</div>
                                     </div>
                                     <div class="nilai-donasi">
-                                        <input type="text"  name="" id="" wire:model="amount">
+                                        <input type="text"  name="" wire:model="amount">
                                         <p>{{ ucwords($terbilang) }}</p>
                                     </div>
                                 </div>

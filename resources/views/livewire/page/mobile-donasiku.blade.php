@@ -3,7 +3,7 @@
     <div class="kiri">
         <p style="font-size: 18px; color:black;"><b>Donasiku ({{ $jumlah }})</b></p>
     </div>
-
+    
     <div class="container mt-3" style="margin-bottom: 100px;">
         @foreach ($data as $devan)
         <a href="{{ route('detail-donasi',$devan->aksi->id) }}" wire:key="donasi-saya-{{ $devan->id }}">
@@ -20,9 +20,12 @@
                         <p style="font-size: 12px;line-height: 17px"><b>{{ $devan->aksi->judul }}</b></p>
                         </a>
                         <div class="progress-box" style="padding:7px 1px 26px;">
-
                             <div class="bar">
-                                <div class="bar-inner count-bar" style="width: 80%; background:blue;"></div>
+                                @if ($devan->penerimaDonasi)
+                                <div class="bar-inner count-bar" style="width:{{ $devan->penerimaDonasi->donasi_tercapai??0/$devan->penerimaDonasi->target_donasi??0 }}%; background:blue;"></div>
+                                @else
+                                <div class="bar-inner count-bar" style="width:100%; background:blue;"></div>
+                                @endif
                             </div>
 
                             <div class="row">

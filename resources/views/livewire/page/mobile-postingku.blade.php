@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-8 mt-2">
                     <div>
-                        <button type="button" class="btn btn-outline-info" style="font-size:11px; width:70px;font-weight:200;line-height:1;" wire:click="$emitTo('edit-postingan', 'tampilModal',{{ $datanya->id }})">Edit
+                        <button type="button" class="btn btn-outline-info" style="font-size:11px; width:70px;font-weight:200;line-height:1;" wire:click="$emitTo('donate-popup', 'tampilModal2',{{ $datanya->id }})">Edit
                         </button>
                     </div>
                 </div>
@@ -69,6 +69,6 @@
     </div>
     <livewire:page.footer/>
     <livewire:button-plus/>
-    <livewire:edit-postingan/>
+    {{-- <livewire:edit-postingan/> --}}
 </div>
 
