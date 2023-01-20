@@ -76,6 +76,7 @@ class DonatePopup extends Component
             $a = DB::transaction(function () {
                 $this->validate(
                     [
+                        "photo" => "required|max:4096",
                         "nama" => "required",
                         "alamat" => "required",
                         "region_prop" => "required",
@@ -85,8 +86,8 @@ class DonatePopup extends Component
                         "alamat" => "required",
                         "telepon" => "required",
                         "no_identitas" => "required",
-                        "foto_ktp" => "required|mimes:jpg,jpeg,png |max:4096",
-                        "foto_penerima" => "required|mimes:jpg,jpeg,png |max:4096",
+                        "foto_ktp" => "required|max:4096",
+                        "foto_penerima" => "required|max:4096",
                         "judul" => "required",
                         "kategori" => "required",
                         "deskripsi" => "required",
@@ -144,13 +145,13 @@ class DonatePopup extends Component
             });
 
         } else {
-            $this->validate(
-                [
-                    "judul" => "required",
-                    "kategori" => "required",
-                    "deskripsi" => "required",
-                ]
-            );
+            // $this->validate(
+            //     [
+            //         "judul" => "required",
+            //         "kategori" => "required",
+            //         "deskripsi" => "required",
+            //     ]
+            // );
 
             $path = $this->photo->store('aksi', 'public');
             $data = Beraksi::create([
@@ -159,6 +160,8 @@ class DonatePopup extends Component
                 "deskripsi" => $this->deskripsi,
                 "setuju" => true,
                 "creator_id" => auth()->user()->id,
+                "publish_st" => 'PUBLISH_ST_01',
+                "publish_at" => now(),
 
             ]);
             $data->sampul()->create(
@@ -169,7 +172,7 @@ class DonatePopup extends Component
 
             $this->tampilModal();
 
-            return redirect()->to('aksi');
+            return redirect()->to('list-aksi');
             $this->emitTo('page.aksi', 'newAksi', $data->id);
         }
     }

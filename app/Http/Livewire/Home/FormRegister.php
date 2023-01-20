@@ -32,7 +32,7 @@ class FormRegister extends Component
     public function simpan()
     {
         $this->validate();
-        User::create(
+         $a =    User::create(
             [
                 "name" => $this->name,
                 "email" => $this->email,
@@ -41,5 +41,8 @@ class FormRegister extends Component
                 "password" => Hash::make($this->password),
             ]
         );
+        $a->assignRole('masyarakat');
+
+        return redirect()->to('/');
     }
 }

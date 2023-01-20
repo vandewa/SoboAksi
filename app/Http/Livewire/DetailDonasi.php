@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\Aksi;
 use App\Models\Kategori;
 use Livewire\Component;
-use Illuminate\Http\Request;
 
 class DetailDonasi extends Component
 {
@@ -28,7 +27,7 @@ class DetailDonasi extends Component
     
     public function show($id)
     {
-        $data = Aksi::with(['kategorinya', 'penerimaDonasi'])->withCount("dukung")->find($id);
+        $data = Aksi::with(['kategorinya', 'penerimaDonasi', 'user'])->withCount("dukung")->find($id);
         $this->datanya = $data;
         $this->sampul = $data->sampul->url_photo?? asset('trusthand/assets/images/resource/cause-1.jpg');
     }

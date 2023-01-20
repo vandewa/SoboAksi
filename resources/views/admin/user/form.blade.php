@@ -32,7 +32,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Nomor WhatsApp</label>
-                        {!! Form::number('nomor_hp', null, ['class' => 'form-control', 'placeholder' => 'Masukkan WhatsApp']) !!}
+                        {!! Form::number('nomor_hp', null, ['class' => 'form-control',
+                        'placeholder' => 'Masukkan WhatsApp']) !!}
                     </div>
                 </div>
             </div>
@@ -107,8 +108,7 @@
                         {{Form::select('region_kel',[], null, ['class' => 'form-control select2', 'placeholder' =>
                         'Pilih Kelurahan', 'id' => 'kelurahan'])}}
                         @else
-                        {{Form::select('region_kel', get_kel($data->region_kec), $kelurahan, ['class' => 'form-control
-                        select2', 'placeholder' => 'Pilih Kelurahan', 'id' => 'kelurahan'])}}
+                       
                         @endif
                     </div>
                 </div>

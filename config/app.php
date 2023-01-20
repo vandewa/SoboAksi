@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -189,6 +189,7 @@ return [
          */
 
         Spatie\Permission\PermissionServiceProvider::class,
+        Riskihajar\Terbilang\TerbilangServiceProvider::class,
         // Yajra\DataTables\DataTablesServiceProvider::class,
 
         /*
@@ -214,6 +215,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'Terbilang' => Riskihajar\Terbilang\Facades\Terbilang::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

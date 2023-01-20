@@ -27,7 +27,7 @@
                 </div>
                 <div class="card-content collpase show">
                     <div class="card-body">
-                        {{Form::open(['route' => 'admin:aksi.store','method' => 'post', 'id' => 'my-form'])}} 
+                        {{Form::open(['route' => 'admin:aksi.store','method' => 'post', 'id' => 'my-form', 'files' => true])}} 
                         
                         @include('admin.aksi.form')
                             

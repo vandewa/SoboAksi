@@ -20,8 +20,8 @@ class RoleSeeder extends Seeder
 
         $data = [
             // ['id' => '1', 'name' => 'diaspora', 'guard_name' => 'Diaspora'],
-            ['id' => '2', 'name' => 'opd', 'guard_name' => 'OPD'],
-            ['id' => '3', 'name' => 'masyarakat', 'guard_name' => 'Masyarakat'],
+            ['name' => 'opd'],
+            ['name' => 'masyarakat'],
         ];
 
         foreach ($data as $datum) {

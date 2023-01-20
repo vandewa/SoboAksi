@@ -42,6 +42,8 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
+                                        <th>No Identitas</th>
+                                        <th>Jenis Identitas</th>
                                         <th>Nama</th>
                                         <th>Alamat</th>
                                         <th>Provinsi</th>
@@ -76,6 +78,8 @@
         ajax: window.location.href,
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex' , orderable: false, searchable: false, className: "text-left"},
+            { data: 'no_identitas'},
+            { data: 'identitas.code_nm'},
             { data: 'nama'},
             { data: 'alamat'},
             { data: 'provinsi.region_nm'},

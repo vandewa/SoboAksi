@@ -14,7 +14,7 @@
     <title>@yield('title')</title>
     
     <link rel="apple-touch-icon" href="{{ asset('stack-admin/app-assets/images/ico/apple-icon-120.png')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('stack-admin/app-assets/images/ico/favicon.ico')}}">
+    <link rel="icon" href="{{ asset('trusthand/assets/images/logo.ico')}}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -25,7 +25,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/fonts/meteocons/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/vendors/css/charts/morris.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/vendors/css/forms/selects/select2.min.css')}}">
-    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/vendors/css/forms/toggle/switchery.min.css')}}"> --}}
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('stack-admin/app-assets/vendors/css/forms/toggle/switchery.min.css')}}">
+     --}}
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -51,6 +52,7 @@
     <!-- END: Custom CSS-->
     
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    {{-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> --}}
 
     @vite([])
 
@@ -161,6 +163,20 @@
             })
         });
     </script>
+    {{-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var quill = new Quill('#editor', {
+          theme: 'snow'
+        });
+      </script> --}}
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+        </script>
 
     @stack('js')
 

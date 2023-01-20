@@ -1,4 +1,3 @@
-
 {{-- start web --}}
   <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
     <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
@@ -6,16 +5,14 @@
             <div class="image-box">
                 <figure class="image">
                     <a href="{{ route('detail-donasi',$idnya) }}">
-                    <img src="{{ $sampul }}" style="width:350px;height:200px;background-size: cover;
-                    background-position: center center;">
+                    <img src="{{ $sampul }}" style="height:200px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
                     </a>
                 </figure>
-                <div class="category"><a href="{{ route('detail-donasi',$idnya) }}">{{$kategorinya->nama_kategori}}</a></div>
+                <div class="category"><a href="{{ route('aksi', ['kategori' => $idnya]) }}">{{$kategorinya->nama_kategori}}</a></div>
             </div>
             <div class="lower-content">
                 <div class="text" style="padding: 32px 30px 7px 40px;">
                     <h3><a href="{{ route('detail-donasi',$idnya) }}">{{substr($judul,0,40)}}..</a></h3>
-                    {{-- <p>{{substr($deskripsi,0,50)}}..</p> --}}
                 </div>
                 <div class="progress-box">
                     @if($penerimaDonasi)
