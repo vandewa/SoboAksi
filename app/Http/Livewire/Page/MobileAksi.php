@@ -15,6 +15,8 @@ class MobileAksi extends Component
     {
         $data = Aksi::with(['sampul', 'penerimaDonasi', 'kategorinya', 'dukung', 'komentar'])->whereDoesntHave('penerimaDonasi')->limit(5)->withCount('dukung')->withCount('komentar')->where('publish_st', 'PUBLISH_ST_01')->orderBy('publish_at', 'desc')->get();
 
+        // dd($data);
+
         return view('livewire.page.mobile-aksi',[
             "data" => $data
         ]);       
