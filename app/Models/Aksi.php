@@ -45,7 +45,7 @@ class Aksi extends Model
 
     public function dukung()
     {
-        return $this->hasMany(AksiDukung::class);
+        return $this->hasOne(AksiDukung::class, 'aksi_id');
     }
 
     public function partisipasi()
