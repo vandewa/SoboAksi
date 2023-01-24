@@ -36,8 +36,51 @@
                                                 </h2>
                                             </div>
                                             <div class="progress-box" style="padding:10px 20px 26px;">
+                                                @if ($aksi->dukung_count != 0)
+                                                    @if ($aksi->dukung_count == 1)
+                                                        <span style="font-size: 8px;" class="ml-2"><b>Kamu</b> mendukung aksi ini</span>
+                                                    @else
+                                                        <span style="font-size: 8px;" class="ml-2"><b>Kamu</b> dan <b>{{ $aksi->dukung_count }} orang </b> mendukung aksi ini</span>
+                                                    @endif
+                                                @else
+                                                    <span style="font-size: 8px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang </b> mendukung aksi ini</span>
+                                                @endif
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        @if (Auth::user())
+                                                            @if ($aksi->dukung_count != 0)
+                                                            <div class="ml-2">
+                                                                <button wire:click="like({{ $aksi->id }})">
+                                                                <img src="{{ asset('images/png/hand.png') }}" width="20px;">
+                                                                <span style="font-size: 11px;">Dukung</span>
+                                                                </button>
+                                                            </div>
+                                                            @else
+                                                            <div class="ml-2">
+                                                                <button wire:click="like({{ $aksi->id }})">
+                                                                    <span style="font-size: 11px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                                                </button>
+                                                            </div>
+                                                            @endif
+                                                        @else
+                                                        <div class="ml-2">
+                                                            <a wire:click="$emitTo('registrasi', 'tampilModal')">
+                                                                <span style="font-size: 11px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                                            </a>
+                                                        </div>
+                                                        @endif     
+                                                    </div>
+                                                    
+                                                    <div class="col-6">
+                                                        <a href="{{ route('detail-donasi',$aksi->id) }}">
+                                                            <span style="font-size: 11px;color:black;"><i class="fas fa-eye" style="color: grey;"></i>&nbsp;&nbsp;Lihat</span>
+                                                        </a>
+                                                    </div>
+                                                    
 
-                                                <div class="row mt-1">
+                                                </div>
+
+                                                {{-- <div class="row mt-1">
                                                     <div class="col-6">
                                                         <a href="{{ route('detail-donasi',$aksi->id) }}">
                                                             <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
@@ -58,7 +101,7 @@
                                                         </button>
                                                         @endif
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
