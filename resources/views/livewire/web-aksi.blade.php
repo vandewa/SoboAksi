@@ -26,14 +26,18 @@
                             </h2>
                         </div>
                         <div class="progress-box" style="padding:10px 20px 26px;">
-                            @if ($aksi->dukung_count != 0)
+                            @if (Auth::check())
                                 @if ($aksi->dukung_count == 1)
-                                    <span style="font-size: 11px;" class="ml-2"><b>Kamu</b> mendukung aksi ini</span>
+                                    @if ($aksi->dukung->creator_id == Auth::user()->id)
+                                        <span style="font-size: 11px;" class="ml-2"><b>Kamu</b> mendukung aksi ini</span>  
+                                    @else 
+                                        <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>     
+                                    @endif
                                 @else
-                                    <span style="font-size: 11px;" class="ml-2"><b>Kamu</b> dan <b>{{ $aksi->dukung_count }} orang </b> mendukung aksi ini</span>
-                                @endif
+                                <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>   
+                                @endif                       
                             @else
-                                <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang </b> mendukung aksi ini</span>
+                            <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>
                             @endif
                             <div class="row mt-1">
                                 <div class="col-6">
