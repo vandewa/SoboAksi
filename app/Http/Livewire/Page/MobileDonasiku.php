@@ -13,7 +13,7 @@ class MobileDonasiku extends Component
 
         // dd( $data);
 
-        return view('livewire.page.mobile-donasiku', [
+    return view('livewire.page.mobile-donasiku', [
             'data' => $data,
             'jumlah' => DonasiPayment::with(['aksi'])
             ->where('payment_user_id', auth()->user()->id)

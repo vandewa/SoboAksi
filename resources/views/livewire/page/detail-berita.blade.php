@@ -35,7 +35,8 @@
         </div>
     </section>
     <!-- sidebar-page-container end -->
-
-    <livewire:page.footer/>
+    <div class="d-block d-md-none">
+        <livewire:page.footer/>
+    </div>
   
 </div>

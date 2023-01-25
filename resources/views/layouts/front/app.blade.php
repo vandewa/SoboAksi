@@ -394,26 +394,45 @@
                                     </a>
                                 </div>
                                 <div class="content-box">
-                                    <h4>About Us</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut
-                                        labore et magna aliqua. Ut enim ad minim veniam laboris.</p>
-                                </div>
-                                <div class="form-inner">
-                                    <h4>Get a free quote</h4>
-                                    <form action="{{ route('home') }}" method="post">
-                                        <div class="form-group">
-                                            <input type="text" name="name" placeholder="Name" required="">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" name="email" placeholder="Email" required="">
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea name="message" placeholder="Message..."></textarea>
-                                        </div>
-                                        <div class="form-group message-btn">
-                                            <button class="theme-btn-one">Submit Now</button>
-                                        </div>
-                                    </form>
+                                    <div class="mb-5">
+                                        Selamat Datang, <h4 style="color:#E04237;">{{ Auth::user()->name??'' }}</h4>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="{{ route('donasiku') }}" style="color: black;">
+                                            <i class="fa-solid fa-hand-holding-dollar fa-beat" style="--fa-animation-duration: 1.5s;"></i>
+                                            <span>
+                                                &nbsp; Donasiku 
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="{{ route('postingku') }}" style="color: black;">
+                                            <i class="fa-solid fa-comment-dots fa-beat" style="--fa-animation-duration: 1.6s;"></i>
+                                            <span>
+                                                &nbsp; Postingan
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="{{ route('ganti-password') }}" style="color: black;">
+                                            <i class="fa-solid fa-key fa-beat" style="--fa-animation-duration: 1.7s;"></i>
+                                            <span>
+                                                &nbsp; Ganti Password
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: black;">
+                                            <i class="fa-solid fa-right-from-bracket fa-beat" style="--fa-animation-duration: 1.8s;"></i>
+                                                <span>
+                                                    &nbsp; Logout
+                                                </span>
+                                        
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
