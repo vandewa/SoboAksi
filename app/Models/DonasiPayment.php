@@ -19,6 +19,6 @@ class DonasiPayment extends Model
 
     public function penerimaDonasi()
     {
-        return $this->hasOne(AksiPenerima::class, 'aksi_id');
+        return $this->belongsTo(AksiPenerima::class, 'aksi_penerima_id');
     }
 }
