@@ -26,7 +26,7 @@ class WebListAksi extends Component
     }
     public function loadPosts()
     {
-        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul'])->withCount("dukung")->withCount("komentar")->orderBy("created_at", "desc")->whereDoesntHave('penerimaDonasi');
+        $posts = Beraksi::with(['kategorinya', 'penerimaDonasi', 'sampul', 'dukunganSaya'])->withCount("dukung")->withCount("komentar")->orderBy("created_at", "desc")->whereDoesntHave('penerimaDonasi');
         if($this->kategori){
             $posts->whereHas('kategorinya', function($a){
                 $a->where('id', $this->kategori);

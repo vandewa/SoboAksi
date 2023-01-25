@@ -19,6 +19,7 @@ class MobileGalangDana extends Component
     public $peroleh;
     public $target;
     public $jumlahKomentar;
+    public $saya;
 
     public function mount($data)
     {
@@ -33,8 +34,9 @@ class MobileGalangDana extends Component
         $this->penerimaDonasi = $data['penerimaDonasi'];
         $this->sampul = $data['sampul']['url_photo']?? asset('trusthand/assets/images/resource/cause-1.jpg');
         $this->jumlahKomentar = $data['komentar_count'];
+        $this->saya = $data['dukunganSaya'];
 
-
+        // dd($data['dukunganSaya']); 
     }
 
     public function render()
@@ -51,6 +53,7 @@ class MobileGalangDana extends Component
         if($data){
             $data->delete();
             $this->jumlahLike --;
+            $this->saya = null;
         }else {
             $a = AksiDukung::create(
                 [
@@ -59,6 +62,7 @@ class MobileGalangDana extends Component
                 ]
             );
             $this->jumlahLike ++;
+            $this->saya = $a;
         }
     }
 }
