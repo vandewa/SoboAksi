@@ -50,22 +50,34 @@
                     </div>
                     @endif
                     <div class="row mt-1">
-                        <div class="col-md-6">
-                          <li class="admin">
-                            <button class="btn btn-primary btn-block">
-                              <span style="font-size: 13px;width:100%;float: left;">
-                               {{ $jumlahKomentar }} <i class="icon-16"></i> 
-                              </span>
-                            </button>
-                          </li>
-                        </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-danger btn-block" wire:click="like">
-                              <span style="font-size: 13px;width:100%;float: left;">{{ $jumlahLike }} <i class="fa fa-heart"></i> 
-                              </span>
-                            </button>
-                        </div>
-                    </div>
+                      <div class="col-6">
+                          <a href="{{ route('detail-donasi',$idnya) }}">
+                              <button class="btn btn-primary btn-block" style="font-size: 13px;width:100%;">
+                                  <i class="icon-16"></i> {{ $jumlahKomentar }}
+                              </button>
+                          </a>
+                      </div>
+                      <div class="col-6">
+                          @if (Auth::check())
+                              @if ($saya)
+                              <button class="btn btn-danger btn-block" wire:click="like">
+                                <span style="font-size: 13px;width:100%;float: left;"><i class="fa fa-heart"></i> {{ $jumlahLike }} 
+                                </span>
+                              </button>
+                              @else
+                              <button class="btn btn-secondary btn-block" wire:click="like">
+                                <span style="font-size: 13px;width:100%;float: left;"><i class="fa fa-heart"></i> {{ $jumlahLike }} 
+                                </span>
+                              </button>
+                              @endif 
+                          @else
+                          <button class="btn btn-secondary btn-block" wire:click="like">
+                            <span style="font-size: 13px;width:100%;float: left;"><i class="fa fa-heart"></i> {{ $jumlahLike }} 
+                            </span>
+                          </button>
+                          @endif
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>

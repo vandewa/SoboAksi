@@ -57,7 +57,7 @@ class Aksi extends Component
     {
         return view('livewire.page.aksi',[
             'aksi' => Beraksi::with(['kategorinya'])->where('kategori', $this->kategori)->first(),
-            'jumlah' => Beraksi::where('kategori', $this->kategori)->count(),
+            'jumlah' => Beraksi::where('kategori', $this->kategori)->whereHas('penerimaDonasi')->count(),
         ]);
     }
 }
