@@ -60,7 +60,7 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(KategoriStoreValidation $request)
     {
         $a = Kategori::create([
             'nama_kategori' => ucwords($request->nama_kategori)

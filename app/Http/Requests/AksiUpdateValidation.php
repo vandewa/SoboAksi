@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DonasiStoreValidation extends FormRequest
+class AksiUpdateValidation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +24,12 @@ class DonasiStoreValidation extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'required|mimes:jpeg,png,jpg|max:2000',
+            'photo' => 'mimes:jpeg,png,jpg|max:2000',
             'judul' => 'required',
             'kategori' => 'required',
             'deskripsi' => 'required',
-            'penerima_id' => 'required',
-            'publish_at ' => 'required',
-            'target_waktu ' => 'required',
-            'target_donasi ' => 'required',
+            'setuju' => 'required',
+            'publish_st' => 'required',
         ];
     }
 }
