@@ -124,7 +124,7 @@ class DonasiController extends Controller
             'target_donasi' => $request->target_donasi,
             'target_waktu' => $request->target_waktu,
             'donasi_st' => 'DONASI_ST_00',
-            'donasi_tercapai' => '0'
+            'donasi_tercapai' => 0
         ]);
 
         if($request->photo){
@@ -188,7 +188,7 @@ class DonasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(DonasiUpdateValidation $request, $id)
+    public function update(Request $request, $id)
     {
         // return $request->all();
         if($request->publish_st == 'PUBLISH_ST_02'){
@@ -208,13 +208,13 @@ class DonasiController extends Controller
             'highlight' => $request->highlight,
         ]);
 
-        AksiPenerima::where('aksi_id', $id)
+        AksiPenerima::where('aksi_id', $id)->first()
         ->update([
             'penerima_id' => $request->penerima_id,
             'target_donasi' => $request->target_donasi,
             'target_waktu' => $request->target_waktu,
             'donasi_st' => 'DONASI_ST_00',
-            'donasi_tercapai' => '0'
+            'donasi_tercapai' => 0
         ]);
 
         if($request->photo){
