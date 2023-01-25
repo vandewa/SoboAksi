@@ -55,11 +55,19 @@
 
                                 <div class="row mt-1">
                                     <div class="col-6">
+                                        @if (Auth::check())
                                         <a href="{{ route('detail-donasi',$idnya) }}">
                                             <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
                                                 <i class="icon-16"></i> {{ $jumlahKomentar }}
                                             </button>
                                         </a>
+                                        @else
+                                        <a wire:click="$emitTo('registrasi', 'tampilModal')">
+                                            <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
+                                                <i class="icon-16"></i> {{ $jumlahKomentar }}
+                                            </button>
+                                        </a>
+                                        @endif
                                     </div>
                                     <div class="col-6">
                                         @if (Auth::check())
@@ -75,7 +83,7 @@
                                             </button>
                                             @endif 
                                         @else
-                                        <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;"     wire:click="like">
+                                        <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;"     wire:click="$emitTo('registrasi', 'tampilModal')">
                                             <i class="fa fa-heart me-2"></i>
                                             {{ $jumlahLike }}
                                         </button>
