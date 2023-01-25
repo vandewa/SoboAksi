@@ -24,7 +24,7 @@ class AksiStoreValidation extends FormRequest
     public function rules()
     {
         return [
-            'photo' => 'required',
+            'photo' => 'required|mimes:jpeg,png,jpg|max:2000',
             'judul' => 'required',
             'kategori' => 'required',
             'deskripsi' => 'required',
