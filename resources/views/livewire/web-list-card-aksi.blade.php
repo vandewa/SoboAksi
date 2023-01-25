@@ -50,26 +50,52 @@
                     </div>
                     @endif
 
+                    @if (Auth::check())
+                        @if ($jumlahLike == 1)
+                            @if ($saya)
+                                <span style="font-size: 11px;" class="ml-2"><b>Kamu</b> mendukung aksi ini</span>  
+                            @else
+                                <span style="font-size: 11px;" class="ml-2"><b>{{ $jumlahLike }} orang</b> mendukung aksi ini</span>   
+                            @endif
+                        @else
+                            <span style="font-size: 11px;" class="ml-2"><b>{{ $jumlahLike }} orang</b> mendukung aksi ini</span> 
+                        @endif                       
+                    @else
+                        <span style="font-size: 11px;" class="ml-2"><b>{{ $jumlahLike }} orang</b> mendukung aksi ini</span>
+                    @endif
+
                     <div class="row mt-1">
                         <div class="col-6">
-                            <a href="{{ route('detail-donasi',$idnya) }}">
-                                <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
-                                    <i class="icon-16"></i> {{ $jumlahKomentar }}
-                                </button>
-                            </a>
-                        </div>
-                        <div class="col-6">
-                            @if ($jumlahLike != 0)
-                            <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like">
-                                <i class="fa fa-heart me-2"></i>
-                                {{ $jumlahLike }}
-                            </button>
+                            @if (Auth::check())
+                                @if ($saya)
+                                <div class="ml-2">
+                                    <button wire:click="like({{ $idnya }})">
+                                    <img src="{{ asset('images/png/hand.png') }}" width="20px;">
+                                    <span style="font-size: 12px;">Dukung</span>
+                                    </button>
+                                </div>
+                                @else
+                                <div class="ml-2">
+                                    <button wire:click="like({{ $idnya }})">
+                                        <span style="font-size: 12px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                    </button>
+                                </div>
+                                @endif 
                             @else
-                            <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;" wire:click="like">
-                                <i class="fa fa-heart me-2"></i>
-                                {{ $jumlahLike }}
-                            </button>
+                            <div class="ml-2">
+                                <a wire:click="$emitTo('registrasi', 'tampilModal')">
+                                    <span style="font-size: 12px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                </a>
+                            </div>
                             @endif
+                        </div>
+                        
+                        <div class="col-6">
+                            <div class="ml-1">
+                                <a href="{{ route('detail-donasi',$idnya) }}">
+                                    <span style="font-size: 12px;color:black;"><i class="fas fa-eye" style="color: grey;"></i>&nbsp;&nbsp;Lihat</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -38,40 +38,52 @@
                                             <div class="progress-box" style="padding:10px 20px 26px;">
                                                 @if (Auth::check())
                                                     @if ($aksi->dukung_count == 1)
-                                                        @if ($aksi->dukung->creator_id == Auth::user()->id)
+                                                        @if ($aksi->dukunganSaya)
                                                             <span style="font-size: 11px;" class="ml-2"><b>Kamu</b> mendukung aksi ini</span>  
-                                                        @else 
-                                                            <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>     
+                                                        @else
+                                                            <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>   
                                                         @endif
                                                     @else
-                                                    <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>   
+                                                        <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span> 
                                                     @endif                       
                                                 @else
-                                                <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>
+                                                    <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>
                                                 @endif
 
-                                                {{-- <div class="row mt-1">
+                                                <div class="row mt-1">
                                                     <div class="col-6">
-                                                        <a href="{{ route('detail-donasi',$aksi->id) }}">
-                                                            <button class="btn btn-primary btn-block" style="font-size: 10px;width:100%;">
-                                                                <i class="icon-16"></i> {{ $aksi->komentar_count }}
-                                                            </button>
-                                                        </a>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        @if ($aksi->dukung_count != 0)
-                                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like({{ $aksi->id }})">
-                                                            <i class="fa fa-heart me-2"></i>
-                                                            {{ $aksi->dukung_count }}
-                                                        </button>
+                                                        @if (Auth::check())
+                                                            @if ($aksi->dukunganSaya)
+                                                            <div class="ml-1">
+                                                                <button wire:click="like({{ $aksi->id }})">
+                                                                <img src="{{ asset('images/png/hand.png') }}" width="20px;">
+                                                                <span style="font-size: 12px;">Dukung</span>
+                                                                </button>
+                                                            </div>
+                                                            @else
+                                                            <div class="ml-1">
+                                                                <button wire:click="like({{ $aksi->id }})">
+                                                                    <span style="font-size: 12px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                                                </button>
+                                                            </div>
+                                                            @endif 
                                                         @else
-                                                        <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;" wire:click="like({{ $aksi->id }})">
-                                                            <i class="fa fa-heart me-2"></i>
-                                                            {{ $aksi->dukung_count }}
-                                                        </button>
+                                                        <div class="ml-1">
+                                                            <a wire:click="$emitTo('registrasi', 'tampilModal')">
+                                                                <span style="font-size: 12px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                                            </a>
+                                                        </div>
                                                         @endif
                                                     </div>
-                                                </div> --}}
+                                                    
+                                                    <div class="col-6">
+                                                        <div class="ml-1">
+                                                            <a href="{{ route('detail-donasi',$aksi->id) }}">
+                                                                <span style="font-size: 12px;color:black;"><i class="fas fa-eye" style="color: grey;"></i>&nbsp;&nbsp;Lihat</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -16,7 +16,7 @@
                             </a>
                         </figure>
                         <div class="category">
-                            <a href="{{ route('list-aksi', ['kategori' => $aksi->kategori]) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$aksi->kategorinya->nama_kategori}}
+                            <a href="{{ route('web-list-aksi', ['kategori' => $aksi->kategori]) }}" style="font-size:12px;line-height:16px;margin-right: 0px;">{{$aksi->kategorinya->nama_kategori}}
                             </a>
                         </div>
                     </div>
@@ -28,53 +28,51 @@
                         <div class="progress-box" style="padding:10px 20px 26px;">
                             @if (Auth::check())
                                 @if ($aksi->dukung_count == 1)
-                                    @if ($aksi->dukung->creator_id == Auth::user()->id)
+                                    @if ($aksi->dukunganSaya)
                                         <span style="font-size: 11px;" class="ml-2"><b>Kamu</b> mendukung aksi ini</span>  
-                                    @else 
-                                        <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>     
+                                    @else
+                                        <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>   
                                     @endif
                                 @else
-                                <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>   
+                                    <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span> 
                                 @endif                       
                             @else
-                            <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>
+                                <span style="font-size: 11px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>
                             @endif
+
                             <div class="row mt-1">
                                 <div class="col-6">
-                                    @if (Auth::user())
-                                        @if ($aksi->dukung_count != 0)
-                                        <div class="ml-3">
+                                    @if (Auth::check())
+                                        @if ($aksi->dukunganSaya)
+                                        <div class="ml-1">
                                             <button wire:click="like({{ $aksi->id }})">
                                             <img src="{{ asset('images/png/hand.png') }}" width="20px;">
-                                            <span style="font-size: 14px;">Dukung</span>
+                                            <span style="font-size: 12px;">Dukung</span>
                                             </button>
                                         </div>
                                         @else
-                                        <div class="ml-4">
+                                        <div class="ml-1">
                                             <button wire:click="like({{ $aksi->id }})">
-                                                <span style="font-size: 14px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                                <span style="font-size: 12px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
                                             </button>
                                         </div>
-                                        @endif
+                                        @endif 
                                     @else
-                                    <div class="ml-4">
+                                    <div class="ml-1">
                                         <a wire:click="$emitTo('registrasi', 'tampilModal')">
-                                            <span style="font-size: 14px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
+                                            <span style="font-size: 12px;"><i class="far fa-hand-rock"></i>&nbsp;&nbsp;Dukung</span>
                                         </a>
                                     </div>
-                                    @endif     
+                                    @endif
                                 </div>
                                 
                                 <div class="col-6">
-                                    <div class="ml-3">
+                                    <div class="ml-1">
                                         <a href="{{ route('detail-donasi',$aksi->id) }}">
-                                            <span style="font-size: 14px;color:black;"><i class="fas fa-eye" style="color: grey;"></i>&nbsp;&nbsp;Lihat</span>
+                                            <span style="font-size: 12px;color:black;"><i class="fas fa-eye" style="color: grey;"></i>&nbsp;&nbsp;Lihat</span>
                                         </a>
                                     </div>
-                                    
                                 </div>
-                                
-
                             </div>
                         </div>
                     </div>

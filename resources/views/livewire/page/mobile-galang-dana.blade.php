@@ -62,13 +62,20 @@
                                         </a>
                                     </div>
                                     <div class="col-6">
-                                        @if ($jumlahLike != 0)
-                                        <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like">
-                                            <i class="fa fa-heart me-2"></i>
-                                            {{ $jumlahLike }}
-                                        </button>
+                                        @if (Auth::check())
+                                            @if ($saya)
+                                            <button class="btn btn-danger btn-block" style="font-size: 10px;width:100%;" wire:click="like">
+                                                <i class="fa fa-heart me-2"></i>
+                                                {{ $jumlahLike }}
+                                            </button>
+                                            @else
+                                            <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;" wire:click="like">
+                                                <i class="fa fa-heart me-2"></i>
+                                                {{ $jumlahLike }}
+                                            </button>
+                                            @endif 
                                         @else
-                                        <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;" wire:click="like">
+                                        <button class="btn btn-secondary btn-block" style="font-size: 10px;width:100%;"     wire:click="like">
                                             <i class="fa fa-heart me-2"></i>
                                             {{ $jumlahLike }}
                                         </button>
