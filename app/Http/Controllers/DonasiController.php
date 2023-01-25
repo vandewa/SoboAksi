@@ -104,7 +104,7 @@ class DonasiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DonasiStoreValidation $request)
     {
 
        $aksi = Aksi::create([
@@ -188,7 +188,7 @@ class DonasiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DonasiUpdateValidation $request, $id)
     {
         // return $request->all();
         if($request->publish_st == 'PUBLISH_ST_02'){

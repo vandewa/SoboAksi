@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AksiStoreValidation;
 use Yajra\DataTables\Facades\DataTables;    
+use App\Http\Requests\AksiUpdateValidation;
 
 class AksiController extends Controller
 {
@@ -92,7 +93,7 @@ class AksiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AksiStoreValidation $request)
     {
         $aksi = Aksi::create([
             'judul' => $request->judul,
@@ -147,7 +148,7 @@ class AksiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AksiUpdateValidation $request, $id)
     {
         // return $request->all();
         if($request->publish_st == 'PUBLISH_ST_02'){
