@@ -52,7 +52,7 @@
                                                     @endif                       
                                                 @else
                                                     <span style="font-size: 9px;" class="ml-2">
-                                                    <   b>Kamu</> dan <b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini
+                                                        <b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini
                                                     </span>
                                                 @endif
 
