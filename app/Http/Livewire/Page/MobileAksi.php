@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MobileAksi extends Component
 {
     public $jumlahLike;
+    public $likeLainnya;
 
     public function render()
     {
