@@ -16,7 +16,7 @@ class DonasiPaymentController extends Controller
     public function callback(Request $request)
     {
         $cekTransaksi =  DonasiPayment::find((int)$request['external_id']);
-        if($cekTransaksi->payment_status == "PENDING"){
+        if($cekTransaksi->payment_status == "PAID"){
             return MyResponse::type("success")->info("transaksi sudah dibauar sebelumnya")->response();
         }
         $data =  DonasiPayment::find((int)$request['external_id'])
