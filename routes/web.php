@@ -27,6 +27,7 @@ use App\Http\Livewire\Page\GantiPassword;
 use App\Http\Livewire\Page\MobileListAksi;
 use App\Http\Controllers\DonasiController;
 use App\Http\Livewire\WebListAksi;
+use App\Http\Controllers\PembayaranDonasiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,6 +83,7 @@ Route::group(['middleware' => ['auth', 'role:diaspora']], function () {
         Route::resource('aksi', AksiController::class);
         Route::resource('donasi', DonasiController::class);
         Route::resource('wilayah', WilayahController::class);
+        Route::resource('pembayaran-donasi', PembayaranDonasiController::class);
         Route::get('filter', [WilayahController::class, 'index']);
     });
 });

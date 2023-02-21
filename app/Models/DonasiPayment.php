@@ -21,4 +21,9 @@ class DonasiPayment extends Model
     {
         return $this->belongsTo(AksiPenerima::class, 'aksi_penerima_id');
     }
+
+    public function donatur()
+    {
+        return $this->belongsTo(User::class, 'payment_user_id');
+    }
 }
