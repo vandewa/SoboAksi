@@ -34,12 +34,18 @@ class PembayaranDonasiController extends Controller
                 return $this->rupiah($row->payment);
             })
             ->editColumn('request_payment', function($row){
-                return Carbon::createFromTimeStamp(strtotime($row->request_payment))->isoFormat('D MMMM Y');
-
+                if($row->payment_date){
+                    return Carbon::createFromTimeStamp(strtotime($row->request_payment))->isoFormat('D MMMM Y');
+                } else {
+                    return '';
+                }
             })
             ->editColumn('payment_date', function($row){
-                return Carbon::createFromTimeStamp(strtotime($row->payment_date))->isoFormat('D MMMM Y');
-
+                if($row->payment_date){
+                    return Carbon::createFromTimeStamp(strtotime($row->payment_date))->isoFormat('D MMMM Y');
+                } else {
+                    return '';
+                }
             })
             ->editColumn('payment_status', function($row){
                 if($row->payment_status == 'PAID'){
@@ -48,7 +54,6 @@ class PembayaranDonasiController extends Controller
                     return '<div class="badge badge-warning">PENDING</div>';
 
                 }
-
             })
             ->rawColumns(['action', 'payment_status'])
             ->make(true);
