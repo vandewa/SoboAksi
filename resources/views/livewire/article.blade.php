@@ -16,8 +16,14 @@
                             </figure>
                             <div class="lower-content p_relative d_block">
                                 <div class="text">
-                                    <div class="post-date"><h3>{{ \Carbon\Carbon::parse($art["created_at"])->isoFormat('DD') }}<span>{{ \Carbon\Carbon::parse($art["created_at"])->isoFormat('MMMM') }}</span></h3></div>
-                                    <h3><a href="{{ route('detail-berita', $art["id_posting"]) }}">{{substr($art["judul_posting"],0,35)}}..</a></h3>
+                                    <div class="post-date">
+                                        <h3>{{ \Carbon\Carbon::parse($art["created_at"])->isoFormat('DD') }}
+                                            <span>{{substr(\Carbon\Carbon::parse($art["created_at"])->isoFormat('MMMM'),0,3)}} </span>
+                                        </h3>
+                                    </div>
+                                    <h3>
+                                        <a href="{{ route('detail-berita', $art["id_posting"]) }}">{{substr($art["judul_posting"],0,35)}}..</a>
+                                    </h3>
                                     <p>{{substr($art["kata_kunci"],0,42)}}..</p>
                                     <div class="btn-box">
                                         <a href="{{ route('detail-berita', $art["id_posting"]) }}" class="theme-btn-two">Read more</a>

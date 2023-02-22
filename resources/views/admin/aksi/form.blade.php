@@ -23,6 +23,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
+                        <label>Keterangan</label>
+                        {!! Form::text('keterangan', null, ['class' => 'form-control', 'placeholder' => 'Keterangan Aksi']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
                         <label>Kategori</label>
                         {!! Form::select('kategori', $kategori,null, ['class' => 'form-control select2', 'placeholder' => '- Pilih Kategori -']) !!}
                     </div>
