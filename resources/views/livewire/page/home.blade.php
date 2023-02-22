@@ -4,12 +4,12 @@
     <livewire:preloader/>
 
     {{-- START MOBILE SELAMAT DATANG --}}
-        <livewire:page.mobile-selamat-datang/>
+    <livewire:page.mobile-selamat-datang/>
     {{-- END MOBILE --}}
 
 
     <!-- KATEGORI -->
-    <livewire:category/>
+    {{-- <livewire:category/> --}}
     <!-- END KATEGORI -->
 
     <!-- GALANG DANA -->
