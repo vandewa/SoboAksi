@@ -11,6 +11,7 @@ class MobileGalangDana extends Component
     public $idnya;
     public $kategori;
     public $judul;
+    public $keterangan;
     public $deskripsi;
     public $kategorinya;
     public $jumlahLike;
@@ -28,6 +29,7 @@ class MobileGalangDana extends Component
         $this->target = $data['penerimaDonasi']['target_donasi']??0;
         $this->kategori = $data['kategori'];
         $this->judul = $data['judul'];
+        $this->keterangan = $data['keterangan'];
         $this->deskripsi = $data['deskripsi'];
         $this->kategorinya = $data['kategorinya'];
         $this->jumlahLike = $data['dukung_count'];
