@@ -109,6 +109,7 @@ class DonasiController extends Controller
 
        $aksi = Aksi::create([
             'judul' => $request->judul,
+            'keterangan' => $request->keterangan,
             'kategori' => $request->kategori,
             'deskripsi' => $request->deskripsi,
             'creator_id' => auth()->user()->id,
@@ -199,6 +200,7 @@ class DonasiController extends Controller
 
        Aksi::find($id)->update([
             'judul' => $request->judul,
+            'keterangan' => $request->keterangan,
             'kategori' => $request->kategori,
             'deskripsi' => $request->deskripsi,
             'updated_by' => auth()->user()->id,

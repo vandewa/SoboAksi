@@ -34,6 +34,10 @@
                                     <input type="text" wire:model.lazy="judul" class="form-control" name="name" placeholder="Nama Aksi" required style="height:35px !important;">
                                 </div>
                                 <div class="form-group">
+                                    <label>Keterangan <span>*</span></label>
+                                    <input type="text" wire:model.lazy="keterangan" class="form-control" name="name" placeholder="Keterangan Aksi" required style="height:35px !important;">
+                                </div>
+                                <div class="form-group">
                                     <label>Kategori <span>*</span></label>
                                     <select name=""  wire:model.lazy="kategori" class="form-control">
                                         @foreach ($listKategori??[] as $listKategori)

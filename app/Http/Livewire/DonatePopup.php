@@ -21,6 +21,7 @@ class DonatePopup extends Component
     public $modal = false;
     public $photo;
     public $judul;
+    public $keterangan;
     public $kategori = 1;
     public $listKategori;
     public $deskripsi;
@@ -70,6 +71,7 @@ class DonatePopup extends Component
         $this->modal = !$this->modal;
         $this->photo = '';
         $this->judul = '';
+        $this->keterangan = '';
         $this->kategori = 1 ;
         $this->deskripsi = '';
         $this->setuju = '';
@@ -105,6 +107,7 @@ class DonatePopup extends Component
         $aksi = Aksi::with(['sampul', 'penerimaDonasi'])->find($id);
         $this->idnya = $aksi->id;
         $this->judul = $aksi->judul;
+        $this->keterangan = $aksi->keterangan;
         $this->getListKategori();
         $this->kategori = $aksi->kategori??null;
         $this->photo2 = $aksi->sampul->UrlPhoto??null;
@@ -152,6 +155,7 @@ class DonatePopup extends Component
                         "foto_ktp" => "required",
                         "foto_penerima" => "required",
                         "judul" => "required",
+                        "keterangan" => "required",
                         "kategori" => "required",
                         "deskripsi" => "required",
                         "target_donasi" => "required",
@@ -180,6 +184,7 @@ class DonatePopup extends Component
                 $path = $this->photo->store('aksi', 'public');
                 $data = Beraksi::create([
                     "judul" => $this->judul,
+                    "keterangan" => $this->keterangan,
                     "kategori" => $this->kategori,
                     "deskripsi" => $this->deskripsi,
                     "setuju" => true,
@@ -219,6 +224,7 @@ class DonatePopup extends Component
             $path = $this->photo->store('aksi', 'public');
             $data = Beraksi::create([
                 "judul" => $this->judul,
+                "keterangan" => $this->keterangan,
                 "kategori" => $this->kategori,
                 "deskripsi" => $this->deskripsi,
                 "setuju" => true,
@@ -294,6 +300,7 @@ class DonatePopup extends Component
                 "foto_ktp" => "max:4096",
                 "foto_penerima" => "max:4096",
                 "judul" => "required",
+                "keterangan" => "required",
                 "kategori" => "required",
                 "deskripsi" => "required",
                 "target_donasi" => "required",
@@ -332,6 +339,7 @@ class DonatePopup extends Component
                 Beraksi::find($id)
                 ->update([
                     "judul" => $this->judul,
+                    "keterangan" => $this->keterangan,
                     "kategori" => $this->kategori,
                     "deskripsi" => $this->deskripsi,
                     "setuju" => true,
@@ -361,6 +369,7 @@ class DonatePopup extends Component
                 [
                     "photo" => "max:4096",
                     "judul" => "required",
+                    "keterangan" => "required",
                     "kategori" => "required",
                     "deskripsi" => "required",
                 ]
@@ -373,6 +382,7 @@ class DonatePopup extends Component
             Beraksi::find($id)
             ->update([
                 "judul" => $this->judul,
+                "keterangan" => $this->keterangan,
                 "kategori" => $this->kategori,
                 "deskripsi" => $this->deskripsi,
                 "setuju" => true,
