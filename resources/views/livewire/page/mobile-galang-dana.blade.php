@@ -27,7 +27,7 @@
                             <div class="progress-box" style="padding:40px 20px 26px;">
                                 @if($penerimaDonasi)
                                 <div class="bar">
-                                    <div class="bar-inner count-bar" style="width: {{ $peroleh/$target*100 }}%;"><div class="count-text">{{ round($peroleh/$target*100,1) }}%</div></div>
+                                    <div class="bar-inner count-bar" style="width: {{ $peroleh/$target*100 }}%;"><div class="count-text" style="right:-20px;">{{ round($peroleh/$target*100,1) }}%</div></div>
                                 </div>
     
                                 <div class="row mb-3">
