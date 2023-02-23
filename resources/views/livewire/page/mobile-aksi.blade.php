@@ -46,9 +46,14 @@
                                                             <span style="font-size: 9px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>   
                                                         @endif
                                                     @else
-                                                        <span style="font-size: 9px;" class="ml-2">
-                                                            <b>Kamu</b> dan <b>{{ $aksi->dukung_count - 1 }} orang</b> mendukung aksi ini
-                                                        </span>
+                                                        @if ($aksi->dukunganSaya)
+                                                            <span style="font-size: 9px;" class="ml-2">
+                                                                <b>Kamu</b> dan <b>{{ $aksi->dukung_count - 1 }} orang</b> mendukung aksi ini
+                                                            </span> 
+                                                        @else
+                                                            <span style="font-size: 9px;" class="ml-2"><b>{{ $aksi->dukung_count }} orang</b> mendukung aksi ini</span>   
+                                                        @endif
+                                                        
                                                     @endif                       
                                                 @else
                                                     <span style="font-size: 9px;" class="ml-2">
