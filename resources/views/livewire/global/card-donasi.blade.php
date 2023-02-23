@@ -18,7 +18,7 @@
                     @if($penerimaDonasi)
                     <div class="bar">
                       <div class="bar-inner count-bar" style="width: {{ $peroleh/$target*100 }}%;">
-                        <div class="count-text">{{ $peroleh/$target*100 }}%
+                        <div class="count-text">{{ round($peroleh/$target*100,1) }}%
                         </div>
                       </div>
                     </div>
