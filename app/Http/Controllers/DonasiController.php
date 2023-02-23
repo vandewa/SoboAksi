@@ -216,7 +216,6 @@ class DonasiController extends Controller
             'target_donasi' => $request->target_donasi,
             'target_waktu' => $request->target_waktu,
             'donasi_st' => 'DONASI_ST_00',
-            'donasi_tercapai' => 0
         ]);
 
         if($request->photo){
