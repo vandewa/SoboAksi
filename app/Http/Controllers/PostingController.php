@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Aksi;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use App\Models\Penerima;
+use Carbon\Carbon;
+use App\Models\ComRegion;
+use App\Http\Requests\PenerimaStoreValidation;
 
 class PostingController extends Controller
 {
