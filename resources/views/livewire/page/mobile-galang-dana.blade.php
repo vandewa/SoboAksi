@@ -21,7 +21,7 @@
                                 </h2>
                             </div>
                             <div class="text" style="padding:12px 30px 13px 26px !important;text-align:left;border-bottom:0px !important;">
-                                <h2 style="font-size: 12px !important;"><a href="{{ route('detail-donasi',$idnya) }}" style=" color:black; ">{{$judul}}</a>
+                                <h2 style="font-size: 12px !important;"><a href="{{ route('detail-donasi',$idnya) }}" style=" color:black; ">{{$keterangan}}</a>
                                 </h2>
                             </div>
                             <div class="progress-box" style="padding:40px 20px 26px;">
