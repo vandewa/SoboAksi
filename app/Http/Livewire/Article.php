@@ -6,6 +6,8 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 use Exception;
 use Illuminate\Http\Client\PendingRequest;
+use Illuminate\Http\Client\Response;
+use Illuminate\Http\Client\RequestException;
 
 class Article extends Component
 {
@@ -16,10 +18,7 @@ class Article extends Component
 
     public function mount()
     {
-        $response = Http::withoutVerifying()->retry(5, 1000, function (Exception $exception, PendingRequest $request) {
-            return false;
-        })->get('https://diskominfo.wonosobokab.go.id/api/news');
-
+        $response = Http::withoutVerifying()->retry(5, 1000)->get('https://diskominfo.wonosobokab.go.id/api/news');
 
         if($response->clientError()){
 
@@ -33,7 +32,6 @@ class Article extends Component
 
     public function render()
     {
-
         return view('livewire.article');
     }
 }
