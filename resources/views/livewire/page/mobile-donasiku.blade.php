@@ -133,7 +133,7 @@
                                     <div class="ml-3">
                                         <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
                                             <p style="font-size: 20px;line-height: 17px">
-                                                <b>{{ $devan->aksi->judul }}</b>
+                                                <b>{{ $devan->aksi->judul ?? '' }}</b>
                                             </p>
                                         </a>
                                         <div class="progress-box mt-5" style="padding:7px 1px 26px;">
