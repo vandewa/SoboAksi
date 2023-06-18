@@ -11,14 +11,14 @@
                     <div class="card mb-3" style="max-width: 540px;border-radius: 2%;">
                         <div class="row no-gutters mt-3 ml-3 mr-3 mb-3">
                             <div class="col-4">
-                                <a href="{{ route('detail-donasi', $devan->aksi->id) }}">
+                                <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
                                     <img src="{{ $devan->aksi->sampul->url_photo ?? asset('trusthand/assets/images/resource/cause-1.jpg') }}"
                                         class="card-img" alt="...">
                                 </a>
                             </div>
                             <div class="col-8">
                                 <div class="ml-3">
-                                    <a href="{{ route('detail-donasi', $devan->aksi->id) }}">
+                                    <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
                                         <p style="font-size: 12px;line-height: 17px"><b>{{ $devan->aksi->judul }}</b>
                                         </p>
                                     </a>
@@ -100,7 +100,7 @@
                                 @else
                                     <button type="button" class="btn btn-outline-success"
                                         style="font-size:10px; width:90px;font-weight:200;line-height:1;"
-                                        wire:click="$emitTo('donate-form', 'tampilModal', {{ $devan->aksi->id }})">Donasi
+                                        wire:click="$emitTo('donate-form', 'tampilModal', {{ $devan->aksi->id ?? '' }})">Donasi
                                         lagi</button>
                                 @endif
                             </div>
@@ -119,19 +119,19 @@
         <div class="container" style="margin-top: 150px;margin-bottom:150px;">
             <div class="row">
                 @foreach ($data as $devan)
-                    <a href="{{ route('detail-donasi', $devan->aksi->id) }}"
+                    <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}"
                         wire:key="donasi-saya-{{ $devan->id }}">
                         <div class="card mb-3" style="border-radius: 2%;width:800px;">
                             <div class="row no-gutters mt-3 ml-3 mr-3 mb-3">
                                 <div class="col-4">
-                                    <a href="{{ route('detail-donasi', $devan->aksi->id) }}">
+                                    <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
                                         <img src="{{ $devan->aksi->sampul->url_photo ?? asset('trusthand/assets/images/resource/cause-1.jpg') }}"
                                             class="card-img" style="width: 80%;">
                                     </a>
                                 </div>
                                 <div class="col-8">
                                     <div class="ml-3">
-                                        <a href="{{ route('detail-donasi', $devan->aksi->id) }}">
+                                        <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
                                             <p style="font-size: 20px;line-height: 17px">
                                                 <b>{{ $devan->aksi->judul }}</b>
                                             </p>
@@ -217,7 +217,7 @@
                                     @else
                                         <button type="button" class="btn btn-outline-success"
                                             style="font-size:10px; width:90px;font-weight:200;line-height:1;"
-                                            wire:click="$emitTo('donate-form', 'tampilModal', {{ $devan->aksi->id }})">Donasi
+                                            wire:click="$emitTo('donate-form', 'tampilModal', {{ $devan->aksi->id ?? '' }})">Donasi
                                             lagi</button>
                                     @endif
                                 </div>
