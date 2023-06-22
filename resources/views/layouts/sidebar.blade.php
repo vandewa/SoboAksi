@@ -3,8 +3,10 @@
     <div class="main-menu-content mt-2">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="nav-item {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}"><a href="{{ url('/dashboard') }}"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Dashboard</span></a></li>
+            <li class="nav-item {{ Request::segment(2) == 'donasi' ? 'active' : '' }}"><a href="{{ route('admin:donasi.index') }}"><i class="feather icon-award"></i><span class="menu-title" data-i18n="Donasi">Donasi</span></a></li>
             <li class="nav-item {{ Request::segment(2) == 'aksi' ? 'active' : '' }}"><a href="{{ route('admin:aksi.index') }}"><i class="feather icon-tag"></i><span class="menu-title" data-i18n="Aksi">Aksi</span></a></li>
             <li class="nav-item {{ Request::segment(2) == 'penerima' ? 'active' : '' }}"><a href="{{ route('admin:penerima.index') }}"><i class="feather icon-user-check"></i><span class="menu-title" data-i18n="Penerima">Penerima</span></a></li>
+            <li class="nav-item {{ Request::segment(2) == 'pembayaran-donasi' ? 'active' : '' }}"><a href="{{ route('admin:pembayaran-donasi.index') }}"><i class="feather icon-check-circle"></i><span class="menu-title" data-i18n="Pembayaran Donasi">Pembayaran Donasi</span></a></li>
             <li class=" navigation-header"><span>Master</span><i class=" feather icon-minus" data-toggle="tooltip" data-placement="right" data-original-title="Master"></i>
             </li>
             <li class="nav-item {{ Request::segment(2) == 'kategori' ? 'active' : '' }}"><a href="{{ route('admin:kategori.index') }}"><i class="feather icon-grid"></i><span class="menu-title" data-i18n="Kategori">Kategori</span></a></li>

@@ -46,5 +46,19 @@ if (!function_exists('output')) {
     }
 }
 
+if (!function_exists('output')) {
+    function rupiah($angka){
 
+        $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+        return $hasil_rupiah;
 
+    }
+}
+
+if (! function_exists('is_mobile')) {
+    function is_mobile()
+    {
+        $detect = new \Detection\MobileDetect;
+        return $detect->isMobile();
+    }
+}

@@ -28,6 +28,11 @@ class Aksi extends Model
     public function fotonya(){
         return $this->hasMany(AksiPhoto::class, 'aksi_id');
     }
+
+    public function sampul(){
+        return $this->hasOne(AksiPhoto::class, 'aksi_id');
+    }
+
     public function penerimaAksi()
     {
         return $this->belongsToMany(Penerima::class, 'aksi_penerimas', 'aksi_id','penerima_id');
@@ -35,17 +40,27 @@ class Aksi extends Model
 
     public function penerimaDonasi()
     {
-        return $this->hasMany(AksiPenerima::class, 'aksi_id');
+        return $this->hasOne(AksiPenerima::class, 'aksi_id');
     }
 
     public function dukung()
     {
-        return $this->hasMany(AksiDukung::class);
+        return $this->hasMany(AksiDukung::class, 'aksi_id');
+    }
+    public function dukunganSaya()
+    {
+        return $this->hasOne(AksiDukung::class, 'aksi_id')->where('creator_id', auth()->user()->id??'');
     }
 
     public function partisipasi()
     {
         return $this->hasMany(AksiPartisipasi::class);
     }
+
+    public function komentar()
+    {
+        return $this->hasMany(Komentar::class, 'aksi_id');
+    }
+
 
 }

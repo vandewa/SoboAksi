@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
-<!-- BEGIN: Head-->
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -39,87 +38,115 @@
     <!-- END: Custom CSS-->
 
     @vite([])
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: "Open Sans";
+            color: #fff;
+        }
+        section{
+            background: url({{asset('stack-admin/app-assets/images/png/human.png') }});
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center center;
+        }
+        .form-container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 380px;
+            padding: 50px 30px;
+            border-radius: 10px;
+            box-shadow:7px 7px 60px #000;
+        }
+        /* h1{
+            color: #ffffff;
+            font-size: 2em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2rem;
+        } */
+        .control input{
+            padding: 10px;
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            color:#000;
+            background: #ddd;
+            outline: none;
+            border: none;
+            margin: 1em 0;
+
+        }         
+        .control .btn{
+            color: #fff;
+            text-transform: uppercase;
+            background: crimson;
+            opacity: .7;
+            transition:opacity .3s ease;
+        }
+        .btn:focus{
+            opacity: 1;
+        }
+        p{
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            opacity: .7;
+        }
+        a:hover{
+            opacity: 1;
+        }
+    </style>
 </head>
-<!-- END: Head-->
-
-<!-- BEGIN: Body-->
-
-<body class="vertical-layout vertical-menu 1-column blank-page blank-page" data-open="click" data-menu="vertical-menu" data-col="1-column"  style="background: url({{ asset('stack-admin/app-assets/images/jpg/modern.jpg') }}); background-size: cover; background-position: center center;"> 
-    <!-- BEGIN: Content-->
-    <div class="app-content content">
-        <div class="content-overlay"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
+<body>
+    <section>
+        <div class="form-container">
+            <div class="card-title text-center col-12">
+                <img src="{{ asset('stack-admin/app-assets/images/png/soboaksi.png')}}" width="100%">
             </div>
-            <div class="content-body">
-                <section class="row flexbox-container">
-                    <div class="col-12 d-flex align-items-center justify-content-center">
-                        <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
-                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
-                                <div class="card-header border-0 pb-0">
-                                    <div class="card-title text-center col-12">
-                                        <img src="{{ asset('stack-admin/app-assets/images/png/pemda.png')}}" alt="branding logo" width="15%">
-                                        <img src="{{ asset('stack-admin/app-assets/images/png/sobo.png')}}" alt="branding logo" width="75%">
-                                    </div>
-                                    <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2 mt-2"><span>Login</span></h6>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-body">
-                                        <form method="POST" action="{{ route('login') }}">
-                                            @csrf
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('Email Address') }}" autofocus>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+            <div class="control">
+            {{-- <label for="name" style="color: black;">Name</label> --}}
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" 
+                value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('Email Address') }}" autofocus>
 
-                                                @error('email')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                                
-                                                <div class="form-control-position">
-                                                    <i class="feather icon-user"></i>
-                                                </div>
-                                              
-                                            </fieldset>
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Enter Password">
-
-                                                @error('password')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                                <div class="form-control-position">
-                                                    <i class="fa fa-key"></i>
-                                                </div>
-                                            </fieldset>
-                                            {{-- <div class="form-group row">
-                                                <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
-                                                    <fieldset>
-                                                        <input type="checkbox" id="remember-me" class="chk-remember">
-                                                        <label for="remember-me"> Remember Me</label>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html" class="card-link">Forgot Password?</a></div>
-                                            </div> --}}
-                                            
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                                {{ __('Login') }}
-                                            </button>
-                                        </form>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
+            <div class="control">
+            {{-- <label for="psw">Password</label> --}}
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" 
+            name="password" required autocomplete="current-password" placeholder="Enter Password">
+
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <span style="color: black;"><input type="checkbox" id="remember-me" class="chk-remember"> Remember me</span>
+            <div class="control">
+            <input type="submit" class="btn" value="Login">
+            </div>
+        </form>
+        {{-- <p ><a href="recover-password.html" style="color: black;">Forget password ?</a></p> --}}
         </div>
-    </div>
-    <!-- END: Content-->
+    </section>
 
-
+    
     <!-- BEGIN: Vendor JS-->
     <script src="{{ asset('stack-admin/app-assets/vendors/js/vendors.min.js')}}"></script>
     <!-- BEGIN Vendor JS-->

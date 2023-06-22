@@ -1,3 +1,4 @@
+<input type="hidden" name="profile_photo_path" value="images/profile/pemda.png">
 <div class="form-body">
     <h4 class="form-section"><i class="fa fa-user-secret"></i> Management User</h4>
     <div class="row">
@@ -32,8 +33,8 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Nomor WhatsApp</label>
-                        {!! Form::number('nomor_hp', null, ['class' => 'form-control', 'placeholder' => 'Masukkan
-                        WhatsApp']) !!}
+                        {!! Form::number('nomor_hp', null, ['class' => 'form-control',
+                        'placeholder' => 'Masukkan WhatsApp']) !!}
                     </div>
                 </div>
             </div>
@@ -108,8 +109,7 @@
                         {{Form::select('region_kel',[], null, ['class' => 'form-control select2', 'placeholder' =>
                         'Pilih Kelurahan', 'id' => 'kelurahan'])}}
                         @else
-                        {{Form::select('region_kel', get_kel($data->region_kec), $kelurahan, ['class' => 'form-control
-                        select2', 'placeholder' => 'Pilih Kelurahan', 'id' => 'kelurahan'])}}
+                       
                         @endif
                     </div>
                 </div>

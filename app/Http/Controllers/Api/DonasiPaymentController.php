@@ -121,8 +121,8 @@ class DonasiPaymentController extends Controller
                     'email',
                 ]
             ],
-            'success_redirect_url' => 'http//soboaksi.test',
-            'failure_redirect_url' => 'http//soboaksi.test',
+            'success_redirect_url' => 'https://sobo-aksi.wonosobokab.go.id?status=success',
+            'failure_redirect_url' => 'https://sobo-aksi.wonosobokab.go.id?status=failed',
             'currency' => 'IDR',
             'fees' => [
                 [
