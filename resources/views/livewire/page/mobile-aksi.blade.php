@@ -12,7 +12,7 @@
         </div>
         <div class="row clearfix">
             <div class="row scroller">
-                <div class="col-7 sidebar addscrollbar">
+                <div class="col-7 sidebar addscrollbar mb-5">
                     @foreach ($data as $aksi)
                     <div class="col-7 full-wallet float-left d-inline-block">
                         <div class="col-7 pl-0 pr-0 mt-4" style="max-width: 100%">
