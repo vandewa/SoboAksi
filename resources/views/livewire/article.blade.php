@@ -44,7 +44,6 @@
 <div class="auto-container d-block d-md-none" style="margin-bottom: 70px !important;">
     <div class="sec-title centred">
         <span class="sub-title">Berita</span>
-        {{-- <h2 style="font-size: 25px !important; ">Kabupaten Wonosobo</h2> --}}
     </div>
     <div class="row clearfix">
             <div class="row scroller">

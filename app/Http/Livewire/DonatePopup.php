@@ -208,7 +208,7 @@ class DonatePopup extends Component
 
                 $this->tampilModal();
 
-                return redirect()->to('aksi');
+                return redirect()->to('aksi')->with('store', 'oke');
 
             });
 
@@ -238,10 +238,9 @@ class DonatePopup extends Component
                     "url" => $path
                 ]
             );
-
             $this->tampilModal();
 
-            return redirect()->to('list-aksi');
+            return redirect()->to('web-list-aksi')->with('store', 'oke');
             $this->emitTo('page.aksi', 'newAksi', $data->id);
         }
     }
@@ -361,7 +360,7 @@ class DonatePopup extends Component
                     "donasi_tercapai" => 0
                 ]);
 
-                return redirect()->to('postingku');
+                return redirect()->to('postingku')->with('update', 'oke');
 
 
         } else {
@@ -397,7 +396,7 @@ class DonatePopup extends Component
                 ]);
             }
 
-            return redirect()->to('postingku');
+            return redirect()->to('postingku')->with('update', 'oke');
         }
 
     }

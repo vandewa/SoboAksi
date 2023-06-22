@@ -1,6 +1,6 @@
 {{-- START MOBILE --}}
 <div>
-    <div class="auto-container d-block d-md-none">
+    <div class="auto-container d-block d-md-none mb-5">
         <div class="sec-title centred">
             <span class="sub-title">Aksi</span>
         </div>

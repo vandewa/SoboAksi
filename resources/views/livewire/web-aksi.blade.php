@@ -1,10 +1,10 @@
 {{-- start web --}}
-<div class="auto-container d-none d-md-block">
+<div class="auto-container d-none d-md-block    ">
     <div class="sec-title centred mb_50">
         <span class="sub-title">Aksi</span>
         <h2>Berbagi Inisiasi dan Prakarsa</h2>
     </div>
-    <div class="row clearfix">
+    <div class="row clearfix mb-5">
         @foreach ($data as $aksi)
         <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms" >

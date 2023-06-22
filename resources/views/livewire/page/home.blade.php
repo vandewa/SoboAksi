@@ -7,7 +7,6 @@
     <livewire:page.mobile-selamat-datang />
     {{-- END MOBILE --}}
 
-
     <!-- KATEGORI -->
     {{-- <livewire:category/> --}}
     <!-- END KATEGORI -->
@@ -85,7 +84,7 @@
     <!-- END AKSI DESKTOP -->
 
     <!-- ARTIKEL -->
-    <livewire:article />
+    {{-- <livewire:article /> --}}
     <!-- END ARTIKEL -->
 
     <!-- FOOTER -->

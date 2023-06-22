@@ -38,6 +38,8 @@
     <link href="{{ asset('trusthand/assets/css/responsive.css')}}" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/bb9305debb.js" crossorigin="anonymous"></script>   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
+
 
 
     @vite([])
@@ -671,6 +673,34 @@
             alert('A post was added with the id of: ' + postId);
         })
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+        function sweetAlert() {
+            Swal.fire(
+                'Berhasil!',
+                'Menambahkan aksi.',
+                'success'
+            )
+        }
+
+        @if (session('store'))
+            sweetAlert();
+        @endif
+    </script>
+    <script type="text/javascript">
+        function sweetAlert2() {
+            Swal.fire(
+                'Berhasil!',
+                'Mengedit aksi.',
+                'success'
+            )
+        }
+
+        @if (session('edit'))
+            sweetAlert2();
+        @endif
+    </script>
+
 
 </body><!-- End of .page_wrapper -->
 

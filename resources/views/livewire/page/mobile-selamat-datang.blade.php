@@ -1,5 +1,5 @@
-
 <div>
+    @if(is_mobile())
     <div class="d-block d-md-none">
         @if(Auth::check())
         <div class="container mt-4">
@@ -17,6 +17,7 @@
         </div>
         @endif
     </div>
+    @endif
 </div>
 
 {{-- @endif --}}
