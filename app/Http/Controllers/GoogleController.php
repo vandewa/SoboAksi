@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
+use Spatie\Permission\Models\Role;
+
 
 class GoogleController extends Controller
 {
@@ -20,11 +22,11 @@ class GoogleController extends Controller
 
         $user = Socialite::driver('google')->user();
         
-        $finduser = User::where('google_id', $user->getEmail())->first();
+        $finduser = User::where('email', $user->getEmail())->first();
 
         if($finduser){
             Auth::login($finduser);
-            return redirect()->intended('home');
+            return redirect()->route('home');
         }else{
             $newuser = User::create([
                 'name' => $user->getName(),
@@ -32,8 +34,13 @@ class GoogleController extends Controller
                 'google_id' => $user->getId(),
             ]);
 
-            Auth::login($finduser);
-            return redirect()->intended('home');
+            $role = Role::where('name', 'masyarakat')->first();
+            if($role){
+                $newuser->assignRole([$role->id]);
+            }
+
+            Auth::login($newuser);
+            return redirect()->route('home');
 
         }
 
@@ -49,12 +56,10 @@ class GoogleController extends Controller
         //         ]);
 
         //         Auth::login($new_user);
-
         //         return redirect()->route('home');
                 
         //     } else {
         //         Auth::login($user);
-
         //         return redirect()->route('home');
         //     }
         // } catch (\Throwable $th){
