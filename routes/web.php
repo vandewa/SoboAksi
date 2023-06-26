@@ -29,6 +29,7 @@ use App\Http\Livewire\Page\MobileListAksi;
 use App\Http\Controllers\DonasiController;
 use App\Http\Livewire\WebListAksi;
 use App\Http\Controllers\PembayaranDonasiController;
+use App\Http\Controllers\GoogleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +53,8 @@ Route::get('/edit-profile', MobileEditProfile::class)->name('edit-profile');
 Route::get('/ganti-password', GantiPassword::class)->name('ganti-password');
 Route::get('/list-aksi', MobileListAksi::class)->name('list-aksi');
 Route::get('/web-list-aksi', WebListAksi::class)->name('web-list-aksi');
+Route::get('/auth/google', [GoogleController::class, 'redirectGoogle'])->name('google.login');
+Route::get('/auth/google/callback/', [GoogleController::class, 'callbackGoogle']);
 
 
 //dokumentasi template

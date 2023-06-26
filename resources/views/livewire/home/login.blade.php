@@ -36,6 +36,9 @@
                                 <div class="tombol d-flex justify-content-center btn-block">
                                     <button type="submit" class="butt mb-2" style="line-height:25px !important;">Login</button>
                                 </div>
+                                <a type="button" class="login-with-google-btn" href="{{ route('google.login') }}">
+                                    Sign in with Google
+                                </a>
                                 <p>Belum punya akun? <a href="#" wire:click="$emitTo('registrasi', 'register')">Registrasi
                                         Sekarang</a></p>
                                 <p><a href="#" wire:click="lupaPassword">Lupa Password</a></p>
