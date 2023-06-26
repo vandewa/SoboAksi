@@ -33,7 +33,9 @@ class GoogleController extends Controller
                 return redirect()->route('home');
                 
             } else {
+                Auth::login($user);
 
+                return redirect()->route('home');
             }
         } catch (\Throwable $th){
             dd('Something went wrong!'. $th->getMessage());
