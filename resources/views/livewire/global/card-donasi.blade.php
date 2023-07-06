@@ -16,10 +16,10 @@
                     {{-- <h3><a href="{{ route('detail-donasi',$idnya) }}">{{substr($judul,0,40)}}..</a></h3> --}}
                     <h3>
                       <a href="{{ route('detail-donasi',$idnya) }}">
-                      @if(strlen($judul) > 46)
-                        {{substr($judul,0,46)}}..
+                      @if(strlen($judul) > 47)
+                        {{substr($judul,0,47)}}..
                       @else
-                        {{substr($judul,0,46)}}
+                        {{substr($judul,0,47)}}
                       @endif
                     </a>
                     </h3>
