@@ -27,7 +27,12 @@
                                         <div class="bar">
                                             @if ($devan->penerimaDonasi)
                                                 <div class="bar-inner count-bar"
-                                                    style="width:{{ $devan->penerimaDonasi->donasi_tercapai ?? (0 / $devan->penerimaDonasi->target_donasi ?? 0) }}%; background:blue;">
+                                                    style="width:
+                                                    @if($devan->penerimaDonasi->donasi_tercapai != 0)
+                                                    {{ $devan->penerimaDonasi->donasi_tercapai/ $devan->penerimaDonasi->target_donasi *100 }}%; background:blue;">
+                                                    @else
+                                                    0%; background:blue;">
+                                                    @endif
                                                 </div>
                                             @else
                                                 <div class="bar-inner count-bar" style="width:100%; background:blue;">
@@ -122,7 +127,7 @@
                 @foreach ($data as $devan)
                     <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}"
                         wire:key="donasi-saya-{{ $devan->id }}">
-                        <div class="card mb-3" style="border-radius: 2%;width:800px;">
+                        <div class="card mb-3" style="border-radius: 2%;width:800px;margin:0 auto;">
                             <div class="row no-gutters mt-3 ml-3 mr-3 mb-3">
                                 <div class="col-4">
                                     <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
@@ -141,7 +146,12 @@
                                             <div class="bar">
                                                 @if ($devan->penerimaDonasi)
                                                     <div class="bar-inner count-bar"
-                                                        style="width:{{ $devan->penerimaDonasi->donasi_tercapai ?? (0 / $devan->penerimaDonasi->target_donasi ?? 0) }}%; background:blue;">
+                                                        style="width:
+                                                        @if($devan->penerimaDonasi->donasi_tercapai != 0)
+                                                        {{ $devan->penerimaDonasi->donasi_tercapai/ $devan->penerimaDonasi->target_donasi *100 }}%; background:blue;">
+                                                        @else
+                                                        0%; background:blue;">
+                                                        @endif
                                                     </div>
                                                 @else
                                                     <div class="bar-inner count-bar"
