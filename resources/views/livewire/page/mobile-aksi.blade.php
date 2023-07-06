@@ -31,8 +31,16 @@
                                             </div>
                                         </div>
                                         <div class="lower-content">
-                                            <div class="text" style="padding:12px 30px 13px 26px !important;text-align:left;border-bottom:0px !important;">
-                                                <h2 style="font-size: 15px !important;"><a href="{{ route('detail-donasi',$aksi->id) }}" style=" color:black; ">{{$aksi->judul}}</a>
+                                            {{-- <div class="text" style="padding:12px 30px 13px 26px !important;text-align:left;border-bottom:0px !important;"> --}}
+                                            <div class="text" style="height:100px;">
+                                                <h2 style="font-size: 15px !important;">
+                                                    <a href="{{ route('detail-donasi',$aksi->id) }}" style=" color:black; ">
+                                                    @if(strlen($aksi->judul) > 45)
+                                                        {{substr($aksi->judul,0,45)}}..
+                                                    @else
+                                                        {{substr($aksi->judul,0,45)}}
+                                                    @endif
+                                                    </a>
                                                 </h2>
                                             </div>
                                             <div class="progress-box" style="padding:10px 20px 26px;">

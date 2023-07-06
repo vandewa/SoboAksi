@@ -98,13 +98,13 @@
     {{-- END TOMBOL BACK --}}
     <section class="cause-details" style="margin-top: 0px;margin-bottom: 40px;">
         <div class="auto-container">
-            <div class="row clearfix d-flex justify-content-center">
+            <div class="row clearfix d-flex justify-content-center" style="width: 800px;margin:0 auto;">
                 <div class="col-lg-10 col-md-12 col-sm-12 content-side" >
                     <div class="cause-details-content" >
                         <div class="cause-block-one" >
                             <div class="inner-box" >
                                 <div class="image-box mb-4">
-                                <figure class="image"><img src="{{ $sampul }}" ></figure>
+                                <figure class="image"><img src="{{ $sampul }}" style="max-height: 700px;"></figure>
                                 </div>  
                                 <div class="container mb-3">
                                     <h1 style="font-size: 20px;">{{ $datanya->judul }}</h1>
@@ -207,13 +207,13 @@
         @if (Auth::check())
         <div class="donasi-bottom"> 
             <div class="tombol d-flex justify-content-center mt-3">
-                <button type="submit" class="butt mb-2" style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:55% !important;" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi Sekarang</span>
+                <button type="submit" class="butt mb-2" style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:35% !important;" wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi Sekarang</span>
             </div>
         </div>
         @else
         <div class="donasi-bottom">
             <div class="tombol d-flex justify-content-center mt-3">
-                <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2" style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:55% !important;">Donasi Sekarang</button>
+                <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2" style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:35% !important;">Donasi Sekarang</button>
             </div>
         @endif
     @endif

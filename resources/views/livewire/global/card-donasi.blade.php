@@ -11,9 +11,18 @@
                 <div class="category"><a href="{{ route('aksi', ['kategori' => $kategorinya->id]) }}">{{$kategorinya->nama_kategori}}</a></div>
             </div>
             <div class="lower-content">
-                <div class="text" style="padding: 32px 30px 7px 40px;">
+                {{-- <div class="text" style="padding: 32px 30px 7px 40px;"> --}}
+                <div class="text" style="height:130px;">
                     {{-- <h3><a href="{{ route('detail-donasi',$idnya) }}">{{substr($judul,0,40)}}..</a></h3> --}}
-                    <h3><a href="{{ route('detail-donasi',$idnya) }}">{{$judul}}</a></h3>
+                    <h3>
+                      <a href="{{ route('detail-donasi',$idnya) }}">
+                      @if(strlen($judul) > 50)
+                        {{substr($judul,0,50)}}..
+                      @else
+                        {{substr($judul,0,50)}}
+                      @endif
+                    </a>
+                    </h3>
                 </div>
                 <div class="progress-box">
                     @if($penerimaDonasi)
@@ -27,7 +36,7 @@
                     <div class="row mb-3">
                       <div class="col-6">
                           <h6>
-                              <span style="font-size: 15px;width:100%;float: left;" >
+                              <span style="font-size: 13px;width:100%;float: left;" >
                                Diperoleh
                               </span>
                               <br>
