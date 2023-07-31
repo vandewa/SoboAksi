@@ -562,6 +562,24 @@
                                 </a>
                             </figure>
                         </div>
+                        <div class="menu-area clearfix">
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler">
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                                <i class="icon-bar"></i>
+                            </div>
+                            <nav class="main-menu navbar-expand-md navbar-light">
+                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li><a href="{{ route('diaspora') }}">Apa itu Diaspora ?</a></li> 
+                                        <li><a href="contact.html">Apa itu SoboAksi ?</a></li> 
+                                        <li><a href="{{ route('visi') }}">Visi Diaspora</a></li> 
+                                        <li><a href="{{ route('misi') }}">Misi Diaspora</a></li> 
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
                         <livewire:button.donasi />
                     </div>
                 </div>

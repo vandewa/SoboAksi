@@ -27,4 +27,11 @@ class HomeController extends Controller
 
         // return view('front.beranda');
     }
+
+    public function visi()
+    {
+        return view('livewire/page/visi');
+
+        // return view('front.beranda');
+    }
 }

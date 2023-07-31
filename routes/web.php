@@ -30,6 +30,10 @@ use App\Http\Controllers\DonasiController;
 use App\Http\Livewire\WebListAksi;
 use App\Http\Controllers\PembayaranDonasiController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Livewire\Page\Diaspora;
+use App\Http\Livewire\Page\Misi;
+use App\Http\Livewire\Page\Visi;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,6 +59,10 @@ Route::get('/list-aksi', MobileListAksi::class)->name('list-aksi');
 Route::get('/web-list-aksi', WebListAksi::class)->name('web-list-aksi');
 Route::get('/auth/google', [GoogleController::class, 'redirectGoogle'])->name('google.login');
 Route::get('/auth/google/callback/', [GoogleController::class, 'callbackGoogle']);
+Route::get('/visi', Visi::class)->name('visi');
+Route::get('/misi', Misi::class)->name('misi');
+Route::get('/diaspora', Diaspora::class)->name('diaspora');
+
 
 
 //dokumentasi template

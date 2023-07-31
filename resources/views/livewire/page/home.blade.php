@@ -11,6 +11,8 @@
     {{-- <livewire:category/> --}}
     <!-- END KATEGORI -->
 
+    @include('livewire.page.slider')
+
     <!-- GALANG DANA -->
     @if (count($aksi) != 0)
         <section class="cause-section sec-pad">
@@ -24,7 +26,7 @@
             <div class="auto-container d-none d-md-block">
                 <div class="sec-title centred mb_50">
                     <span class="sub-title">Donasi</span>
-                    <h2>Penggalangan Dana Mendesak</h2>
+                    <h2>Mau berbuat baik apa hari ini?</h2>
                 </div>
                 <div class="row clearfix">
                     @foreach ($aksi as $ak)
@@ -84,7 +86,7 @@
     <!-- END AKSI DESKTOP -->
 
     <!-- ARTIKEL -->
-    {{-- <livewire:article /> --}}
+    <livewire:article />
     <!-- END ARTIKEL -->
 
     <!-- FOOTER -->
@@ -93,6 +95,9 @@
         <livewire:page.footer />
     </div>
     {{-- END MOBILE --}}
+    <!-- START DESKTOP -->
+    @include('livewire.page.footer-web')
+    <!-- END DESKTOP -->
     <!-- END FOOTER -->
 
 </div>
