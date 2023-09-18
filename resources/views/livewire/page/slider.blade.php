@@ -8,6 +8,7 @@
                 <div class="auto-container">
                     <div class="content-box p_relative d_block z_5">
                         <h2 class="p_relative d_block">Aksi Nyata Untuk Wonosobo</h2>
+                        <p class="p_relative d_block">Sobo Aksi yang merupakan sebuah platform lokal Wonosobo yang menjembatani antara kepedulian dan peluang dari Yayasan Diaspora terhadap berbagai program pembangunan daerah.</p>
                         <div class="btn-box">
                             <a class="theme-btn-one"><span>DIASPORA FOUNDATION</span></a>
                         </div>
@@ -20,7 +21,8 @@
                 <div class="shape-2"></div>
                 <div class="auto-container">
                     <div class="content-box p_relative d_block z_5">
-                        <h2 class="p_relative d_block">Sobo Aksi yang merupakan sebuah platform lokal Wonosobo yang menjembatani antara kepedulian dan peluang dari Yayasan Diaspora terhadap berbagai program pembangunan daerah</h2>
+                        <h2 class="p_relative d_block">Aksi Nyata Untuk Wonosobo</h2>
+                        <p class="p_relative d_block">Sobo Aksi yang merupakan sebuah platform lokal Wonosobo yang menjembatani antara kepedulian dan peluang dari Yayasan Diaspora terhadap berbagai program pembangunan daerah.</p>
                         <div class="btn-box">
                             <a class="theme-btn-one"><span>DIASPORA FOUNDATION</span></a>
                         </div>

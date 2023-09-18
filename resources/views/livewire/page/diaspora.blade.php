@@ -55,9 +55,9 @@
                                             <h3><a href="team-details.html">Tyovan Ari Widagdo</a></h3>
                                             <span class="designation">Ketua Umum</span>
                                             <ul class="social-links clearfix">
-                                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -73,9 +73,9 @@
                                             <h3><a href="team-details.html">Farid Gaban</a></h3>
                                             <span class="designation">Ketua</span>
                                             <ul class="social-links clearfix">
-                                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -91,9 +91,9 @@
                                             <h3><a href="team-details.html">Irfan Bakhtiar</a></h3>
                                             <span class="designation">Pengawas</span>
                                             <ul class="social-links clearfix">
-                                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -109,9 +109,9 @@
                                             <h3><a href="team-details.html">Tafrihan</a></h3>
                                             <span class="designation">Sekretaris Umum</span>
                                             <ul class="social-links clearfix">
-                                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
