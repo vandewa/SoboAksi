@@ -33,6 +33,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Livewire\Page\Diaspora;
 use App\Http\Livewire\Page\Misi;
 use App\Http\Livewire\Page\Visi;
+use App\Http\Livewire\Page\Sobo;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,7 @@ Route::get('/auth/google/callback/', [GoogleController::class, 'callbackGoogle']
 Route::get('/visi', Visi::class)->name('visi');
 Route::get('/misi', Misi::class)->name('misi');
 Route::get('/diaspora', Diaspora::class)->name('diaspora');
+Route::get('/sobo', Sobo::class)->name('sobo');
 
 
 

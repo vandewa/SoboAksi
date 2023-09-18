@@ -573,7 +573,7 @@
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix">
                                         <li><a href="{{ route('diaspora') }}">Apa itu Diaspora ?</a></li> 
-                                        <li><a href="contact.html">Apa itu SoboAksi ?</a></li> 
+                                        <li><a href="{{ route('sobo') }}">Apa itu SoboAksi ?</a></li> 
                                         <li><a href="{{ route('visi') }}">Visi Diaspora</a></li> 
                                         <li><a href="{{ route('misi') }}">Misi Diaspora</a></li> 
                                     </ul>
