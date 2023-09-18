@@ -34,7 +34,7 @@ class PembayaranDonasiController extends Controller
                 return $this->rupiah($row->payment);
             })
             ->editColumn('request_payment', function($row){
-                if($row->payment_date){
+                if($row->request_payment){
                     return Carbon::createFromTimeStamp(strtotime($row->request_payment))->isoFormat('D MMMM Y');
                 } else {
                     return '';
