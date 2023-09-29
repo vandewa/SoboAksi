@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use DB;
 use App\Models\Aksi;
 use App\Models\ComCode;
 use Livewire\Component;
@@ -13,6 +12,7 @@ use App\Models\ComRegion;
 use App\Models\AksiPenerima;
 use Livewire\WithFileUploads;
 use App\Models\Aksi as Beraksi;
+use Illuminate\Support\Facades\DB;
 
 class DonatePopup extends Component
 {
@@ -54,16 +54,17 @@ class DonatePopup extends Component
 
     protected $listeners = ["tampilModal" => "tampilModal", Trix::EVENT_VALUE_UPDATED, "tampilModal2", 'refreshComponent' => '$refresh'];
 
-    public function trix_value_updated($value){
+    public function trix_value_updated($value)
+    {
         $this->deskripsi = $value;
     }
 
 
     public function mount()
     {
-       $this->getProvinsi();
-       $this->getJenisIdentitas();
-       $this->getListKategori();
+        $this->getProvinsi();
+        $this->getJenisIdentitas();
+        $this->getListKategori();
     }
 
     public function tampilModal()
@@ -72,7 +73,7 @@ class DonatePopup extends Component
         $this->photo = '';
         $this->judul = '';
         $this->keterangan = '';
-        $this->kategori = 1 ;
+        $this->kategori = 1;
         $this->deskripsi = '';
         $this->setuju = '';
         $this->denganPenerima = false;
@@ -86,11 +87,11 @@ class DonatePopup extends Component
         $this->region_kel = '';
         $this->alamat = '';
         $this->telepon = '';
-        $this->kode_identitas = "IDENTITAS_ST_01" ;
+        $this->kode_identitas = "IDENTITAS_ST_01";
         $this->no_identitas = '';
         $this->foto_ktp = '';
         $this->foto_penerima = '';
-        $this->isEdit = false ;
+        $this->isEdit = false;
         $this->idnya = '';
         $this->photo2 = '';
         $this->foto_ktp2 = '';
@@ -109,22 +110,22 @@ class DonatePopup extends Component
         $this->judul = $aksi->judul;
         $this->keterangan = $aksi->keterangan;
         $this->getListKategori();
-        $this->kategori = $aksi->kategori??null;
-        $this->photo2 = $aksi->sampul->UrlPhoto??null;
-        $this->deskripsi = $aksi->deskripsi??null;
-        $this->denganPenerima = $aksi->penerimaDonasi == null ? false:true;
-        $this->nama = $aksi->penerimaDonasi->penerima->nama??null;
-        $this->region_prop = $aksi->penerimaDonasi->penerima->region_prop??null;
+        $this->kategori = $aksi->kategori ?? null;
+        $this->photo2 = $aksi->sampul->UrlPhoto ?? null;
+        $this->deskripsi = $aksi->deskripsi ?? null;
+        $this->denganPenerima = $aksi->penerimaDonasi == null ? false : true;
+        $this->nama = $aksi->penerimaDonasi->penerima->nama ?? null;
+        $this->region_prop = $aksi->penerimaDonasi->penerima->region_prop ?? null;
         $this->getProvinsi();
-        $this->alamat = $aksi->penerimaDonasi->penerima->alamat??null;
-        $this->telepon = $aksi->penerimaDonasi->penerima->telepon??null;
+        $this->alamat = $aksi->penerimaDonasi->penerima->alamat ?? null;
+        $this->telepon = $aksi->penerimaDonasi->penerima->telepon ?? null;
         $this->getJenisIdentitas();
-        $this->kode_identitas = $aksi->penerimaDonasi->penerima->kode_identitas??null;
-        $this->foto_ktp2 = $aksi->penerimaDonasi->penerima->UrlKtp??null;
-        $this->no_identitas = $aksi->penerimaDonasi->penerima->no_identitas??null;
-        $this->foto_penerima2 = $aksi->penerimaDonasi->penerima->UrlPenerima??null;
-        $this->target_donasi = $aksi->penerimaDonasi->target_donasi??null;
-        $this->target_waktu = $aksi->penerimaDonasi->target_waktu??null;
+        $this->kode_identitas = $aksi->penerimaDonasi->penerima->kode_identitas ?? null;
+        $this->foto_ktp2 = $aksi->penerimaDonasi->penerima->UrlKtp ?? null;
+        $this->no_identitas = $aksi->penerimaDonasi->penerima->no_identitas ?? null;
+        $this->foto_penerima2 = $aksi->penerimaDonasi->penerima->UrlPenerima ?? null;
+        $this->target_donasi = $aksi->penerimaDonasi->target_donasi ?? null;
+        $this->target_waktu = $aksi->penerimaDonasi->target_waktu ?? null;
 
     }
     public function render()
@@ -138,11 +139,11 @@ class DonatePopup extends Component
 
     public function simpan()
     {
-        if($this->denganPenerima){
+        if ($this->denganPenerima) {
             $a = DB::transaction(function () {
                 $this->validate(
                     [
-                        "photo" => "required",
+                        "photo" => "required|image|max:1024",
                         "nama" => "required",
                         "alamat" => "required",
                         "region_prop" => "required",
@@ -152,8 +153,8 @@ class DonatePopup extends Component
                         "alamat" => "required",
                         "telepon" => "required",
                         "no_identitas" => "required",
-                        "foto_ktp" => "required",
-                        "foto_penerima" => "required",
+                        "foto_ktp" => "required|image|max:1024",
+                        "foto_penerima" => "required|image|max:1024",
                         "judul" => "required",
                         "keterangan" => "required",
                         "kategori" => "required",
@@ -213,13 +214,15 @@ class DonatePopup extends Component
             });
 
         } else {
-            // $this->validate(
-            //     [
-            //         "judul" => "required",
-            //         "kategori" => "required",
-            //         "deskripsi" => "required",
-            //     ]
-            // );
+            $this->validate(
+                [
+                    "photo" => "required|image|max:1024",
+                    "judul" => "required",
+                    "kategori" => "required",
+                    "deskripsi" => "required",
+                    "keterangan" => "required",
+                ]
+            );
 
             $path = $this->photo->store('aksi', 'public');
             $data = Beraksi::create([
@@ -263,7 +266,7 @@ class DonatePopup extends Component
     }
     public function getKabupaten()
     {
-        $data =  ComRegion::where('region_root', $this->region_prop)->get();
+        $data = ComRegion::where('region_root', $this->region_prop)->get();
         $this->kabupatens = $data;
         $this->region_kab = $data->first()->region_cd;
         $this->getKecamatan();
@@ -279,63 +282,63 @@ class DonatePopup extends Component
     {
         $data = ComRegion::where('region_root', $this->region_kec)->get();
         $this->desas = $data;
-        $this->region_kel = $data->first()->region_cd??"";
+        $this->region_kel = $data->first()->region_cd ?? "";
     }
 
     public function update($id)
     {
-        if($this->denganPenerima){
+        if ($this->denganPenerima) {
             $this->validate
             ([
-                "nama" => "required",
-                "alamat" => "required",
-                "region_prop" => "required",
-                "region_kab" => "required",
-                "region_kec" => "required",
-                "region_kel" => "required",
-                "alamat" => "required",
-                "telepon" => "required",
-                "no_identitas" => "required",
-                "foto_ktp" => "max:4096",
-                "foto_penerima" => "max:4096",
-                "judul" => "required",
-                "keterangan" => "required",
-                "kategori" => "required",
-                "deskripsi" => "required",
-                "target_donasi" => "required",
-                "target_waktu" => "required|date",
-            ]);
+                    "nama" => "required",
+                    "alamat" => "required",
+                    "region_prop" => "required",
+                    "region_kab" => "required",
+                    "region_kec" => "required",
+                    "region_kel" => "required",
+                    "alamat" => "required",
+                    "telepon" => "required",
+                    "no_identitas" => "required",
+                    "foto_ktp" => "max:4096",
+                    "foto_penerima" => "max:4096",
+                    "judul" => "required",
+                    "keterangan" => "required",
+                    "kategori" => "required",
+                    "deskripsi" => "required",
+                    "target_donasi" => "required",
+                    "target_waktu" => "required|date",
+                ]);
 
-                $penerima = AksiPenerima::where('aksi_id', $id)->first()->penerima_id;
-                if($this->foto_ktp || $this->foto_penerima){
-                    $ktp = $this->foto_ktp->store('aksi/identitas/', 'public');
-                    $penerimafoto = $this->foto_penerima->store('aksi/penerima', 'public');
-                    Penerima::find($penerima)
+            $penerima = AksiPenerima::where('aksi_id', $id)->first()->penerima_id;
+            if ($this->foto_ktp || $this->foto_penerima) {
+                $ktp = $this->foto_ktp->store('aksi/identitas/', 'public');
+                $penerimafoto = $this->foto_penerima->store('aksi/penerima', 'public');
+                Penerima::find($penerima)
                     ->update([
                         "foto_penerima" => $penerimafoto,
                         "foto_ktp" => $ktp,
                     ]);
-                } 
-                
-                Penerima::find($penerima)
-                    ->update([
-                        "nama" => $this->nama,
-                        "alamat" => $this->alamat,
-                        "region_prop" => $this->region_prop,
-                        "region_kab" => $this->region_kab,
-                        "region_kec" => $this->region_kec,
-                        "region_kel" => $this->region_kel,
-                        "kode_identitas" => $this->kode_identitas,
-                        "alamat" => $this->alamat,
-                        "telepon" => $this->telepon,
-                        "no_identitas" => $this->no_identitas,
+            }
+
+            Penerima::find($penerima)
+                ->update([
+                    "nama" => $this->nama,
+                    "alamat" => $this->alamat,
+                    "region_prop" => $this->region_prop,
+                    "region_kab" => $this->region_kab,
+                    "region_kec" => $this->region_kec,
+                    "region_kel" => $this->region_kel,
+                    "kode_identitas" => $this->kode_identitas,
+                    "alamat" => $this->alamat,
+                    "telepon" => $this->telepon,
+                    "no_identitas" => $this->no_identitas,
                 ]);
 
-                if($this->photo){
-                    $path = $this->photo->store('aksi', 'public');
-                }
-                    
-                Beraksi::find($id)
+            if ($this->photo) {
+                $path = $this->photo->store('aksi', 'public');
+            }
+
+            Beraksi::find($id)
                 ->update([
                     "judul" => $this->judul,
                     "keterangan" => $this->keterangan,
@@ -345,14 +348,14 @@ class DonatePopup extends Component
                     "creator_id" => auth()->user()->id,
                 ]);
 
-                if($this->photo){
-                    AksiPhoto::where('aksi_id', $id)
+            if ($this->photo) {
+                AksiPhoto::where('aksi_id', $id)
                     ->update([
                         "url" => $path
                     ]);
-                }
+            }
 
-                AksiPenerima::where('aksi_id', $id)
+            AksiPenerima::where('aksi_id', $id)
                 ->update([
                     "target_donasi" => $this->target_donasi,
                     "target_waktu" => $this->target_waktu,
@@ -360,7 +363,7 @@ class DonatePopup extends Component
                     "donasi_tercapai" => 0
                 ]);
 
-                return redirect()->to('postingku')->with('update', 'oke');
+            return redirect()->to('postingku')->with('update', 'oke');
 
 
         } else {
@@ -374,26 +377,26 @@ class DonatePopup extends Component
                 ]
             );
 
-            if($this->photo){
+            if ($this->photo) {
                 $path = $this->photo->store('aksi', 'public');
-            } 
+            }
 
             Beraksi::find($id)
-            ->update([
-                "judul" => $this->judul,
-                "keterangan" => $this->keterangan,
-                "kategori" => $this->kategori,
-                "deskripsi" => $this->deskripsi,
-                "setuju" => true,
-                "creator_id" => auth()->user()->id,
-
-            ]);
-
-            if($this->photo){
-                AksiPhoto::where('aksi_id', $id)
                 ->update([
-                    "url" => $path
+                    "judul" => $this->judul,
+                    "keterangan" => $this->keterangan,
+                    "kategori" => $this->kategori,
+                    "deskripsi" => $this->deskripsi,
+                    "setuju" => true,
+                    "creator_id" => auth()->user()->id,
+
                 ]);
+
+            if ($this->photo) {
+                AksiPhoto::where('aksi_id', $id)
+                    ->update([
+                        "url" => $path
+                    ]);
             }
 
             return redirect()->to('postingku')->with('update', 'oke');

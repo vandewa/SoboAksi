@@ -10,7 +10,7 @@
     <title>Sobo Aksi</title>
 
     <!-- Fav Icon -->
-    <link rel="icon" href="{{ asset('trusthand/assets/images/logo.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('trusthand/assets/images/logo.ico') }}" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link
@@ -23,21 +23,21 @@
         rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link href="{{ asset('trusthand/assets/css/font-awesome-all.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/flaticon.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/owl.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/bootstrap.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/jquery.fancybox.min.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/animate.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/nice-select.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/jquery-ui.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/jquery.bootstrap-touchspin.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/color.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/elpath.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/style.css')}}" rel="stylesheet">
-    <link href="{{ asset('trusthand/assets/css/responsive.css')}}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/font-awesome-all.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/owl.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/jquery-ui.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/jquery.bootstrap-touchspin.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/color.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/elpath.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('trusthand/assets/css/responsive.css') }}" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/bb9305debb.js" crossorigin="anonymous"></script>   
+    <script src="https://kit.fontawesome.com/bb9305debb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
 
 
@@ -334,55 +334,56 @@
             right: 10%;
             bottom: 100px;
         }
+
         .login-with-google-btn {
             transition: background-color .3s, box-shadow .3s;
-                
+
             padding: 12px 16px 12px 42px;
             border: none;
             border-radius: 3px;
             box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
-            
+
             color: #757575;
             font-size: 14px;
             font-weight: 500;
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
-            
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
             background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
             background-color: white;
             background-repeat: no-repeat;
             background-position: 12px 11px;
-            
+
             &:hover {
                 box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
             }
-            
+
             &:active {
                 background-color: #eeeeee;
             }
-            
+
             &:focus {
                 outline: none;
-                box-shadow: 
-                0 -1px 0 rgba(0, 0, 0, .04),
-                0 2px 4px rgba(0, 0, 0, .25),
-                0 0 0 3px #c8dafc;
+                box-shadow:
+                    0 -1px 0 rgba(0, 0, 0, .04),
+                    0 2px 4px rgba(0, 0, 0, .25),
+                    0 0 0 3px #c8dafc;
             }
-            
+
             &:disabled {
                 filter: grayscale(100%);
                 background-color: #ebebeb;
                 box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
                 cursor: not-allowed;
             }
-            }
-
+        }
     </style>
 </head>
 
 
 <!-- page wrapper -->
 <div class="d-block d-md-none" style="margin-top: 40px;"></div>
-<body >
+
+<body>
     <div class="boxed_wrapper">
         <!--Search Popup-->
         <div id="search-popup" class="search-popup">
@@ -390,9 +391,9 @@
                 <div class="upper-box clearfix">
                     <figure class="logo-box pull-left">
                         {{-- <a href="{{ route('home') }}"> --}}
-                            <a href="{{ route('home') }}">
-                                <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
-                            </a>
+                        <a href="{{ route('home') }}">
+                            <img src="{{ asset('trusthand/assets/images/sobo.png') }}" alt="">
+                        </a>
                     </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
@@ -400,15 +401,15 @@
                 <div class="auto-container">
                     <div class="search-form">
                         {{-- <form method="post" action="{{ route('home') }}"> --}}
-                            <form method="post" action="{{ route('home') }}">
-                                <div class="form-group">
-                                    <fieldset>
-                                        <input type="search" class="form-control" name="search-input" value=""
-                                            placeholder="Type your keyword and hit" required>
-                                        <button type="submit"><i class="far fa-search"></i></button>
-                                    </fieldset>
-                                </div>
-                            </form>
+                        <form method="post" action="{{ route('home') }}">
+                            <div class="form-group">
+                                <fieldset>
+                                    <input type="search" class="form-control" name="search-input" value=""
+                                        placeholder="Type your keyword and hit" required>
+                                    <button type="submit"><i class="far fa-search"></i></button>
+                                </fieldset>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -434,24 +435,26 @@
                             <div class="content-inner">
                                 <div class="logo">
                                     <a href="{{ route('home') }}">
-                                        <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="" />
+                                        <img src="{{ asset('trusthand/assets/images/sobo.png') }}" alt="" />
                                     </a>
                                 </div>
                                 <div class="content-box">
                                     <div class="mb-5">
-                                        Selamat Datang, <h4 style="color:#E04237;">{{ Auth::user()->name??'' }}</h4>
+                                        Selamat Datang, <h4 style="color:#E04237;">{{ Auth::user()->name ?? '' }}</h4>
                                     </div>
                                     <div class="mb-3">
                                         <a href="{{ route('donasiku') }}" style="color: black;">
-                                            <i class="fa-solid fa-hand-holding-dollar fa-beat" style="--fa-animation-duration: 1.5s;"></i>
+                                            <i class="fa-solid fa-hand-holding-dollar fa-beat"
+                                                style="--fa-animation-duration: 1.5s;"></i>
                                             <span>
-                                                &nbsp; Donasiku 
+                                                &nbsp; Donasiku
                                             </span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
                                         <a href="{{ route('postingku') }}" style="color: black;">
-                                            <i class="fa-solid fa-comment-dots fa-beat" style="--fa-animation-duration: 1.6s;"></i>
+                                            <i class="fa-solid fa-comment-dots fa-beat"
+                                                style="--fa-animation-duration: 1.6s;"></i>
                                             <span>
                                                 &nbsp; Postingan
                                             </span>
@@ -459,20 +462,25 @@
                                     </div>
                                     <div class="mb-3">
                                         <a href="{{ route('ganti-password') }}" style="color: black;">
-                                            <i class="fa-solid fa-key fa-beat" style="--fa-animation-duration: 1.7s;"></i>
+                                            <i class="fa-solid fa-key fa-beat"
+                                                style="--fa-animation-duration: 1.7s;"></i>
                                             <span>
                                                 &nbsp; Ganti Password
                                             </span>
                                         </a>
                                     </div>
                                     <div class="mb-3">
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" style="color: black;">
-                                            <i class="fa-solid fa-right-from-bracket fa-beat" style="--fa-animation-duration: 1.8s;"></i>
-                                                <span>
-                                                    &nbsp; Logout
-                                                </span>
-                                        
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            style="color: black;">
+                                            <i class="fa-solid fa-right-from-bracket fa-beat"
+                                                style="--fa-animation-duration: 1.8s;"></i>
+                                            <span>
+                                                &nbsp; Logout
+                                            </span>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
                                                 @csrf
                                             </form>
                                         </a>
@@ -488,103 +496,130 @@
 
 
         <!-- main header -->
-        <header class="main-header" >
+        <header class="main-header">
             <!-- header-lower -->
-            @if(Auth::check())
-            {{-- START MOBILE --}}
-            <div class="d-block d-md-none">
-                <div class="header-lower">
-                    {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
-                    @if(Request::segment(1) != '' && Request::segment(1) != 'akun-profile' && Request::segment(1) !=
-                    'detail-berita' && Request::segment(1) !='detail-aksi')
-                    <a href="{{ url()->previous() }}">
-                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true" style="height:10px !important;"></i></div>
-                    </a>
-                    @else
-                    @endif
-                </div>
-            </div>
-            {{-- END MOBILE --}}
-            {{-- START DEKSTOP --}}
-            <div class="d-none d-md-block">
-                <div class="header-lower">
-                    <div class="outer-box">
-                        <div class="logo-box">
-                            <figure class="logo">
-                                <a href="{{ route('home') }}">
-                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="menu-area clearfix">
-                            <nav class="main-menu clearfix">
-                            </nav>
-                            <ul class="nav-right">
-                                <li class="btn-box">
-                                    <livewire:button.donasi />
-                                </li>
-                                <li class="nav-btn nav-toggler navSidebar-button clearfix">
-                                    <i class="icon-3"></i>
-                                </li>
-                            </ul>
-                        </div>
+            @if (Auth::check())
+                {{-- START MOBILE --}}
+                <div class="d-block d-md-none">
+                    <div class="header-lower">
+                        {{-- JIKA BUKAN HOME MENAMPILKAN TOMBOL BACK --}}
+                        @if (Request::segment(1) != '' &&
+                                Request::segment(1) != 'akun-profile' &&
+                                Request::segment(1) != 'detail-berita' &&
+                                Request::segment(1) != 'detail-aksi')
+                            <a href="{{ url()->previous() }}">
+                                <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
+                                        style="height:10px !important;"></i></div>
+                            </a>
+                        @else
+                        @endif
                     </div>
                 </div>
-            </div>
-            {{-- END DESKTOP --}}
-            @else
-            {{-- START MOBILE --}}
-            {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
-            <div class="d-block d-md-none">
-                <div class="header-lower">
-                    @if(Request::segment(1) != '' )
-                    <a href="{{ url()->previous() }}">
-                        <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
-                                style="height:10px !important;"></i></div>
-                    </a>
-                    @else
-                    @endif
-                    <a href="{{ route('home') }}">
-                        <center><img src="{{ asset('trusthand/assets/images/sobo.png')}}" width="70%" class="mt-4">
-                        </center>
-                    </a>
-                </div>
-            </div>
-            {{-- END MOBILE --}}
-            {{-- START DEKSTOP --}}
-            <div class="d-none d-md-block">
-                <div class="header-lower">
-                    <div class="outer-box">
-                        <div class="logo-box">
-                            <figure class="logo">
-                                <a href="{{ route('home') }}">
-                                    <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="menu-area clearfix">
-                            <!--Mobile Navigation Toggler-->
-                            <div class="mobile-nav-toggler">
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
-                                <i class="icon-bar"></i>
+                {{-- END MOBILE --}}
+                {{-- START DEKSTOP --}}
+                <div class="d-none d-md-block">
+                    <div class="header-lower">
+                        <div class="outer-box">
+                            <div class="logo-box">
+                                <figure class="logo">
+                                    <a href="{{ route('home') }}">
+                                        <img src="{{ asset('trusthand/assets/images/putih.png') }}" alt=""
+                                            title="">
+                                    </a>
+                                </figure>
                             </div>
-                            <nav class="main-menu navbar-expand-md navbar-light">
-                                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                    <ul class="navigation clearfix">
-                                        <li><a href="{{ route('diaspora') }}">Apa itu Diaspora ?</a></li> 
-                                        <li><a href="{{ route('sobo') }}">Apa itu SoboAksi ?</a></li> 
-                                        <li><a href="{{ route('visi') }}">Visi Diaspora</a></li> 
-                                        <li><a href="{{ route('misi') }}">Misi Diaspora</a></li> 
-                                    </ul>
+                            <div class="menu-area clearfix">
+                                <div class="mobile-nav-toggler">
+                                    <i class="icon-bar"></i>
+                                    <i class="icon-bar"></i>
+                                    <i class="icon-bar"></i>
                                 </div>
-                            </nav>
+                                <nav class="main-menu navbar-expand-md navbar-light">
+                                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                        <ul class="navigation clearfix">
+                                            <li><a href="{{ route('diaspora') }}">Apa itu Diaspora ?</a></li>
+                                            <li><a href="{{ route('sobo') }}">Apa itu SoboAksi ?</a></li>
+                                            <li><a href="{{ route('visi') }}">Visi Diaspora</a></li>
+                                            <li><a href="{{ route('misi') }}">Misi Diaspora</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <ul class="nav-right">
+                                    <li class="btn-box">
+                                        <livewire:button.donasi />
+                                    </li>
+                                    <li class="nav-right nav-toggler navSidebar-button clea<i class="fa-solid
+                                        fa-circle-user fa-bounce fa-2xl"
+                                        style="color: #3787ff;--fa-animation-duration: 3.5s;"></i><i
+                                            class="fa-solid fa-circle-user fa-flip fa-2xl"></i>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <livewire:button.donasi />
                     </div>
                 </div>
-            </div>
-            {{-- END DESKTOP --}}
+                {{-- END DESKTOP --}}
+            @else
+                {{-- START MOBILE --}}
+                {{-- JIKA BELUM LOGIN TAMPIL LOGO SOBO AKSI BERWARNA --}}
+                <div class="d-block d-md-none">
+                    <div class="header-lower">
+                        @if (Request::segment(1) != '')
+                            <a href="{{ url()->previous() }}">
+                                <div class="round"><i class="fa fa-arrow-left" aria-hidden="true"
+                                        style="height:10px !important;"></i></div>
+                            </a>
+                        @else
+                        @endif
+                        <a href="{{ route('home') }}">
+                            <center><img src="{{ asset('trusthand/assets/images/sobo.png') }}" width="70%"
+                                    class="mt-4">
+                            </center>
+                        </a>
+                        <center>
+                            <h5 style="font-size:14px;" class="mr-3 ml-3">platform lokal Wonosobo yang
+                                menjembatani antara
+                                kepedulian dan peluang dari
+                                Yayasan Dispora terhadap berbagai pembangunan daerah</h5>
+                        </center><br>
+                    </div>
+                </div>
+                {{-- END MOBILE --}}
+                {{-- START DEKSTOP --}}
+                <div class="d-none d-md-block">
+                    <div class="header-lower">
+                        <div class="outer-box">
+                            <div class="logo-box">
+                                <figure class="logo">
+                                    <a href="{{ route('home') }}">
+                                        <img src="{{ asset('trusthand/assets/images/putih.png') }}" alt=""
+                                            title="">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div class="menu-area clearfix">
+                                <!--Mobile Navigation Toggler-->
+                                <div class="mobile-nav-toggler">
+                                    <i class="icon-bar"></i>
+                                    <i class="icon-bar"></i>
+                                    <i class="icon-bar"></i>
+                                </div>
+                                <nav class="main-menu navbar-expand-md navbar-light">
+                                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                        <ul class="navigation clearfix">
+                                            <li><a href="{{ route('diaspora') }}">Apa itu Diaspora ?</a></li>
+                                            <li><a href="{{ route('sobo') }}">Apa itu SoboAksi ?</a></li>
+                                            <li><a href="{{ route('visi') }}">Visi Diaspora</a></li>
+                                            <li><a href="{{ route('misi') }}">Misi Diaspora</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <livewire:button.donasi />
+                        </div>
+                    </div>
+                </div>
+                {{-- END DESKTOP --}}
             @endif
 
             <!--sticky Header-->
@@ -594,7 +629,7 @@
                         <div class="logo-box">
                             <figure class="logo">
                                 <a href="{{ route('home') }}">
-                                    <img src="{{ asset('trusthand/assets/images/sobo.png')}}" alt="">
+                                    <img src="{{ asset('trusthand/assets/images/sobo.png') }}" alt="">
                                 </a>
                             </figure>
                         </div>
@@ -605,10 +640,12 @@
                                 <li class="btn-box">
                                     <livewire:button.donasi />
                                 </li>
-                                @if(Auth::check())
-                                <li class="nav-btn nav-toggler navSidebar-button clearfix">
-                                    <i class="icon-3"></i>
-                                </li>
+                                @if (Auth::check())
+                                    <li class="nav-right nav-toggler navSidebar-button clea<i class="fa-solid
+                                        fa-circle-user fa-bounce fa-2xl"
+                                        style="color: #3787ff;--fa-animation-duration: 3.5s;"></i><i
+                                            class="fa-solid fa-circle-user fa-flip fa-2xl"></i>
+                                    </li>
                                 @endif
                             </ul>
                         </div>
@@ -629,7 +666,7 @@
             <nav class="menu-box">
                 <div class="nav-logo">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('trusthand/assets/images/putih.png')}}" alt="" title="">
+                        <img src="{{ asset('trusthand/assets/images/putih.png') }}" alt="" title="">
                     </a>
                 </div>
                 <div class="menu-outer">
@@ -706,25 +743,25 @@
 
 
     <!-- jequery plugins -->
-    <script src="{{ asset('trusthand/assets/js/jquery.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/popper.min.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/owl.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/wow.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/validation.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/jquery.fancybox.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/appear.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/scrollbar.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/isotope.js')}}"></script>
-    <!-- <script src="{{ asset('trusthand/assets/js/jquery.nice-select.min.js')}}"></script> -->
-    <script src="{{ asset('trusthand/assets/js/parallax-scroll.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/jquery-ui.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/nav-tool.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/jquery.bootstrap-touchspin.js')}}"></script>
-    <script src="{{ asset('trusthand/assets/js/bxslider.js')}}"></script>
+    <script src="{{ asset('trusthand/assets/js/jquery.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/owl.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/wow.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/validation.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/appear.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/scrollbar.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/isotope.js') }}"></script>
+    <!-- <script src="{{ asset('trusthand/assets/js/jquery.nice-select.min.js') }}"></script> -->
+    <script src="{{ asset('trusthand/assets/js/parallax-scroll.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/nav-tool.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/jquery.bootstrap-touchspin.js') }}"></script>
+    <script src="{{ asset('trusthand/assets/js/bxslider.js') }}"></script>
 
     <!-- main-js -->
-    <script src="{{ asset('trusthand/assets/js/script.js')}}"></script>
+    <script src="{{ asset('trusthand/assets/js/script.js') }}"></script>
 
     @livewireScripts
     @stack('js')
