@@ -443,6 +443,15 @@
                                         Selamat Datang, <h4 style="color:#E04237;">{{ Auth::user()->name ?? '' }}</h4>
                                     </div>
                                     <div class="mb-3">
+                                        <a href="{{ route('edit-profile') }}" style="color: black;">
+                                            <i class="fa-solid fa-user fa-beat"
+                                                style="--fa-animation-duration: 1.4s;"></i>
+                                            <span>
+                                                &nbsp; Profil
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="mb-3">
                                         <a href="{{ route('donasiku') }}" style="color: black;">
                                             <i class="fa-solid fa-hand-holding-dollar fa-beat"
                                                 style="--fa-animation-duration: 1.5s;"></i>
@@ -739,8 +748,26 @@
 
     </div>
 
-
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Bagikan lewat</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <livewire:global.isian-modal />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jequery plugins -->
     <script src="{{ asset('trusthand/assets/js/jquery.js') }}"></script>
