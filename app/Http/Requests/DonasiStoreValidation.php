@@ -28,10 +28,10 @@ class DonasiStoreValidation extends FormRequest
             'judul' => 'required',
             'kategori' => 'required',
             'deskripsi' => 'required',
-            'penerima_id' => 'required',
-            'publish_at ' => 'required',
-            'target_waktu ' => 'required',
-            'target_donasi ' => 'required',
+            // 'penerima_id' => 'required',
+            // 'publish_at ' => 'required',
+            // 'target_waktu ' => 'required',
+            // 'target_donasi ' => 'required',
         ];
     }
 }

@@ -1,7 +1,7 @@
 {{-- start web --}}
 <div class="auto-container d-none d-md-block">
     <div class="sec-title centred mb_50">
-        <span class="sub-title">Aksi</span>
+        <span class="sub-title">Cerita Diaspora</span>
         <h2>Berbagi Inisiasi dan Prakarsa</h2>
     </div>
     <div class="row clearfix mb-5">

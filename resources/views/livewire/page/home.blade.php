@@ -25,7 +25,7 @@
             {{-- START DESKTOP --}}
             <div class="auto-container d-none d-md-block">
                 <div class="sec-title centred mb_50">
-                    <span class="sub-title">Donasi</span>
+                    <span class="sub-title">Aksi</span>
                     <h2>Mau berbuat baik apa hari ini?</h2>
                 </div>
                 <div class="row clearfix">
