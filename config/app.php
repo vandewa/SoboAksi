@@ -58,7 +58,7 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
-    'xendit_token' => env('XENDIT_TOKEN', "xnd_development_fjcEeL4kQmFwx60azq57Jn1rLOqy6dC6nasfGonJUcHRvJzKd3rOaI78Za69l"),
+    'xendit_token' => env('XENDIT_TOKEN', "xnd_public_production_iQsaFMvSeSrrBnOKE2tyQpyLk850E4Y4p8aVtn0fxQB19NClFmXhoOoi6fJWdl"),
 
     /*
     |--------------------------------------------------------------------------
@@ -158,9 +158,9 @@ return [
 
     'providers' => [
 
-        /*
-         * Laravel Framework Service Providers...
-         */
+            /*
+             * Laravel Framework Service Providers...
+             */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -184,20 +184,20 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /*
-         * Package Service Providers...
-         */
+            /*
+             * Package Service Providers...
+             */
 
         Spatie\Permission\PermissionServiceProvider::class,
         Riskihajar\Terbilang\TerbilangServiceProvider::class,
-        // Yajra\DataTables\DataTablesServiceProvider::class,
+            // Yajra\DataTables\DataTablesServiceProvider::class,
 
-        /*
-         * Application Service Providers...
-         */
+            /*
+             * Application Service Providers...
+             */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+            // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 

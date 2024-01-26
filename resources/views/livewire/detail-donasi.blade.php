@@ -211,8 +211,7 @@
                     <div class="tombol d-flex justify-content-center mt-3">
                         <button type="submit" class="butt mb-2"
                             style="line-height:25px !important; margin-bottom: 30px !important;margin-top:5px !important; width:80% !important;"
-                            wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"
-                            disabled><span>Donasi
+                            wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi
                                 Sekarang <i>(Coming Soon)</i></span>
                     </div>
                 </div>
@@ -220,8 +219,7 @@
                 <div class="donasi-bottom">
                     <div class="tombol d-flex justify-content-center mt-3">
                         <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2"
-                            style="line-height:25px !important; margin-bottom: 30px !important;margin-top:5px !important; width:80% !important;"
-                            disabled>Donasi
+                            style="line-height:25px !important; margin-bottom: 30px !important;margin-top:5px !important; width:80% !important;">Donasi
                             Sekarang <i>(Coming Soon)</i></button>
                     </div>
             @endif
@@ -235,8 +233,7 @@
                     <div class="tombol d-flex justify-content-center mt-3">
                         <button type="submit" class="butt mb-2"
                             style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:35% !important;"
-                            wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"
-                            disabled><span>Donasi
+                            wire:click="$emitTo('donate-form', 'tampilModal', {{ $datanya->id }})"><span>Donasi
                                 Sekarang <i>(Coming Soon)</i></span>
                     </div>
                 </div>
@@ -244,8 +241,7 @@
                 <div class="donasi-bottom">
                     <div class="tombol d-flex justify-content-center mt-3">
                         <button wire:click="$emitTo('registrasi', 'tampilModal')" class="butt mb-2"
-                            style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:35% !important;"
-                            disabled>Donasi
+                            style="line-height:45px !important; margin-bottom: 30px !important;margin-top:5px !important; width:35% !important;">Donasi
                             Sekarang <i>(Coming Soon)</i></button>
                     </div>
             @endif
