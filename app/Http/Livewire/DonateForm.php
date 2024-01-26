@@ -20,7 +20,7 @@ class DonateForm extends Component
 
     public function updated()
     {
-       $this->terbilang();
+        $this->terbilang();
     }
 
     public function tampilModal($id)
@@ -47,8 +47,8 @@ class DonateForm extends Component
 
     public function terbilang()
     {
-        if($this->amount ){
-            $this->terbilang = Terbilang::make($this->amount).' Rupiah';
+        if ($this->amount) {
+            $this->terbilang = Terbilang::make($this->amount) . ' Rupiah';
         } else {
             $this->terbilang = Terbilang::make($this->amount);
         }
@@ -58,7 +58,7 @@ class DonateForm extends Component
     {
         $data = DonasiPayment::create(
             [
-                'aksi_id' =>  $this->idnya,
+                'aksi_id' => $this->idnya,
                 'aksi_penerima_id' => $this->penerimaId,
                 'payment' => $this->amount,
                 'request_payment' => now(),
@@ -75,8 +75,8 @@ class DonateForm extends Component
         $params = [
             'external_id' => "$data->id",
             'amount' => $this->amount,
-            'description' => 'Donasi Sobo Aksi #'.str_pad($data->id,5,"0",STR_PAD_LEFT),
-            'invoice_duration' => 3600*48,
+            'description' => 'Donasi Sobo Aksi #' . str_pad($data->id, 5, "0", STR_PAD_LEFT),
+            'invoice_duration' => 3600 * 48,
             'customer' => [
                 'given_names' => $user->name,
                 'surname' => $user->name,
@@ -102,12 +102,12 @@ class DonateForm extends Component
                 ]
             ],
             'success_redirect_url' => url('/'),
-            'failure_redirect_url' => 'http//soboaksi.test',
+            'failure_redirect_url' => 'https://sobo-aksi.wonosobokab.go.id',
             'currency' => 'IDR',
             'fees' => [
                 [
                     'type' => 'OPERASIONAL (5%)',
-                    'value' => $this->amount / 100*5
+                    'value' => $this->amount / 100 * 5
                 ]
             ]
         ];

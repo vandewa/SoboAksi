@@ -58,7 +58,7 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
-    'xendit_token' => env('XENDIT_TOKEN', "xnd_public_production_iQsaFMvSeSrrBnOKE2tyQpyLk850E4Y4p8aVtn0fxQB19NClFmXhoOoi6fJWdl"),
+    'xendit_token' => env('XENDIT_TOKEN'),
 
     /*
     |--------------------------------------------------------------------------
