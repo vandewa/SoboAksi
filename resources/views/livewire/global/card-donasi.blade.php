@@ -94,6 +94,7 @@
                             @endif
                         </div>
                         <div class="col-4">
+                            
                             <button class="btn btn-warning btn-block" style="font-size: 13px;width:100%;"
                                 data-toggle="modal" data-target="#exampleModalCenter"
                                 wire:click="$emit('link', '{{ route('detail-donasi', $idnya) }}')">

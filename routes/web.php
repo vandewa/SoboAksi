@@ -78,7 +78,7 @@ Route::get('trusthand-template', function () {
 
 Auth::routes();
 
-Route::post('userregister', [UserRegisterController::class, 'store'])->name('userregister');
+// Route::post('userregister', [UserRegisterController::class, 'store'])->name('userregister');
 
 Route::get('kabupaten', [RegionController::class, 'kabupaten'])->name('kabupaten');
 Route::get('kecamatan', [RegionController::class, 'kecamatan'])->name('kecamatan');

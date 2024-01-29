@@ -7,13 +7,14 @@ use Livewire\Component;
 class IsianModal extends Component
 {
 
-    public $su;
+    public $jmbt;
 
     protected $listeners = ['link'];
 
     public function link($a)
     {
-        $this->su = $a;
+        $this->jmbt = $a;
+        // dd($this->jmbt);
     }
     public function render()
     {
