@@ -163,7 +163,7 @@
                                             <div class="bar-inner count-bar"
                                                 style="width: {{ (($datanya->penerimaDonasi->donasi_tercapai ?? 0) / ($datanya->penerimaDonasi->target_donasi ?? 0)) * 100 }}%;">
                                                 <div class="count-text">
-                                                    {{ (($datanya->penerimaDonasi->donasi_tercapai ?? 0) / ($datanya->penerimaDonasi->target_donasi ?? 0)) * 100 }}%
+                                                    {{ round((($datanya->penerimaDonasi->donasi_tercapai ?? 0) / ($datanya->penerimaDonasi->target_donasi ?? 0)) * 100), 1 }}%
                                                 </div>
                                             </div>
                                         </div>
