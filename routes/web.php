@@ -71,6 +71,12 @@ Route::get('/sobo', Sobo::class)->name('sobo');
 Route::get('documentation', function () {
     return File::get(public_path() . '/documentation.html');
 });
+Route::get('privacy-policy', function () {
+    return File::get(public_path() . '/privacypolicy.html');
+});
+Route::get('terms', function () {
+    return File::get(public_path() . '/terms.html');
+});
 
 Route::get('trusthand-template', function () {
     return File::get(public_path() . '/trusthand-template.html');
