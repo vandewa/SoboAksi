@@ -41,6 +41,7 @@
                     <div class="form-group">
                         <label>Deskripsi</label>
                         {{Form::textarea('deskripsi', null, ['id'=>'editor', 'rows' => 5])}}
+                        <a href=""></a>
                     </div>
                 </div>
             </div>
