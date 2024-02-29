@@ -12,7 +12,7 @@
                         <div class="row no-gutters mt-3 ml-3 mr-3 mb-3">
                             <div class="col-4">
                                 <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
-                                    <img src="{{ $devan->aksi->sampul->url_photo ?? asset('trusthand/assets/images/resource/cause-1.jpg') }}"
+                                    <img src="{{ route('helper.show-picture', ['path' => $aksi->sampul->path]) }}"
                                         class="card-img" alt="...">
                                 </a>
                             </div>
@@ -28,14 +28,13 @@
                                             @if ($devan->penerimaDonasi)
                                                 <div class="bar-inner count-bar"
                                                     style="width:
-                                                    @if($devan->penerimaDonasi->donasi_tercapai != 0)
-                                                    {{ $devan->penerimaDonasi->donasi_tercapai/ $devan->penerimaDonasi->target_donasi *100 }}%; background:blue;">
+                                                    @if ($devan->penerimaDonasi->donasi_tercapai != 0) {{ ($devan->penerimaDonasi->donasi_tercapai / $devan->penerimaDonasi->target_donasi) * 100 }}%; background:blue;">
                                                     @else
-                                                    0%; background:blue;">
-                                                    @endif
+                                                    0%; background:blue;"> @endif
                                                 </div>
-                                            @else
-                                                <div class="bar-inner count-bar" style="width:100%; background:blue;">
+@else
+<div class="bar-inner
+                                                    count-bar" style="width:100%; background:blue;">
                                                 </div>
                                             @endif
                                         </div>
@@ -75,7 +74,7 @@
                             @php
                                 $datetime1 = strtotime(date('Y-m-d', strtotime($devan->request_payment)));
                                 $datetime2 = strtotime(date('Y-m-d', strtotime(now())));
-                                
+
                                 $secs = $datetime2 - $datetime1; // == <seconds between the two times>
                                 $days = ($secs / 86400) * 24; //jam
                             @endphp
@@ -131,7 +130,7 @@
                             <div class="row no-gutters mt-3 ml-3 mr-3 mb-3">
                                 <div class="col-4">
                                     <a href="{{ route('detail-donasi', $devan->aksi->id ?? '') }}">
-                                        <img src="{{ $devan->aksi->sampul->url_photo ?? asset('trusthand/assets/images/resource/cause-1.jpg') }}"
+                                        <img src="{{ route('helper.show-picture', ['path' => $aksi->sampul->path]) }}"
                                             class="card-img" style="width: 80%;">
                                     </a>
                                 </div>
@@ -147,15 +146,13 @@
                                                 @if ($devan->penerimaDonasi)
                                                     <div class="bar-inner count-bar"
                                                         style="width:
-                                                        @if($devan->penerimaDonasi->donasi_tercapai != 0)
-                                                        {{ $devan->penerimaDonasi->donasi_tercapai/ $devan->penerimaDonasi->target_donasi *100 }}%; background:blue;">
+                                                        @if ($devan->penerimaDonasi->donasi_tercapai != 0) {{ ($devan->penerimaDonasi->donasi_tercapai / $devan->penerimaDonasi->target_donasi) * 100 }}%; background:blue;">
                                                         @else
-                                                        0%; background:blue;">
-                                                        @endif
+                                                        0%; background:blue;"> @endif
                                                     </div>
-                                                @else
-                                                    <div class="bar-inner count-bar"
-                                                        style="width:100%; background:blue;"></div>
+@else
+<div class="bar-inner
+                                                        count-bar" style="width:100%; background:blue;"></div>
                                                 @endif
                                             </div>
 
@@ -194,7 +191,7 @@
                                 @php
                                     $datetime1 = strtotime(date('Y-m-d', strtotime($devan->request_payment)));
                                     $datetime2 = strtotime(date('Y-m-d', strtotime(now())));
-                                    
+
                                     $secs = $datetime2 - $datetime1; // == <seconds between the two times>
                                     $days = ($secs / 86400) * 24; //jam
                                 @endphp

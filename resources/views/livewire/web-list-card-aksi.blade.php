@@ -4,7 +4,7 @@
             <div class="image-box">
                 <figure class="image">
                     <a href="{{ route('detail-donasi',$idnya) }}">
-                    <img src="{{ $sampul }}" style="height:300px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
+                    <img src="{{ route('helper.show-picture', ['path' => $sampul]) }}" style="height:300px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
                     </a>
                 </figure>
                 <div class="category"><a href="{{ route('web-list-aksi', ['kategori' => $kategorinya->id]) }}">{{$kategorinya->nama_kategori}}</a></div>

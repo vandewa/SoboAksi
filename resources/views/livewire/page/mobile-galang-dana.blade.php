@@ -7,7 +7,7 @@
                         <div class="image-box">
                             <figure class="image">
                                 <a href="{{ route('detail-donasi',$idnya) }}">
-                                <img src="{{ $sampul }}" style="height:200px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
+                                <img src="{{ route('helper.show-picture', ['path' => $sampul]) }}" style="height:200px; object-fit:cover;background-repeat:no-repeat;background-position: center center !important;">
                                 </a>
                             </figure>
                             <div class="category">

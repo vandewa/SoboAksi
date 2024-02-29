@@ -34,7 +34,7 @@ class CardDonasi extends Component
         $this->kategorinya = $data['kategorinya'];
         $this->jumlahLike = $data['dukung_count'];
         $this->penerimaDonasi = $data['penerimaDonasi'];
-        $this->sampul = $data['sampul']['url_photo']?? asset('trusthand/assets/images/resource/cause-1.jpg');
+        $this->sampul = $data['sampul']['path']?? asset('trusthand/assets/images/resource/cause-1.jpg');
         $this->jumlahKomentar = $data['komentar_count'];
         $this->saya = $data['dukunganSaya'];
 

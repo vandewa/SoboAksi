@@ -19,23 +19,23 @@ class PostingController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->ajax()){
+        if ($request->ajax()) {
 
             $data = Aksi::with(['kategorinya', 'user', 'publikasi', 'penerimaDonasi'])->select('*');
 
             return DataTables::of($data)
-            ->addIndexColumn()
-            ->addColumn('action', function($row){
-                $actionBtn =
-                '<div>
-                    <a href="'.route('admin:penerima.edit', $row->id).'" class="btn btn-outline-primary round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil-square-o mr-1" ></i>Edit</a>
+                ->addIndexColumn()
+                ->addColumn('action', function ($row) {
+                    $actionBtn =
+                        '<div>
+                    <a href="' . route('admin:penerima.edit', $row->id) . '" class="btn btn-outline-primary round btn-min-width mr-1" data-toggle="tooltip" data-placement="top" title="Edit Data"><i class="fa fa-pencil-square-o mr-1" ></i>Edit</a>
 
-                    <a href="'.route('admin:penerima.destroy', $row->id ).'" class="btn btn-outline-danger round btn-min-width mr-1 delete-data-table" data-toggle="tooltip" data-placement="top" title="Hapus Data" ><i class="fa fa-trash mr-1"></i> Hapus</a>
+                    <a href="' . route('admin:penerima.destroy', $row->id) . '" class="btn btn-outline-danger round btn-min-width mr-1 delete-data-table" data-toggle="tooltip" data-placement="top" title="Hapus Data" ><i class="fa fa-trash mr-1"></i> Hapus</a>
                 </div>';
-                return $actionBtn;
-            })
-            ->rawColumns(['action'])
-            ->make(true);
+                    return $actionBtn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
         }
 
         return view('admin.penerima.index');
@@ -61,19 +61,19 @@ class PostingController extends Controller
      */
     public function store(PenerimaStoreValidation $request)
     {
-        $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
+        $paths = 'public/' . Carbon::now()->isoFormat('Y') . '/' . Carbon::now()->isoFormat('MMMM');
 
-        if($request->hasFile('foto_ktp') || $request->hasFile('foto_penerima')){
-            if($request->hasFile('foto_ktp')){
+        if ($request->hasFile('foto_ktp') || $request->hasFile('foto_penerima')) {
+            if ($request->hasFile('foto_ktp')) {
                 // $name_foto_ktp = $request->file('foto_ktp')->getClientOriginalName();
-                $path_foto_ktp = $request->file('foto_ktp')->store($paths);
+                $path_foto_ktp = $request->file('foto_ktp')->store('soboaksi/public/penerima', 'gcs');
             } else {
                 $path_foto_ktp = '';
 
             }
-            if($request->hasFile('foto_penerima')){
+            if ($request->hasFile('foto_penerima')) {
                 // $name_foto_penerima = $request->file('foto_penerima')->getClientOriginalName();
-                $path_foto_penerima = $request->file('foto_penerima')->store($paths);
+                $path_foto_penerima = $request->file('foto_penerima')->store('soboaksi/public/penerima', 'gcs');
             } else {
                 $path_foto_penerima = '';
             }
@@ -140,7 +140,7 @@ class PostingController extends Controller
 
         // return $data;
 
-        return view('admin.penerima.edit', compact('data','kabupaten', 'kecamatan', 'kelurahan'));
+        return view('admin.penerima.edit', compact('data', 'kabupaten', 'kecamatan', 'kelurahan'));
     }
 
     /**
@@ -163,10 +163,6 @@ class PostingController extends Controller
      */
     public function destroy($id)
     {
-
-
-
-
         Penerima::destroy($id);
 
     }

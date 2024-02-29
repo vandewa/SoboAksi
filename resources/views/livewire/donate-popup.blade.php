@@ -18,7 +18,9 @@
                             <div class="form-group">
                                 <label>Halaman Sampul <span>*</span></label>
                                 @if ($photo2)
-                                    <img src="{{ $photo2 }}" width="200px" height="200px">
+                                    {{-- <img src="{{ $photo2 }}" width="200px" height="200px"> --}}
+                                    <img src="{{ route('helper.show-picture', ['path' => $photo2]) }}" width="200px"
+                                        height="200px">
                                 @else
                                     @if ($photo)
                                         <img src="{{ $photo->temporaryUrl() }}" width="200px" height="200px">
@@ -189,7 +191,9 @@
                                 <div class="form-group">
                                     <label>Foto Identitas <span>*</span></label>
                                     @if ($foto_ktp2)
-                                        <img src="{{ $foto_ktp2 }}" width="200px" height="200px">
+                                        {{-- <img src="{{ $foto_ktp2 }}" width="200px" height="200px"> --}}
+                                        <img src="{{ route('helper.show-picture', ['path' => $foto_ktp2]) }}"
+                                            width="200px" height="200px">
                                     @else
                                         @if ($foto_ktp)
                                             <img src="{{ $foto_ktp->temporaryUrl() }}" width="200px"
@@ -214,7 +218,9 @@
                                 <div class="form-group">
                                     <label>Foto Calon Penerima <span>*</span></label>
                                     @if ($foto_penerima2)
-                                        <img src="{{ $foto_penerima2 }}" width="200px" height="200px">
+                                        {{-- <img src="{{ $foto_penerima2 }}" width="200px" height="200px"> --}}
+                                        <img src="{{ route('helper.show-picture', ['path' => $foto_penerima2]) }}"
+                                            width="200px" height="200px">
                                     @else
                                         @if ($foto_penerima)
                                             <img src="{{ $foto_penerima->temporaryUrl() }}" width="200px"

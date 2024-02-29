@@ -29,7 +29,7 @@ class DetailDonasi extends Component
     {
         $data = Aksi::with(['kategorinya', 'penerimaDonasi', 'user'])->withCount("dukung")->find($id);
         $this->datanya = $data;
-        $this->sampul = $data->sampul->url_photo?? asset('trusthand/assets/images/resource/cause-1.jpg');
+        $this->sampul = $data->sampul->path?? asset('trusthand/assets/images/resource/cause-1.jpg');
     }
 
     public function getCategory()

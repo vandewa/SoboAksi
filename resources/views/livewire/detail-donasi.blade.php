@@ -106,7 +106,9 @@
                         <div class="cause-block-one">
                             <div class="inner-box">
                                 <div class="image-box mb-4">
-                                    <figure class="image"><img src="{{ $sampul }}" style="max-height: 700px;">
+                                    <figure class="image"><img
+                                            src="{{ route('helper.show-picture', ['path' => $sampul]) }}"
+                                            style="max-height: 700px;">
                                     </figure>
                                 </div>
                                 <div class="container mb-3">

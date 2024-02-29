@@ -1,39 +1,40 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ManagementUserController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegionController;
-use App\Http\Controllers\PenerimaController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\AksiController;
-use App\Http\Controllers\UserRegisterController;
-use App\Http\Controllers\WilayahController;
-use App\Http\Livewire\Page\Home;
 use App\Http\Livewire\Page\Aksi;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\PostingController;
-use App\Http\Controllers\DetailDonasiController;
-use App\Http\Livewire\DetailDonasi;
-use App\Http\Livewire\Page\DetailBerita;
-use App\Http\Livewire\Page\MobileAkun;
-use App\Http\Livewire\Page\MobileDonasiku;
-use App\Http\Livewire\Page\MobilePostingku;
-use App\Http\Livewire\Page\MobileEditProfile;
-use App\Http\Livewire\Page\GantiPassword;
-use App\Http\Livewire\Page\MobileListAksi;
-use App\Http\Controllers\DonasiController;
-use App\Http\Livewire\WebListAksi;
-use App\Http\Controllers\PembayaranDonasiController;
-use App\Http\Controllers\GoogleController;
-use App\Http\Livewire\Page\Diaspora;
+use App\Http\Livewire\Page\Home;
 use App\Http\Livewire\Page\Misi;
-use App\Http\Livewire\Page\Visi;
 use App\Http\Livewire\Page\Sobo;
+use App\Http\Livewire\Page\Visi;
+use App\Http\Livewire\WebListAksi;
+use App\Http\Livewire\DetailDonasi;
+use App\Http\Livewire\Page\Diaspora;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Page\MobileAkun;
+use App\Http\Controllers\AksiController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoleController;
+use App\Http\Livewire\Page\DetailBerita;
+use App\Http\Livewire\Page\GantiPassword;
+use App\Http\Controllers\DonasiController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\HelperController;
+use App\Http\Controllers\RegionController;
+use App\Http\Livewire\Page\MobileDonasiku;
+use App\Http\Livewire\Page\MobileListAksi;
+use App\Http\Controllers\PostingController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WilayahController;
+use App\Http\Livewire\Page\MobilePostingku;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PenerimaController;
+use App\Http\Livewire\Page\MobileEditProfile;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\DetailDonasiController;
+use App\Http\Controllers\UserRegisterController;
+use App\Http\Controllers\ManagementUserController;
+use App\Http\Controllers\PembayaranDonasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +66,7 @@ Route::get('/misi', Misi::class)->name('misi');
 Route::get('/diaspora', Diaspora::class)->name('diaspora');
 Route::get('/sobo', Sobo::class)->name('sobo');
 
-
+Route::get('show-picture', [HelperController::class, 'showPicture'])->name('helper.show-picture');
 
 //dokumentasi template
 Route::get('documentation', function () {

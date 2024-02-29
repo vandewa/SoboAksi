@@ -163,8 +163,8 @@ class DonatePopup extends Component
                         "target_waktu" => "required|date",
                     ]
                 );
-                $ktp = $this->foto_ktp->store('aksi/identitas/', 'public');
-                $penerimafoto = $this->foto_penerima->store('aksi/penerima', 'public');
+                $ktp = $this->foto_ktp->store('soboaksi/aksi/identitas/', 'gcs');
+                $penerimafoto = $this->foto_penerima->store('soboaksi/aksi/penerima', 'gcs');
                 $penerima = Penerima::create(
                     [
                         "nama" => $this->nama,
@@ -182,7 +182,7 @@ class DonatePopup extends Component
 
                     ]
                 );
-                $path = $this->photo->store('aksi', 'public');
+                $path = $this->photo->store('soboaksi/aksi', 'gcs');
                 $data = Beraksi::create([
                     "judul" => $this->judul,
                     "keterangan" => $this->keterangan,
@@ -224,7 +224,7 @@ class DonatePopup extends Component
                 ]
             );
 
-            $path = $this->photo->store('aksi', 'public');
+            $path = $this->photo->store('soboaksi/aksi', 'gcs');
             $data = Beraksi::create([
                 "judul" => $this->judul,
                 "keterangan" => $this->keterangan,
@@ -311,8 +311,8 @@ class DonatePopup extends Component
 
             $penerima = AksiPenerima::where('aksi_id', $id)->first()->penerima_id;
             if ($this->foto_ktp || $this->foto_penerima) {
-                $ktp = $this->foto_ktp->store('aksi/identitas/', 'public');
-                $penerimafoto = $this->foto_penerima->store('aksi/penerima', 'public');
+                $ktp = $this->foto_ktp->store('soboaksi/aksi/identitas/', 'gcs');
+                $penerimafoto = $this->foto_penerima->store('soboaksi/aksi/penerima', 'gcs');
                 Penerima::find($penerima)
                     ->update([
                         "foto_penerima" => $penerimafoto,
@@ -335,7 +335,7 @@ class DonatePopup extends Component
                 ]);
 
             if ($this->photo) {
-                $path = $this->photo->store('aksi', 'public');
+                $path = $this->photo->store('soboaksi/aksi', 'gcs');
             }
 
             Beraksi::find($id)
@@ -378,7 +378,7 @@ class DonatePopup extends Component
             );
 
             if ($this->photo) {
-                $path = $this->photo->store('aksi', 'public');
+                $path = $this->photo->store('soboaksi/aksi', 'gcs');
             }
 
             Beraksi::find($id)

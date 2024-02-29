@@ -23,7 +23,7 @@ class ApiPenerimaController extends Controller
         try {
             $data = Penerima::with('provinsi', 'kabupaten', 'kecamatan', 'kelurahan', 'identitas')->orderBy('nama', 'asc')->where('creator_id', auth('api')->user()->id)->get();
             $responseData = PenerimaResource::collection($data)->resolve();
-            
+
             return MyResponse::type('paginate')->info('Get Penerima')->data($responseData)->response();
         } catch (Exception $e) {
             // $responseData = [];
@@ -50,19 +50,19 @@ class ApiPenerimaController extends Controller
      */
     public function store(PenerimaStoreValidation $request)
     {
-        $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
+        // $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
 
-        if($request->hasFile('foto_ktp') || $request->hasFile('foto_penerima')){
-            if($request->hasFile('foto_ktp')){
+        if ($request->hasFile('foto_ktp') || $request->hasFile('foto_penerima')) {
+            if ($request->hasFile('foto_ktp')) {
                 // $name_foto_ktp = $request->file('foto_ktp')->getClientOriginalName();
-                $path_foto_ktp = $request->file('foto_ktp')->store($paths);
+                $path_foto_ktp = $request->file('foto_ktp')->store('soboaksi/public/foto', 'gcs');
             } else {
                 $path_foto_ktp = '';
 
             }
-            if($request->hasFile('foto_penerima')){
+            if ($request->hasFile('foto_penerima')) {
                 // $name_foto_penerima = $request->file('foto_penerima')->getClientOriginalName();
-                $path_foto_penerima = $request->file('foto_penerima')->store($paths);
+                $path_foto_penerima = $request->file('foto_penerima')->store('soboaksi/public/foto', 'gcs');
             } else {
                 $path_foto_penerima = '';
             }

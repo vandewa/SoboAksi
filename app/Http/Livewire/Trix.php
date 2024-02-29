@@ -16,21 +16,24 @@ class Trix extends Component
     public $trixId;
     public $photos = [];
 
-    public function mount($value = ''){
+    public function mount($value = '')
+    {
         $this->value = $value;
         $this->trixId = 'trix-' . uniqid();
     }
 
-    public function updatedValue($value){
+    public function updatedValue($value)
+    {
         $this->emit(self::EVENT_VALUE_UPDATED, $this->value);
     }
 
-    public function completeUpload(string $uploadedUrl, string $trixUploadCompletedEvent){
+    public function completeUpload(string $uploadedUrl, string $trixUploadCompletedEvent)
+    {
 
-        foreach($this->photos as $photo){
-            if($photo->getFilename() == $uploadedUrl) {
+        foreach ($this->photos as $photo) {
+            if ($photo->getFilename() == $uploadedUrl) {
                 // store in the public/photos location
-                $newFilename = $photo->store('public/photos');
+                $newFilename = $photo->store('soboaksi/public/photos', 'gcs');
 
                 // get the public URL of the newly uploaded file
                 $url = Storage::url($newFilename);

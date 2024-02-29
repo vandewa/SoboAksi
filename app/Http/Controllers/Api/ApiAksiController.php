@@ -62,8 +62,8 @@ class ApiAksiController extends Controller
             // tambah foto
             if($request->hasFile('foto')){
                 foreach($request->file('foto') as $key){
-                    $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
-                        $path_foto_ktp = $key->store($paths);
+                    // $paths = 'public/'.Carbon::now()->isoFormat('Y').'/'.Carbon::now()->isoFormat('MMMM');
+                        $path_foto_ktp = $key->store('soboaksi/public/foto', 'gcs');
                         $data->fotonya()->create([
                             "url" => $path_foto_ktp
                         ]);
