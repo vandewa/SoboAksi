@@ -21,7 +21,7 @@ class Article extends Component
         $response = Http::withoutVerifying()->retry(5, 1000)->get('https://diskominfo.wonosobokab.go.id/api/news');
 
         if($response->clientError()){
-
+            $this->article = [];
         } else {
             $response = $response->collect();
 
